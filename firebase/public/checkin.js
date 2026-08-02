@@ -4,7 +4,9 @@
 
 const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec';
 
-let html5QrcodeScanner = null;
+let html5QrCodeInstance = null;
+let availableCameras = [];
+let currentCameraIndex = 0;
 let allConfirmedGuests = [];
 let guestMapByCode = new Map();
 let currentSelectedGuest = null;
@@ -28,6 +30,10 @@ function initCheckin() {
 function bindEvents() {
   $('#btnSearch').addEventListener('click', handleSearch);
   $('#searchInput').addEventListener('input', handleLiveFilterDebounced);
+  $('#searchInput').addEventListener('keyup', e => {
+    if (e.key === 'Enter') handleSearch();
+  });
+
   $('#btnConfirmIngress').addEventListener('click', confirmIngress);
 
   // Modal VIP y Exportar CSV
@@ -92,13 +98,35 @@ function applyCurrentFilters() {
   renderGuestList(list);
 }
 
-function initQrScanner() {
+async function initQrScanner() {
   if (typeof Html5Qrcode === 'undefined') return;
 
-  const html5QrCode = new Html5Qrcode("qr-reader");
+  try {
+    const cameras = await Html5Qrcode.getCameras();
+    if (cameras && cameras.length > 0) {
+      availableCameras = cameras;
+      const toggleBtn = $('#btnToggleCamera');
+      if (toggleBtn && availableCameras.length > 1) {
+        toggleBtn.classList.remove('hidden');
+        toggleBtn.onclick = switchCamera;
+      }
+      startCameraWithId(availableCameras[0].id);
+    } else {
+      startCameraFacingEnvironment();
+    }
+  } catch (_) {
+    startCameraFacingEnvironment();
+  }
+}
+
+function startCameraFacingEnvironment() {
+  if (html5QrCodeInstance) {
+    try { html5QrCodeInstance.stop(); } catch (_) {}
+  }
+  html5QrCodeInstance = new Html5Qrcode("qr-reader");
   const config = { fps: 15, qrbox: { width: 220, height: 220 } };
 
-  html5QrCode.start(
+  html5QrCodeInstance.start(
     { facingMode: "environment" },
     config,
     onQrCodeSuccess,
@@ -107,6 +135,30 @@ function initQrScanner() {
     console.warn("Cámara no disponible o denegada:", err);
     $('#qr-reader').innerHTML = '<div style="padding:24px;text-align:center;color:#94a3b8;font-size:12px;">📷 Cámara inactiva o denegada. Usá la búsqueda manual por código o nombre abajo.</div>';
   });
+}
+
+async function startCameraWithId(cameraId) {
+  if (html5QrCodeInstance) {
+    try { await html5QrCodeInstance.stop(); } catch (_) {}
+  }
+  html5QrCodeInstance = new Html5Qrcode("qr-reader");
+  const config = { fps: 15, qrbox: { width: 220, height: 220 } };
+
+  html5QrCodeInstance.start(
+    cameraId,
+    config,
+    onQrCodeSuccess,
+    onQrCodeError
+  ).catch(err => {
+    console.warn("Error al iniciar cámara especificada:", err);
+    startCameraFacingEnvironment();
+  });
+}
+
+async function switchCamera() {
+  if (!availableCameras || availableCameras.length <= 1) return;
+  currentCameraIndex = (currentCameraIndex + 1) % availableCameras.length;
+  await startCameraWithId(availableCameras[currentCameraIndex].id);
 }
 
 function onQrCodeSuccess(decodedText) {
@@ -207,7 +259,7 @@ function showGuestResultCard(guest) {
     btnBtn.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
   }
 
-  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function showInvalidCard(message) {
@@ -284,7 +336,7 @@ async function loadDoorList() {
 
 function useFallbackGuests() {
   allConfirmedGuests = [
-    { code: 'UA-001', name: 'Lucas Beathyate', status: 'Confirmado', seats: 2, companionName: 'Acompañante VIP', checkedIn: false },
+    { code: 'UA-001', name: 'Lucas Beathayte', status: 'Confirmado', seats: 2, companionName: 'Acompañante VIP', checkedIn: false },
     { code: 'UA-002', name: 'María Pérez', status: 'Confirmado', seats: 1, companionName: '', checkedIn: false },
     { code: 'UA-003', name: 'Carlos Rodríguez', status: 'Pendiente', seats: 1, companionName: '', checkedIn: false }
   ];

@@ -24,6 +24,7 @@
       --navy-dark: #040f26;
       --navy-mid:  #0d2654;
       --pink:      #ee1f73;
+      --pink-hover:#ef2f83;
       --cyan:      #38bdf8;
       --green:     #22c55e;
       --yellow:    #f59e0b;
@@ -34,8 +35,8 @@
 
     body {
       background:
-        radial-gradient(circle at 85% 90%, rgba(238,31,115,0.25) 0%, transparent 45%),
-        radial-gradient(circle at 10% 15%, rgba(56,189,248,0.2) 0%, transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(238,31,115,0.22) 0%, transparent 45%),
+        radial-gradient(circle at 10% 15%, rgba(56,189,248,0.18) 0%, transparent 40%),
         linear-gradient(160deg, #071938 0%, #0d2654 50%, #1c0e3a 100%);
       color: #ffffff;
       font-family: 'Inter', sans-serif;
@@ -45,14 +46,14 @@
 
     /* Ambient Orbs */
     .orb { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; }
-    .orb-1 { top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(238,31,115,0.18) 0%, transparent 70%); }
-    .orb-2 { bottom: -120px; left: -80px; width: 450px; height: 450px; background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%); }
+    .orb-1 { top: -100px; right: -100px; width: 450px; height: 450px; background: radial-gradient(circle, rgba(238,31,115,0.18) 0%, transparent 70%); }
+    .orb-2 { bottom: -120px; left: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%); }
 
-    /* Header */
+    /* Responsive Header */
     .checkin-header {
-      background: rgba(7, 25, 56, 0.85);
+      background: rgba(7, 25, 56, 0.88);
       border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-      padding: 14px 20px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -60,33 +61,65 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(20px);
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    .brand-group { display: flex; align-items: center; gap: 10px; }
+    .brand-group { display: flex; align-items: center; gap: 12px; }
     .brand-icon {
-      width: 32px; height: 32px; background: #fff; border-radius: 8px;
+      width: 36px; height: 36px; background: #fff; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 20px; color: var(--navy);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-weight: 900; font-size: 22px; color: var(--navy);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
     }
-    .checkin-header__title { font-size: 15px; font-weight: 900; color: #ffffff; line-height: 1.1; }
-    .checkin-header__subtitle { font-size: 10px; color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .checkin-header__title { font-size: 16px; font-weight: 900; color: #ffffff; line-height: 1.1; letter-spacing: -0.3px; }
+    .checkin-header__subtitle { font-size: 11px; color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
 
-    .hdr-actions { display: flex; gap: 8px; align-items: center; }
+    .hdr-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .btn-hdr {
       background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
-      color: #fff; font-size: 11px; font-weight: 800; padding: 7px 12px; border-radius: 10px;
-      cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 4px;
+      color: #fff; font-size: 12px; font-weight: 800; padding: 8px 14px; border-radius: 10px;
+      cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px;
+      text-decoration: none; font-family: inherit;
     }
-    .btn-hdr:hover { background: rgba(255,255,255,0.16); transform: translateY(-1px); }
+    .btn-hdr:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
     .btn-hdr--pink { background: linear-gradient(135deg, #ef2f83, #ee1f73); border: none; box-shadow: 0 4px 14px rgba(238,31,115,0.4); }
+    .btn-hdr--pink:hover { box-shadow: 0 6px 18px rgba(238,31,115,0.6); }
 
-    /* Main Container */
+    /* Main Responsive Container */
     .checkin-container {
       position: relative; z-index: 1;
-      max-width: 620px; width: 100%;
+      max-width: 1360px; width: 100%;
       margin: 0 auto;
-      padding: 20px 16px 50px;
+      padding: 24px 20px 50px;
       flex: 1;
+    }
+
+    /* Grid layout: 1 col on mobile, 2 cols on tablet & desktop */
+    .checkin-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 900px) {
+      .checkin-grid {
+        grid-template-columns: 460px 1fr;
+        align-items: start;
+        gap: 24px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .checkin-grid {
+        grid-template-columns: 520px 1fr;
+        gap: 28px;
+      }
+    }
+
+    .checkin-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     /* Stats Grid */
@@ -94,20 +127,19 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin-bottom: 22px;
     }
     .stat-card {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 16px;
-      padding: 14px 10px;
+      padding: 16px 12px;
       text-align: center;
       backdrop-filter: blur(12px);
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .stat-card:hover { transform: translateY(-2px); }
+    .stat-card:hover { transform: translateY(-2px); border-color: rgba(56, 189, 248, 0.4); }
     .stat-card__num {
-      font-size: 26px;
+      font-size: 32px;
       font-weight: 900;
       color: var(--cyan);
       line-height: 1;
@@ -115,51 +147,53 @@
     .stat-card__num--success { color: var(--green); }
     .stat-card__num--pending { color: var(--yellow); }
     .stat-card__label {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 800;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.7);
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     /* Scanner Box */
     .scanner-box {
-      background: rgba(13, 38, 84, 0.7);
-      border: 2px solid rgba(56, 189, 248, 0.4);
+      background: rgba(13, 38, 84, 0.75);
+      border: 2px solid rgba(56, 189, 248, 0.45);
       border-radius: 22px;
       overflow: hidden;
       box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-      margin-bottom: 22px;
-      position: relative;
       backdrop-filter: blur(20px);
     }
+    .scanner-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      background: rgba(4, 15, 38, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .scanner-title {
+      font-size: 12px; font-weight: 800; color: var(--cyan);
+      text-transform: uppercase; letter-spacing: 0.8px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .btn-cam-switch {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 8px;
+      cursor: pointer; transition: all 0.2s ease; font-family: inherit;
+    }
+    .btn-cam-switch:hover { background: rgba(56,189,248,0.25); border-color: var(--cyan); }
+
     #qr-reader {
       width: 100%;
       background: #000;
+      min-height: 240px;
     }
     #qr-reader video {
-      border-radius: 20px;
+      width: 100% !important;
+      height: auto !important;
+      object-fit: cover;
     }
-    .scanner-overlay {
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-    }
-    .scan-reticle {
-      width: 200px; height: 200px;
-      border: 2px dashed rgba(56, 189, 248, 0.6);
-      border-radius: 16px;
-      position: relative;
-      box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.2);
-    }
-    .scan-line {
-      position: absolute; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, #38bdf8, transparent);
-      box-shadow: 0 0 12px #38bdf8;
-      animation: scanAnim 2s ease-in-out infinite alternate;
-    }
-    @keyframes scanAnim { 0% { top: 5%; } 100% { top: 95%; } }
 
     /* Manual Search Entry */
     .manual-entry {
@@ -167,7 +201,6 @@
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 18px;
       padding: 18px;
-      margin-bottom: 22px;
       backdrop-filter: blur(16px);
     }
     .manual-entry__title {
@@ -185,7 +218,7 @@
     }
     .search-input {
       flex: 1;
-      background: rgba(7, 25, 56, 0.8);
+      background: rgba(7, 25, 56, 0.85);
       border: 1px solid rgba(56, 189, 248, 0.4);
       border-radius: 12px;
       padding: 14px 16px;
@@ -211,6 +244,7 @@
       font-size: 14px;
       box-shadow: 0 6px 18px rgba(238,31,115,0.4);
       transition: all 0.2s ease;
+      font-family: inherit;
     }
     .btn-search:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(238,31,115,0.55); }
 
@@ -218,11 +252,10 @@
     .result-card {
       background: linear-gradient(135deg, #0d2654 0%, #201140 100%);
       border: 2px solid var(--cyan);
-      border-radius: 24px;
-      padding: 28px 24px;
+      border-radius: 22px;
+      padding: 26px 20px;
       text-align: center;
       box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      margin-bottom: 24px;
       animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     @keyframes popIn {
@@ -237,28 +270,28 @@
       font-weight: 900;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .result-badge--valid { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #22c55e; box-shadow: 0 0 16px rgba(34, 197, 94, 0.3); }
     .result-badge--used { background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1px solid #f59e0b; box-shadow: 0 0 16px rgba(245, 158, 11, 0.3); }
     .result-badge--invalid { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid #ef4444; box-shadow: 0 0 16px rgba(239, 68, 68, 0.3); }
     
     .result-guest-name {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 900;
       color: #ffffff;
       margin-bottom: 6px;
       letter-spacing: -0.5px;
     }
     .result-seats {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       color: var(--cyan);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .btn-action-checkin {
       width: 100%;
-      padding: 18px;
+      padding: 16px;
       background: linear-gradient(135deg, #22c55e, #16a34a);
       border: none;
       color: #ffffff;
@@ -280,18 +313,51 @@
       border-radius: 20px;
       padding: 20px;
       backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+    }
+    .guest-list-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    @media (min-width: 600px) {
+      .guest-list-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .guest-list-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .filter-tabs {
-      display: flex; gap: 8px; margin-bottom: 14px;
+      display: flex; gap: 6px; flex-wrap: wrap;
     }
     .tab-btn {
       background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
-      color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 800; padding: 6px 14px;
-      border-radius: 99px; cursor: pointer; transition: all 0.2s ease;
+      color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 800; padding: 6px 12px;
+      border-radius: 99px; cursor: pointer; transition: all 0.2s ease; font-family: inherit;
     }
+    .tab-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
     .tab-btn.active {
-      background: var(--cyan); color: var(--navy); border-color: var(--cyan);
+      background: var(--cyan); color: var(--navy); border-color: var(--cyan); font-weight: 900;
     }
+
+    .guest-list-scroll {
+      max-height: 540px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .guest-list-scroll::-webkit-scrollbar { width: 6px; }
+    .guest-list-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 6px; }
+    .guest-list-scroll::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.3); border-radius: 6px; }
+    .guest-list-scroll::-webkit-scrollbar-thumb:hover { background: rgba(56, 189, 248, 0.6); }
 
     .guest-item {
       display: flex;
@@ -301,8 +367,9 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 10px;
       transition: background 0.15s ease;
+      gap: 12px;
     }
-    .guest-item:hover { background: rgba(255,255,255,0.06); }
+    .guest-item:hover { background: rgba(255,255,255,0.08); }
     .guest-item:last-child { border-bottom: none; }
     .guest-item__name { font-weight: 800; font-size: 14px; color: #fff; }
     .guest-item__code { font-family: monospace; font-size: 12px; color: var(--cyan); font-weight: 700; margin-top: 2px; }
@@ -311,9 +378,11 @@
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 8px;
+      white-space: nowrap;
     }
     .status-tag--in { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
     .status-tag--wait { background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .status-tag--declined { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
 
     .hidden { display: none !important; }
   </style>
@@ -335,68 +404,85 @@
     <div class="hdr-actions">
       <button id="btnOpenVipModal" class="btn-hdr btn-hdr--pink">➕ VIP Fuera de Lista</button>
       <button id="btnExportCsv" class="btn-hdr">📥 CSV</button>
-      <a href="index.html" class="btn-hdr" style="text-decoration:none;">← Salir</a>
+      <a href="index.html" class="btn-hdr">← Salir</a>
     </div>
   </header>
 
   <main class="checkin-container">
 
-    <!-- MÉTRICAS EN VIVO -->
-    <div class="stats-row">
-      <div class="stat-card">
-        <div id="statTotalConfirmed" class="stat-card__num">0</div>
-        <div class="stat-card__label">Confirmados</div>
-      </div>
-      <div class="stat-card">
-        <div id="statCheckedIn" class="stat-card__num stat-card__num--success">0</div>
-        <div class="stat-card__label">En Sala</div>
-      </div>
-      <div class="stat-card">
-        <div id="statPending" class="stat-card__num stat-card__num--pending">0</div>
-        <div class="stat-card__label">Por Llegar</div>
-      </div>
-    </div>
+    <!-- CONTENEDOR GRID RESPONSIVO PARA PC / LAPTOPS / CELULARES -->
+    <div class="checkin-grid">
 
-    <!-- ESCÁNER DE QR CÁMARA CON OVERLAY -->
-    <div class="scanner-box">
-      <div id="qr-reader"></div>
-    </div>
-
-    <!-- BÚSQUEDA MANUAL POR NOMBRE O CÓDIGO -->
-    <div class="manual-entry">
-      <div class="manual-entry__title">🔍 Búsqueda manual por nombre o código</div>
-      <div class="search-group">
-        <input type="text" id="searchInput" class="search-input" placeholder="Ej. UA-001 o Nombre del invitado..." autocomplete="off">
-        <button id="btnSearch" class="btn-search">Buscar</button>
-      </div>
-    </div>
-
-    <!-- TARJETA DE RESULTADO / VALIDACIÓN -->
-    <div id="resultCard" class="result-card hidden">
-      <div id="resultBadge" class="result-badge result-badge--valid">VALIDACIÓN OK</div>
-      <div id="resultGuestName" class="result-guest-name">Invitado</div>
-      <div id="resultSeats" class="result-seats">Acceso para 2 personas</div>
-      <div id="resultDetails" style="font-size:13px;color:#94a3b8;margin-bottom:16px;"></div>
-      <button id="btnConfirmIngress" class="btn-action-checkin">✅ CONFIRMAR INGRESO A SALA</button>
-    </div>
-
-    <!-- LISTA RÁPIDA DE ASISTENTES -->
-    <div class="guest-list-box">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-        <div style="font-size:12px;font-weight:800;color:var(--cyan);text-transform:uppercase;letter-spacing:1px;">
-          📋 Asistentes de Puerta
+      <!-- COLUMNA IZQUIERDA: ESCÁNER, BÚSQUEDA Y VALIDACIÓN -->
+      <section class="checkin-panel">
+        
+        <!-- ESCÁNER DE QR CÁMARA CON BARRA DE HERRAMIENTAS -->
+        <div class="scanner-box">
+          <div class="scanner-toolbar">
+            <span class="scanner-title">📷 Escáner de Código QR</span>
+            <button id="btnToggleCamera" class="btn-cam-switch hidden" title="Cambiar Cámara">🔄 Cambiar Cámara</button>
+          </div>
+          <div id="qr-reader"></div>
         </div>
-        <div class="filter-tabs">
-          <button class="tab-btn active" data-filter="confirmed">Confirmados</button>
-          <button class="tab-btn" data-filter="in">En Sala</button>
-          <button class="tab-btn" data-filter="pending">Por Llegar</button>
-          <button class="tab-btn" data-filter="unconfirmed">Pendientes</button>
-          <button class="tab-btn" data-filter="all">Todos</button>
+
+        <!-- BÚSQUEDA MANUAL POR NOMBRE O CÓDIGO -->
+        <div class="manual-entry">
+          <div class="manual-entry__title">🔍 Búsqueda manual por nombre o código</div>
+          <div class="search-group">
+            <input type="text" id="searchInput" class="search-input" placeholder="Ej. UA-001 o Nombre del invitado..." autocomplete="off">
+            <button id="btnSearch" class="btn-search">Buscar</button>
+          </div>
         </div>
-      </div>
-      <div id="guestListContainer">
-        <div style="font-size:12px;color:#94a3b8;text-align:center;padding:16px;">Cargando lista de puerta...</div>
-      </div>
+
+        <!-- TARJETA DE RESULTADO / VALIDACIÓN -->
+        <div id="resultCard" class="result-card hidden">
+          <div id="resultBadge" class="result-badge result-badge--valid">VALIDACIÓN OK</div>
+          <div id="resultGuestName" class="result-guest-name">Invitado</div>
+          <div id="resultSeats" class="result-seats">Acceso para 2 personas</div>
+          <div id="resultDetails" style="font-size:13px;color:#94a3b8;margin-bottom:16px;"></div>
+          <button id="btnConfirmIngress" class="btn-action-checkin">✅ CONFIRMAR INGRESO A SALA</button>
+        </div>
+
+      </section>
+
+      <!-- COLUMNA DERECHA: MÉTRICAS Y LISTA DE ASISTENTES -->
+      <section class="checkin-panel">
+
+        <!-- MÉTRICAS EN VIVO -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div id="statTotalConfirmed" class="stat-card__num">0</div>
+            <div class="stat-card__label">Confirmados</div>
+          </div>
+          <div class="stat-card">
+            <div id="statCheckedIn" class="stat-card__num stat-card__num--success">0</div>
+            <div class="stat-card__label">En Sala</div>
+          </div>
+          <div class="stat-card">
+            <div id="statPending" class="stat-card__num stat-card__num--pending">0</div>
+            <div class="stat-card__label">Por Llegar</div>
+          </div>
+        </div>
+
+        <!-- LISTA RÁPIDA DE ASISTENTES CON SCROLL -->
+        <div class="guest-list-box">
+          <div class="guest-list-header">
+            <div class="guest-list-title">📋 Asistentes de Puerta</div>
+            <div class="filter-tabs">
+              <button class="tab-btn active" data-filter="confirmed">Confirmados</button>
+              <button class="tab-btn" data-filter="in">En Sala</button>
+              <button class="tab-btn" data-filter="pending">Por Llegar</button>
+              <button class="tab-btn" data-filter="unconfirmed">Pendientes</button>
+              <button class="tab-btn" data-filter="all">Todos</button>
+            </div>
+          </div>
+          <div id="guestListContainer" class="guest-list-scroll">
+            <div style="font-size:12px;color:#94a3b8;text-align:center;padding:16px;">Cargando lista de puerta...</div>
+          </div>
+        </div>
+
+      </section>
+
     </div>
 
   </main>
