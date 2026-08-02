@@ -153,7 +153,7 @@ async function postForm(fields) {
   });
 
   await test('app.js carga correctamente', async () => {
-    const r = await fetch(SITE + '/app.js?v=ua-20260801-v57', { signal: AbortSignal.timeout(10000) });
+    const r = await fetch(SITE + '/app.js?v=ua-20260801-v58', { signal: AbortSignal.timeout(10000) });
     assert(r.status === 200, 'app.js status: ' + r.status);
     const text = await r.text();
     assert(text.includes('BACKEND_URL'), 'app.js no contiene BACKEND_URL');
@@ -163,12 +163,12 @@ async function postForm(fields) {
   });
 
   await test('styles.css carga correctamente', async () => {
-    const r = await fetch(SITE + '/styles.css?v=ua-20260801-v57', { signal: AbortSignal.timeout(10000) });
+    const r = await fetch(SITE + '/styles.css?v=ua-20260801-v58', { signal: AbortSignal.timeout(10000) });
     assert(r.status === 200, 'styles.css status: ' + r.status);
   });
 
   await test('qrcode.min.js carga correctamente', async () => {
-    const r = await fetch(SITE + '/qrcode.min.js?v=ua-20260801-v57', { signal: AbortSignal.timeout(10000) });
+    const r = await fetch(SITE + '/qrcode.min.js?v=ua-20260801-v58', { signal: AbortSignal.timeout(10000) });
     assert(r.status === 200, 'qrcode.min.js status: ' + r.status);
   });
 
