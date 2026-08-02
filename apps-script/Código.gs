@@ -93,11 +93,17 @@ function doPost(e) {
     if (!['yes', 'no'].includes(attendance)) throw new Error('La confirmación no es válida.');
 
     const sheet = getSheet_(SHEET_INVITADOS);
-    const row = findGuestRow_(sheet, code);
-    if (!row) throw new Error('No encontramos esta invitación.');
+    let row = findGuestRow_(sheet, code);
+
+    // Si el código no existe (ej. UA-DEMO-001 o prueba), crearlo en la planilla automáticamente
+    if (!row) {
+      const nextRow = Math.max(sheet.getLastRow() + 1, 2);
+      sheet.getRange(nextRow, 1, 1, 2).setValues([[code, updatedGuestName || 'Invitado de prueba']]);
+      row = nextRow;
+    }
 
     const values = sheet.getRange(row, 1, 1, 11).getValues()[0];
-    let guestName = updatedGuestName || values[1];
+    let guestName = updatedGuestName || values[1] || 'Invitado VIP';
     const currentStatus = clean_(values[4]);
 
     const canOverwriteForTesting = testMode && code === 'UA-DEMO-001';
@@ -1160,7 +1166,13 @@ function sendEmailFromCorporateAccount_(recipient, subject, plainTextBody, optio
   try {
     GmailApp.sendEmail(recipient, subject, plainTextBody, gmailOptions);
   } catch (err) {
-    MailApp.sendEmail(recipient, subject, plainTextBody, gmailOptions);
+    // Si falló por alias 'from' no autorizado, remover la opción 'from' y reintentar con la cuenta activa
+    delete gmailOptions.from;
+    try {
+      GmailApp.sendEmail(recipient, subject, plainTextBody, gmailOptions);
+    } catch (err2) {
+      MailApp.sendEmail(recipient, subject, plainTextBody, gmailOptions);
+    }
   }
 }
 
