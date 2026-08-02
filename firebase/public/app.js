@@ -440,9 +440,14 @@ async function submitRsvpInternal(attendance, companion, companionName) {
   formData.set('companionName', companionName);
   formData.set('allowUpdate', '1');
 
-  const isDemo = new URLSearchParams(location.search).get('demo') === '1' || !state.code || state.code === 'UA-DEMO-001';
+  // Siempre que se ingrese un email, notificar al backend para enviar el correo de confirmación
+  if (email) {
+    try { submitHiddenForm(formData, attendance, companion); } catch (_) {}
+  }
 
-  if (isDemo) {
+  const isPureDemo = new URLSearchParams(location.search).get('demo') === '1' && state.code === 'UA-DEMO-001';
+
+  if (isPureDemo) {
     await sleep(600);
     const confirmed = attendance === 'yes';
     state.guest = {
