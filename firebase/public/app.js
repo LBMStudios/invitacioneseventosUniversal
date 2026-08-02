@@ -15,12 +15,11 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  bindEvents();
-  initPlaneAnimation();
-  initParallaxAnimation();
-  initRevealAnimations();
-  initCountdown();
-  initCloudMouseParallax();
+  try { bindEvents(); } catch (_) {}
+  try { initPlaneAnimation(); } catch (_) {}
+  try { initParallaxAnimation(); } catch (_) {}
+  try { initRevealAnimations(); } catch (_) {}
+  try { initCountdown(); } catch (_) {}
 
   const params = new URLSearchParams(location.search);
 
@@ -31,7 +30,7 @@ function init() {
 
   if (params.get('demo') === '1' || state.code === 'UA-DEMO-001') {
     state.guest = {
-      code: state.code || 'UA-DEMO-001',
+      code: 'UA-DEMO-001',
       name: 'Lucas Beathayte',
       email: '',
       phone: '',
@@ -185,10 +184,6 @@ function initRevealAnimations() {
   nodes.forEach(node => observer.observe(node));
 }
 
-function initCloudMouseParallax() {
-  // Parallax dinámico
-}
-
 async function loadGuest(code) {
   try {
     const payload = await getGuestData(code);
@@ -232,7 +227,7 @@ function getGuestData(code) {
     const script = document.createElement('script');
     let finished = false;
 
-    const timeout = setTimeout(() => finish(() => reject(new Error('No pudimos conectar con la lista de invitados.'))), 4000);
+    const timeout = setTimeout(() => finish(() => reject(new Error('No pudimos conectar con la lista de invitados.'))), 3000);
 
     window[callbackName] = payload => finish(() => {
       if (!payload || !payload.ok) {
@@ -265,32 +260,45 @@ function getGuestData(code) {
 function renderInvitation() {
   const { guest, event } = state;
 
-  $('#loadingState').classList.add('hidden');
-  $('#errorState').classList.add('hidden');
-  $('#invitation').classList.remove('hidden');
+  const loadingEl = $('#loadingState');
+  if (loadingEl) {
+    loadingEl.style.display = 'none';
+    loadingEl.classList.add('hidden');
+  }
 
-  const rawName = guest.name || '';
+  $('#errorState')?.classList.add('hidden');
+  $('#invitation')?.classList.remove('hidden');
+
+  const rawName = guest ? guest.name : 'Invitado';
   const fName = firstName(rawName);
   const isGeneric = !rawName || rawName.toLowerCase().includes('invitado');
-  $('#guestGreeting').textContent = isGeneric
-    ? 'Tenemos una invitación especial para vos'
-    : `¡Hola ${fName}! Tenemos una invitación para vos`;
+  
+  if ($('#guestGreeting')) {
+    $('#guestGreeting').textContent = isGeneric
+      ? 'Tenemos una invitación especial para vos'
+      : `¡Hola ${fName}! Tenemos una invitación para vos`;
+  }
+  
   if ($('#rsvpGuestFirstName')) $('#rsvpGuestFirstName').textContent = fName || 'Invitado';
-  $('#introText').textContent = event.intro;
-  $('#eventDate').textContent = formatEventDate(event.date);
-  $('#eventTime').textContent = `${event.time} hs`;
-  $('#eventVenue').textContent = event.venue;
-  $('#ticketName').textContent = guest.name;
-  $('#ticketCode').textContent = guest.code;
-  $('#formCode').value = guest.code;
-  $('#arrivalTime').textContent = `${event.arrivalTime} hs`;
-  $('#calendarButton').classList.remove('hidden');
-  $('#mapsButton').classList.remove('hidden');
-  $('#ticketSeats').textContent = guest.totalSeats > 0
-    ? `${guest.totalSeats} persona${guest.totalSeats === 2 ? 's' : ''}`
-    : 'Vos + 1';
+  if ($('#introText')) $('#introText').textContent = event.intro;
+  if ($('#eventDate')) $('#eventDate').textContent = formatEventDate(event.date);
+  if ($('#eventTime')) $('#eventTime').textContent = `${event.time} hs`;
+  if ($('#eventVenue')) $('#eventVenue').textContent = event.venue;
+  if ($('#ticketName')) $('#ticketName').textContent = guest.name;
+  if ($('#ticketCode')) $('#ticketCode').textContent = guest.code;
+  if ($('#formCode')) $('#formCode').value = guest.code;
+  if ($('#arrivalTime')) $('#arrivalTime').textContent = `${event.arrivalTime} hs`;
+  
+  $('#calendarButton')?.classList.remove('hidden');
+  $('#mapsButton')?.classList.remove('hidden');
+  
+  if ($('#ticketSeats')) {
+    $('#ticketSeats').textContent = guest.totalSeats > 0
+      ? `${guest.totalSeats} persona${guest.totalSeats === 2 ? 's' : ''}`
+      : 'Vos + 1';
+  }
 
-  const guestCode = guest.code || 'UA-DEMO-001';
+  const guestCode = guest ? guest.code : 'UA-DEMO-001';
   const qrTarget = `https://ua-eventos-uy.web.app/coyote-vs-acme?i=${guestCode}`;
   let qrUrl = '';
   if (typeof QRCode !== 'undefined' && QRCode.generateDataUrl) {
@@ -316,9 +324,9 @@ function renderInvitation() {
   clearFormMessage();
   resetHeroStatus();
   toggleCtas(true);
-  $('#confirmar').classList.remove('hidden');
-  $('#alreadyAnswered').classList.add('hidden');
-  $('#successState').classList.add('hidden');
+  $('#confirmar')?.classList.remove('hidden');
+  $('#alreadyAnswered')?.classList.add('hidden');
+  $('#successState')?.classList.add('hidden');
 
   if (guest.status && guest.status !== 'Pendiente' && !state.testMode) {
     applyAnsweredState(guest.status);
@@ -329,14 +337,16 @@ function renderInvitation() {
 
 function showTestModeState(status) {
   const confirmed = status === 'Confirmado';
-  $('#heroStatus').classList.remove('hidden');
-  $('#heroStatusText').textContent = confirmed
-    ? 'Modo de prueba · respuesta anterior: Confirmado'
-    : 'Modo de prueba · respuesta anterior: No asiste';
+  $('#heroStatus')?.classList.remove('hidden');
+  if ($('#heroStatusText')) {
+    $('#heroStatusText').textContent = confirmed
+      ? 'Modo de prueba · respuesta anterior: Confirmado'
+      : 'Modo de prueba · respuesta anterior: No asiste';
+  }
 
   toggleCtas(true);
-  $('#confirmar').classList.remove('hidden');
-  $('#alreadyAnswered').classList.add('hidden');
+  $('#confirmar')?.classList.remove('hidden');
+  $('#alreadyAnswered')?.classList.add('hidden');
 
   const formMessage = $('#formMessage');
   if (formMessage) {
@@ -353,28 +363,30 @@ function applyAnsweredState(status) {
   const companionName = state.guest?.companionName || '';
 
   toggleCtas(false);
-  $('#confirmar').classList.add('hidden');
-  $('#alreadyAnswered').classList.remove('hidden');
-  $('#heroStatus').classList.remove('hidden');
+  $('#confirmar')?.classList.add('hidden');
+  $('#alreadyAnswered')?.classList.remove('hidden');
+  $('#heroStatus')?.classList.remove('hidden');
 
   if (confirmed) {
-    $('#heroStatusText').textContent = `Asistencia confirmada${totalSeats ? ` · ${totalSeats} persona${totalSeats === 2 ? 's' : ''}` : ''}`;
-    $('#previousAnswerTitle').textContent = `La invitación ya quedó confirmada a nombre de ${fullName}.`;
-    $('#previousAnswer').textContent = totalSeats === 2
-      ? `Registramos a ${fullName} y ${companionName || 'su acompañante'}. Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs.`
-      : `Registramos la asistencia de ${fullName}. Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs.`;
-    $('#ticketSeats').textContent = `${Math.max(totalSeats, 1)} persona${Math.max(totalSeats, 1) === 2 ? 's' : ''}`;
+    if ($('#heroStatusText')) $('#heroStatusText').textContent = `Asistencia confirmada${totalSeats ? ` · ${totalSeats} persona${totalSeats === 2 ? 's' : ''}` : ''}`;
+    if ($('#previousAnswerTitle')) $('#previousAnswerTitle').textContent = `La invitación ya quedó confirmada a nombre de ${fullName}.`;
+    if ($('#previousAnswer')) {
+      $('#previousAnswer').textContent = totalSeats === 2
+        ? `Registramos a ${fullName} y ${companionName || 'su acompañante'}. Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs.`
+        : `Registramos la asistencia de ${fullName}. Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs.`;
+    }
+    if ($('#ticketSeats')) $('#ticketSeats').textContent = `${Math.max(totalSeats, 1)} persona${Math.max(totalSeats, 1) === 2 ? 's' : ''}`;
   } else {
-    $('#heroStatusText').textContent = 'Respuesta registrada · No asistirá';
-    $('#previousAnswerTitle').textContent = `Ya registramos que ${fullName} no podrá asistir.`;
-    $('#previousAnswer').textContent = 'Gracias por avisarnos. Esta invitación ya no volverá a mostrarse como pendiente.';
-    $('#ticketSeats').textContent = 'No asistirá';
+    if ($('#heroStatusText')) $('#heroStatusText').textContent = 'Respuesta registrada · No asistirá';
+    if ($('#previousAnswerTitle')) $('#previousAnswerTitle').textContent = `Ya registramos que ${fullName} no podrá asistir.`;
+    if ($('#previousAnswer')) $('#previousAnswer').textContent = 'Gracias por avisarnos. Esta invitación ya no volverá a mostrarse como pendiente.';
+    if ($('#ticketSeats')) $('#ticketSeats').textContent = 'No asistirá';
   }
 }
 
 function resetHeroStatus() {
-  $('#heroStatus').classList.add('hidden');
-  $('#heroStatusText').textContent = '';
+  $('#heroStatus')?.classList.add('hidden');
+  if ($('#heroStatusText')) $('#heroStatusText').textContent = '';
 }
 
 function toggleCtas(show) {
@@ -551,6 +563,8 @@ function showSuccessFromServer() {
   }
 
   const successNode = $('#successState');
+  if (!successNode) return;
+  
   const iconNode = $('.success__icon', successNode);
   const eyebrowNode = $('.eyebrow', successNode);
   const qrBoxNode = $('.success-qr-box', successNode);
@@ -565,10 +579,12 @@ function showSuccessFromServer() {
       iconNode.style.color = '#38bdf8';
     }
     if (eyebrowNode) eyebrowNode.textContent = 'CONFIRMACIÓN REGISTRADA';
-    $('#successTitle').textContent = `¡Gracias, ${firstName(state.guest.name)}!`;
-    $('#successText').textContent =
-      `Tu asistencia quedó registrada para ${Math.max(total, 1)} persona${Math.max(total, 1) === 2 ? 's' : ''}. ` +
-      `Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs en ${state.event.venue}.`;
+    if ($('#successTitle')) $('#successTitle').textContent = `¡Gracias, ${firstName(state.guest.name)}!`;
+    if ($('#successText')) {
+      $('#successText').textContent =
+        `Tu asistencia quedó registrada para ${Math.max(total, 1)} persona${Math.max(total, 1) === 2 ? 's' : ''}. ` +
+        `Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs en ${state.event.venue}.`;
+    }
 
     if ($('#successQrImage')) $('#successQrImage').src = qrUrl;
     if ($('#successQrCode')) $('#successQrCode').textContent = guestCode;
@@ -588,8 +604,8 @@ function showSuccessFromServer() {
       waButton.classList.remove('hidden');
     }
 
-    $('#calendarButton').classList.remove('hidden');
-    $('#mapsButton').classList.remove('hidden');
+    $('#calendarButton')?.classList.remove('hidden');
+    $('#mapsButton')?.classList.remove('hidden');
     launchConfetti();
   } else {
     if (iconNode) {
@@ -598,14 +614,14 @@ function showSuccessFromServer() {
       iconNode.style.color = '#ef2f83';
     }
     if (eyebrowNode) eyebrowNode.textContent = 'RESPUESTA REGISTRADA';
-    $('#successTitle').textContent = `¡Qué lástima que no puedas acompañarnos, ${firstName(state.guest.name)}!`;
-    $('#successText').textContent = 'Lamentamos mucho que no puedas asistir en esta oportunidad. ¡Esperamos reencontrarnos muy pronto en un próximo evento de Universal Assistance!';
+    if ($('#successTitle')) $('#successTitle').textContent = `¡Qué lástima que no puedas acompañarnos, ${firstName(state.guest.name)}!`;
+    if ($('#successText')) $('#successText').textContent = 'Lamentamos mucho que no puedas asistir en esta oportunidad. ¡Esperamos reencontrarnos muy pronto en un próximo evento de Universal Assistance!';
 
     if (qrBoxNode) qrBoxNode.classList.add('hidden');
     if (downloadBtnNode) downloadBtnNode.classList.add('hidden');
     if ($('#whatsappShareButton')) $('#whatsappShareButton').classList.add('hidden');
-    $('#calendarButton').classList.add('hidden');
-    $('#mapsButton').classList.add('hidden');
+    $('#calendarButton')?.classList.add('hidden');
+    $('#mapsButton')?.classList.add('hidden');
   }
 
   applyAnsweredState(state.guest.status);
@@ -614,6 +630,7 @@ function showSuccessFromServer() {
 
 function showFormMessage(message, isError) {
   const node = $('#formMessage');
+  if (!node) return;
   node.textContent = message;
   node.classList.remove('hidden', 'form-message--error', 'form-message--success');
   node.classList.add(isError ? 'form-message--error' : 'form-message--success');
@@ -621,16 +638,19 @@ function showFormMessage(message, isError) {
 
 function clearFormMessage() {
   const node = $('#formMessage');
+  if (!node) return;
   node.textContent = '';
   node.classList.add('hidden');
   node.classList.remove('form-message--error', 'form-message--success');
 }
 
 function showError(message) {
-  $('#loadingState').classList.add('hidden');
-  $('#invitation').classList.add('hidden');
-  $('#errorState').classList.remove('hidden');
-  $('#errorMessage').textContent = message;
+  const loadingEl = $('#loadingState');
+  if (loadingEl) loadingEl.style.display = 'none';
+  $('#loadingState')?.classList.add('hidden');
+  $('#invitation')?.classList.add('hidden');
+  $('#errorState')?.classList.remove('hidden');
+  if ($('#errorMessage')) $('#errorMessage').textContent = message;
 }
 
 function firstName(fullName) {
