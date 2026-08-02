@@ -312,7 +312,7 @@
                 <span>Compartir por WhatsApp</span>
               </a>
               <button id="calendarButton" class="button button--secondary" type="button">Agregar a Google Calendar</button>
-              <a id="mapsButton" class="button button--secondary" target="_blank" rel="noopener">Ver ubicación</a>
+              <button id="mapsButton" class="button button--secondary" type="button">Ver ubicación del evento</button>
             </div>
           </section>
 
@@ -396,6 +396,29 @@
       </div>
     </div>
   </footer>
+
+  <!-- MODAL NAVEGACIÓN MAPAS -->
+  <div id="mapsModal" class="hidden" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:999;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(16px);">
+    <div style="background:linear-gradient(135deg, #071938, #0d2654);border:2px solid #38bdf8;border-radius:24px;padding:28px;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,0.8);text-align:center;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+        <h3 style="margin:0;font-size:17px;font-weight:900;color:#ffffff;">📍 Cómo llegar al evento</h3>
+        <button id="btnCloseMapsModal" style="background:none;border:none;color:#94a3b8;font-size:22px;cursor:pointer;">✕</button>
+      </div>
+      <p style="font-size:13px;color:#cbd5e1;margin-bottom:20px;">Elegí tu aplicación de navegación preferida para ir a <strong>Movie Montevideo Shopping</strong>:</p>
+      
+      <div style="display:grid;gap:10px;">
+        <a href="https://maps.google.com/?q=Movie+Montevideo+Shopping" target="_blank" rel="noopener" class="button button--primary" style="text-decoration:none;justify-content:center;background:linear-gradient(135deg, #4285F4, #1a73e8);">
+          🗺️ Abrir en Google Maps
+        </a>
+        <a href="https://waze.com/ul?q=Movie%20Montevideo%20Shopping" target="_blank" rel="noopener" class="button button--primary" style="text-decoration:none;justify-content:center;background:linear-gradient(135deg, #33CCFF, #0099FF);">
+          🚗 Abrir en Waze
+        </a>
+        <a href="https://maps.apple.com/?q=Movie+Montevideo+Shopping" target="_blank" rel="noopener" class="button button--secondary" style="text-decoration:none;justify-content:center;">
+          🍎 Abrir en Apple Maps
+        </a>
+      </div>
+    </div>
+  </div>
 
   <iframe name="submissionFrame" id="submissionFrame" class="hidden-frame" title="Envío de confirmación"></iframe>
   <script src="/qrcode.min.js?v=ua-20260727-39"></script>

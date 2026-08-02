@@ -26,7 +26,7 @@ function init() {
   if (params.get('demo') === '1') {
     state.guest = {
       code: 'UA-DEMO-001',
-      name: 'Lucas Beathyate',
+      name: 'Lucas Beathayte',
       email: '',
       phone: '',
       status: 'Pendiente',
@@ -66,6 +66,16 @@ function bindEvents() {
   $('#rsvpForm')?.addEventListener('submit', submitRsvp);
   $('#calendarButton')?.addEventListener('click', downloadCalendarFile);
   $('#downloadPassButton')?.addEventListener('click', downloadVipPass);
+  $('#mapsButton')?.addEventListener('click', openMapsModal);
+  $('#btnCloseMapsModal')?.addEventListener('click', closeMapsModal);
+}
+
+function openMapsModal() {
+  $('#mapsModal')?.classList.remove('hidden');
+}
+
+function closeMapsModal() {
+  $('#mapsModal')?.classList.add('hidden');
 }
 
 function selectTicketOption(type) {
@@ -174,6 +184,10 @@ function initRevealAnimations() {
   nodes.forEach(node => observer.observe(node));
 }
 
+function initCloudMouseParallax() {
+  // Opcional parallax dinámico de fondo
+}
+
 async function loadGuest(code) {
   try {
     const payload = await getGuestData(code);
@@ -184,7 +198,7 @@ async function loadGuest(code) {
     if (!code || code === 'UA-DEMO-001' || state.testMode || String(code).toLowerCase().includes('demo')) {
       state.guest = {
         code: code || 'UA-DEMO-001',
-        name: 'Lucas Beathyate',
+        name: 'Lucas Beathayte',
         email: '',
         phone: '',
         status: 'Pendiente',
@@ -269,7 +283,6 @@ function renderInvitation() {
   $('#ticketCode').textContent = guest.code;
   $('#formCode').value = guest.code;
   $('#arrivalTime').textContent = `${event.arrivalTime} hs`;
-  $('#mapsButton').href = event.mapsUrl || '#';
   $('#calendarButton').classList.remove('hidden');
   $('#mapsButton').classList.remove('hidden');
   $('#ticketSeats').textContent = guest.totalSeats > 0
@@ -312,7 +325,6 @@ function renderInvitation() {
     showTestModeState(guest.status);
   }
 }
-
 
 function showTestModeState(status) {
   const confirmed = status === 'Confirmado';
@@ -678,47 +690,8 @@ function downloadCalendarFile() {
   }
 }
 
-function escapeIcs(value) {
-  return String(value || '')
-    .replace(/\\/g, '\\\\')
-    .replace(/,/g, '\\,')
-    .replace(/;/g, '\\;')
-    .replace(/\n/g, '\\n');
-}
-
-function initCountdown() {
-  const targetDate = new Date('2026-08-27T20:00:00-03:00').getTime();
-
-  function update() {
-    const now = Date.now();
-    const distance = targetDate - now;
-
-    const dNode = $('#countDays');
-    const hNode = $('#countHours');
-    const mNode = $('#countMins');
-    const sNode = $('#countSecs');
-
-    if (distance <= 0) {
-      if (dNode) dNode.textContent = '00';
-      if (hNode) hNode.textContent = '00';
-      if (mNode) mNode.textContent = '00';
-      if (sNode) sNode.textContent = '00';
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    if (dNode) dNode.textContent = String(days).padStart(2, '0');
-    if (hNode) hNode.textContent = String(hours).padStart(2, '0');
-    if (mNode) mNode.textContent = String(minutes).padStart(2, '0');
-    if (sNode) sNode.textContent = String(seconds).padStart(2, '0');
-  }
-
-  update();
-  setInterval(update, 1000);
+function downloadVipPass() {
+  window.print();
 }
 
 function launchConfetti() {
@@ -765,7 +738,7 @@ function launchConfetti() {
     particles.forEach(p => {
       p.x += p.vx;
       p.y += p.vy;
-      p.vy += 0.4; // Gravity
+      p.vy += 0.4;
       p.vx *= 0.985;
       p.rotation += p.rSpeed;
 
@@ -799,259 +772,5 @@ function launchConfetti() {
     }
   }
 
-  requestAnimationFrame(animate);
+  animate();
 }
-
-function downloadVipPass() {
-  if (!state.guest) return;
-
-  const canvas = document.createElement('canvas');
-  canvas.width = 1000;
-  canvas.height = 560;
-  const ctx = canvas.getContext('2d');
-
-  // Fondo exterior oscuro
-  ctx.fillStyle = '#071938';
-  ctx.fillRect(0, 0, 1000, 560);
-
-  // Gradiente interno azul marino / índigo / noche
-  const grad = ctx.createLinearGradient(0, 0, 1000, 560);
-  grad.addColorStop(0, '#071938');
-  grad.addColorStop(0.5, '#0d2c60');
-  grad.addColorStop(1, '#321c54');
-
-  // Coordenadas de la forma del ticket
-  const tx = 30, ty = 30, tw = 940, th = 500;
-  const notchX = 660, notchR = 20, cornerR = 20;
-
-  function drawTicketShape(c) {
-    c.beginPath();
-    c.moveTo(tx + cornerR, ty);
-    c.lineTo(notchX - notchR, ty);
-    c.arc(notchX, ty, notchR, Math.PI, 0, true);
-    c.lineTo(tx + tw - cornerR, ty);
-    c.arcTo(tx + tw, ty, tx + tw, ty + cornerR, cornerR);
-    c.lineTo(tx + tw, ty + th - cornerR);
-    c.arcTo(tx + tw, ty + th, tx + tw - cornerR, ty + th, cornerR);
-    c.lineTo(notchX + notchR, ty + th);
-    c.arc(notchX, ty + th, notchR, 0, Math.PI, true);
-    c.lineTo(tx + cornerR, ty + th);
-    c.arcTo(tx, ty + th, tx, ty + th - cornerR, cornerR);
-    c.lineTo(tx, ty + cornerR);
-    c.arcTo(tx, ty, tx + cornerR, ty, cornerR);
-    c.closePath();
-  }
-
-  // Rellenar forma del ticket
-  drawTicketShape(ctx);
-  ctx.fillStyle = grad;
-  ctx.fill();
-
-  // Borde neón deslumbrante
-  ctx.strokeStyle = 'rgba(56, 189, 248, 0.55)';
-  ctx.lineWidth = 3;
-  ctx.stroke();
-
-  // Línea de troquelado vertical punteada (Perforation line)
-  ctx.setLineDash([8, 8]);
-  ctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo(notchX, ty + notchR + 4);
-  ctx.lineTo(notchX, ty + th - notchR - 4);
-  ctx.stroke();
-  ctx.setLineDash([]); // Reset line dash
-
-  // -------------------------------------------------------------
-  // CUERPO PRINCIPAL DEL TICKET (IZQUIERDA)
-  // -------------------------------------------------------------
-
-  // Encabezado Marca UA & Zurich (Tipografía Vectorial Limpia e Impecable)
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '900 24px Inter, sans-serif';
-  ctx.fillText('UNIVERSAL ASSISTANCE', 65, 82);
-
-  ctx.fillStyle = '#38bdf8';
-  ctx.font = '800 13px Inter, sans-serif';
-  ctx.fillText('A COMPANY OF ZURICH · ASISTENCIA AL VIAJERO', 65, 108);
-
-  // Línea divisoria
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
-  ctx.beginPath();
-  ctx.moveTo(65, 135);
-  ctx.lineTo(625, 135);
-  ctx.stroke();
-
-  // Título del evento
-  ctx.fillStyle = '#ff7be7';
-  ctx.font = '900 13px Inter, sans-serif';
-  ctx.fillText('FUNCIÓN DE CINE EXCLUSIVA', 65, 175);
-
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '900 42px Inter, sans-serif';
-  ctx.fillText('COYOTE VS ACME', 65, 230);
-
-  // Datos del invitado
-  const guestName = state.guest.name || 'Invitado Especial';
-  const seats = Number(state.guest.totalSeats || 1);
-  const seatsText = seats > 1 ? `Acceso para ${seats} personas (Vos + 1)` : 'Acceso individual';
-
-  ctx.fillStyle = '#38bdf8';
-  ctx.font = '700 13px Inter, sans-serif';
-  ctx.fillText('INVITADO ESPECIAL', 65, 280);
-
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '900 28px Inter, sans-serif';
-  ctx.fillText(guestName, 65, 320);
-
-  ctx.fillStyle = '#f1f5f9';
-  ctx.font = '600 17px Inter, sans-serif';
-  ctx.fillText(seatsText, 65, 355);
-
-  // Detalles del evento
-  ctx.fillStyle = '#38bdf8';
-  ctx.font = '800 13px Inter, sans-serif';
-  ctx.fillText('FECHA Y HORA:', 65, 415);
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '700 15px Inter, sans-serif';
-  ctx.fillText('Jueves 27 de Agosto · 20:00 hs', 65, 440);
-
-  ctx.fillStyle = '#38bdf8';
-  ctx.font = '800 13px Inter, sans-serif';
-  ctx.fillText('LUGAR:', 390, 415);
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '700 15px Inter, sans-serif';
-  ctx.fillText('Movie Montevideo Shopping', 390, 440);
-
-  // Pie del cuerpo principal
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-  ctx.font = '700 11px monospace';
-  ctx.fillText('UA CINEMA VIP PASS · VALIDO PARA 1 FUNCIÓN', 65, 490);
-
-  // -------------------------------------------------------------
-  // TALÓN DEL TICKET / CONTROL STUB (DERECHA)
-  // -------------------------------------------------------------
-
-  // Badge VIP en el talón
-  ctx.fillStyle = '#38bdf8';
-  ctx.fillRect(690, 60, 240, 38);
-  ctx.fillStyle = '#0f172a';
-  ctx.font = '900 13px Inter, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('PASE VIP EXCLUSIVO', 810, 84);
-  ctx.textAlign = 'left';
-
-  // Código de entrada
-  const code = state.guest.code || 'UA-DEMO-001';
-  ctx.fillStyle = '#38bdf8';
-  ctx.font = '800 12px Inter, sans-serif';
-  ctx.fillText('CÓDIGO DE ENTRADA:', 690, 128);
-
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '900 22px monospace';
-  ctx.fillText(code, 690, 155);
-
-  // Dibujar Código QR Nativo en el Talón
-  const qrTarget = `https://ua-eventos-uy.web.app/coyote-vs-acme?i=${code}`;
-  const pageQrImg = $('#successQrImage') || $('#ticketQrImage');
-
-  let drawn = false;
-  if (pageQrImg && pageQrImg.complete && pageQrImg.naturalWidth > 0) {
-    try {
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(720, 175, 180, 180);
-      ctx.drawImage(pageQrImg, 725, 180, 170, 170);
-      drawn = true;
-    } catch (e) {
-      console.warn('Canvas drawImage fallback:', e);
-    }
-  }
-
-  if (!drawn) {
-    drawNativeQrCode(ctx, 720, 175, 180, qrTarget);
-  }
-
-  ctx.fillStyle = '#38bdf8';
-  ctx.font = '800 11px Inter, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('ESCANEÁ EN BOLETERÍA', 810, 382);
-  ctx.textAlign = 'left';
-
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-  ctx.font = '700 11px monospace';
-  ctx.fillText(code, 770, 490);
-
-  try {
-    const dataUrl = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.download = `Pase-VIP-Universal-Assistance-${code}.png`;
-    link.href = dataUrl;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  } catch (err) {
-    alert('No se pudo generar la imagen del pase. Guardá una captura de pantalla de esta página.');
-  }
-}
-
-function drawNativeQrCode(ctx, x, y, size, text) {
-  if (typeof QRCode !== 'undefined' && QRCode.drawToCanvas) {
-    QRCode.drawToCanvas(ctx, x, y, size, text, '#0f172a', '#ffffff');
-    return;
-  }
-  ctx.fillStyle = '#ffffff';
-  ctx.fillRect(x, y, size, size);
-}
-
-function initCloudMouseParallax() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if ('ontouchstart' in window) return; // Skip on mobile/touch
-
-  const clouds = [
-    { el: document.querySelector('.cloud--one'),   speed: 0.025, invert: false },
-    { el: document.querySelector('.cloud--two'),   speed: 0.04,  invert: true },
-    { el: document.querySelector('.cloud--three'), speed: 0.015, invert: false }
-  ].filter(c => c.el);
-
-  if (!clouds.length) return;
-
-  let targetX = 0, targetY = 0;
-  let currentX = 0, currentY = 0;
-  let ticking = false;
-
-  document.addEventListener('mousemove', (e) => {
-    const cx = window.innerWidth / 2;
-    const cy = window.innerHeight / 2;
-    targetX = (e.clientX - cx) / cx; // -1 to 1
-    targetY = (e.clientY - cy) / cy; // -1 to 1
-
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(animate);
-    }
-  });
-
-  function animate() {
-    // Smooth lerp towards target
-    currentX += (targetX - currentX) * 0.06;
-    currentY += (targetY - currentY) * 0.06;
-
-    clouds.forEach(({ el, speed, invert }) => {
-      const factor = invert ? -1 : 1;
-      const dx = currentX * speed * factor * window.innerWidth * 0.5;
-      const dy = currentY * speed * factor * window.innerHeight * 0.3;
-      el.style.transform = `translate3d(${dx.toFixed(1)}px, ${dy.toFixed(1)}px, 0)`;
-    });
-
-    // Keep animating while not settled
-    if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
-      requestAnimationFrame(animate);
-    } else {
-      ticking = false;
-    }
-  }
-}
-
-
-
-

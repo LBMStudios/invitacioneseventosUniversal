@@ -94,7 +94,7 @@
       flex: 1;
     }
 
-    /* Grid layout: 1 col on mobile, 2 cols on tablet & desktop */
+    /* Grid layout */
     .checkin-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -171,18 +171,21 @@
       padding: 12px 18px;
       background: rgba(4, 15, 38, 0.6);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 8px; flex-wrap: wrap;
     }
     .scanner-title {
       font-size: 12px; font-weight: 800; color: var(--cyan);
       text-transform: uppercase; letter-spacing: 0.8px;
       display: flex; align-items: center; gap: 6px;
     }
+    .scanner-controls { display: flex; gap: 6px; align-items: center; }
     .btn-cam-switch {
       background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
       color: #fff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 8px;
       cursor: pointer; transition: all 0.2s ease; font-family: inherit;
     }
     .btn-cam-switch:hover { background: rgba(56,189,248,0.25); border-color: var(--cyan); }
+    .btn-cam-switch.active-torch { background: rgba(245, 158, 11, 0.4); border-color: var(--yellow); color: #fef08a; }
 
     #qr-reader {
       width: 100%;
@@ -306,6 +309,22 @@
     }
     .btn-action-checkin:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6); }
 
+    .btn-action-undo {
+      width: 100%;
+      padding: 12px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+      font-weight: 800;
+      font-size: 13px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 8px;
+      font-family: inherit;
+    }
+    .btn-action-undo:hover { background: rgba(239, 68, 68, 0.3); color: #fff; }
+
     /* Guest List Box */
     .guest-list-box {
       background: rgba(255, 255, 255, 0.05);
@@ -343,10 +362,23 @@
       background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
       color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 800; padding: 6px 12px;
       border-radius: 99px; cursor: pointer; transition: all 0.2s ease; font-family: inherit;
+      display: inline-flex; align-items: center; gap: 6px;
     }
     .tab-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
     .tab-btn.active {
       background: var(--cyan); color: var(--navy); border-color: var(--cyan); font-weight: 900;
+    }
+    .tab-badge {
+      background: rgba(255,255,255,0.2);
+      color: inherit;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 1px 6px;
+      border-radius: 99px;
+    }
+    .tab-btn.active .tab-badge {
+      background: rgba(7, 25, 56, 0.25);
+      color: var(--navy);
     }
 
     .guest-list-scroll {
@@ -420,7 +452,10 @@
         <div class="scanner-box">
           <div class="scanner-toolbar">
             <span class="scanner-title">📷 Escáner de Código QR</span>
-            <button id="btnToggleCamera" class="btn-cam-switch hidden" title="Cambiar Cámara">🔄 Cambiar Cámara</button>
+            <div class="scanner-controls">
+              <button id="btnToggleFlash" class="btn-cam-switch hidden" title="Encender Linterna">🔦 Flash</button>
+              <button id="btnToggleCamera" class="btn-cam-switch hidden" title="Cambiar Cámara">🔄 Cambiar Cámara</button>
+            </div>
           </div>
           <div id="qr-reader"></div>
         </div>
@@ -441,6 +476,7 @@
           <div id="resultSeats" class="result-seats">Acceso para 2 personas</div>
           <div id="resultDetails" style="font-size:13px;color:#94a3b8;margin-bottom:16px;"></div>
           <button id="btnConfirmIngress" class="btn-action-checkin">✅ CONFIRMAR INGRESO A SALA</button>
+          <button id="btnUndoIngress" class="btn-action-undo hidden">↩️ Revertir Ingreso / Deshacer</button>
         </div>
 
       </section>
@@ -469,11 +505,11 @@
           <div class="guest-list-header">
             <div class="guest-list-title">📋 Asistentes de Puerta</div>
             <div class="filter-tabs">
-              <button class="tab-btn active" data-filter="confirmed">Confirmados</button>
-              <button class="tab-btn" data-filter="in">En Sala</button>
-              <button class="tab-btn" data-filter="pending">Por Llegar</button>
-              <button class="tab-btn" data-filter="unconfirmed">Pendientes</button>
-              <button class="tab-btn" data-filter="all">Todos</button>
+              <button class="tab-btn active" data-filter="confirmed">Confirmados <span id="badgeConfirmed" class="tab-badge">0</span></button>
+              <button class="tab-btn" data-filter="in">En Sala <span id="badgeIn" class="tab-badge">0</span></button>
+              <button class="tab-btn" data-filter="pending">Por Llegar <span id="badgePending" class="tab-badge">0</span></button>
+              <button class="tab-btn" data-filter="unconfirmed">Pendientes <span id="badgeUnconfirmed" class="tab-badge">0</span></button>
+              <button class="tab-btn" data-filter="all">Todos <span id="badgeAll" class="tab-badge">0</span></button>
             </div>
           </div>
           <div id="guestListContainer" class="guest-list-scroll">

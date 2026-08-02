@@ -7,6 +7,7 @@ const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpq
 let html5QrCodeInstance = null;
 let availableCameras = [];
 let currentCameraIndex = 0;
+let isTorchOn = false;
 let allConfirmedGuests = [];
 let guestMapByCode = new Map();
 let currentSelectedGuest = null;
@@ -35,6 +36,8 @@ function bindEvents() {
   });
 
   $('#btnConfirmIngress').addEventListener('click', confirmIngress);
+  if ($('#btnUndoIngress')) $('#btnUndoIngress').addEventListener('click', undoIngress);
+  if ($('#btnToggleFlash')) $('#btnToggleFlash').addEventListener('click', toggleFlash);
 
   // Modal VIP y Exportar CSV
   if ($('#btnOpenVipModal')) $('#btnOpenVipModal').addEventListener('click', openVipModal);
@@ -47,8 +50,9 @@ function bindEvents() {
   $$('.tab-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       $$('.tab-btn').forEach(b => b.classList.remove('active'));
-      e.target.classList.add('active');
-      currentFilterTab = e.target.dataset.filter;
+      const targetBtn = e.target.closest('.tab-btn') || e.target;
+      targetBtn.classList.add('active');
+      currentFilterTab = targetBtn.dataset.filter;
       applyCurrentFilters();
     });
   });
@@ -119,6 +123,48 @@ async function initQrScanner() {
   }
 }
 
+function checkFlashSupport() {
+  const flashBtn = $('#btnToggleFlash');
+  if (!flashBtn || !html5QrCodeInstance) return;
+
+  try {
+    // Verificar si las capacidades del track de video admiten linterna (torch)
+    const capabilities = html5QrCodeInstance.getRunningTrackCapabilities?.();
+    if (capabilities && capabilities.torch) {
+      flashBtn.classList.remove('hidden');
+    } else {
+      // Mostrar por defecto en móviles
+      if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        flashBtn.classList.remove('hidden');
+      }
+    }
+  } catch (_) {
+    if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+      flashBtn.classList.remove('hidden');
+    }
+  }
+}
+
+async function toggleFlash() {
+  if (!html5QrCodeInstance) return;
+  isTorchOn = !isTorchOn;
+
+  try {
+    await html5QrCodeInstance.applyVideoConstraints({
+      advanced: [{ torch: isTorchOn }]
+    });
+    const flashBtn = $('#btnToggleFlash');
+    if (flashBtn) {
+      flashBtn.classList.toggle('active-torch', isTorchOn);
+      flashBtn.textContent = isTorchOn ? '⚡ Linterna ON' : '🔦 Flash';
+    }
+  } catch (err) {
+    console.warn('Linterna no compatible en este dispositivo:', err);
+    alert('La linterna/flash no está disponible en la cámara activa.');
+    isTorchOn = false;
+  }
+}
+
 function startCameraFacingEnvironment() {
   if (html5QrCodeInstance) {
     try { html5QrCodeInstance.stop(); } catch (_) {}
@@ -131,7 +177,9 @@ function startCameraFacingEnvironment() {
     config,
     onQrCodeSuccess,
     onQrCodeError
-  ).catch(err => {
+  ).then(() => {
+    checkFlashSupport();
+  }).catch(err => {
     console.warn("Cámara no disponible o denegada:", err);
     $('#qr-reader').innerHTML = '<div style="padding:24px;text-align:center;color:#94a3b8;font-size:12px;">📷 Cámara inactiva o denegada. Usá la búsqueda manual por código o nombre abajo.</div>';
   });
@@ -149,7 +197,9 @@ async function startCameraWithId(cameraId) {
     config,
     onQrCodeSuccess,
     onQrCodeError
-  ).catch(err => {
+  ).then(() => {
+    checkFlashSupport();
+  }).catch(err => {
     console.warn("Error al iniciar cámara especificada:", err);
     startCameraFacingEnvironment();
   });
@@ -225,6 +275,7 @@ function showGuestResultCard(guest) {
   const seatsNode = $('#resultSeats');
   const detailsNode = $('#resultDetails');
   const btnBtn = $('#btnConfirmIngress');
+  const undoBtn = $('#btnUndoIngress');
 
   card.classList.remove('hidden');
   btnBtn.classList.remove('hidden');
@@ -242,21 +293,25 @@ function showGuestResultCard(guest) {
     badge.textContent = `⚠️ YA INGRESÓ A SALA${timeInfo}`;
     btnBtn.textContent = '✔ RE-CONFIRMAR INGRESO';
     btnBtn.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
+    if (undoBtn) undoBtn.classList.remove('hidden');
   } else if (isConfirmedStatus_(guest.status)) {
     badge.className = 'result-badge result-badge--valid';
     badge.textContent = '✅ ACCESO VÁLIDO (CONFIRMADO)';
     btnBtn.textContent = '✅ CONFIRMAR INGRESO A SALA';
     btnBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+    if (undoBtn) undoBtn.classList.add('hidden');
   } else if (guest.status.toLowerCase() === 'no asiste') {
     badge.className = 'result-badge result-badge--invalid';
     badge.textContent = '❌ EL INVITADO DECLINÓ ASISTENCIA';
     btnBtn.textContent = '⚠️ INGRESAR DE TODAS FORMAS (EXCEPCIÓN)';
     btnBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+    if (undoBtn) undoBtn.classList.add('hidden');
   } else {
     badge.className = 'result-badge result-badge--used';
     badge.textContent = '⚠️ INVITACIÓN SIN CONFIRMAR (PENDIENTE)';
     btnBtn.textContent = '⚠️ CONFIRMAR E INGRESAR A SALA';
     btnBtn.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
+    if (undoBtn) undoBtn.classList.add('hidden');
   }
 
   card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -270,6 +325,7 @@ function showInvalidCard(message) {
   const seatsNode = $('#resultSeats');
   const detailsNode = $('#resultDetails');
   const btnBtn = $('#btnConfirmIngress');
+  const undoBtn = $('#btnUndoIngress');
 
   card.classList.remove('hidden');
   badge.className = 'result-badge result-badge--invalid';
@@ -278,6 +334,7 @@ function showInvalidCard(message) {
   seatsNode.textContent = '';
   detailsNode.textContent = message;
   btnBtn.classList.add('hidden');
+  if (undoBtn) undoBtn.classList.add('hidden');
 }
 
 async function confirmIngress() {
@@ -288,8 +345,6 @@ async function confirmIngress() {
   btn.textContent = 'Guardando en Google Sheets…';
 
   const guestCode = currentSelectedGuest.code;
-  const guestName = currentSelectedGuest.name;
-  const seats = currentSelectedGuest.seats || 1;
 
   try {
     const nowTimeString = new Date().toLocaleTimeString('es-UY', { hour: '2-digit', minute: '2-digit' }) + ' hs';
@@ -313,6 +368,24 @@ async function confirmIngress() {
   } finally {
     btn.disabled = false;
   }
+}
+
+async function undoIngress() {
+  if (!currentSelectedGuest) return;
+
+  if (!confirm(`¿Deshacer el ingreso de ${currentSelectedGuest.name}? El estado volverá a "Por Llegar".`)) return;
+
+  currentSelectedGuest.checkedIn = false;
+  currentSelectedGuest.checkinTime = '';
+
+  updateStats();
+  applyCurrentFilters();
+
+  const undoUrl = `${BACKEND_URL}?action=undoIngress&code=${encodeURIComponent(currentSelectedGuest.code)}`;
+  fetch(undoUrl, { method: 'POST', mode: 'no-cors' }).catch(_ => {});
+
+  playWarningSound();
+  showGuestResultCard(currentSelectedGuest);
 }
 
 async function loadDoorList() {
@@ -352,6 +425,19 @@ function updateStats() {
   $('#statTotalConfirmed').textContent = totalSeatsConfirmed;
   $('#statCheckedIn').textContent = checkedInSeats;
   $('#statPending').textContent = pendingSeats;
+
+  // Actualizar badges numéricos en los botones de pestaña
+  const cntConfirmed = confirmedGuests.length;
+  const cntIn = allConfirmedGuests.filter(g => g.checkedIn).length;
+  const cntPending = allConfirmedGuests.filter(g => isConfirmedStatus_(g.status) && !g.checkedIn).length;
+  const cntUnconfirmed = allConfirmedGuests.filter(g => !isConfirmedStatus_(g.status) && g.status.toLowerCase() !== 'no asiste').length;
+  const cntAll = allConfirmedGuests.length;
+
+  if ($('#badgeConfirmed')) $('#badgeConfirmed').textContent = cntConfirmed;
+  if ($('#badgeIn')) $('#badgeIn').textContent = cntIn;
+  if ($('#badgePending')) $('#badgePending').textContent = cntPending;
+  if ($('#badgeUnconfirmed')) $('#badgeUnconfirmed').textContent = cntUnconfirmed;
+  if ($('#badgeAll')) $('#badgeAll').textContent = cntAll;
 }
 
 function renderGuestList(guests) {

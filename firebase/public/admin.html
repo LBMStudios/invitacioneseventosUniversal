@@ -45,8 +45,8 @@
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.16);
       border-radius: 28px;
-      padding: 52px 56px;
-      max-width: 480px; width: 92%;
+      padding: 44px 40px;
+      max-width: 500px; width: 92%;
       backdrop-filter: blur(28px);
       box-shadow: 0 32px 80px rgba(0,0,0,0.45);
       text-align: center;
@@ -57,7 +57,7 @@
     /* Brand header */
     .brand {
       display: flex; align-items: center; justify-content: center; gap: 10px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
     .brand-icon {
       width: 34px; height: 34px; background: #fff; border-radius: 8px;
@@ -81,35 +81,51 @@
     .dot { width: 5px; height: 5px; background: var(--cyan); border-radius: 50%; animation: pulseDot 2s infinite; }
     @keyframes pulseDot { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
 
-    .event-title { font-size: 38px; font-weight: 900; line-height: 1; letter-spacing: -1px; margin-bottom: 6px; }
+    .event-title { font-size: 36px; font-weight: 900; line-height: 1; letter-spacing: -1px; margin-bottom: 6px; }
     .t-coyote { background: linear-gradient(135deg, #fff 30%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .t-vs { background: linear-gradient(135deg, #ef2f83, #ee1f73); color: #fff; font-size: 18px; padding: 1px 12px; border-radius: 99px; display: inline-block; transform: translateY(-5px) rotate(-4deg); box-shadow: 0 4px 14px rgba(238,31,115,0.5); margin: 0 6px; }
+    .t-vs { background: linear-gradient(135deg, #ef2f83, #ee1f73); color: #fff; font-size: 17px; padding: 1px 12px; border-radius: 99px; display: inline-block; transform: translateY(-5px) rotate(-4deg); box-shadow: 0 4px 14px rgba(238,31,115,0.5); margin: 0 6px; }
     .t-acme { color: var(--pink); }
 
-    .subtitle { font-size: 13px; color: rgba(148,163,184,0.9); margin-bottom: 36px; font-weight: 500; }
+    .subtitle { font-size: 13px; color: rgba(148,163,184,0.9); margin-bottom: 28px; font-weight: 500; }
 
     /* Admin lock icon */
     .lock-icon {
-      width: 64px; height: 64px; border-radius: 20px; margin: 0 auto 24px;
+      width: 58px; height: 58px; border-radius: 18px; margin: 0 auto 20px;
       background: rgba(238,31,115,0.18); border: 1px solid rgba(238,31,115,0.35);
       display: flex; align-items: center; justify-content: center;
-      font-size: 28px;
+      font-size: 26px;
     }
 
-    .panel-label { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px; }
-    .panel-desc  { font-size: 12px; color: rgba(148,163,184,0.8); margin-bottom: 28px; line-height: 1.6; }
+    .panel-label { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .panel-desc  { font-size: 12px; color: rgba(148,163,184,0.8); margin-bottom: 24px; line-height: 1.5; }
+
+    .actions-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;
+    }
 
     /* CTA Button */
     .cta-btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      width: 100%; padding: 16px 24px; border-radius: 99px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 14px 18px; border-radius: 14px;
       background: linear-gradient(135deg, #ef2f83, #e91673);
-      color: #fff; font-size: 15px; font-weight: 800;
+      color: #fff; font-size: 13.5px; font-weight: 800;
       text-decoration: none; border: none; cursor: pointer;
-      box-shadow: 0 8px 28px rgba(238,31,115,0.4);
+      box-shadow: 0 8px 24px rgba(238,31,115,0.4);
       transition: all 0.22s ease; font-family: inherit;
     }
-    .cta-btn:hover { background: linear-gradient(135deg, #ff3d8f, #f2187d); transform: translateY(-2px); box-shadow: 0 12px 36px rgba(238,31,115,0.55); }
+    .cta-btn:hover { background: linear-gradient(135deg, #ff3d8f, #f2187d); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(238,31,115,0.55); }
+    
+    .cta-btn--secondary {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--cyan);
+      box-shadow: none;
+    }
+    .cta-btn--secondary:hover {
+      background: rgba(56, 189, 248, 0.28);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+    }
 
     /* Not configured state */
     .not-configured {
@@ -130,7 +146,7 @@
     .redirect-msg { font-size: 14px; font-weight: 600; color: var(--cyan); }
 
     /* Footer */
-    .footer { margin-top: 28px; font-size: 11px; color: rgba(148,163,184,0.4); }
+    .footer { margin-top: 24px; font-size: 11px; color: rgba(148,163,184,0.4); }
 
   </style>
 </head>
@@ -163,26 +179,31 @@
 
   <div class="subtitle">Gestión de invitados y comunicaciones del evento.</div>
 
-  <!-- Default state: lock + button -->
+  <!-- Default state: lock + buttons -->
   <div id="default-state">
     <div class="lock-icon">🔐</div>
-    <div class="panel-label">Acceso restringido</div>
-    <div class="panel-desc">Este panel es de uso exclusivo del equipo de Universal Assistance. Al continuar serás autenticado con tu cuenta de Google.</div>
+    <div class="panel-label">Acceso Administrador</div>
+    <div class="panel-desc">Elegí la herramienta que deseas utilizar para la gestión del evento:</div>
 
     <div id="not-configured-msg" class="not-configured">
       ⚠️ <strong>Panel aún no configurado.</strong><br>
       El administrador debe completar la variable <code>APPS_SCRIPT_URL</code> en este archivo para activar el acceso al panel.
     </div>
 
-    <button class="cta-btn" onclick="goToPanel()">
-      🔑 Ingresar al Panel Admin
-    </button>
+    <div class="actions-grid">
+      <a href="checkin.html" class="cta-btn cta-btn--secondary">
+        📱 App de Escaneo QR
+      </a>
+      <button class="cta-btn" onclick="goToPanel()">
+        🔑 Panel GAS
+      </button>
+    </div>
   </div>
 
   <!-- Redirect state: spinner -->
   <div id="redirect-state" class="redirect-state">
     <div class="spinner-big"></div>
-    <div class="redirect-msg">Redirigiendo al panel…</div>
+    <div class="redirect-msg">Redirigiendo al panel de administración…</div>
   </div>
 
   <div class="footer">Universal Assistance &middot; UA Eventos 2026</div>
@@ -190,11 +211,6 @@
 </div>
 
 <script>
-  // ─────────────────────────────────────────────────────────────────────────
-  //  ⚙️  CONFIGURACIÓN — reemplazá con la URL de tu Apps Script Web App
-  //  Ejemplo:
-  //  https://script.google.com/macros/s/AKfycby.../exec?page=admin
-  // ─────────────────────────────────────────────────────────────────────────
   var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec';
 
   function goToPanel() {
@@ -205,37 +221,17 @@
       return;
     }
 
-    // Asegurar que incluye el parámetro ?page=admin
     if (url.indexOf('page=admin') === -1) {
       url += (url.indexOf('?') >= 0 ? '&' : '?') + 'page=admin';
     }
 
-    // Mostrar spinner de redirección
     document.getElementById('default-state').style.display = 'none';
     document.getElementById('redirect-state').style.display = 'block';
 
     setTimeout(function() {
       window.location.href = url;
-    }, 800);
+    }, 600);
   }
-
-  // Si ya hay URL configurada, redirigir automáticamente al cargar
-  window.addEventListener('DOMContentLoaded', function() {
-    var url = APPS_SCRIPT_URL.trim();
-    if (url) {
-      // Pequeño delay para que se vea el branding
-      setTimeout(function() {
-        document.getElementById('default-state').style.display = 'none';
-        document.getElementById('redirect-state').style.display = 'block';
-        if (url.indexOf('page=admin') === -1) {
-          url += (url.indexOf('?') >= 0 ? '&' : '?') + 'page=admin';
-        }
-        setTimeout(function() {
-          window.location.href = url;
-        }, 1200);
-      }, 600);
-    }
-  });
 </script>
 
 </body>
