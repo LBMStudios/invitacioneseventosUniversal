@@ -500,36 +500,6 @@ function submitHiddenForm(formData, attendance, companion) {
   setTimeout(() => postForm.remove(), 3000);
 }
 
-async function waitForSavedResponse(code, expectedStatus) {
-  let lastPayload = null;
-  let lastNetworkError = null;
-
-  for (let attempt = 0; attempt < 10; attempt += 1) {
-    await sleep(attempt === 0 ? 750 : 650);
-
-    try {
-      lastPayload = await getGuestData(code);
-      lastNetworkError = null;
-    } catch (error) {
-      lastNetworkError = error;
-      continue;
-    }
-
-    const status = lastPayload.guest?.status;
-    if (!status || status === 'Pendiente') continue;
-
-    if (status !== expectedStatus) {
-      throw new Error(state.testMode
-        ? 'La respuesta de prueba todavía no se actualizó. Volvé a intentarlo.'
-        : 'Esta invitación ya tenía una respuesta registrada y no puede modificarse.');
-    }
-
-    return lastPayload;
-  }
-
-  if (lastNetworkError) throw lastNetworkError;
-  throw new Error('La respuesta demoró más de lo esperado. Recargá la página para verificarla.');
-}
 
 function showSuccessFromServer() {
   const attending = state.guest.status === 'Confirmado';
