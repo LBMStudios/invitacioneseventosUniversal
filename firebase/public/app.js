@@ -725,145 +725,203 @@ function downloadVipPass() {
     }
   };
 
-  const ticketCard = document.querySelector('.invite-card');
-  const guestCode = state.guest?.code || 'UA-DEMO-001';
-
-  if (typeof html2canvas !== 'undefined' && ticketCard) {
-    html2canvas(ticketCard, {
-      scale: 3,
-      useCORS: true,
-      allowTaint: true,
-      backgroundColor: '#071938',
-      logging: false
-    }).then(canvas => {
-      const a = document.createElement('a');
-      a.download = `Entrada-VIP-UA-${guestCode}.png`;
-      a.href = canvas.toDataURL('image/png');
-      a.click();
-      finish();
-    }).catch(err => {
-      console.warn('html2canvas capture error, fallback canvas used:', err);
-      fallbackCanvasDownload(finish);
-    });
-  } else {
-    fallbackCanvasDownload(finish);
-  }
-}
-
-function fallbackCanvasDownload(finishCallback) {
   const guest = state.guest || { name: 'Lucas Beathayte', code: 'UA-DEMO-001', totalSeats: 1 };
-  const event = state.event || { name: 'Función especial Coyote vs. Acme', date: '27/08/2026', time: '20:00', venue: 'Movie Montevideo Shopping' };
+  const event = state.event || { name: 'Función especial Coyote vs. Acme', date: 'Jueves 27 de Agosto', time: '20:00', venue: 'Movie Montevideo Shopping' };
 
   const canvas = document.createElement('canvas');
-  canvas.width = 900;
-  canvas.height = 1350;
+  canvas.width = 1200;
+  canvas.height = 630;
   const ctx = canvas.getContext('2d');
 
-  const bgGrad = ctx.createLinearGradient(0, 0, 900, 1350);
-  bgGrad.addColorStop(0, '#071938');
-  bgGrad.addColorStop(0.5, '#0d2654');
-  bgGrad.addColorStop(1, '#051126');
-  ctx.fillStyle = bgGrad;
-  ctx.fillRect(0, 0, 900, 1350);
+  // 1. Fondo Oscuro Principal
+  ctx.fillStyle = '#04142d';
+  ctx.fillRect(0, 0, 1200, 630);
 
-  ctx.strokeStyle = '#38bdf8';
-  ctx.lineWidth = 6;
-  ctx.strokeRect(20, 20, 860, 1310);
-
-  ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 28px Inter, sans-serif';
-  ctx.fillText('UNIVERSAL ASSISTANCE', 60, 90);
-
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
-  ctx.font = '500 18px Inter, sans-serif';
-  ctx.fillText('A company of ZURICH  ·  MOVIE', 60, 120);
-
-  ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
-  ctx.lineWidth = 2;
+  // 2. Ticket Card Background (Borde azul/cyan)
+  const x = 40, y = 40, w = 1120, h = 550, r = 24;
+  
+  ctx.save();
   ctx.beginPath();
-  ctx.moveTo(60, 145);
-  ctx.lineTo(840, 145);
+  if (ctx.roundRect) {
+    ctx.roundRect(x, y, w, h, r);
+  } else {
+    ctx.rect(x, y, w, h);
+  }
+  
+  const bgGrad = ctx.createLinearGradient(x, y, x + w, y + h);
+  bgGrad.addColorStop(0, '#0a224a');
+  bgGrad.addColorStop(0.5, '#0e2b5c');
+  bgGrad.addColorStop(1, '#162c5e');
+  ctx.fillStyle = bgGrad;
+  ctx.fill();
+
+  ctx.strokeStyle = '#1a88d6';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  ctx.restore();
+
+  // 3. Recortes semicirculares en la perforación (Top y Bottom Muescas)
+  const perfX = 780;
+  
+  ctx.save();
+  ctx.globalCompositeOperation = 'destination-out';
+  // Muesca Superior
+  ctx.beginPath();
+  ctx.arc(perfX, y, 24, 0, Math.PI * 2);
+  ctx.fill();
+  // Muesca Inferior
+  ctx.beginPath();
+  ctx.arc(perfX, y + h, 24, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // Re-dibujar bordes de las muescas
+  ctx.strokeStyle = '#1a88d6';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.arc(perfX, y, 24, 0, Math.PI);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(perfX, y + h, 24, Math.PI, Math.PI * 2);
   ctx.stroke();
 
-  ctx.fillStyle = '#ef2f83';
-  ctx.font = 'bold 20px Inter, sans-serif';
-  ctx.fillText('FUNCIÓN ESPECIAL DE CINE', 60, 195);
+  // 4. Línea de Perforación Punteada
+  ctx.save();
+  ctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+  ctx.lineWidth = 2;
+  ctx.setLineDash([8, 8]);
+  ctx.beginPath();
+  ctx.moveTo(perfX, y + 26);
+  ctx.lineTo(perfX, y + h - 26);
+  ctx.stroke();
+  ctx.restore();
 
+  // 5. CONTENIDO LADO IZQUIERDO
+  // Header Marca
   ctx.fillStyle = '#ffffff';
-  ctx.font = '900 46px Inter, sans-serif';
-  ctx.fillText('COYOTE VS ACME', 60, 255);
-
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.font = '600 17px Inter, sans-serif';
-  ctx.fillText('TITULAR DE LA ENTRADA', 60, 320);
+  ctx.font = '900 28px Inter, sans-serif';
+  ctx.fillText('UNIVERSAL ASSISTANCE', 80, 95);
 
   ctx.fillStyle = '#38bdf8';
-  ctx.font = '900 36px Inter, sans-serif';
-  ctx.fillText(guest.name || 'Invitado VIP', 60, 365);
+  ctx.font = '700 13px Inter, sans-serif';
+  ctx.fillText('A COMPANY OF ZURICH · ASISTENCIA AL VIAJERO', 80, 122);
 
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
-  ctx.fillRect(60, 405, 780, 160);
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
-  ctx.strokeRect(60, 405, 780, 160);
+  // Línea divisoria izquierda
+  ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(80, 142);
+  ctx.lineTo(740, 142);
+  ctx.stroke();
 
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.font = 'bold 15px Inter, sans-serif';
-  ctx.fillText('FECHA Y HORA', 90, 440);
-  ctx.fillText('LUGAR', 480, 440);
+  // Subtítulo Magenta
+  ctx.fillStyle = '#ff2e93';
+  ctx.font = '800 14px Inter, sans-serif';
+  ctx.fillText('FUNCIÓN DE CINE EXCLUSIVA', 80, 180);
 
+  // Título Película
   ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 21px Inter, sans-serif';
-  ctx.fillText(`${event.date || '27/08/2026'} · ${event.time || '20:00'} hs`, 90, 475);
-  ctx.fillText(event.venue || 'Movie Montevideo Shopping', 480, 475);
+  ctx.font = '900 44px Inter, sans-serif';
+  ctx.fillText('COYOTE VS ACME', 80, 235);
 
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.font = 'bold 15px Inter, sans-serif';
-  ctx.fillText('ENTRADAS / ACCESOS', 90, 518);
-  ctx.fillText('CÓDIGO PASE VIP', 480, 518);
+  // Label Invitado
+  ctx.fillStyle = '#38bdf8';
+  ctx.font = '700 12px Inter, sans-serif';
+  ctx.fillText('INVITADO ESPECIAL', 80, 285);
 
+  // Nombre del Invitado
+  const guestName = guest.name || 'Invitado de prueba';
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '900 34px Inter, sans-serif';
+  ctx.fillText(guestName, 80, 330);
+
+  // Acceso
   const total = Number(guest.totalSeats || 1);
-  ctx.fillStyle = '#38bdf8';
-  ctx.font = 'bold 21px Inter, sans-serif';
-  ctx.fillText(`${total} persona${total === 2 ? 's' : ''} (${total === 2 ? 'Con acompañante' : '1 lugar'})`, 90, 548);
-  ctx.fillText(guest.code || 'UA-DEMO-001', 480, 548);
+  const accessText = total === 2 ? 'Acceso con acompañante' : 'Acceso individual';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+  ctx.font = '600 17px Inter, sans-serif';
+  ctx.fillText(accessText, 80, 365);
 
+  // Meta Datos (Fecha y Hora | Lugar)
+  ctx.fillStyle = '#38bdf8';
+  ctx.font = '800 12px Inter, sans-serif';
+  ctx.fillText('FECHA Y HORA:', 80, 425);
+  ctx.fillText('LUGAR:', 440, 425);
+
+  const formattedDate = formatEventDate(event.date);
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '700 17px Inter, sans-serif';
+  ctx.fillText(`${formattedDate || 'Jueves 27 de Agosto'} · ${event.time || '20:00'} hs`, 80, 455);
+  ctx.fillText(event.venue || 'Movie Montevideo Shopping', 440, 455);
+
+  // Pie Izquierdo
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+  ctx.font = '600 11px Inter, monospace';
+  ctx.fillText('UA CINEMA VIP PASS · VALIDO PARA 1 FUNCIÓN', 80, 535);
+
+  // 6. CONTENIDO LADO DERECHO (Troquel del Pase)
+  // Badge Cyan superior
+  ctx.fillStyle = '#38bdf8';
+  if (ctx.roundRect) {
+    ctx.beginPath();
+    ctx.roundRect(815, 80, 250, 40, 6);
+    ctx.fill();
+  } else {
+    ctx.fillRect(815, 80, 250, 40);
+  }
+
+  ctx.fillStyle = '#04142d';
+  ctx.font = '900 14px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('PASE VIP EXCLUSIVO', 940, 105);
+
+  // Código Label
+  ctx.fillStyle = '#38bdf8';
+  ctx.font = '800 11px Inter, sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText('CÓDIGO DE ENTRADA:', 815, 152);
+
+  // Código Value
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '900 22px Inter, monospace';
+  ctx.fillText(guest.code || 'UA-DEMO-001', 815, 180);
+
+  // Caja Blanca del QR
   const qrImg = document.getElementById('successQrImage') || document.getElementById('ticketQrImage');
 
-  const drawAndDownload = () => {
+  const drawAndSave = () => {
     ctx.fillStyle = '#ffffff';
-    ctx.fillRect(250, 600, 400, 400);
+    ctx.fillRect(835, 205, 210, 210);
 
     if (qrImg && qrImg.naturalWidth > 0) {
       try {
-        ctx.drawImage(qrImg, 270, 620, 360, 360);
+        ctx.drawImage(qrImg, 845, 215, 190, 190);
       } catch (_) {}
     }
 
-    ctx.fillStyle = '#071938';
-    ctx.font = 'bold 22px Inter, monospace';
+    // Texto debajo del QR
+    ctx.fillStyle = '#38bdf8';
+    ctx.font = '800 12px Inter, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(guest.code || 'UA-DEMO-001', 450, 980);
-    ctx.textAlign = 'left';
+    ctx.fillText('ESCANEÁ EN BOLETERÍA', 940, 442);
 
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.55)';
-    ctx.font = '16px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('Presentá este Pase VIP en el acceso a la sala de cine.', 450, 1180);
-    ctx.fillText('Universal Assistance Uruguay · 2026', 450, 1210);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+    ctx.font = '600 11px Inter, monospace';
+    ctx.fillText(guest.code || 'UA-DEMO-001', 940, 535);
 
+    // Descargar imagen PNG
     const a = document.createElement('a');
     a.download = `Entrada-UA-${guest.code || 'VIP'}.png`;
     a.href = canvas.toDataURL('image/png');
     a.click();
-
-    if (finishCallback) finishCallback();
+    finish();
   };
 
   if (qrImg && (!qrImg.complete || qrImg.naturalWidth === 0)) {
-    qrImg.onload = drawAndDownload;
-    setTimeout(drawAndDownload, 600);
+    qrImg.onload = drawAndSave;
+    setTimeout(drawAndSave, 500);
   } else {
-    drawAndDownload();
+    drawAndSave();
   }
 }
 
