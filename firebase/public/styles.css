@@ -329,8 +329,58 @@ button, input { font: inherit; }
 .field { display: grid; gap: 7px; }
 .field > span { font-weight: 750; font-size: 14px; }
 .field small { color: var(--ua-muted); }
-.field input { width: 100%; min-height: 52px; border-radius: 14px; border: 1px solid var(--ua-line); padding: 0 14px; outline: none; color: var(--ua-text); background: #fff; }
-.field input:focus { border-color: var(--ua-cyan); box-shadow: 0 0 0 3px rgba(22,201,234,.16); }
+.field input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 14px;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  padding: 0 16px;
+  outline: none;
+  color: #ffffff !important;
+  background-color: #0d2654 !important;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.field input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+select:focus,
+textarea:focus {
+  background-color: #071938 !important;
+  color: #ffffff !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #0d2654 inset !important;
+  box-shadow: 0 0 0px 1000px #0d2654 inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-weight: 400;
+}
 .button--primary,
 .hero-cta { color: #fff; background: linear-gradient(90deg, #e91673, #f23f91); box-shadow: 0 14px 30px rgba(239,47,131,.23); }
 .button--secondary { color: var(--ua-blue); background: #fff; border: 1px solid #b8cde0; }
