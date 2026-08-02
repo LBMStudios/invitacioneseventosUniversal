@@ -718,6 +718,39 @@ function downloadVipPass() {
     btn.textContent = 'Generando tu Entrada…';
   }
 
+  const finish = () => {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = '🎟️ Descargar mi Entrada';
+    }
+  };
+
+  const ticketCard = document.querySelector('.invite-card');
+  const guestCode = state.guest?.code || 'UA-DEMO-001';
+
+  if (typeof html2canvas !== 'undefined' && ticketCard) {
+    html2canvas(ticketCard, {
+      scale: 3,
+      useCORS: true,
+      allowTaint: true,
+      backgroundColor: '#071938',
+      logging: false
+    }).then(canvas => {
+      const a = document.createElement('a');
+      a.download = `Entrada-VIP-UA-${guestCode}.png`;
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+      finish();
+    }).catch(err => {
+      console.warn('html2canvas capture error, fallback canvas used:', err);
+      fallbackCanvasDownload(finish);
+    });
+  } else {
+    fallbackCanvasDownload(finish);
+  }
+}
+
+function fallbackCanvasDownload(finishCallback) {
   const guest = state.guest || { name: 'Lucas Beathayte', code: 'UA-DEMO-001', totalSeats: 1 };
   const event = state.event || { name: 'Función especial Coyote vs. Acme', date: '27/08/2026', time: '20:00', venue: 'Movie Montevideo Shopping' };
 
@@ -726,7 +759,6 @@ function downloadVipPass() {
   canvas.height = 1350;
   const ctx = canvas.getContext('2d');
 
-  // Fondo oscuro con gradiente
   const bgGrad = ctx.createLinearGradient(0, 0, 900, 1350);
   bgGrad.addColorStop(0, '#071938');
   bgGrad.addColorStop(0.5, '#0d2654');
@@ -734,12 +766,10 @@ function downloadVipPass() {
   ctx.fillStyle = bgGrad;
   ctx.fillRect(0, 0, 900, 1350);
 
-  // Borde resplandeciente cyan
   ctx.strokeStyle = '#38bdf8';
   ctx.lineWidth = 6;
   ctx.strokeRect(20, 20, 860, 1310);
 
-  // Header Brand
   ctx.fillStyle = '#ffffff';
   ctx.font = 'bold 28px Inter, sans-serif';
   ctx.fillText('UNIVERSAL ASSISTANCE', 60, 90);
@@ -748,7 +778,6 @@ function downloadVipPass() {
   ctx.font = '500 18px Inter, sans-serif';
   ctx.fillText('A company of ZURICH  ·  MOVIE', 60, 120);
 
-  // Divider
   ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
   ctx.lineWidth = 2;
   ctx.beginPath();
@@ -756,17 +785,14 @@ function downloadVipPass() {
   ctx.lineTo(840, 145);
   ctx.stroke();
 
-  // Subtítulo Evento
   ctx.fillStyle = '#ef2f83';
   ctx.font = 'bold 20px Inter, sans-serif';
   ctx.fillText('FUNCIÓN ESPECIAL DE CINE', 60, 195);
 
-  // Título Película
   ctx.fillStyle = '#ffffff';
   ctx.font = '900 46px Inter, sans-serif';
   ctx.fillText('COYOTE VS ACME', 60, 255);
 
-  // Nombre del Invitado
   ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
   ctx.font = '600 17px Inter, sans-serif';
   ctx.fillText('TITULAR DE LA ENTRADA', 60, 320);
@@ -775,7 +801,6 @@ function downloadVipPass() {
   ctx.font = '900 36px Inter, sans-serif';
   ctx.fillText(guest.name || 'Invitado VIP', 60, 365);
 
-  // Caja de Datos (Fecha, Hora, Lugar, Accesos)
   ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
   ctx.fillRect(60, 405, 780, 160);
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
@@ -802,7 +827,6 @@ function downloadVipPass() {
   ctx.fillText(`${total} persona${total === 2 ? 's' : ''} (${total === 2 ? 'Con acompañante' : '1 lugar'})`, 90, 548);
   ctx.fillText(guest.code || 'UA-DEMO-001', 480, 548);
 
-  // Render Código QR
   const qrImg = document.getElementById('successQrImage') || document.getElementById('ticketQrImage');
 
   const drawAndDownload = () => {
@@ -815,30 +839,24 @@ function downloadVipPass() {
       } catch (_) {}
     }
 
-    // Texto bajo QR
     ctx.fillStyle = '#071938';
     ctx.font = 'bold 22px Inter, monospace';
     ctx.textAlign = 'center';
     ctx.fillText(guest.code || 'UA-DEMO-001', 450, 980);
     ctx.textAlign = 'left';
 
-    // Pie de entrada
     ctx.fillStyle = 'rgba(255, 255, 255, 0.55)';
     ctx.font = '16px Inter, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText('Presentá este Pase VIP en el acceso a la sala de cine.', 450, 1180);
     ctx.fillText('Universal Assistance Uruguay · 2026', 450, 1210);
 
-    // Descarga directa PNG
     const a = document.createElement('a');
     a.download = `Entrada-UA-${guest.code || 'VIP'}.png`;
     a.href = canvas.toDataURL('image/png');
     a.click();
 
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = '🎟️ Descargar mi Entrada';
-    }
+    if (finishCallback) finishCallback();
   };
 
   if (qrImg && (!qrImg.complete || qrImg.naturalWidth === 0)) {
