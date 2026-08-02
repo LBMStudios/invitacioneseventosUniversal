@@ -57,12 +57,28 @@ function doGet(e) {
 
 
 function doPost(e) {
+  const p = e && e.parameter ? e.parameter : {};
+
+  // ── MODO SIMULACION (antes del lock, sin efectos secundarios) ──────
+  // Permite load testing sin bloquear Sheets ni enviar emails
+  if (clean_(p.simulate) === '1') {
+    Utilities.sleep(Math.floor(Math.random() * 150 + 80)); // latencia realista 80-230ms
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        ok: true,
+        simulated: true,
+        code: clean_(p.code) || 'SIM-TEST',
+        status: clean_(p.attendance) === 'yes' ? 'Confirmado' : 'No asiste',
+        timestamp: new Date().toISOString()
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
   const lock = LockService.getScriptLock();
 
   try {
     lock.waitLock(15000);
 
-    const p = e && e.parameter ? e.parameter : {};
     const action = clean_(p.action);
     const code = clean_(p.code);
 
@@ -89,7 +105,6 @@ function doPost(e) {
     const testMode = clean_(p.testMode) === '1';
     const allowUpdate = clean_(p.allowUpdate) === '1';
 
-    if (!code) throw new Error('Falta el código de invitación.');
     if (!['yes', 'no'].includes(attendance)) throw new Error('La confirmación no es válida.');
 
     const sheet = getSheet_(SHEET_INVITADOS);
