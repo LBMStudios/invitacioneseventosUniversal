@@ -1,0 +1,24 @@
+{
+  "name": "UA Acreditación Puerta - Coyote vs. Acme",
+  "short_name": "UA Checkin",
+  "description": "Sistema de Acreditación y Escáner QR de Puerta para Universal Assistance",
+  "start_url": "/checkin.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#071938",
+  "theme_color": "#071938",
+  "icons": [
+    {
+      "src": "/assets/logo-ua-white.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo-ua-white.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

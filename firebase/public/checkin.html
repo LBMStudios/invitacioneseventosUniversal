@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Acreditación y Control de Ingreso · Universal Assistance</title>
+  <link rel="icon" type="image/png" href="/assets/logo-ua-white.png">
+  <link rel="shortcut icon" href="/assets/logo-ua-white.png">
+  <meta name="theme-color" content="#071938">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="UA Checkin">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/logo-ua-white.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <style>
+    :root {
+      --navy:      #071938;
+      --navy-dark: #040f26;
+      --navy-mid:  #0d2654;
+      --pink:      #ee1f73;
+      --cyan:      #38bdf8;
+      --green:     #22c55e;
+      --yellow:    #f59e0b;
+      --red:       #ef4444;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background:
+        radial-gradient(circle at 85% 90%, rgba(238,31,115,0.25) 0%, transparent 45%),
+        radial-gradient(circle at 10% 15%, rgba(56,189,248,0.2) 0%, transparent 40%),
+        linear-gradient(160deg, #071938 0%, #0d2654 50%, #1c0e3a 100%);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+    }
+
+    /* Ambient Orbs */
+    .orb { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; }
+    .orb-1 { top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(238,31,115,0.18) 0%, transparent 70%); }
+    .orb-2 { bottom: -120px; left: -80px; width: 450px; height: 450px; background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%); }
+
+    /* Header */
+    .checkin-header {
+      background: rgba(7, 25, 56, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+    }
+    .brand-group { display: flex; align-items: center; gap: 10px; }
+    .brand-icon {
+      width: 32px; height: 32px; background: #fff; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 20px; color: var(--navy);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .checkin-header__title { font-size: 15px; font-weight: 900; color: #ffffff; line-height: 1.1; }
+    .checkin-header__subtitle { font-size: 10px; color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .hdr-actions { display: flex; gap: 8px; align-items: center; }
+    .btn-hdr {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+      color: #fff; font-size: 11px; font-weight: 800; padding: 7px 12px; border-radius: 10px;
+      cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 4px;
+    }
+    .btn-hdr:hover { background: rgba(255,255,255,0.16); transform: translateY(-1px); }
+    .btn-hdr--pink { background: linear-gradient(135deg, #ef2f83, #ee1f73); border: none; box-shadow: 0 4px 14px rgba(238,31,115,0.4); }
+
+    /* Main Container */
+    .checkin-container {
+      position: relative; z-index: 1;
+      max-width: 620px; width: 100%;
+      margin: 0 auto;
+      padding: 20px 16px 50px;
+      flex: 1;
+    }
+
+    /* Stats Grid */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .stat-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 14px 10px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: transform 0.2s ease;
+    }
+    .stat-card:hover { transform: translateY(-2px); }
+    .stat-card__num {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--cyan);
+      line-height: 1;
+    }
+    .stat-card__num--success { color: var(--green); }
+    .stat-card__num--pending { color: var(--yellow); }
+    .stat-card__label {
+      font-size: 9px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+    }
+
+    /* Scanner Box */
+    .scanner-box {
+      background: rgba(13, 38, 84, 0.7);
+      border: 2px solid rgba(56, 189, 248, 0.4);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      margin-bottom: 22px;
+      position: relative;
+      backdrop-filter: blur(20px);
+    }
+    #qr-reader {
+      width: 100%;
+      background: #000;
+    }
+    #qr-reader video {
+      border-radius: 20px;
+    }
+    .scanner-overlay {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .scan-reticle {
+      width: 200px; height: 200px;
+      border: 2px dashed rgba(56, 189, 248, 0.6);
+      border-radius: 16px;
+      position: relative;
+      box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.2);
+    }
+    .scan-line {
+      position: absolute; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+      box-shadow: 0 0 12px #38bdf8;
+      animation: scanAnim 2s ease-in-out infinite alternate;
+    }
+    @keyframes scanAnim { 0% { top: 5%; } 100% { top: 95%; } }
+
+    /* Manual Search Entry */
+    .manual-entry {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 22px;
+      backdrop-filter: blur(16px);
+    }
+    .manual-entry__title {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--cyan);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .search-group {
+      display: flex;
+      gap: 10px;
+    }
+    .search-input {
+      flex: 1;
+      background: rgba(7, 25, 56, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+    }
+    .btn-search {
+      background: linear-gradient(135deg, #ef2f83, #ee1f73);
+      border: none;
+      color: #ffffff;
+      font-weight: 800;
+      padding: 14px 22px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 6px 18px rgba(238,31,115,0.4);
+      transition: all 0.2s ease;
+    }
+    .btn-search:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(238,31,115,0.55); }
+
+    /* Result Card */
+    .result-card {
+      background: linear-gradient(135deg, #0d2654 0%, #201140 100%);
+      border: 2px solid var(--cyan);
+      border-radius: 24px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      margin-bottom: 24px;
+      animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.94) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .result-badge {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .result-badge--valid { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #22c55e; box-shadow: 0 0 16px rgba(34, 197, 94, 0.3); }
+    .result-badge--used { background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1px solid #f59e0b; box-shadow: 0 0 16px rgba(245, 158, 11, 0.3); }
+    .result-badge--invalid { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid #ef4444; box-shadow: 0 0 16px rgba(239, 68, 68, 0.3); }
+    
+    .result-guest-name {
+      font-size: 28px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+    .result-seats {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+    .btn-action-checkin {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border: none;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 16px;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(34, 197, 94, 0.45);
+      transition: all 0.22s ease;
+      margin-top: 12px;
+      font-family: inherit;
+    }
+    .btn-action-checkin:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6); }
+
+    /* Guest List Box */
+    .guest-list-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 20px;
+      backdrop-filter: blur(16px);
+    }
+    .filter-tabs {
+      display: flex; gap: 8px; margin-bottom: 14px;
+    }
+    .tab-btn {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 800; padding: 6px 14px;
+      border-radius: 99px; cursor: pointer; transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--cyan); color: var(--navy); border-color: var(--cyan);
+    }
+
+    .guest-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      transition: background 0.15s ease;
+    }
+    .guest-item:hover { background: rgba(255,255,255,0.06); }
+    .guest-item:last-child { border-bottom: none; }
+    .guest-item__name { font-weight: 800; font-size: 14px; color: #fff; }
+    .guest-item__code { font-family: monospace; font-size: 12px; color: var(--cyan); font-weight: 700; margin-top: 2px; }
+    .status-tag {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+    .status-tag--in { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
+    .status-tag--wait { background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1px solid rgba(245, 158, 11, 0.4); }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- HEADER OFICIAL UA -->
+  <header class="checkin-header">
+    <div class="brand-group">
+      <div class="brand-icon">u</div>
+      <div>
+        <div class="checkin-header__title">UNIVERSAL ASSISTANCE</div>
+        <div class="checkin-header__subtitle">Control de Acreditación · Movie Montevideo Shopping</div>
+      </div>
+    </div>
+    <div class="hdr-actions">
+      <button id="btnOpenVipModal" class="btn-hdr btn-hdr--pink">➕ VIP Fuera de Lista</button>
+      <button id="btnExportCsv" class="btn-hdr">📥 CSV</button>
+      <a href="index.html" class="btn-hdr" style="text-decoration:none;">← Salir</a>
+    </div>
+  </header>
+
+  <main class="checkin-container">
+
+    <!-- MÉTRICAS EN VIVO -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div id="statTotalConfirmed" class="stat-card__num">0</div>
+        <div class="stat-card__label">Confirmados</div>
+      </div>
+      <div class="stat-card">
+        <div id="statCheckedIn" class="stat-card__num stat-card__num--success">0</div>
+        <div class="stat-card__label">En Sala</div>
+      </div>
+      <div class="stat-card">
+        <div id="statPending" class="stat-card__num stat-card__num--pending">0</div>
+        <div class="stat-card__label">Por Llegar</div>
+      </div>
+    </div>
+
+    <!-- ESCÁNER DE QR CÁMARA CON OVERLAY -->
+    <div class="scanner-box">
+      <div id="qr-reader"></div>
+    </div>
+
+    <!-- BÚSQUEDA MANUAL POR NOMBRE O CÓDIGO -->
+    <div class="manual-entry">
+      <div class="manual-entry__title">🔍 Búsqueda manual por nombre o código</div>
+      <div class="search-group">
+        <input type="text" id="searchInput" class="search-input" placeholder="Ej. UA-001 o Nombre del invitado..." autocomplete="off">
+        <button id="btnSearch" class="btn-search">Buscar</button>
+      </div>
+    </div>
+
+    <!-- TARJETA DE RESULTADO / VALIDACIÓN -->
+    <div id="resultCard" class="result-card hidden">
+      <div id="resultBadge" class="result-badge result-badge--valid">VALIDACIÓN OK</div>
+      <div id="resultGuestName" class="result-guest-name">Invitado</div>
+      <div id="resultSeats" class="result-seats">Acceso para 2 personas</div>
+      <div id="resultDetails" style="font-size:13px;color:#94a3b8;margin-bottom:16px;"></div>
+      <button id="btnConfirmIngress" class="btn-action-checkin">✅ CONFIRMAR INGRESO A SALA</button>
+    </div>
+
+    <!-- LISTA RÁPIDA DE ASISTENTES -->
+    <div class="guest-list-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <div style="font-size:12px;font-weight:800;color:var(--cyan);text-transform:uppercase;letter-spacing:1px;">
+          📋 Asistentes de Puerta
+        </div>
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-filter="confirmed">Confirmados</button>
+          <button class="tab-btn" data-filter="in">En Sala</button>
+          <button class="tab-btn" data-filter="pending">Por Llegar</button>
+          <button class="tab-btn" data-filter="unconfirmed">Pendientes</button>
+          <button class="tab-btn" data-filter="all">Todos</button>
+        </div>
+      </div>
+      <div id="guestListContainer">
+        <div style="font-size:12px;color:#94a3b8;text-align:center;padding:16px;">Cargando lista de puerta...</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MODAL REGISTRO VIP EN PUERTA -->
+  <div id="vipModal" class="hidden" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:999;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(16px);">
+    <div style="background:linear-gradient(135deg, #071938, #0d2654);border:2px solid #ee1f73;border-radius:24px;padding:28px;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(0,0,0,0.8);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <h3 style="margin:0;font-size:18px;font-weight:900;color:#ffffff;">➕ Registrar Invitado VIP / Fuera de Lista</h3>
+        <button id="btnCloseVipModal" style="background:none;border:none;color:#94a3b8;font-size:22px;cursor:pointer;">✕</button>
+      </div>
+      
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:11px;font-weight:800;color:var(--cyan);margin-bottom:6px;text-transform:uppercase;">Nombre Completo (*)</label>
+        <input type="text" id="vipNameInput" style="width:100%;box-sizing:border-box;padding:14px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;" placeholder="Ej. Juan Pérez">
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:11px;font-weight:800;color:var(--cyan);margin-bottom:6px;text-transform:uppercase;">¿Trae Acompañante?</label>
+        <select id="vipCompanionSelect" style="width:100%;box-sizing:border-box;padding:14px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;">
+          <option value="no">No, viene solo (1 entrada)</option>
+          <option value="yes">Sí, trae acompañante (2 entradas)</option>
+        </select>
+      </div>
+
+      <div id="vipCompanionNameGroup" class="hidden" style="margin-bottom:18px;">
+        <label style="display:block;font-size:11px;font-weight:800;color:var(--cyan);margin-bottom:6px;text-transform:uppercase;">Nombre Acompañante</label>
+        <input type="text" id="vipCompanionNameInput" style="width:100%;box-sizing:border-box;padding:14px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;" placeholder="Ej. María López">
+      </div>
+
+      <button id="btnSubmitVip" style="width:100%;padding:16px;background:linear-gradient(135deg, #ef2f83, #ee1f73);border:none;color:#fff;font-weight:900;font-size:15px;border-radius:12px;cursor:pointer;box-shadow:0 8px 25px rgba(238,31,115,0.45);font-family:inherit;">
+        REGISTRAR E INGRESAR A SALA
+      </button>
+    </div>
+  </div>
+
+  <script src="checkin.js"></script>
+</body>
+</html>

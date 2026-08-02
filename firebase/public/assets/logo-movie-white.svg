@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 44" height="34" preserveAspectRatio="xMidYMid meet" aria-label="Movie">
+  <g fill="none" stroke="#FFFFFF" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- m -->
+    <path d="M 6 34 L 6 18 C 6 13.5 9.5 11.5 14 11.5 C 18.5 11.5 21.5 14 21.5 19 L 21.5 34 M 21.5 19 C 21.5 13.5 25 11.5 29.5 11.5 C 34 11.5 37 14.5 37 20 L 37 34"/>
+    <!-- v -->
+    <path d="M 83 12 L 93 34 L 103 12"/>
+    <!-- i -->
+    <path d="M 115 18 L 115 34"/>
+    <!-- e -->
+    <path d="M 144 23 L 127 23 C 127 16.5 132 11.5 139 11.5 C 145.5 11.5 149.5 16.5 149.5 22 M 127.5 24.5 C 127.5 31 132.5 35 139 35 C 144.5 35 148 32 150 28.5"/>
+  </g>
+  <circle cx="115" cy="10.5" r="3.5" fill="#FFFFFF"/>
+  <!-- Star logo element in m★vie -->
+  <g transform="translate(60, 23)">
+    <!-- Outer Star Magenta -->
+    <path d="M 0 -17 L 4.9 -5.1 L 17.5 -3.3 L 8.4 5.5 L 10.6 18 L 0 12.1 L -10.6 18 L -8.4 5.5 L -17.5 -3.3 L -4.9 -5.1 Z" fill="#E4007B"/>
+    <!-- Inner Star Cutout -->
+    <path d="M 0 -8.5 L 2.5 -2.6 L 8.8 -1.7 L 4.2 2.8 L 5.3 9 L 0 6.1 L -5.3 9 L -4.2 2.8 L -8.8 -1.7 L -2.5 -2.6 Z" fill="#071b3d"/>
+  </g>
+</svg>

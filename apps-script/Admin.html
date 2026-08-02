@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UA Eventos &#8212; Panel Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #071938;
+      --navy-dark: #040f26;
+      --navy-mid:  #0d2654;
+      --purple:    #321c54;
+      --pink:      #ee1f73;
+      --pink-glow: #ff2e83;
+      --cyan:      #38bdf8;
+      --cyan-light:#7dd3fc;
+      --green:     #22c55e;
+      --yellow:    #f59e0b;
+      --red:       #ef4444;
+      --white:     #ffffff;
+      --text-main: #f8fafc;
+      --text-sub:  #94a3b8;
+      --border:    rgba(255,255,255,0.16);
+      --glass:     rgba(255,255,255,0.07);
+      --sw: 256px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      background: var(--navy);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    /* ── CANVAS BACKGROUND (Exact match to event landing page) ── */
+    .app { display: flex; height: 100vh; overflow: hidden; position: relative; }
+
+    .bg-canvas {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(circle at 85% 95%, rgba(238, 31, 115, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.28) 0%, transparent 40%),
+        linear-gradient(160deg, #071938 0%, #0d2654 45%, #251246 100%);
+    }
+
+    /* Floating ambient light particles */
+    .bg-glow-orb-1 {
+      position: fixed; top: -100px; right: -100px; width: 450px; height: 450px;
+      background: radial-gradient(circle, rgba(238, 31, 115, 0.18) 0%, transparent 70%);
+      pointer-events: none; z-index: 0; animation: floatOrb 15s ease-in-out infinite alternate;
+    }
+    .bg-glow-orb-2 {
+      position: fixed; bottom: -150px; left: 10%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+      pointer-events: none; z-index: 0; animation: floatOrb 18s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes floatOrb { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(-30px) scale(1.1); } }
+
+    .main { flex: 1; overflow-y: auto; position: relative; z-index: 1; display: flex; flex-direction: column; }
+
+    /* ── HEADER ───────────────────────────────────── */
+    .top-header {
+      height: 60px; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(7, 25, 56, 0.75);
+      border-bottom: 1px solid var(--border);
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+      position: sticky; top: 0; z-index: 50; flex-shrink: 0;
+    }
+
+    .brand-header-left { display: flex; align-items: center; gap: 12px; }
+    .ua-brand-group { display: flex; align-items: center; gap: 8px; }
+    .ua-brand-icon {
+      width: 30px; height: 30px; background: #fff; border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 19px; color: var(--navy); line-height: 1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .ua-brand-title { font-size: 11px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: 0.2px; }
+    .zurich-tag { font-size: 10px; color: rgba(255,255,255,0.6); padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.22); display: flex; align-items: center; gap: 4px; }
+    .zurich-tag strong { color: #fff; font-weight: 800; letter-spacing: 0.5px; }
+    .movie-logo-tag { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.5px; display: flex; align-items: center; gap: 2px; }
+    .movie-logo-tag .star { color: var(--pink); font-size: 14px; transform: translateY(-1px); }
+
+    /* ── SIDEBAR ──────────────────────────────────── */
+    .sidebar {
+      width: var(--sw); flex-shrink: 0;
+      background: rgba(4, 15, 38, 0.95);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; z-index: 20;
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+    .s-event-card { padding: 22px 20px 18px; border-bottom: 1px solid var(--border); }
+    .event-badge-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 99px; padding: 3px 12px; margin-bottom: 10px;
+    }
+    .badge-dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: pulseDot 2s infinite; }
+    @keyframes pulseDot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.3; transform:scale(0.8); } }
+    .badge-text { font-size: 9px; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 1.1px; }
+
+    .s-title { font-size: 16px; font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -0.3px; }
+    .s-title .coyote { color: var(--cyan-light); }
+    .s-title .vs-badge {
+      background: var(--pink); color: #fff; font-size: 9px; font-weight: 900;
+      padding: 1px 6px; border-radius: 99px; display: inline-block; transform: rotate(-5deg); margin: 0 2px;
+      box-shadow: 0 2px 8px rgba(238, 31, 115, 0.5);
+    }
+    .s-title .acme { color: var(--pink); }
+    .s-subtitle { font-size: 11px; color: var(--text-sub); margin-top: 5px; font-weight: 500; }
+
+    .nav { flex: 1; padding: 12px 0; overflow-y: auto; }
+    .nav-group-label { font-size: 9px; font-weight: 800; color: rgba(148, 163, 184, 0.45); text-transform: uppercase; letter-spacing: 1.2px; padding: 14px 20px 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer;
+      color: var(--text-sub); font-weight: 500; font-size: 13px;
+      transition: all 0.18s ease; border-left: 3px solid transparent;
+      -webkit-user-select: none; user-select: none;
+    }
+    .nav-item:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-item.active { color: var(--cyan); background: rgba(56, 189, 248, 0.14); border-left-color: var(--cyan); font-weight: 700; }
+    .nav-icon { width: 18px; text-align: center; font-size: 14px; opacity: 0.85; }
+    .nav-item.active .nav-icon { opacity: 1; }
+    .nav-badge-count { margin-left: auto; background: rgba(56, 189, 248, 0.2); color: var(--cyan); font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 99px; }
+
+    .s-footer { padding: 14px 20px; border-top: 1px solid var(--border); font-size: 11px; color: rgba(148, 163, 184, 0.5); }
+    .s-refresh-btn { color: var(--cyan); font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 5px; margin-bottom: 4px; transition: opacity 0.15s; }
+    .s-refresh-btn:hover { opacity: 0.7; }
+
+    /* ── HERO BANNER IN DASHBOARD ─────────────────── */
+    .dashboard-hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+      border: 1px solid var(--border); border-radius: 22px;
+      padding: 34px 38px; margin-bottom: 24px;
+      -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35); position: relative; overflow: hidden;
+      animation: heroIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    .dashboard-hero::before {
+      content: ''; position: absolute; top: -70px; right: -70px; width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(238, 31, 115, 0.28) 0%, transparent 70%); pointer-events: none;
+    }
+
+    .hero-pill-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 99px; padding: 4px 14px; margin-bottom: 12px; }
+    .hero-pill-tag span { font-size: 10px; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 1.2px; }
+
+    .hero-main-title { font-size: 44px; font-weight: 900; line-height: 1; letter-spacing: -1px; margin-bottom: 10px; }
+    .hero-main-title .t-coyote { background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-main-title .t-vs { background: linear-gradient(135deg, #ef2f83, #ee1f73); color: #fff; font-size: 22px; font-weight: 900; padding: 2px 14px; border-radius: 99px; display: inline-block; transform: translateY(-6px) rotate(-4deg); box-shadow: 0 4px 15px rgba(238, 31, 115, 0.5); margin: 0 8px; }
+    .hero-main-title .t-acme { color: var(--pink); text-shadow: 0 0 30px rgba(238, 31, 115, 0.4); }
+
+    .hero-desc-bold { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .hero-desc-sub  { font-size: 13px; color: var(--text-sub); margin-bottom: 24px; }
+
+    .hero-info-chips { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-chip-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 10px 18px; display: flex; align-items: center; gap: 10px; transition: border-color 0.2s; }
+    .hero-chip-item:hover { border-color: rgba(56, 189, 248, 0.4); }
+    .hero-chip-icon { font-size: 16px; color: var(--cyan); }
+    .hero-chip-lbl  { font-size: 9px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.8px; }
+    .hero-chip-val  { font-size: 13px; font-weight: 700; color: #fff; }
+
+    /* ── STATS & PROGRESS ─────────────────────────── */
+    .stats-grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; margin-bottom: 20px; }
+    .stat-glass-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px; padding: 22px 20px; backdrop-filter: blur(20px);
+      position: relative; overflow: hidden; transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .stat-glass-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.28); }
+    .stat-top-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .stat-label-txt  { font-size: 9px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .stat-number-val { font-size: 38px; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 4px; }
+    .stat-number-val.cyan   { color: var(--cyan); }
+    .stat-number-val.green  { color: var(--green); }
+    .stat-number-val.yellow { color: var(--yellow); }
+    .stat-number-val.red    { color: var(--red); }
+    .stat-number-val.pink   { color: var(--pink); }
+    .stat-foot-txt   { font-size: 11px; color: var(--text-sub); }
+
+    .progress-glass-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 18px; padding: 20px 24px; margin-bottom: 20px; }
+    .progress-top-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .progress-title-txt { font-size: 13px; font-weight: 700; color: #fff; }
+    .progress-pct-txt { font-size: 26px; font-weight: 900; color: var(--cyan); }
+    .progress-track-bg { height: 8px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; }
+    .progress-fill-bar { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--pink)); border-radius: 99px; transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    /* ── BUTTONS ──────────────────────────────────── */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 22px; border-radius: 99px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; font-family: inherit; transition: all 0.2s ease; white-space: nowrap; user-select: none; }
+    .btn-pink-cta { background: linear-gradient(135deg, #ef2f83, #e91673); color: #fff; box-shadow: 0 6px 20px rgba(238, 31, 115, 0.35); }
+    .btn-pink-cta:hover { background: linear-gradient(135deg, #ff3d8f, #f2187d); box-shadow: 0 8px 28px rgba(238, 31, 115, 0.5); transform: translateY(-1px); }
+    .btn-cyan-cta { background: var(--cyan); color: var(--navy-dark); font-weight: 800; box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3); }
+    .btn-cyan-cta:hover { background: #56c8fa; transform: translateY(-1px); box-shadow: 0 8px 25px rgba(56, 189, 248, 0.45); }
+    .btn-green-cta { background: #25d366; color: #fff; font-weight: 800; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
+    .btn-green-cta:hover { background: #20bd5a; transform: translateY(-1px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+    .btn-outline-cta { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.28); }
+    .btn-outline-cta:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(56, 189, 248, 0.12); }
+    .btn-danger-ghost { background: rgba(239, 68, 68, 0.12); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.25); }
+    .btn-danger-ghost:hover { background: rgba(239, 68, 68, 0.22); }
+    .btn-sm { padding: 6px 14px; font-size: 11px; }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none !important; transform: none !important; }
+
+    /* ── TABLES & FORMS ───────────────────────────── */
+    .toolbar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .search-input-box { flex: 1; min-width: 220px; position: relative; }
+    .search-input-box input { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px 10px 40px; color: #fff; font-size: 13px; font-family: inherit; outline: none; transition: all 0.15s; }
+    .search-input-box input::placeholder { color: var(--text-sub); }
+    .search-input-box input:focus { border-color: rgba(56,189,248,0.5); background: rgba(255,255,255,0.1); box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12); }
+    .search-ic-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-sub); font-size: 14px; pointer-events: none; }
+
+    .filter-btn-group { display: flex; gap: 6px; flex-wrap: wrap; }
+    .f-pill-btn { padding: 8px 14px; border-radius: 99px; border: 1px solid var(--border); background: transparent; color: var(--text-sub); font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .f-pill-btn:hover { color: #fff; border-color: rgba(56,189,248,0.4); }
+    .f-pill-btn.active { background: rgba(56, 189, 248, 0.15); color: var(--cyan); border-color: rgba(56, 189, 248, 0.4); font-weight: 700; }
+
+    .table-glass-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; overflow: hidden; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { padding: 12px 18px; text-align: left; font-size: 10px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border); background: rgba(4, 15, 38, 0.65); white-space: nowrap; }
+    tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.12s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(56, 189, 248, 0.07); }
+    tbody td { padding: 12px 18px; font-size: 13px; vertical-align: middle; }
+    .td-code-txt { font-family: monospace; color: var(--cyan); font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .td-name-txt { font-weight: 700; color: #fff; }
+    .td-email-txt { color: var(--text-sub); font-size: 12px; }
+
+    .status-pill-badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 99px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+    .sp-green  { background: rgba(34, 197, 94, 0.15);  color: var(--green); }
+    .sp-red    { background: rgba(239, 68, 68, 0.15);  color: var(--red); }
+    .sp-yellow { background: rgba(245, 158, 11, 0.15); color: var(--yellow); }
+    .sp-muted  { background: rgba(255,255,255,0.08);  color: var(--text-sub); }
+    .sp-cyan   { background: rgba(56, 189, 248, 0.15); color: var(--cyan); }
+    .sp-pink   { background: rgba(238, 31, 115, 0.15); color: var(--pink); }
+
+    .content-card-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.13); border-radius: 18px; padding: 26px; margin-bottom: 16px; backdrop-filter: blur(20px); }
+    .card-head-row { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .card-head-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .card-head-title { font-size: 16px; font-weight: 800; color: #fff; }
+    .card-head-sub   { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
+
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-field-group { display: flex; flex-direction: column; gap: 6px; }
+    label { font-size: 10px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.9px; }
+    input[type=text], input[type=email], textarea { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 11px 16px; color: #fff; font-size: 13px; font-family: inherit; outline: none; transition: all 0.15s; width: 100%; }
+    input::placeholder, textarea::placeholder { color: rgba(148, 163, 184, 0.5); }
+    input:focus, textarea:focus { border-color: rgba(56, 189, 248, 0.5); background: rgba(255,255,255,0.1); box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12); }
+    textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+
+    /* ── ALERTS & TOAST ───────────────────────────── */
+    .alert-banner { display: flex; gap: 12px; align-items: flex-start; padding: 14px 18px; border-radius: 14px; font-size: 12px; line-height: 1.6; margin-bottom: 16px; }
+    .alert-yellow { background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); color: #fcd34d; }
+
+    #toast { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+    .toast-msg-item { background: rgba(7, 25, 56, 0.95); border: 1px solid rgba(255,255,255,0.18); border-radius: 14px; padding: 14px 22px; font-size: 13px; font-weight: 600; color: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.6); animation: toastIn 0.25s ease; max-width: 340px; backdrop-filter: blur(20px); }
+    .toast-msg-item.success { border-color: rgba(34, 197, 94, 0.5); color: var(--green); }
+    .toast-msg-item.error   { border-color: rgba(239, 68, 68, 0.5); color: var(--red); }
+    @keyframes toastIn { from { opacity:0; transform:translateX(28px); } to { opacity:1; transform:none; } }
+
+    .loading-spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.25); border-top-color: var(--cyan); border-radius: 50%; animation: spin 0.5s linear infinite; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .empty-state-box { text-align: center; padding: 56px 20px; color: var(--text-sub); }
+    .empty-state-box .icon { font-size: 38px; margin-bottom: 12px; opacity: 0.5; }
+
+    code { background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 6px; font-size: 11px; font-family: monospace; }
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.22); border-radius: 99px; }
+  </style>
+</head>
+<body>
+
+<div class="bg-canvas"></div>
+<div class="bg-glow-orb-1"></div>
+<div class="bg-glow-orb-2"></div>
+
+<div class="app">
+
+  <!-- ════════════════════ SIDEBAR ════════════════════ -->
+  <aside class="sidebar">
+    <div class="s-event-card">
+      <div class="event-badge-pill">
+        <div class="badge-dot" id="sidebar-status-dot"></div>
+        <span class="badge-text" id="sidebar-status-text">Evento activo</span>
+      </div>
+      <div class="s-title">
+        <span class="coyote">COYOTE</span> <span class="vs-badge">VS</span> <span class="acme">ACME</span>
+      </div>
+      <div class="s-subtitle">Jueves 27 de agosto &middot; 20:00 hs</div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-group-label">Panel</div>
+      <div class="nav-item active" onclick="switchTab('dashboard')">
+        <span class="nav-icon">&#9783;</span> Dashboard
+      </div>
+
+      <div class="nav-group-label">Invitados</div>
+      <div class="nav-item" onclick="switchTab('guests')">
+        <span class="nav-icon">&#9786;</span> Lista completa
+        <span class="nav-badge-count" id="badge-total-count">0</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('add')">
+        <span class="nav-icon">&#10133;</span> Agregar invitado
+      </div>
+
+      <div class="nav-group-label">Comunicaci&oacute;n</div>
+      <div class="nav-item" onclick="switchTab('send')">
+        <span class="nav-icon">&#9993;</span> Enviar invitaciones
+      </div>
+      <div class="nav-item" onclick="switchTab('reminders')">
+        <span class="nav-icon">&#9201;</span> Recordatorios
+      </div>
+
+      <div class="nav-group-label">Sistema</div>
+      <div class="nav-item" onclick="switchTab('tools')">
+        <span class="nav-icon">&#128295;</span> Herramientas
+      </div>
+      <div class="nav-item" onclick="switchTab('config')">
+        <span class="nav-icon">&#9967;</span> Configuraci&oacute;n
+      </div>
+    </nav>
+
+    <div class="s-footer">
+      <span class="s-refresh-btn" onclick="loadAllData()">&#8635; Actualizar datos</span>
+      <div>UA Eventos &middot; Panel Admin</div>
+    </div>
+  </aside>
+
+  <!-- ════════════════════ MAIN AREA ════════════════════ -->
+  <main class="main">
+
+    <header class="top-header">
+      <div class="brand-header-left">
+        <div class="ua-brand-group">
+          <div class="ua-brand-icon">u</div>
+          <div class="ua-brand-title">universal<br>assistance</div>
+        </div>
+        <div class="zurich-tag">A company of <strong>ZURICH</strong></div>
+      </div>
+      <div class="movie-logo-tag">m<span class="star">&#9733;</span>vie</div>
+    </header>
+
+    <div class="content" style="padding-top:24px;">
+
+      <!-- ── DASHBOARD ────────────────────────────────────────── -->
+      <div id="tab-dashboard" class="tab-pane-content" style="display:block;">
+        <div class="dashboard-hero">
+          <div class="hero-pill-tag">
+            <span>✩ FUNCI&Oacute;N DE CINE EXCLUSIVA - UNIVERSAL ASSISTANCE</span>
+          </div>
+          <div class="hero-main-title">
+            <span class="t-coyote">COYOTE</span>
+            <span class="t-vs">VS</span>
+            <span class="t-acme">ACME</span>
+          </div>
+          <div class="hero-desc-bold">Una noche de cine para compartir.</div>
+          <div class="hero-desc-sub">Queremos compartir contigo una funci&oacute;n especial.</div>
+
+          <div class="hero-info-chips">
+            <div class="hero-chip-item">
+              <span class="hero-chip-icon">&#128197;</span>
+              <div>
+                <div class="hero-chip-lbl">Fecha</div>
+                <div class="hero-chip-val">Jueves 27 de agosto</div>
+              </div>
+            </div>
+            <div class="hero-chip-item">
+              <span class="hero-chip-icon">&#128336;</span>
+              <div>
+                <div class="hero-chip-lbl">Hora</div>
+                <div class="hero-chip-val">20:00 hs (Llegada 19:30 hs)</div>
+              </div>
+            </div>
+            <div class="hero-chip-item">
+              <span class="hero-chip-icon">&#128205;</span>
+              <div>
+                <div class="hero-chip-lbl">Lugar</div>
+                <div class="hero-chip-val">Movie Montevideo Shopping</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid-container">
+          <div class="stat-glass-card">
+            <div class="stat-top-accent" style="background:var(--cyan)"></div>
+            <div class="stat-label-txt">Total invitados</div>
+            <div class="stat-number-val cyan" id="s-total">&#8212;</div>
+            <div class="stat-foot-txt">registrados</div>
+          </div>
+          <div class="stat-glass-card">
+            <div class="stat-top-accent" style="background:var(--green)"></div>
+            <div class="stat-label-txt">Confirmados</div>
+            <div class="stat-number-val green" id="s-confirmed">&#8212;</div>
+            <div class="stat-foot-txt">asistir&aacute;n</div>
+          </div>
+          <div class="stat-glass-card">
+            <div class="stat-top-accent" style="background:var(--yellow)"></div>
+            <div class="stat-label-txt">Pendientes</div>
+            <div class="stat-number-val yellow" id="s-pending">&#8212;</div>
+            <div class="stat-foot-txt">sin responder</div>
+          </div>
+          <div class="stat-glass-card">
+            <div class="stat-top-accent" style="background:var(--red)"></div>
+            <div class="stat-label-txt">No asisten</div>
+            <div class="stat-number-val red" id="s-notAttending">&#8212;</div>
+            <div class="stat-foot-txt">declinaron</div>
+          </div>
+          <div class="stat-glass-card">
+            <div class="stat-top-accent" style="background:var(--cyan)"></div>
+            <div class="stat-label-txt">Asientos</div>
+            <div class="stat-number-val cyan" id="s-seats">&#8212;</div>
+            <div class="stat-foot-txt">reservados</div>
+          </div>
+          <div class="stat-glass-card">
+            <div class="stat-top-accent" style="background:var(--pink)"></div>
+            <div class="stat-label-txt">Emails enviados</div>
+            <div class="stat-number-val pink" id="s-withEmail">&#8212;</div>
+            <div class="stat-foot-txt" id="s-noEmail-desc"></div>
+          </div>
+        </div>
+
+        <div class="progress-glass-box">
+          <div class="progress-top-row">
+            <span class="progress-title-txt">Tasa de respuesta general</span>
+            <span class="progress-pct-txt" id="s-rate">0%</span>
+          </div>
+          <div class="progress-track-bg">
+            <div class="progress-fill-bar" id="s-rate-bar" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="btn btn-pink-cta" onclick="switchTab('send')">&#9993; Enviar invitaciones</button>
+          <button class="btn btn-cyan-cta" onclick="switchTab('guests')">Ver lista completa</button>
+          <button class="btn btn-outline-cta" onclick="switchTab('add')">&#10133; Agregar invitado</button>
+          <button class="btn btn-outline-cta" onclick="switchTab('reminders')">&#9201; Enviar recordatorios</button>
+        </div>
+      </div>
+
+      <!-- ── GUESTS LIST ──────────────────────────────────────── -->
+      <div id="tab-guests" class="tab-pane-content" style="display:none;">
+        <div class="toolbar-row">
+          <div class="search-input-box">
+            <span class="search-ic-icon">&#9906;</span>
+            <input type="text" id="guest-search-field" placeholder="Buscar por nombre, email o c&oacute;digo&hellip;" oninput="filterGuestTable()">
+          </div>
+          <div class="filter-btn-group">
+            <button class="f-pill-btn active" onclick="setGuestFilter('all',this)">Todos</button>
+            <button class="f-pill-btn" onclick="setGuestFilter('Confirmado',this)">Confirmados</button>
+            <button class="f-pill-btn" onclick="setGuestFilter('No asiste',this)">No asisten</button>
+            <button class="f-pill-btn" onclick="setGuestFilter('Pendiente',this)">Pendientes</button>
+          </div>
+          <button class="btn btn-outline-cta btn-sm" onclick="exportGuestsCSV()">&#11015; CSV</button>
+        </div>
+
+        <div id="guest-table-wrapper" class="table-glass-card">
+          <div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando invitados&hellip;</p></div>
+        </div>
+        <div id="guest-total-label" style="font-size:12px; color:var(--text-sub); margin-top:10px;"></div>
+      </div>
+
+      <!-- ── ADD GUESTS ───────────────────────────────────────── -->
+      <div id="tab-add" class="tab-pane-content" style="display:none;">
+        <div class="content-card-box">
+          <div class="card-head-row">
+            <div class="card-head-icon" style="background:rgba(56,189,248,0.18); border:1px solid rgba(56,189,248,0.3); color:var(--cyan)">&#10133;</div>
+            <div>
+              <div class="card-head-title">Invitado individual</div>
+              <div class="card-head-sub">El c&oacute;digo UA-NNN y link personalizado se generan autom&aacute;ticamente.</div>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-field-group">
+              <label>Nombre completo *</label>
+              <input type="text" id="add-single-name" placeholder="Ej: Mar&iacute;a Gonz&aacute;lez">
+            </div>
+            <div class="form-field-group">
+              <label>Email</label>
+              <input type="email" id="add-single-email" placeholder="Ej: mgonzalez@empresa.com">
+            </div>
+          </div>
+          <button class="btn btn-cyan-cta" id="add-single-btn" onclick="submitSingleGuest()">&#10133; Agregar invitado</button>
+          <div id="add-single-result" style="margin-top:12px; font-size:13px;"></div>
+        </div>
+
+        <div class="content-card-box">
+          <div class="card-head-row">
+            <div class="card-head-icon" style="background:rgba(238,31,115,0.18); border:1px solid rgba(238,31,115,0.3); color:var(--pink)">&#128203;</div>
+            <div>
+              <div class="card-head-title">Importaci&oacute;n masiva</div>
+              <div class="card-head-sub">Peg&aacute; desde Excel o escrib&iacute; una l&iacute;nea por invitado. Formato: <code>Nombre, Email</code></div>
+            </div>
+          </div>
+          <div class="form-field-group" style="margin-bottom:14px;">
+            <label>Lista de invitados</label>
+            <textarea id="bulk-text-input" placeholder="Mar&#237;a Gonz&#225;lez, mgonzalez@empresa.com&#10;Carlos L&#243;pez, clopez@empresa.com&#10;Ana Mart&#237;nez, amartinez@empresa.com"></textarea>
+          </div>
+          <div id="bulk-preview-box" style="margin-bottom:14px; font-size:12px; color:var(--text-sub);"></div>
+          <div style="display:flex; gap:10px;">
+            <button class="btn btn-outline-cta" onclick="previewBulkImport()">&#128065; Previsualizar</button>
+            <button class="btn btn-pink-cta" id="bulk-import-btn" onclick="submitBulkImport()">&#11014; Importar lista</button>
+          </div>
+          <div id="bulk-import-result" style="margin-top:12px; font-size:13px;"></div>
+        </div>
+      </div>
+
+      <!-- ── SEND INVITATIONS ─────────────────────────────────── -->
+      <div id="tab-send" class="tab-pane-content" style="display:none;">
+        <div class="toolbar-row">
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; color:#fff; font-weight:600;">
+            <input type="checkbox" id="send-select-all" onchange="toggleSendAll(this.checked)" style="width:16px; height:16px; accent-color:var(--cyan);">
+            Seleccionar todos
+          </label>
+          <span style="font-size:13px; color:var(--text-sub)">Seleccionados: <strong id="send-selected-count" style="color:var(--cyan); font-size:15px;">0</strong></span>
+          <div style="margin-left:auto;">
+            <div class="filter-btn-group">
+              <button class="f-pill-btn active" data-sf="all" onclick="setSendFilter('all',this)">Todos</button>
+              <button class="f-pill-btn" data-sf="pending" onclick="setSendFilter('pending',this)">Sin enviar</button>
+              <button class="f-pill-btn" data-sf="sent" onclick="setSendFilter('sent',this)">Ya enviados</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; margin-bottom:16px;">
+          <button class="btn btn-outline-cta" id="send-demo-btn" onclick="triggerSendDemo()">&#129514; Enviar DEMO a seleccionados</button>
+          <button class="btn btn-pink-cta" id="send-prod-btn" onclick="triggerSendProd()">&#9993; Enviar invitaci&oacute;n REAL</button>
+        </div>
+
+        <div class="alert-banner alert-yellow">
+          <span>&#9888;</span>
+          <div><strong>Env&iacute;o REAL:</strong> envia el email definitivo al invitado. <strong>DEMO:</strong> incluye banner de prueba y no altera el estado final. L&iacute;mite Google Workspace: ~1.500 emails/d&iacute;a.</div>
+        </div>
+
+        <div id="send-guest-list" class="table-glass-card">
+          <div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando&hellip;</p></div>
+        </div>
+        <div id="send-result-box" style="margin-top:14px; font-size:13px;"></div>
+      </div>
+
+      <!-- ── REMINDERS ────────────────────────────────────────── -->
+      <div id="tab-reminders" class="tab-pane-content" style="display:none;">
+        <div class="content-card-box">
+          <div class="card-head-row">
+            <div class="card-head-icon" style="background:rgba(245,158,11,0.18); border:1px solid rgba(245,158,11,0.3); color:var(--yellow)">&#9201;</div>
+            <div>
+              <div class="card-head-title">Enviar recordatorios de asistencia</div>
+              <div class="card-head-sub">Envia el correo de recordatorio a los invitados confirmados seleccionados.</div>
+            </div>
+          </div>
+
+          <div class="toolbar-row" style="margin-bottom:12px;">
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; color:#fff; font-weight:600;">
+              <input type="checkbox" id="rem-select-all" onchange="toggleRemAll(this.checked)" style="width:16px; height:16px; accent-color:var(--cyan);">
+              Seleccionar todos los confirmados
+            </label>
+            <span style="font-size:13px; color:var(--text-sub)">Seleccionados: <strong id="rem-selected-count" style="color:var(--cyan); font-size:15px;">0</strong></span>
+          </div>
+
+          <div id="rem-guest-list" class="table-glass-card" style="max-height:360px; overflow-y:auto;">
+            <div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando&hellip;</p></div>
+          </div>
+
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-pink-cta" id="rem-send-btn" onclick="triggerSendReminders()">&#9201; Enviar recordatorios seleccionados</button>
+            <button class="btn btn-outline-cta" id="rem-auto-btn" onclick="toolScheduleAutoReminder()">&#9200; Programar env&iacute;o autom&aacute;tico (26/08 10:00 hs)</button>
+          </div>
+          <div id="rem-result-box" style="margin-top:12px; font-size:13px;"></div>
+        </div>
+      </div>
+
+      <!-- ── TOOLS ────────────────────────────────────────────── -->
+      <div id="tab-tools" class="tab-pane-content" style="display:none;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:16px;">
+
+          <!-- WhatsApp Link Formulas Tool -->
+          <div class="content-card-box">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(37,211,102,0.18); border:1px solid rgba(37,211,102,0.3); color:#25d366">&#128172;</div>
+              <div class="card-head-title">Botones de WhatsApp</div>
+            </div>
+            <div style="font-size:12px; color:var(--text-sub); margin-bottom:16px; line-height:1.5;">Genera la Columna K en Google Sheets con botones hiperv&iacute;nculo de WhatsApp (wa.me) para enviar invitaciones directamente.</div>
+            <button class="btn btn-green-cta btn-sm" id="tool-wa-btn" onclick="toolGenerateWhatsApp()">Ejecutar</button>
+            <div id="tool-wa-res" style="margin-top:10px; font-size:12px;"></div>
+          </div>
+
+          <!-- Auto Reminder Trigger Tool -->
+          <div class="content-card-box">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(245,158,11,0.18); border:1px solid rgba(245,158,11,0.3); color:var(--yellow)">&#9200;</div>
+              <div class="card-head-title">Recordatorio autom&aacute;tico</div>
+            </div>
+            <div style="font-size:12px; color:var(--text-sub); margin-bottom:16px; line-height:1.5;">Crea un activador programado en Google Apps Script para enviar recordatorios el 26/08/2026 a las 10:00 AM (24h antes del evento).</div>
+            <button class="btn btn-outline-cta btn-sm" id="tool-sched-btn" onclick="toolScheduleAutoReminder()">Programar</button>
+            <div id="tool-sched-res" style="margin-top:10px; font-size:12px;"></div>
+          </div>
+
+          <!-- Generar links -->
+          <div class="content-card-box">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(56,189,248,0.18); border:1px solid rgba(56,189,248,0.3); color:var(--cyan)">&#128279;</div>
+              <div class="card-head-title">Generar links Columna J</div>
+            </div>
+            <div style="font-size:12px; color:var(--text-sub); margin-bottom:16px; line-height:1.5;">Actualiza la Columna J del sheet con el enlace de cada invitado.</div>
+            <button class="btn btn-cyan-cta btn-sm" id="tool-links-btn" onclick="toolGenerateLinks()">Ejecutar</button>
+            <div id="tool-links-res" style="margin-top:10px; font-size:12px;"></div>
+          </div>
+
+          <!-- Códigos faltantes -->
+          <div class="content-card-box">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(238,31,115,0.18); border:1px solid rgba(238,31,115,0.3); color:var(--pink)">&#128273;</div>
+              <div class="card-head-title">C&oacute;digos faltantes</div>
+            </div>
+            <div style="font-size:12px; color:var(--text-sub); margin-bottom:16px; line-height:1.5;">Genera c&oacute;digos UA-NNN para invitados sin c&oacute;digo asignado.</div>
+            <button class="btn btn-cyan-cta btn-sm" id="tool-codes-btn" onclick="toolGenerateCodes()">Ejecutar</button>
+            <div id="tool-codes-res" style="margin-top:10px; font-size:12px;"></div>
+          </div>
+
+          <!-- Regenerar reporte -->
+          <div class="content-card-box">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(34,197,94,0.18); border:1px solid rgba(34,197,94,0.3); color:var(--green)">&#128202;</div>
+              <div class="card-head-title">Regenerar reporte</div>
+            </div>
+            <div style="font-size:12px; color:var(--text-sub); margin-bottom:16px; line-height:1.5;">Regenera la pesta&ntilde;a Reporte_Cine_Movie en Google Sheets.</div>
+            <button class="btn btn-cyan-cta btn-sm" id="tool-report-btn" onclick="toolRegenReport()">Ejecutar</button>
+            <div id="tool-report-res" style="margin-top:10px; font-size:12px;"></div>
+          </div>
+
+          <!-- Verificar remitente -->
+          <div class="content-card-box">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(245,158,11,0.18); border:1px solid rgba(245,158,11,0.3); color:var(--yellow)">&#128269;</div>
+              <div class="card-head-title">Verificar remitente</div>
+            </div>
+            <div style="font-size:12px; color:var(--text-sub); margin-bottom:16px; line-height:1.5;">Comprueba permisos de envio desde la cuenta ejecutora.</div>
+            <button class="btn btn-outline-cta btn-sm" id="tool-verify-btn" onclick="toolVerifySender()">Verificar</button>
+            <div id="tool-verify-res" style="margin-top:10px; font-size:12px;"></div>
+          </div>
+
+          <!-- Vaciar lista completa -->
+          <div class="content-card-box" style="border-color:rgba(239,68,68,0.3);">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(239,68,68,0.18); border:1px solid rgba(239,68,68,0.3); color:var(--red)">&#128465;</div>
+              <div class="card-head-title" style="color:var(--red);">Vaciar lista de invitados</div>
+            </div>
+            <div style="font-size:12px; color:var(--text-sub); margin-bottom:16px; line-height:1.5;">Elimina todos los datos de la pesta&ntilde;a Invitados conservando los encabezados. Requiere doble confirmaci&oacute;n.</div>
+            <button class="btn btn-danger-ghost btn-sm" id="tool-clear-btn" onclick="toolClearAllGuests()">Vaciar lista</button>
+            <div id="tool-clear-res" style="margin-top:10px; font-size:12px;"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── CONFIG ───────────────────────────────────────────── -->
+      <div id="tab-config" class="tab-pane-content" style="display:none;">
+        <div class="content-card-box">
+          <div class="card-head-row">
+            <div class="card-head-icon" style="background:rgba(34,197,94,0.18); border:1px solid rgba(34,197,94,0.3); color:var(--green)">&#9967;</div>
+            <div>
+              <div class="card-head-title">Detalles del evento</div>
+              <div class="card-head-sub">Los cambios se guardan directamente en la pesta&ntilde;a Configuracion de Google Sheets.</div>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field-group"><label>Nombre del evento</label><input type="text" id="cfg-name" placeholder="Coyote vs. Acme"></div>
+            <div class="form-field-group"><label>Marca</label><input type="text" id="cfg-brand" placeholder="Universal Assistance"></div>
+            <div class="form-field-group"><label>Fecha</label><input type="text" id="cfg-date" placeholder="27/08/2026"></div>
+            <div class="form-field-group"><label>Hora del evento</label><input type="text" id="cfg-time" placeholder="20:00"></div>
+            <div class="form-field-group"><label>Hora sugerida de llegada</label><input type="text" id="cfg-arrival" placeholder="19:30"></div>
+            <div class="form-field-group"><label>Lugar</label><input type="text" id="cfg-venue" placeholder="Movie Montevideo Shopping"></div>
+            <div class="form-field-group" style="grid-column: 1 / -1;"><label>URL Google Maps</label><input type="text" id="cfg-maps" placeholder="https://maps.google.com/..."></div>
+            <div class="form-field-group"><label>Email de contacto</label><input type="email" id="cfg-email" placeholder="eventos@ua.com.uy"></div>
+            <div class="form-field-group"><label>Tel&eacute;fono de contacto</label><input type="text" id="cfg-phone" placeholder="2901 7378"></div>
+            <div class="form-field-group">
+              <label>Estado del evento</label>
+              <select id="cfg-status" onchange="updateEventStatusBadge(this.value)" style="width:100%; padding:11px 14px; background:rgba(255,255,255,0.06); border:1px solid var(--border); border-radius:10px; color:#fff; font-size:13px; font-weight:700;">
+                <option value="active">🟢 EVENTO ACTIVO (Boletería Abierta)</option>
+                <option value="prep">🟡 EN PREPARACIÓN (Fase de pruebas)</option>
+                <option value="ended">🔴 FINALIZADO (Cierre de sala)</option>
+              </select>
+            </div>
+            <div class="form-field-group">
+              <label>Tema de Colores del Evento</label>
+              <select id="cfg-theme" onchange="applyThemePreset(this.value)" style="width:100%; padding:11px 14px; background:rgba(255,255,255,0.06); border:1px solid var(--border); border-radius:10px; color:#fff; font-size:13px; font-weight:700;">
+                <option value="coyote">🎬 Coyote vs. Acme (Cyan & Magenta)</option>
+                <option value="gold">🏆 Universal Premium (Dorado & Azul Noche)</option>
+                <option value="emerald">🌿 Zurich Esmeralda (Esmeralda & Cyan)</option>
+                <option value="neon">🌌 Neón Cyber (Violeta & Neón Pink)</option>
+              </select>
+            </div>
+            <div class="form-field-group" style="grid-column: 1 / -1;"><label>Texto principal del email</label><input type="text" id="cfg-intro"></div>
+            <div class="form-field-group" style="grid-column: 1 / -1;"><label>Mensaje de confirmaci&oacute;n</label><input type="text" id="cfg-confirm"></div>
+          </div>
+
+          <div style="display:flex; gap:10px; margin-top:16px;">
+            <button class="btn btn-pink-cta" id="cfg-save-btn" onclick="saveEventConfig()">&#128190; Guardar configuraci&oacute;n</button>
+            <button class="btn btn-outline-cta" onclick="loadEventConfig()">&#8635; Recargar</button>
+          </div>
+          <div id="cfg-result-box" style="margin-top:12px; font-size:13px;"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<div id="toast"></div>
+
+<!-- ════════════════════ JAVASCRIPT LOGIC ════════════════════ -->
+<script>
+var allGuestsData = [];
+var activeGuestFilter = 'all';
+var activeSendFilter = 'all';
+var LANDING_URL = 'https://ua-eventos-uy.web.app/coyote-vs-acme';
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadAllData();
+});
+
+function loadAllData() {
+  loadDashboardStats();
+  loadGuestsList();
+  loadEventConfig();
+}
+
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-pane-content').forEach(function(pane) { pane.style.display = 'none'; });
+  document.querySelectorAll('.nav-item').forEach(function(item) { item.classList.remove('active'); });
+
+  var targetPane = document.getElementById('tab-' + tabId);
+  if (targetPane) targetPane.style.display = 'block';
+
+  var map = { dashboard: 0, guests: 1, add: 2, send: 3, reminders: 4, tools: 5, config: 6 };
+  var navItems = document.querySelectorAll('.nav-item');
+  if (navItems[map[tabId]]) navItems[map[tabId]].classList.add('active');
+
+  if (tabId === 'send') renderSendList();
+  if (tabId === 'reminders') renderRemindersList();
+}
+
+/* DASHBOARD */
+function loadDashboardStats() {
+  google.script.run
+    .withSuccessHandler(function(s) {
+      setElText('s-total', s.total);
+      setElText('s-confirmed', s.confirmed);
+      setElText('s-notAttending', s.notAttending);
+      setElText('s-pending', s.pending);
+      setElText('s-seats', s.totalSeats);
+      setElText('s-withEmail', s.withEmail);
+      setElText('s-noEmail-desc', s.noEmail + ' sin enviar');
+      setElText('s-rate', s.responseRate + '%');
+      document.getElementById('s-rate-bar').style.width = s.responseRate + '%';
+    })
+    .withFailureHandler(function(e) { showToast('Error al cargar stats: ' + e.message, 'error'); })
+    .adminGetStats();
+}
+
+/* GUESTS TABLE */
+function loadGuestsList() {
+  setElHtml('guest-table-wrapper', '<div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando invitados&hellip;</p></div>');
+  google.script.run
+    .withSuccessHandler(function(guests) {
+      allGuestsData = guests;
+      setElText('badge-total-count', guests.length);
+      renderGuestTable();
+    })
+    .withFailureHandler(function(e) {
+      setElHtml('guest-table-wrapper', '<div class="empty-state-box"><p>Error: ' + escapeHtml(e.message) + '</p></div>');
+    })
+    .adminGetGuestList();
+}
+
+function setGuestFilter(filterKey, btnEl) {
+  activeGuestFilter = filterKey;
+  document.querySelectorAll('.f-pill-btn').forEach(function(b) { b.classList.remove('active'); });
+  btnEl.classList.add('active');
+  renderGuestTable();
+}
+
+function filterGuestTable() { renderGuestTable(); }
+
+function renderGuestTable() {
+  var query = (document.getElementById('guest-search-field').value || '').toLowerCase();
+  var filtered = allGuestsData.filter(function(g) {
+    var matchFilter = activeGuestFilter === 'all' || g.status === activeGuestFilter;
+    var matchSearch = !query || (g.name || '').toLowerCase().indexOf(query) >= 0 || (g.email || '').toLowerCase().indexOf(query) >= 0 || (g.code || '').toLowerCase().indexOf(query) >= 0;
+    return matchFilter && matchSearch;
+  });
+
+  setElText('guest-total-label', 'Mostrando ' + filtered.length + ' de ' + allGuestsData.length + ' invitados');
+
+  if (!filtered.length) {
+    setElHtml('guest-table-wrapper', '<div class="empty-state-box"><div class="icon">&#128269;</div><p>No se encontraron invitados</p></div>');
+    return;
+  }
+
+  var rowsHtml = filtered.map(function(g) {
+    var safeCode = g.code.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    var safeName = escapeHtml(g.name).replace(/'/g, "\\'");
+    var safeLink = (g.link || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    var waUrl = getWhatsAppUrlForGuest(g);
+
+    return '<tr>'
+      + '<td class="td-code-txt">' + escapeHtml(g.code) + '</td>'
+      + '<td class="td-name-txt">' + escapeHtml(g.name) + '</td>'
+      + '<td class="td-email-txt">' + escapeHtml(g.email || '') + '</td>'
+      + '<td>' + renderStatusBadge(g.status) + '</td>'
+      + '<td style="text-align:center; color:#fff;">' + (g.totalSeats || '—') + '</td>'
+      + '<td>' + renderMailBadge(g.mailStatus) + '</td>'
+      + '<td><div style="display:flex; gap:6px;">'
+        + '<button class="btn btn-outline-cta btn-sm" title="Copiar link de invitación" onclick="copyGuestLink(\'' + safeLink + '\', this)">&#128279;</button>'
+        + '<a href="' + waUrl + '" target="_blank" class="btn btn-green-cta btn-sm" title="Enviar por WhatsApp" style="text-decoration:none;">&#128172;</a>'
+        + '<button class="btn btn-danger-ghost btn-sm" title="Eliminar invitado" onclick="deleteGuestEntry(\'' + safeCode + '\', \'' + safeName + '\')">&#128465;</button>'
+      + '</div></td>'
+    + '</tr>';
+  }).join('');
+
+  setElHtml('guest-table-wrapper', '<table><thead><tr><th>C&oacute;digo</th><th>Nombre</th><th>Email</th><th>Estado</th><th>Asientos</th><th>Email enviado</th><th>Acciones</th></tr></thead><tbody>' + rowsHtml + '</tbody></table>');
+}
+
+function getWhatsAppUrlForGuest(g) {
+  var phone = (g.phone || '').replace(/\D/g, '');
+  var firstName = (g.name || 'Invitado').split(' ')[0];
+  var inviteUrl = g.link || (LANDING_URL + '?i=' + encodeURIComponent(g.code));
+  var textMsg = '¡Hola ' + firstName + '! Universal Assistance Uruguay te invita a la función especial de Coyote vs. Acme en Movie Montevideo Shopping. Confirmá tu lugar aquí: ' + inviteUrl;
+  var encodedMsg = encodeURIComponent(textMsg);
+  if (phone) {
+    return 'https://wa.me/' + phone + '?text=' + encodedMsg;
+  } else {
+    return 'https://wa.me/?text=' + encodedMsg;
+  }
+}
+
+function copyGuestLink(linkUrl, btnEl) {
+  if (!linkUrl) { showToast('Sin link generado', 'error'); return; }
+  navigator.clipboard.writeText(linkUrl).then(function() {
+    var orig = btnEl.innerHTML; btnEl.innerHTML = '&#9989;'; btnEl.disabled = true;
+    setTimeout(function() { btnEl.innerHTML = orig; btnEl.disabled = false; }, 1800);
+    showToast('Link copiado al portapapeles', 'success');
+  });
+}
+
+function deleteGuestEntry(code, name) {
+  if (!confirm('Eliminar a ' + name + ' (' + code + ')?\n\nEsta acción no se puede deshacer.')) return;
+  google.script.run
+    .withSuccessHandler(function() { showToast(name + ' eliminado', 'success'); loadGuestsList(); loadDashboardStats(); })
+    .withFailureHandler(function(e) { showToast('Error: ' + e.message, 'error'); })
+    .adminDeleteGuest(code);
+}
+
+function exportGuestsCSV() {
+  var headers = ['Codigo', 'Nombre', 'Email', 'Estado', 'Asientos', 'Link', 'MailStatus'];
+  var rows = allGuestsData.map(function(g) {
+    return [g.code, g.name, g.email, g.status, g.totalSeats, g.link, g.mailStatus].map(function(v) { return '"' + String(v || '').replace(/"/g, '""') + '"'; });
+  });
+  var blob = new Blob(['\uFEFF' + [headers].concat(rows).map(function(r) { return r.join(','); }).join('\n')], { type: 'text/csv;charset=utf-8' });
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'invitados_ua.csv'; a.click();
+}
+
+/* ADD GUESTS */
+function submitSingleGuest() {
+  var name = (document.getElementById('add-single-name').value || '').trim();
+  var email = (document.getElementById('add-single-email').value || '').trim();
+  if (!name) { showToast('El nombre es obligatorio', 'error'); return; }
+  setBtnLoading('add-single-btn', 'Agregando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('add-single-btn', '&#10133; Agregar invitado');
+      document.getElementById('add-single-name').value = ''; document.getElementById('add-single-email').value = '';
+      setElHtml('add-single-result', '<span style="color:var(--green)">&#9989; ' + escapeHtml(name) + ' agregado como <strong>' + res.code + '</strong></span>');
+      showToast(name + ' agregado como ' + res.code, 'success');
+      loadGuestsList(); loadDashboardStats();
+    })
+    .withFailureHandler(function(e) {
+      resetBtnState('add-single-btn', '&#10133; Agregar invitado');
+      setElHtml('add-single-result', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>');
+    })
+    .adminAddGuest(name, email);
+}
+
+function parseBulkText() {
+  return document.getElementById('bulk-text-input').value.split('\n').map(function(line) {
+    var parts = line.split(/[,\t]/).map(function(p) { return p.trim(); }).filter(Boolean);
+    return parts.length ? { name: parts[0], email: parts[1] || '' } : null;
+  }).filter(Boolean);
+}
+
+function previewBulkImport() {
+  var lines = parseBulkText();
+  if (!lines.length) { setElText('bulk-preview-box', 'Sin datos.'); return; }
+  setElHtml('bulk-preview-box', '<strong style="color:var(--cyan)">' + lines.length + ' invitado(s) detectados:</strong><br>' + lines.slice(0, 5).map(function(l) { return '• ' + escapeHtml(l.name) + ' — ' + (l.email || 'sin email'); }).join('<br>') + (lines.length > 5 ? '<br>… y ' + (lines.length - 5) + ' más.' : ''));
+}
+
+function submitBulkImport() {
+  var guests = parseBulkText();
+  if (!guests.length) { showToast('La lista está vacía', 'error'); return; }
+  setBtnLoading('bulk-import-btn', 'Importando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('bulk-import-btn', '&#11014; Importar lista');
+      document.getElementById('bulk-text-input').value = ''; setElText('bulk-preview-box', '');
+      setElHtml('bulk-import-result', '<span style="color:var(--green)">&#9989; ' + res.added + ' invitados importados correctamente.</span>');
+      showToast(res.added + ' invitados importados', 'success');
+      loadGuestsList(); loadDashboardStats();
+    })
+    .withFailureHandler(function(e) {
+      resetBtnState('bulk-import-btn', '&#11014; Importar lista');
+      setElHtml('bulk-import-result', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>');
+    })
+    .adminImportGuests(guests);
+}
+
+/* SEND INVITATIONS */
+function setSendFilter(filterKey, btnEl) {
+  activeSendFilter = filterKey;
+  document.querySelectorAll('[data-sf]').forEach(function(b) { b.classList.remove('active'); });
+  btnEl.classList.add('active'); renderSendList();
+}
+
+function renderSendList() {
+  var list = allGuestsData.filter(function(g) {
+    if (activeSendFilter === 'pending') return !g.mailStatus || g.mailStatus === '' || g.mailStatus === 'Pendiente';
+    if (activeSendFilter === 'sent')    return g.mailStatus && g.mailStatus !== '' && g.mailStatus !== 'Pendiente';
+    return true;
+  });
+  if (!list.length) {
+    setElHtml('send-guest-list', '<div class="empty-state-box"><div class="icon">&#128140;</div><p>No hay invitados en esta categoría</p></div>');
+    updateSendCount(); return;
+  }
+  setElHtml('send-guest-list', list.map(function(g) {
+    return '<div style="display:flex; align-items:center; gap:14px; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.06);">'
+      + '<input type="checkbox" class="send-chk" data-code="' + escapeHtml(g.code) + '" onchange="updateSendCount()" style="width:16px; height:16px; accent-color:var(--cyan);">'
+      + '<div style="font-weight:700; color:#fff; flex:1; overflow:hidden; text-overflow:ellipsis;">' + escapeHtml(g.name) + '</div>'
+      + '<div style="color:var(--text-sub); font-size:12px; flex:1; overflow:hidden; text-overflow:ellipsis;">' + escapeHtml(g.email || '—') + '</div>'
+      + '<div>' + renderStatusBadge(g.status) + '</div>'
+      + '<div>' + renderMailBadge(g.mailStatus) + '</div>'
+    + '</div>';
+  }).join(''));
+  updateSendCount();
+}
+
+function toggleSendAll(checked) { document.querySelectorAll('.send-chk').forEach(function(x) { x.checked = checked; }); updateSendCount(); }
+function updateSendCount() { setElText('send-selected-count', document.querySelectorAll('.send-chk:checked').length); }
+function getSelectedSendCodes() { return Array.from(document.querySelectorAll('.send-chk:checked')).map(function(c) { return c.dataset.code; }); }
+
+function triggerSendDemo() {
+  var codes = getSelectedSendCodes();
+  if (!codes.length) { showToast('Seleccioná al menos un invitado', 'error'); return; }
+  if (!confirm('Enviar DEMO a ' + codes.length + ' persona(s)?')) return;
+  setBtnLoading('send-demo-btn', 'Enviando DEMO…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('send-demo-btn', '&#129514; Enviar DEMO a seleccionados');
+      setElHtml('send-result-box', '<span style="color:var(--green)">&#9989; ' + res.sent + ' DEMO enviados.</span>');
+      showToast(res.sent + ' DEMO enviados', 'success');
+      loadGuestsList(); loadDashboardStats();
+    })
+    .withFailureHandler(function(e) { resetBtnState('send-demo-btn', '&#129514; Enviar DEMO a seleccionados'); showToast('Error: ' + e.message, 'error'); })
+    .adminSendDemoEmails(codes);
+}
+
+function triggerSendProd() {
+  var codes = getSelectedSendCodes();
+  if (!codes.length) { showToast('Seleccioná al menos un invitado', 'error'); return; }
+  if (!confirm('⚠️ ENVIAR REAL a ' + codes.length + ' persona(s)?')) return;
+  setBtnLoading('send-prod-btn', 'Enviando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('send-prod-btn', '&#9993; Enviar invitación REAL');
+      setElHtml('send-result-box', '<span style="color:var(--green)">&#9989; ' + res.sent + ' invitaciones enviadas.</span>');
+      showToast(res.sent + ' invitaciones enviadas', 'success');
+      loadGuestsList(); loadDashboardStats();
+    })
+    .withFailureHandler(function(e) { resetBtnState('send-prod-btn', '&#9993; Enviar invitación REAL'); showToast('Error: ' + e.message, 'error'); })
+    .adminSendProductionEmails(codes);
+}
+
+/* REMINDERS */
+function renderRemindersList() {
+  var confirmed = allGuestsData.filter(function(g) { return g.status === 'Confirmado' && g.email; });
+  if (!confirmed.length) {
+    setElHtml('rem-guest-list', '<div class="empty-state-box"><div class="icon">&#10004;</div><p>No hay confirmados con email registrado</p></div>');
+    updateRemCount(); return;
+  }
+  setElHtml('rem-guest-list', confirmed.map(function(g) {
+    return '<div style="display:flex; align-items:center; gap:14px; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.06);">'
+      + '<input type="checkbox" class="rem-chk" data-code="' + escapeHtml(g.code) + '" onchange="updateRemCount()" style="width:16px; height:16px; accent-color:var(--cyan);">'
+      + '<div style="font-weight:700; color:#fff; flex:1;">' + escapeHtml(g.name) + '</div>'
+      + '<div style="color:var(--text-sub); font-size:12px; flex:1;">' + escapeHtml(g.email) + '</div>'
+      + '<div>' + renderStatusBadge(g.status) + '</div>'
+      + '<div style="font-size:11px; color:var(--text-sub);">' + (g.totalSeats ? g.totalSeats + ' asiento(s)' : '') + '</div>'
+    + '</div>';
+  }).join(''));
+  updateRemCount();
+}
+
+function toggleRemAll(checked) { document.querySelectorAll('.rem-chk').forEach(function(x) { x.checked = checked; }); updateRemCount(); }
+function updateRemCount() { setElText('rem-selected-count', document.querySelectorAll('.rem-chk:checked').length); }
+function getSelectedRemCodes() { return Array.from(document.querySelectorAll('.rem-chk:checked')).map(function(c) { return c.dataset.code; }); }
+
+function triggerSendReminders() {
+  var codes = getSelectedRemCodes();
+  if (!codes.length) { showToast('Seleccioná al menos un invitado', 'error'); return; }
+  if (!confirm('Enviar recordatorio a ' + codes.length + ' invitado(s) confirmado(s)?')) return;
+  setBtnLoading('rem-send-btn', 'Enviando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('rem-send-btn', '&#9201; Enviar recordatorios seleccionados');
+      setElHtml('rem-result-box', '<span style="color:var(--green)">&#9989; ' + res.sent + ' recordatorio(s) enviados.</span>');
+      showToast(res.sent + ' recordatorios enviados', 'success');
+      loadGuestsList();
+    })
+    .withFailureHandler(function(e) { resetBtnState('rem-send-btn', '&#9201; Enviar recordatorios seleccionados'); showToast('Error: ' + e.message, 'error'); })
+    .adminSendReminders(codes);
+}
+
+/* TOOLS */
+function toolGenerateWhatsApp() {
+  setBtnLoading('tool-wa-btn', 'Generando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-wa-btn', 'Ejecutar');
+      setElHtml('tool-wa-res', '<span style="color:var(--green)">&#9989; Enlaces de WhatsApp generados en la Columna K.</span>');
+      showToast('Formulas WhatsApp generadas en Sheet', 'success');
+      loadGuestsList();
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-wa-btn', 'Ejecutar'); setElHtml('tool-wa-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminGenerateWhatsAppLinks();
+}
+
+function toolScheduleAutoReminder() {
+  setBtnLoading('tool-sched-btn', 'Programando…');
+  if (document.getElementById('rem-auto-btn')) setBtnLoading('rem-auto-btn', 'Programando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-sched-btn', 'Programar');
+      if (document.getElementById('rem-auto-btn')) resetBtnState('rem-auto-btn', '&#9200; Programar envío automático (26/08 10:00 hs)');
+      setElHtml('tool-sched-res', '<span style="color:var(--green)">&#9989; Activador programado para el ' + escapeHtml(res.scheduledDate) + '</span>');
+      showToast('Recordatorio automático programado para ' + res.scheduledDate, 'success');
+    })
+    .withFailureHandler(function(e) {
+      resetBtnState('tool-sched-btn', 'Programar');
+      if (document.getElementById('rem-auto-btn')) resetBtnState('rem-auto-btn', '&#9200; Programar envío automático (26/08 10:00 hs)');
+      setElHtml('tool-sched-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>');
+    })
+    .adminScheduleAutoReminder();
+}
+
+function toolGenerateLinks() {
+  setBtnLoading('tool-links-btn', 'Generando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-links-btn', 'Ejecutar');
+      setElHtml('tool-links-res', '<span style="color:var(--green)">&#9989; ' + res.generated + ' links generados.</span>');
+      showToast(res.generated + ' links generados', 'success');
+      loadGuestsList();
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-links-btn', 'Ejecutar'); setElHtml('tool-links-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminGenerateLinks();
+}
+
+function toolGenerateCodes() {
+  setBtnLoading('tool-codes-btn', 'Generando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-codes-btn', 'Ejecutar');
+      setElHtml('tool-codes-res', '<span style="color:var(--green)">&#9989; ' + res.generated + ' códigos generados.</span>');
+      showToast(res.generated + ' códigos generados', 'success');
+      loadGuestsList();
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-codes-btn', 'Ejecutar'); setElHtml('tool-codes-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminGenerateMissingCodes();
+}
+
+function toolRegenReport() {
+  setBtnLoading('tool-report-btn', 'Generando…');
+  google.script.run
+    .withSuccessHandler(function() {
+      resetBtnState('tool-report-btn', 'Ejecutar');
+      setElHtml('tool-report-res', '<span style="color:var(--green)">&#9989; Reporte regenerado.</span>');
+      showToast('Reporte actualizado', 'success');
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-report-btn', 'Ejecutar'); setElHtml('tool-report-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminRegenerateReport();
+}
+
+function toolVerifySender() {
+  setBtnLoading('tool-verify-btn', 'Verificando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-verify-btn', 'Verificar');
+      setElHtml('tool-verify-res', res.valid ? '<span style="color:var(--green)">&#9989; Remitente autorizado (' + escapeHtml(res.activeAccount) + ')</span>' : '<span style="color:var(--red)">&#10060; No coincide con ' + escapeHtml(res.senderRequired) + '</span>');
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-verify-btn', 'Verificar'); setElHtml('tool-verify-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminVerifySender();
+}
+
+function toolClearAllGuests() {
+  if (!confirm('🚨 ATENCIÓN: ¿Estás seguro de que querés VACIAR TODA LA LISTA de invitados?\n\nSe eliminarán todas las filas de datos.')) return;
+  if (!confirm('⚠️ CONFIRMACIÓN FINAL: Esta acción no se puede deshacer. ¿Proceder?')) return;
+
+  setBtnLoading('tool-clear-btn', 'Eliminando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-clear-btn', 'Vaciar lista');
+      setElHtml('tool-clear-res', '<span style="color:var(--green)">&#9989; Se eliminaron ' + res.deleted + ' invitados.</span>');
+      showToast('Lista vaciada correctamente', 'success');
+      loadGuestsList(); loadDashboardStats();
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-clear-btn', 'Vaciar lista'); setElHtml('tool-clear-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminClearAllGuests();
+}
+
+/* CONFIG & THEMES */
+function applyThemePreset(preset) {
+  var root = document.documentElement;
+  if (preset === 'gold') {
+    root.style.setProperty('--pink', '#d97706');
+    root.style.setProperty('--pink-glow', '#f59e0b');
+    root.style.setProperty('--cyan', '#fbbf24');
+    root.style.setProperty('--cyan-light', '#fef08a');
+  } else if (preset === 'emerald') {
+    root.style.setProperty('--pink', '#059669');
+    root.style.setProperty('--pink-glow', '#10b981');
+    root.style.setProperty('--cyan', '#34d399');
+    root.style.setProperty('--cyan-light', '#a7f3d0');
+  } else if (preset === 'neon') {
+    root.style.setProperty('--pink', '#f43f5e');
+    root.style.setProperty('--pink-glow', '#fb7185');
+    root.style.setProperty('--cyan', '#a855f7');
+    root.style.setProperty('--cyan-light', '#e9d5ff');
+  } else {
+    root.style.setProperty('--pink', '#ee1f73');
+    root.style.setProperty('--pink-glow', '#ff2e83');
+    root.style.setProperty('--cyan', '#38bdf8');
+    root.style.setProperty('--cyan-light', '#7dd3fc');
+  }
+}
+
+function updateEventStatusBadge(status) {
+  var badgeText = document.getElementById('sidebar-status-text');
+  var badgeDot = document.getElementById('sidebar-status-dot');
+  if (!badgeText) return;
+  if (status === 'prep') {
+    badgeText.textContent = 'EN PREPARACIÓN';
+    badgeText.style.color = '#f59e0b';
+    if (badgeDot) badgeDot.style.background = '#f59e0b';
+  } else if (status === 'ended') {
+    badgeText.textContent = 'EVENTO FINALIZADO';
+    badgeText.style.color = '#ef4444';
+    if (badgeDot) badgeDot.style.background = '#ef4444';
+  } else {
+    badgeText.textContent = 'EVENTO ACTIVO';
+    badgeText.style.color = 'var(--cyan)';
+    if (badgeDot) badgeDot.style.background = 'var(--cyan)';
+  }
+}
+
+function loadEventConfig() {
+  google.script.run
+    .withSuccessHandler(function(cfg) {
+      var map = {
+        'cfg-name': 'Nombre del evento', 'cfg-brand': 'Marca', 'cfg-date': 'Fecha', 'cfg-time': 'Hora',
+        'cfg-arrival': 'Hora sugerida de llegada', 'cfg-venue': 'Lugar', 'cfg-maps': 'Dirección / Maps',
+        'cfg-email': 'Correo de contacto', 'cfg-phone': 'Teléfono de contacto',
+        'cfg-intro': 'Texto principal', 'cfg-confirm': 'Mensaje de confirmación',
+        'cfg-status': 'Estado del evento', 'cfg-theme': 'Tema de colores'
+      };
+      Object.keys(map).forEach(function(id) {
+        var input = document.getElementById(id);
+        if (input && cfg[map[id]] !== undefined) input.value = cfg[map[id]];
+      });
+      if (cfg['Tema de colores']) applyThemePreset(cfg['Tema de colores']);
+      if (cfg['Estado del evento']) updateEventStatusBadge(cfg['Estado del evento']);
+    })
+    .withFailureHandler(function(e) { showToast('Error al cargar config: ' + e.message, 'error'); })
+    .adminGetConfig();
+}
+
+function saveEventConfig() {
+  var data = {
+    'Nombre del evento': getVal('cfg-name'), 'Marca': getVal('cfg-brand'), 'Fecha': getVal('cfg-date'),
+    'Hora': getVal('cfg-time'), 'Hora sugerida de llegada': getVal('cfg-arrival'), 'Lugar': getVal('cfg-venue'),
+    'Dirección / Maps': getVal('cfg-maps'), 'Correo de contacto': getVal('cfg-email'),
+    'Teléfono de contacto': getVal('cfg-phone'), 'Texto principal': getVal('cfg-intro'),
+    'Mensaje de confirmación': getVal('cfg-confirm'),
+    'Estado del evento': getVal('cfg-status'), 'Tema de colores': getVal('cfg-theme')
+  };
+  setBtnLoading('cfg-save-btn', 'Guardando…');
+  google.script.run
+    .withSuccessHandler(function() {
+      resetBtnState('cfg-save-btn', '&#128190; Guardar configuración');
+      setElHtml('cfg-result-box', '<span style="color:var(--green)">&#9989; Configuración guardada correctamente.</span>');
+      showToast('Configuración guardada', 'success');
+      applyThemePreset(data['Tema de colores']);
+      updateEventStatusBadge(data['Estado del evento']);
+    })
+    .withFailureHandler(function(e) {
+      resetBtnState('cfg-save-btn', '&#128190; Guardar configuración');
+      setElHtml('cfg-result-box', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>');
+    })
+    .adminSaveConfig(data);
+}
+
+/* UTILS */
+function escapeHtml(str) { return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function setElText(id, txt) { var el = document.getElementById(id); if (el) el.textContent = txt; }
+function setElHtml(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
+function getVal(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+
+function renderStatusBadge(status) {
+  var map = { Confirmado: 'sp-green', 'No asiste': 'sp-red', Pendiente: 'sp-yellow' };
+  return '<span class="status-pill-badge ' + (map[status] || 'sp-muted') + '">' + (status || 'Pendiente') + '</span>';
+}
+
+function renderMailBadge(mailStatus) {
+  if (!mailStatus || mailStatus === '' || mailStatus === 'Pendiente') return '<span class="status-pill-badge sp-muted">Sin enviar</span>';
+  if (mailStatus.indexOf('DEMO') >= 0) return '<span class="status-pill-badge sp-cyan">DEMO</span>';
+  if (mailStatus.indexOf('Recordatorio') >= 0) return '<span class="status-pill-badge sp-pink">Recordatorio</span>';
+  if (mailStatus.indexOf('Enviado') >= 0 || mailStatus.indexOf('Correo') >= 0) return '<span class="status-pill-badge sp-green">Enviado</span>';
+  return '<span class="status-pill-badge sp-muted">' + escapeHtml(mailStatus.substring(0, 18)) + '</span>';
+}
+
+function setBtnLoading(id, text) {
+  var btn = document.getElementById(id); if (!btn) return;
+  btn.disabled = true; btn.innerHTML = '<div class="loading-spinner"></div> ' + text;
+}
+
+function resetBtnState(id, text) {
+  var btn = document.getElementById(id); if (!btn) return;
+  btn.disabled = false; btn.innerHTML = text;
+}
+
+function showToast(msg, type) {
+  var container = document.getElementById('toast');
+  var item = document.createElement('div');
+  item.className = 'toast-msg-item ' + (type || '');
+  item.textContent = msg;
+  container.appendChild(item);
+  setTimeout(function() { item.remove(); }, 3500);
+}
+</script>
+
+</body>
+</html>

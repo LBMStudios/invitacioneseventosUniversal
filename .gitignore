@@ -1,0 +1,17 @@
+# Firebase
+.firebase/
+firebase-debug.log
+ui-debug.log
+
+# Logs & temp
+*.log
+*.tmp
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Clasp auth
+.clasprc.json
