@@ -1,4 +1,4 @@
-const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbzkavCHwzdPhqSIKBpkN3oC2QD7EIAcvZVbwX9MwaP7jiM8QhjVJrMGHpbKflu2XQZW3w/exec';
+const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec';
 
 const state = {
   guest: null,
@@ -23,9 +23,15 @@ function init() {
   initCloudMouseParallax();
 
   const params = new URLSearchParams(location.search);
-  if (params.get('demo') === '1') {
+
+  // Si no viene código en la URL, asignar por defecto UA-DEMO-001 para que la invitación siempre cargue
+  if (!state.code) {
+    state.code = 'UA-DEMO-001';
+  }
+
+  if (params.get('demo') === '1' || state.code === 'UA-DEMO-001') {
     state.guest = {
-      code: 'UA-DEMO-001',
+      code: state.code || 'UA-DEMO-001',
       name: 'Lucas Beathayte',
       email: '',
       phone: '',
@@ -47,11 +53,6 @@ function init() {
       confirmationMessage: 'Tu asistencia quedó registrada.'
     };
     renderInvitation();
-    return;
-  }
-
-  if (!state.code) {
-    showError('El enlace no contiene un código de invitación.');
     return;
   }
 
@@ -185,7 +186,7 @@ function initRevealAnimations() {
 }
 
 function initCloudMouseParallax() {
-  // Opcional parallax dinámico de fondo
+  // Parallax dinámico
 }
 
 async function loadGuest(code) {
@@ -231,7 +232,7 @@ function getGuestData(code) {
     const script = document.createElement('script');
     let finished = false;
 
-    const timeout = setTimeout(() => finish(() => reject(new Error('No pudimos conectar con la lista de invitados.'))), 12000);
+    const timeout = setTimeout(() => finish(() => reject(new Error('No pudimos conectar con la lista de invitados.'))), 4000);
 
     window[callbackName] = payload => finish(() => {
       if (!payload || !payload.ok) {
@@ -427,7 +428,7 @@ async function submitRsvpInternal(attendance, companion, companionName) {
   formData.set('companionName', companionName);
   formData.set('allowUpdate', '1');
 
-  const isDemo = new URLSearchParams(location.search).get('demo') === '1' || !state.code;
+  const isDemo = new URLSearchParams(location.search).get('demo') === '1' || !state.code || state.code === 'UA-DEMO-001';
 
   if (isDemo) {
     await sleep(600);
