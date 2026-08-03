@@ -190,6 +190,60 @@ function initRevealAnimations() {
   nodes.forEach(node => observer.observe(node));
 }
 
+function initCountdown() {
+  const daysEl  = $('#countDays');
+  const hoursEl = $('#countHours');
+  const minsEl  = $('#countMins');
+  const secsEl  = $('#countSecs');
+
+  if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+  function parseTargetDate() {
+    let year = 2026, month = 7, day = 27, hours = 20, minutes = 0;
+    if (state.event?.date) {
+      const parts = state.event.date.split(/[\/\.-]/);
+      if (parts.length === 3) {
+        if (parts[0].length === 4) {
+          year = parseInt(parts[0], 10);
+          month = parseInt(parts[1], 10) - 1;
+          day = parseInt(parts[2], 10);
+        } else {
+          day = parseInt(parts[0], 10);
+          month = parseInt(parts[1], 10) - 1;
+          year = parseInt(parts[2], 10);
+        }
+      }
+    }
+    if (state.event?.time) {
+      const tParts = state.event.time.split(':');
+      if (tParts.length >= 2) {
+        hours = parseInt(tParts[0], 10);
+        minutes = parseInt(tParts[1], 10);
+      }
+    }
+    return new Date(year, month, day, hours, minutes, 0).getTime();
+  }
+
+  function update() {
+    const target = parseTargetDate();
+    const now = Date.now();
+    const diff = Math.max(0, target - now);
+
+    const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+    daysEl.textContent  = String(days).padStart(2, '0');
+    hoursEl.textContent = String(hours).padStart(2, '0');
+    minsEl.textContent  = String(mins).padStart(2, '0');
+    secsEl.textContent  = String(secs).padStart(2, '0');
+  }
+
+  update();
+  setInterval(update, 1000);
+}
+
 async function loadGuest(code) {
   try {
     const payload = await getGuestData(code);
