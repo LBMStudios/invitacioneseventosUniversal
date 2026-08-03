@@ -5,234 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UA Eventos — Panel de Administración</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy:  #071938;
-      --navy2: #0d2654;
-      --pink:  #ee1f73;
-      --cyan:  #38bdf8;
-      --green: #22c55e;
-    }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html, body {
-      height: 100%; min-height: 100vh;
-      font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at 85% 90%, rgba(238,31,115,0.32) 0%, transparent 45%),
-        radial-gradient(circle at 10% 15%, rgba(56,189,248,0.25) 0%, transparent 40%),
-        linear-gradient(160deg, #071938 0%, #0d2654 50%, #221048 100%);
-      color: #f8fafc;
-      display: flex; align-items: center; justify-content: center;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
       overflow: hidden;
+      background: #071938;
+      font-family: 'Inter', sans-serif;
     }
-
-    /* Ambient orbs */
-    .orb { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; }
-    .orb-1 { top: -120px; right: -120px; width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(238,31,115,0.18) 0%, transparent 70%);
-      animation: floatOrb 14s ease-in-out infinite alternate; }
-    .orb-2 { bottom: -150px; left: 5%; width: 550px; height: 550px;
-      background: radial-gradient(circle, rgba(56,189,248,0.14) 0%, transparent 70%);
-      animation: floatOrb 18s ease-in-out infinite alternate-reverse; }
-    @keyframes floatOrb { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(-30px) scale(1.08); } }
-
-    /* Card container */
-    .card {
-      position: relative; z-index: 1;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 28px;
-      padding: 44px 40px;
-      max-width: 500px; width: 92%;
-      backdrop-filter: blur(28px);
-      box-shadow: 0 32px 80px rgba(0,0,0,0.45);
-      text-align: center;
-      animation: cardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    .admin-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
     }
-    @keyframes cardIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* Brand header */
-    .brand {
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      margin-bottom: 28px;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
     }
-    .brand-icon {
-      width: 34px; height: 34px; background: #fff; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 22px; color: var(--navy);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-    }
-    .brand-text { text-align: left; line-height: 1.1; }
-    .brand-main { font-size: 12px; font-weight: 800; color: #fff; letter-spacing: 0.2px; }
-    .brand-sub { font-size: 10px; color: rgba(255,255,255,0.5); font-weight: 500; }
-    .movie-tag { font-size: 18px; font-weight: 900; color: #fff; letter-spacing: -0.5px; margin-left: 10px; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.22); }
-    .movie-tag .star { color: var(--pink); }
-
-    /* Title */
-    .pill-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(56,189,248,0.14); border: 1px solid rgba(56,189,248,0.4);
-      border-radius: 99px; padding: 4px 14px; margin-bottom: 14px;
-      font-size: 9px; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 1.2px;
-    }
-    .dot { width: 5px; height: 5px; background: var(--cyan); border-radius: 50%; animation: pulseDot 2s infinite; }
-    @keyframes pulseDot { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-
-    .event-title { font-size: 36px; font-weight: 900; line-height: 1; letter-spacing: -1px; margin-bottom: 6px; }
-    .t-coyote { background: linear-gradient(135deg, #fff 30%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .t-vs { background: linear-gradient(135deg, #ef2f83, #ee1f73); color: #fff; font-size: 17px; padding: 1px 12px; border-radius: 99px; display: inline-block; transform: translateY(-5px) rotate(-4deg); box-shadow: 0 4px 14px rgba(238,31,115,0.5); margin: 0 6px; }
-    .t-acme { color: var(--pink); }
-
-    .subtitle { font-size: 13px; color: rgba(148,163,184,0.9); margin-bottom: 28px; font-weight: 500; }
-
-    /* Admin lock icon */
-    .lock-icon {
-      width: 58px; height: 58px; border-radius: 18px; margin: 0 auto 20px;
-      background: rgba(238,31,115,0.18); border: 1px solid rgba(238,31,115,0.35);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px;
-    }
-
-    .panel-label { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px; }
-    .panel-desc  { font-size: 12px; color: rgba(148,163,184,0.8); margin-bottom: 24px; line-height: 1.5; }
-
-    .actions-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;
-    }
-
-    /* CTA Button */
-    .cta-btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 14px 18px; border-radius: 14px;
-      background: linear-gradient(135deg, #ef2f83, #e91673);
-      color: #fff; font-size: 13.5px; font-weight: 800;
-      text-decoration: none; border: none; cursor: pointer;
-      box-shadow: 0 8px 24px rgba(238,31,115,0.4);
-      transition: all 0.22s ease; font-family: inherit;
-    }
-    .cta-btn:hover { background: linear-gradient(135deg, #ff3d8f, #f2187d); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(238,31,115,0.55); }
-    
-    .cta-btn--secondary {
-      background: rgba(56, 189, 248, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      color: var(--cyan);
-      box-shadow: none;
-    }
-    .cta-btn--secondary:hover {
-      background: rgba(56, 189, 248, 0.28);
-      color: #fff;
-      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
-    }
-
-    /* Not configured state */
-    .not-configured {
-      display: none;
-      background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3);
-      border-radius: 14px; padding: 16px 18px; margin-bottom: 20px;
-      font-size: 12px; color: #fcd34d; line-height: 1.6; text-align: left;
-    }
-
-    /* Success redirect state */
-    .redirect-state { display: none; }
-    .spinner-big {
-      width: 48px; height: 48px; border: 3px solid rgba(56,189,248,0.2);
-      border-top-color: var(--cyan); border-radius: 50%;
-      animation: spin 0.7s linear infinite; margin: 0 auto 16px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .redirect-msg { font-size: 14px; font-weight: 600; color: var(--cyan); }
-
-    /* Footer */
-    .footer { margin-top: 24px; font-size: 11px; color: rgba(148,163,184,0.4); }
-
   </style>
 </head>
 <body>
-
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-
-<div class="card">
-
-  <!-- Brand -->
-  <div class="brand">
-    <div class="brand-icon">u</div>
-    <div class="brand-text">
-      <div class="brand-main">universal assistance</div>
-      <div class="brand-sub">A company of ZURICH</div>
-    </div>
-    <div class="movie-tag">m<span class="star">★</span>vie</div>
+  <div class="admin-container">
+    <iframe 
+      id="adminFrame"
+      src="https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec?page=admin" 
+      allow="clipboard-read; clipboard-write"
+      title="UA Eventos — Panel de Administración">
+    </iframe>
   </div>
-
-  <!-- Pill tag -->
-  <div class="pill-tag"><div class="dot"></div> PANEL DE ADMINISTRACIÓN</div>
-
-  <!-- Event title -->
-  <div class="event-title">
-    <span class="t-coyote">COYOTE</span>
-    <span class="t-vs">VS</span>
-    <span class="t-acme">ACME</span>
-  </div>
-
-  <div class="subtitle">Gestión de invitados y comunicaciones del evento.</div>
-
-  <!-- Default state: lock + buttons -->
-  <div id="default-state">
-    <div class="lock-icon">🔐</div>
-    <div class="panel-label">Acceso Administrador</div>
-    <div class="panel-desc">Elegí la herramienta que deseas utilizar para la gestión del evento:</div>
-
-    <div id="not-configured-msg" class="not-configured">
-      ⚠️ <strong>Panel aún no configurado.</strong><br>
-      El administrador debe completar la variable <code>APPS_SCRIPT_URL</code> en este archivo para activar el acceso al panel.
-    </div>
-
-    <div class="actions-grid">
-      <a href="checkin.html" class="cta-btn cta-btn--secondary">
-        📱 App de Escaneo QR
-      </a>
-      <button class="cta-btn" onclick="goToPanel()">
-        🔑 Panel GAS
-      </button>
-    </div>
-  </div>
-
-  <!-- Redirect state: spinner -->
-  <div id="redirect-state" class="redirect-state">
-    <div class="spinner-big"></div>
-    <div class="redirect-msg">Redirigiendo al panel de administración…</div>
-  </div>
-
-  <div class="footer">Universal Assistance &middot; UA Eventos 2026</div>
-
-</div>
-
-<script>
-  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec';
-
-  function goToPanel() {
-    var url = APPS_SCRIPT_URL.trim();
-
-    if (!url) {
-      document.getElementById('not-configured-msg').style.display = 'block';
-      return;
-    }
-
-    if (url.indexOf('page=admin') === -1) {
-      url += (url.indexOf('?') >= 0 ? '&' : '?') + 'page=admin';
-    }
-
-    document.getElementById('default-state').style.display = 'none';
-    document.getElementById('redirect-state').style.display = 'block';
-
-    setTimeout(function() {
-      window.location.href = url;
-    }, 600);
-  }
-</script>
-
 </body>
 </html>
