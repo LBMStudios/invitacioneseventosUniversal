@@ -6,7 +6,7 @@
       "test",
       "--config=playwright.config.js",
       "--project=chromium",
-      "specs/a11y.spec.js"
+      "specs/e2e.spec.js"
     ],
     "configFile": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\playwright.config.js",
     "rootDir": "C:/Users/Lucas Rossi/Downloads/UAInvitacón/tests/specs",
@@ -84,20 +84,20 @@
   },
   "suites": [
     {
-      "title": "a11y.spec.js",
-      "file": "a11y.spec.js",
+      "title": "e2e.spec.js",
+      "file": "e2e.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "08 - Accesibilidad (axe-core)",
-          "file": "a11y.spec.js",
-          "line": 20,
+          "title": "01 - Carga de la pagina",
+          "file": "e2e.spec.js",
+          "line": 37,
           "column": 6,
           "specs": [
             {
-              "title": "Sin violaciones criticas en la pagina principal",
+              "title": "Carga con demo=1 y muestra el formulario",
               "ok": true,
               "tags": [],
               "tests": [
@@ -112,12 +112,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5043,
+                      "duration": 5667,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-02T02:16:08.356Z",
+                      "startTime": "2026-08-03T13:02:58.439Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -125,13 +125,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "2629bfe6b43df460208f-abcce2fac7701fe531e9",
-              "file": "a11y.spec.js",
-              "line": 22,
+              "id": "616cc0f313d283bb66d2-e9acb5244e5787b98ebf",
+              "file": "e2e.spec.js",
+              "line": 39,
               "column": 3
             },
             {
-              "title": "Sin violaciones serias en el formulario RSVP",
+              "title": "El spinner desaparece al cargar",
               "ok": true,
               "tags": [],
               "tests": [
@@ -146,12 +146,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2804,
+                      "duration": 3412,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-02T02:16:13.911Z",
+                      "startTime": "2026-08-03T13:03:04.677Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -159,13 +159,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "2629bfe6b43df460208f-cc110dd1724bb40509f1",
-              "file": "a11y.spec.js",
-              "line": 35,
+              "id": "616cc0f313d283bb66d2-088a68754a32d1a93a26",
+              "file": "e2e.spec.js",
+              "line": 44,
               "column": 3
             },
             {
-              "title": "Todos los inputs tienen labels asociados",
+              "title": "No hay errores criticos de consola",
               "ok": true,
               "tags": [],
               "tests": [
@@ -180,12 +180,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3128,
+                      "duration": 3460,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-02T02:16:16.726Z",
+                      "startTime": "2026-08-03T13:03:08.103Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -193,13 +193,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "2629bfe6b43df460208f-0e79e77d9a283cb9d40a",
-              "file": "a11y.spec.js",
-              "line": 48,
+              "id": "616cc0f313d283bb66d2-4ca38ce09467d64edd24",
+              "file": "e2e.spec.js",
+              "line": 53,
               "column": 3
             },
             {
-              "title": "El formulario tiene atributo role o semantica correcta",
+              "title": "El titulo de la pagina es correcto",
               "ok": true,
               "tags": [],
               "tests": [
@@ -214,12 +214,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1817,
+                      "duration": 1757,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-02T02:16:19.865Z",
+                      "startTime": "2026-08-03T13:03:11.575Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -227,13 +227,21 @@
                   "status": "expected"
                 }
               ],
-              "id": "2629bfe6b43df460208f-a71b02129eb4e43f8185",
-              "file": "a11y.spec.js",
+              "id": "616cc0f313d283bb66d2-5787b08432286d2559f1",
+              "file": "e2e.spec.js",
               "line": 65,
               "column": 3
-            },
+            }
+          ]
+        },
+        {
+          "title": "02 - Elementos visuales",
+          "file": "e2e.spec.js",
+          "line": 75,
+          "column": 6,
+          "specs": [
             {
-              "title": "Los botones tienen texto descriptivo (no vacios)",
+              "title": "El contador regresivo muestra numeros",
               "ok": true,
               "tags": [],
               "tests": [
@@ -248,12 +256,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2086,
+                      "duration": 2863,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-02T02:16:21.694Z",
+                      "startTime": "2026-08-03T13:03:13.344Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -261,13 +269,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "2629bfe6b43df460208f-4fc138f000394cc566d5",
-              "file": "a11y.spec.js",
-              "line": 76,
+              "id": "616cc0f313d283bb66d2-f37d9529f67ae2e82b13",
+              "file": "e2e.spec.js",
+              "line": 82,
               "column": 3
             },
             {
-              "title": "La pagina tiene un h1 unico",
+              "title": "El boton de confirmar es visible y esta habilitado",
               "ok": true,
               "tags": [],
               "tests": [
@@ -282,12 +290,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2930,
+                      "duration": 2604,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-02T02:16:23.792Z",
+                      "startTime": "2026-08-03T13:03:16.219Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -295,13 +303,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "2629bfe6b43df460208f-fc67e79b6976f7e4b032",
-              "file": "a11y.spec.js",
+              "id": "616cc0f313d283bb66d2-97a18d20f3c62f4dcc60",
+              "file": "e2e.spec.js",
               "line": 89,
               "column": 3
             },
             {
-              "title": "Las imagenes tienen atributo alt",
+              "title": "El boton de declinar es visible",
               "ok": true,
               "tags": [],
               "tests": [
@@ -316,12 +324,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3116,
+                      "duration": 1908,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-02T02:16:26.735Z",
+                      "startTime": "2026-08-03T13:03:18.836Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -329,13 +337,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "2629bfe6b43df460208f-e4a39b80a6696c6aae71",
-              "file": "a11y.spec.js",
-              "line": 96,
+              "id": "616cc0f313d283bb66d2-5f77e1652c3a0419d03a",
+              "file": "e2e.spec.js",
+              "line": 95,
               "column": 3
             },
             {
-              "title": "Reporte completo axe: contar todas las violaciones",
+              "title": "El iframe oculto de envio existe",
               "ok": true,
               "tags": [],
               "tests": [
@@ -350,34 +358,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2722,
+                      "duration": 2484,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "    Violaciones axe:\n"
-                        },
-                        {
-                          "text": "      critical : 0\n"
-                        },
-                        {
-                          "text": "      serious  : 0\n"
-                        },
-                        {
-                          "text": "      moderate : 0\n"
-                        },
-                        {
-                          "text": "      minor    : 0\n"
-                        },
-                        {
-                          "text": "      Passes   : 40\n"
-                        },
-                        {
-                          "text": "      inappl.  : 47\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-02T02:16:29.863Z",
+                      "startTime": "2026-08-03T13:03:20.756Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -385,9 +371,469 @@
                   "status": "expected"
                 }
               ],
-              "id": "2629bfe6b43df460208f-5e61e6ddf65da1d427fa",
-              "file": "a11y.spec.js",
-              "line": 111,
+              "id": "616cc0f313d283bb66d2-ffcb91e7d9ef4d6c2303",
+              "file": "e2e.spec.js",
+              "line": 100,
+              "column": 3
+            },
+            {
+              "title": "Las opciones de ticket (solo / con acompanante) existen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2994,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:03:23.267Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-db59d8b1b3cf9887d01c",
+              "file": "e2e.spec.js",
+              "line": 104,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "03 - RSVP: Confirmar solo",
+          "file": "e2e.spec.js",
+          "line": 114,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Flujo completo: rellenar y confirmar solo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8316,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:03:26.276Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-36fd82fe11181766d599",
+              "file": "e2e.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "La pantalla de exito muestra el QR",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5020,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:03:34.605Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-eabcda137734e10dd258",
+              "file": "e2e.spec.js",
+              "line": 122,
+              "column": 3
+            },
+            {
+              "title": "El boton de descarga de entrada aparece tras confirmar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5268,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:03:39.639Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-90ab2b64cee93963d62b",
+              "file": "e2e.spec.js",
+              "line": 132,
+              "column": 3
+            },
+            {
+              "title": "El codigo QR es correcto (contiene UA-)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5370,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:03:44.920Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-d8e14ccb665e96abb255",
+              "file": "e2e.spec.js",
+              "line": 138,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "04 - RSVP: Declinar",
+          "file": "e2e.spec.js",
+          "line": 153,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Declinar: boton y pantalla de no asistencia",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5345,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:03:50.305Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-13672a97e8951f3654e3",
+              "file": "e2e.spec.js",
+              "line": 155,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "05 - RSVP: Con acompanante",
+          "file": "e2e.spec.js",
+          "line": 185,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Seleccionar acompanante muestra el campo de nombre",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2761,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:03:55.662Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-cd4d2022e80b3292c9f6",
+              "file": "e2e.spec.js",
+              "line": 187,
+              "column": 3
+            },
+            {
+              "title": "Flujo completo con acompanante",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4398,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:03:58.434Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-342a99870025277775df",
+              "file": "e2e.spec.js",
+              "line": 194,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "06 - Modal de ubicacion",
+          "file": "e2e.spec.js",
+          "line": 205,
+          "column": 6,
+          "specs": [
+            {
+              "title": "El modal de ubicacion existe en el DOM",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2970,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:04:02.852Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-9684c29b565fb9c77f5c",
+              "file": "e2e.spec.js",
+              "line": 207,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "07 - Performance",
+          "file": "e2e.spec.js",
+          "line": 218,
+          "column": 6,
+          "specs": [
+            {
+              "title": "DOMContentLoaded en menos de 5 segundos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2200,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "    DOMContentLoaded: 1811ms\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:04:05.833Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-a1fceda0f170e98a4fdd",
+              "file": "e2e.spec.js",
+              "line": 220,
+              "column": 3
+            },
+            {
+              "title": "El formulario aparece en menos de 10 segundos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3245,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "    Formulario visible: 2836ms\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:04:08.043Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-629d268f9150553be38f",
+              "file": "e2e.spec.js",
+              "line": 229,
+              "column": 3
+            },
+            {
+              "title": "El submit muestra exito en menos de 2 segundos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5603,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "    Submit -> exito: 1228ms\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-03T13:04:11.299Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-76845fb8174474561b05",
+              "file": "e2e.spec.js",
+              "line": 238,
               "column": 3
             }
           ]
@@ -397,9 +843,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-02T02:16:07.616Z",
-    "duration": 26359.831000000002,
-    "expected": 8,
+    "startTime": "2026-08-03T13:02:57.837Z",
+    "duration": 80588.383,
+    "expected": 20,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

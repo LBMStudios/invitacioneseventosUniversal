@@ -43,6 +43,8 @@ function doGet(e) {
       payload = getGuest_(params.code || '');
     } else if (action === 'guestListCheckin') {
       payload = getGuestListCheckin_();
+    } else if (action === 'importOfficial') {
+      payload = importOfficialList();
     } else if (action === 'health') {
       payload = { ok: true, service: 'UA RSVP', timestamp: new Date().toISOString() };
     } else {
@@ -2062,13 +2064,14 @@ function sendInvitationDemoEmail_(email, guestName, code) {
  * Devuelve la lista completa de invitados para el panel admin.
  * Cols: A=Código B=Nombre C=Email D=Teléfono E=Estado F=Acompañante
  *       G=NombreAcomp H=Asientos I=FechaRespuesta J=Link K=MailStatus L=DEMO
+ *       M=Canal N=Agencia/Convenio O=Referente UA
  */
 function adminGetGuestList() {
   const sheet   = getSheet_(SHEET_INVITADOS);
   const lastRow = sheet.getLastRow();
   if (lastRow < 2) return [];
 
-  const data = sheet.getRange(2, 1, lastRow - 1, 12).getDisplayValues();
+  const data = sheet.getRange(2, 1, lastRow - 1, 15).getDisplayValues();
   return data
     .filter(r => r[0]) // ignorar filas vacías
     .map(r => ({
@@ -2083,7 +2086,10 @@ function adminGetGuestList() {
       responseDate:   r[8],
       link:           r[9],
       mailStatus:     r[10],
-      demoCheck:      r[11]
+      demoCheck:      r[11],
+      channel:        r[12] || '',
+      agency:         r[13] || '',
+      referent:       r[14] || ''
     }));
 }
 
@@ -2705,3 +2711,235 @@ function clearAllData() {
 
   Logger.log('clearAllData: ' + dataRows + ' filas borradas — ' + new Date().toISOString());
 }
+
+
+// ═══════════════════════════════════════════════════════════════════════
+// IMPORTACIÓN OFICIAL DE INVITADOS
+// ═══════════════════════════════════════════════════════════════════════
+
+/**
+ * Importa la lista oficial de 126 invitados con Canal, Agencia/Convenio y Referente UA.
+ * Ejecutar desde el editor de Apps Script -> importOfficialList -> ▶ Ejecutar
+ */
+function importOfficialList() {
+  const ss    = SpreadsheetApp.openById(SPREADSHEET_ID);
+  let sheet   = ss.getSheetByName(SHEET_INVITADOS);
+
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_INVITADOS);
+  }
+
+  const headers = [
+    'Código',
+    'Nombre Completo',
+    'Email',
+    'Teléfono',
+    'Estado',
+    'Acompañante',
+    'Nombre Acompañante',
+    'Total Lugares',
+    'Fecha Respuesta',
+    'Link Invitación',
+    'Estado Email',
+    'DEMO',
+    'Canal',
+    'Agencia / Convenio',
+    'Referente UA'
+  ];
+
+  // Limpiar contenido previo
+  sheet.clearContents();
+
+  // Escribir y dar formato a los encabezados
+  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  try {
+    sheet.getRange(1, 1, 1, headers.length)
+      .setFontWeight('bold')
+      .setBackground('#071938')
+      .setFontColor('#ffffff');
+  } catch (_) {}
+
+  const rawList = [
+    ["MARIANNA", "TOMASI", "FUNCIONARIO SURVIEW", "OFICINA", 2, "AM/MT"],
+    ["LAURA", "CAPRIO", "SALUD", "SEMM", 2, "AM/MT"],
+    ["ANDRES", "RODRIGUEZ", "SALUD", "SEMM", 2, "AM/MT"],
+    ["DIEGO", "DE CARLINI", "SALUD", "SEMM", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "SEMM", 2, "AM/MT"],
+    ["KARINA", "MACADAR", "SALUD", "SEMM", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "SEMM", 2, "AM/MT"],
+    ["PAOLA", "PRADIE", "SALUD", "SEMM CALL", 3, "AM/MT"],
+    ["ANDRES", "VOELKER", "SALUD", "SEMM", 2, "AM/MT"],
+    ["JUAN", "BORRELI", "SALUD", "SEMM", 3, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "SEMM CALL", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "SEMM CALL", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "SEMM CALL", 2, "AM/MT"],
+    ["NESTOR", "CONDE", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["ANGELA", "HOFFMAN", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["MONICA", "NAUMIS", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["LUCY", "HERNANDEZ", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["ALBERTO", "YAFFE", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "ASOC ESPAÑOLA", 2, "AM/MT"],
+    ["KAREN", "RAMILLO", "SALUD", "EVANGELICO", 2, "AM/MT"],
+    ["MYRIAM", "CARDOZO", "SALUD", "EVANGELICO", 2, "AM/MT"],
+    ["JORGE", "MUÑOZ", "SALUD", "EVANGELICO", 2, "AM/MT"],
+    ["IGNACIO", "BARBOT", "SALUD", "EVANGELICO", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "EVANGELICO", 2, "AM/MT"],
+    ["SANTIAGO", "DE LUCA", "SALUD", "CASMU", 2, "AM/MT"],
+    ["NADIA", "NUÑEZ", "SALUD", "CASMU", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "CASMU", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "CASMU", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "CASMU", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "CASMU", 2, "AM/MT"],
+    ["ANA", "LOPEZ", "SALUD", "SUMMUM", 2, "AM/MT"],
+    ["NATALIA", "LABAT", "SALUD", "SUMMUM", 2, "AM/MT"],
+    ["MARIANA", "FIRPO", "SALUD", "SUMMUM", 2, "AM/MT"],
+    ["ALEJANDRA", "SAAVEDRA", "CORREDOR DE SEGUROS", "SAAVEDRA SEGUROS", 2, "MT"],
+    ["DELIA", "VILARO", "CORREDOR DE SEGUROS", "DVS SEGUROS", 2, "MT"],
+    ["ELISA", "COSTA", "SALUD", "COSEM", 2, "AM/MT"],
+    ["SANTIAGO", "FLEITAS", "SALUD", "COSEM", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "COSEM", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "COSEM", 2, "AM/MT"],
+    ["EXTRA", "VENDEDOR", "SALUD", "COSEM", 2, "AM/MT"],
+    ["JOAQUIN", "BARRETO", "SALUD", "AMSJ", 2, "AM/MT"],
+    ["GUSTAVO", "AMORIN", "SALUD", "ASISTENCIAL MEDICA", 2, "AM/MT"],
+    ["JOAQUIN", "GUILLEN", "SALUD", "ASISTENCIAL MEDICA", 2, "AM/MT"],
+    ["GUSTAVO", "BURGHI", "SALUD", "ASISTENCIAL MEDICA", 2, "AM/MT"],
+    ["SILVINA", "TORTORELLA", "SALUD", "ASISTENCIAL MEDICA", 2, "AM/MT"],
+    ["FERNANDO", "BERVEJILLO", "CORREDOR DE SEGUROS", "", 2, "MT"],
+    ["LAURA", "FERNANDEZ", "SALUD", "SEGURO AMERICANO", 2, "AM/MT"],
+    ["FACUNDO", "QUIROZ", "SALUD", "SEGURO AMERICANO", 2, "AM/MT"],
+    ["FERNANDA", "CABRERA", "SALUD", "SEGURO AMERICANO", 2, "AM/MT"],
+    ["EXTRA", "DIRECTIVA", "SALUD", "SEGURO AMERICANO", 2, "AM/MT"],
+    ["LAURA", "SUAREZ", "CORREDOR DE SEGUROS", "RISSO SEGUROS", 2, "MT"],
+    ["JORGE", "JEREZ", "SALUD", "MP", 2, "AM/MT"],
+    ["JORGE", "FERRAGUZ", "SALUD", "MP", 2, "AM/MT"],
+    ["NATALIA", "CAIMI", "BANCO", "OCA", 2, "AM/MT"],
+    ["GABRIELA", "PEREZ", "BANCO", "OCA", 2, "AM/MT"],
+    ["JUAN PABLO", "FERNANDEZ", "BANCO", "OCA", 2, "AM/MT"],
+    ["FLORENCIA", "DIAZ", "BANCO", "OCA", 2, "AM/MT"],
+    ["IGNACIO", "MARIÑO", "BANCO", "OCA", 2, "AM/MT"],
+    ["RAUL", "MONTOSSI", "BANCO", "ITAU", 3, "AM/MT"],
+    ["EXTRA", "DIRECTIVA", "BANCO", "ITAU", 2, "AM/MT"],
+    ["EXTRA", "DIRECTIVA", "BANCO", "ITAU", 2, "AM/MT"],
+    ["ROSINA", "URIOSTE", "BANCO", "BBVA", 2, "AM/MT"],
+    ["JOAQUIN", "TOLOSA", "BANCO", "BBVA", 2, "AM/MT"],
+    ["AGUSTIN", "CIRILI", "CORREDOR DE SEGUROS", "SBI", 2, "AM/MT"],
+    ["GUSTAVO", "SPINELLA", "CORREDOR DE SEGUROS", "SBI", 2, "AM/MT"],
+    ["FABIAN", "GIOVANOLA", "CORREDOR DE SEGUROS", "SBI", 2, "AM/MT"],
+    ["CAMILA", "MIGALES", "CORREDOR DE SEGUROS", "SBI", 2, "AM/MT"],
+    ["YAMILA", "BARRERA", "CORREDOR DE SEGUROS", "SBI", 2, "AM/MT"],
+    ["EXTRA", "DIRECCION", "BANCO", "SANTANDER", 2, "AM/UA AR"],
+    ["EXTRA", "DIRECCION", "BANCO", "SANTANDER", 2, "AM/UA AR"],
+    ["VERONICA", "CORREA", "CORREDOR DE SEGUROS", "PORTO SERVICIOS", 2, "AM/MT"],
+    ["ANA", "CAMIOU", "FUNCIONARIO SURVIEW", "", 2, "FUNCIONARIO"],
+    ["ANA LAURA", "BRITOS", "FUNCIONARIO SURVIEW", "", 2, "FUNCIONARIO"],
+    ["SILVANA", "SAGARIO", "EMPRESA", "BIG CHESSE", 2, "MT"],
+    ["CECILIA", "MENDEZ", "FUNCIONARIO SURVIEW", "", 2, "FUNCIONARIO"],
+    ["JIMENA", "QUINTANA", "FUNCIONARIO SURVIEW", "", 2, "FUNCIONARIO"],
+    ["SEBASTIAN", "MARTINEZ", "FUNCIONARIO SURVIEW", "", 2, "FUNCIONARIO"],
+    ["THOILME", "SILVA", "FUNCIONARIO SURVIEW", "", 3, "FUNCIONARIO"],
+    ["GABRIELA", "CONTI", "AGENCIA", "COIT", 2, "AB"],
+    ["VICTORIA", "MENDEZ", "AGENCIA", "JM", 2, "AB"],
+    ["VALENTINA", "MENDEZ", "FUNCIONARIO SURVIEW", "", 1, "FUNCIONARIO"],
+    ["SOFIA", "RAMIREZ", "FUNCIONARIO SURVIEW", "", 2, "FUNCIONARIO"],
+    ["VICTORIA", "PEREIRA", "AGENCIA", "CONOSUR", 2, "AB"],
+    ["MARIO", "ETCHESURE", "AGENCIA", "CONOSUR", 2, "AB"],
+    ["YHONSON", "CHOCA", "FUNCIONARIO SURVIEW", "", 2, "FUNCIONARIO"],
+    ["PABLO", "ANANIKIAN", "AGENCIA", "SUNLIVE", 2, "AB"],
+    ["ALEJANDRO", "MENDEZ", "FUNCIONARIO SURVIEW", "", 1, "FUNCIONARIO"],
+    ["PAULA", "ARAMENDIA", "FUNCIONARIO SURVIEW", "", 1, "FUNCIONARIO"],
+    ["ADRIANA", "FRAGA", "AGENCIA", "NUEVOS MUNDOS", 3, "ANA C."],
+    ["DIEGO", "CORREA", "AGENCIA", "MELITOUR", 2, "AB"],
+    ["GIULIA", "BARROS", "EMPRESA", "TRYOLABS", 1, "MT"],
+    ["SABRINA", "USTINELLI", "EMPRESA", "TRYOLABS", 1, "MT"],
+    ["ROSINA", "INTROINI", "EMPRESA", "PWC", 2, "MT"],
+    ["VERONICA", "SANCHIZ", "EMPRESA", "PWC", 2, "MT"],
+    ["ADRIANA", "RUMBOS", "AGENCIA", "RUMBOS", 2, "AB"],
+    ["MAIRA", "PEREZ", "EMPRESA", "GENERSOL DISEL", 2, "MT"],
+    ["MARIA EUGENIA", "DÍAZ", "EMPRESA", "BIOERIX", 1, "MT"],
+    ["FLORENCIA", "NAVIA", "EMPRESA", "BIOERIX", 1, "MT"],
+    ["ALEJO", "QUINTA", "EMPRESA", "BIOERIX", 1, "MT"],
+    ["INES", "GIRO", "EMPRESA", "AMS", 2, "MT"],
+    ["ZOILA", "ZELA", "EMPRESA", "AIR CLASS", 2, "MT"],
+    ["ABEL", "GARCIA", "EMPRESA", "BRENDISOL", 2, "MT"],
+    ["INES", "BARRABINO", "CORREDOR DE SEGUROS", "NGS", 2, "MT"],
+    ["JOEL", "FELDER", "CORREDOR DE SEGUROS", "EDF", 3, "MT"],
+    ["CAROLINA", "GOÑI", "EMPRESA", "GREYCON", 2, "MT"],
+    ["FABIANA", "MASINI", "CORREDOR DE SEGUROS", "MASINI SEGUROS", 2, "MT"],
+    ["GONZALO", "MASINI", "CORREDOR DE SEGUROS", "MASINI SEGUROS", 2, "MT"],
+    ["LAURA", "RISSO", "CORREDOR DE SEGUROS", "RISSO SEGUROS", 2, "MT"],
+    ["VERONICA", "BONFIGLIO", "EMPRESA", "NUEVO SIGLO", 2, "MT"],
+    ["RICARDO", "HAUSMAN", "CORREDOR DE SEGUROS", "RICARDO HAUSMAN", 2, "MT"],
+    ["SUSANA", "GARCIA", "CORREDOR DE SEGUROS", "SUSANA GARCIA SEGUROS", 2, "MT"],
+    ["JORGE", "VIDIELLA", "EMPRESA", "LABORATORIO LIBRA", 2, "MT"],
+    ["CRISTOBAL", "FERNANDEZ", "CORREDOR DE SEGUROS", "FL SEGUROS", 2, "MT"],
+    ["TRAVELOZ", "", "AGENCIA", "TRAVELOZ", 2, "AB"],
+    ["TRAVELOZ", "", "AGENCIA", "TRAVELOZ", 2, "AB"],
+    ["TRAVELOZ", "", "AGENCIA", "TRAVELOZ", 2, "AB"],
+    ["DESTINICO", "", "AGENCIA", "DESTINICO", 2, "AB"],
+    ["DESTINICO", "", "AGENCIA", "DESTINICO", 2, "AB"],
+    ["DESTINICO", "", "AGENCIA", "DESTINICO", 2, "AB"],
+    ["OM TRAVEL", "", "AGENCIA", "OM TRAVEL", 2, "AB"],
+    ["OM TRAVEL", "", "AGENCIA", "OM TRAVEL", 2, "AB"],
+    ["OM TRAVEL", "", "AGENCIA", "OM TRAVEL", 2, "AB"]
+  ];
+
+  function formatTitle(str) {
+    if (!str) return '';
+    return str.toLowerCase().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  }
+
+  const rows = [];
+  let counter = 1;
+
+  rawList.forEach(item => {
+    const nom = item[0] ? item[0].trim() : '';
+    const ape = item[1] ? item[1].trim() : '';
+    const canal = item[2] ? item[2].trim() : '';
+    const convenio = item[3] ? item[3].trim() : '';
+    const asientos = item[4] || 2;
+    const referente = item[5] ? item[5].trim() : '';
+
+    const code = 'UA-' + String(counter).padStart(3, '0');
+    counter++;
+
+    let fullName = (formatTitle(nom) + ' ' + formatTitle(ape)).trim();
+    if (nom === 'EXTRA') {
+      fullName = `Extra ${formatTitle(ape)} (${convenio || canal || 'UA'})`;
+    } else if (['TRAVELOZ', 'DESTINICO', 'OM TRAVEL'].includes(nom)) {
+      fullName = `Cupo ${formatTitle(nom)} (${convenio || 'Agencia'})`;
+    }
+
+    const inviteLink = `${LANDING_URL}?i=${code}`;
+
+    rows.push([
+      code,                 // A: Código
+      fullName,             // B: Nombre Completo
+      '',                   // C: Email
+      '',                   // D: Teléfono
+      'Pendiente',          // E: Estado
+      'No',                 // F: Acompañante
+      '',                   // G: Nombre Acompañante
+      asientos,             // H: Total Lugares
+      '',                   // I: Fecha Respuesta
+      inviteLink,           // J: Link Invitación
+      'Pendiente de envío', // K: Estado Email
+      '0',                  // L: DEMO
+      canal,                // M: Canal
+      convenio,             // N: Agencia / Convenio
+      referente             // O: Referente UA
+    ]);
+  });
+
+  sheet.getRange(2, 1, rows.length, headers.length).setValues(rows);
+
+  try { generarReporteCine_Silent_(); } catch (_) {}
+
+  Logger.log('importOfficialList: ' + rows.length + ' invitados importados con exito.');
+  return { ok: true, count: rows.length };
+}
+

@@ -255,6 +255,22 @@
     .f-pill-btn:hover { color: #fff; border-color: rgba(56,189,248,0.4); }
     .f-pill-btn.active { background: rgba(56, 189, 248, 0.15); color: var(--cyan); border-color: rgba(56, 189, 248, 0.4); font-weight: 700; }
 
+    .form-select-sm {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px 12px;
+      color: var(--text-main);
+      font-size: 12px;
+      font-family: inherit;
+      outline: none;
+      cursor: pointer;
+      max-width: 220px;
+      transition: all 0.15s;
+    }
+    .form-select-sm:focus { border-color: rgba(56,189,248,0.5); }
+    .form-select-sm option { background: #0d2654; color: #fff; }
+
     .table-glass-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; overflow: hidden; }
     table { width: 100%; border-collapse: collapse; }
     thead th { padding: 12px 18px; text-align: left; font-size: 10px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border); background: rgba(4, 15, 38, 0.65); white-space: nowrap; }
@@ -495,6 +511,18 @@
             <button class="f-pill-btn" onclick="setGuestFilter('Pendiente',this)">Pendientes</button>
           </div>
           <button class="btn btn-outline-cta btn-sm" onclick="exportGuestsCSV()">&#11015; CSV</button>
+        </div>
+
+        <div class="toolbar-row" style="margin-top: -6px; gap: 8px;">
+          <select id="filter-channel-select" class="form-select-sm" onchange="filterGuestTable()">
+            <option value="">🏢 Todos los Canales</option>
+          </select>
+          <select id="filter-agency-select" class="form-select-sm" onchange="filterGuestTable()">
+            <option value="">🤝 Todos los Convenios / Agencias</option>
+          </select>
+          <select id="filter-referent-select" class="form-select-sm" onchange="filterGuestTable()">
+            <option value="">👤 Todos los Referentes UA</option>
+          </select>
         </div>
 
         <!-- ── BARRA DE ACCIONES MÚLTIPLES ── -->
@@ -776,6 +804,48 @@ function loadAllData() {
   loadEventConfig();
 }
 
+function loadGuestsList() {
+  setElHtml('guest-table-wrapper', '<div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando invitados&hellip;</p></div>');
+  google.script.run
+    .withSuccessHandler(function(guests) {
+      allGuestsData = guests;
+      setElText('badge-total-count', guests.length);
+      populateDynamicFilters(guests);
+      renderGuestTable();
+    })
+    .withFailureHandler(function(e) {
+      setElHtml('guest-table-wrapper', '<div class="empty-state-box"><p>Error: ' + escapeHtml(e.message) + '</p></div>');
+    })
+    .adminGetGuestList();
+}
+
+function populateDynamicFilters(guests) {
+  var channels = Array.from(new Set(guests.map(function(g) { return g.channel; }).filter(Boolean))).sort();
+  var agencies = Array.from(new Set(guests.map(function(g) { return g.agency; }).filter(Boolean))).sort();
+  var referents = Array.from(new Set(guests.map(function(g) { return g.referent; }).filter(Boolean))).sort();
+
+  var chSel = document.getElementById('filter-channel-select');
+  if (chSel) {
+    var cur = chSel.value;
+    chSel.innerHTML = '<option value="">🏢 Todos los Canales</option>' + channels.map(function(c) { return '<option value="' + escapeHtml(c) + '">' + escapeHtml(c) + '</option>'; }).join('');
+    chSel.value = cur;
+  }
+
+  var agSel = document.getElementById('filter-agency-select');
+  if (agSel) {
+    var curAg = agSel.value;
+    agSel.innerHTML = '<option value="">🤝 Todos los Convenios</option>' + agencies.map(function(a) { return '<option value="' + escapeHtml(a) + '">' + escapeHtml(a) + '</option>'; }).join('');
+    agSel.value = curAg;
+  }
+
+  var refSel = document.getElementById('filter-referent-select');
+  if (refSel) {
+    var curRef = refSel.value;
+    refSel.innerHTML = '<option value="">👤 Todos los Referentes</option>' + referents.map(function(r) { return '<option value="' + escapeHtml(r) + '">' + escapeHtml(r) + '</option>'; }).join('');
+    refSel.value = curRef;
+  }
+}
+
 function switchTab(tabId) {
   document.querySelectorAll('.tab-pane-content').forEach(function(pane) { pane.style.display = 'none'; });
   document.querySelectorAll('.nav-item').forEach(function(item) { item.classList.remove('active'); });
@@ -809,21 +879,6 @@ function loadDashboardStats() {
     .adminGetStats();
 }
 
-/* GUESTS TABLE */
-function loadGuestsList() {
-  setElHtml('guest-table-wrapper', '<div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando invitados&hellip;</p></div>');
-  google.script.run
-    .withSuccessHandler(function(guests) {
-      allGuestsData = guests;
-      setElText('badge-total-count', guests.length);
-      renderGuestTable();
-    })
-    .withFailureHandler(function(e) {
-      setElHtml('guest-table-wrapper', '<div class="empty-state-box"><p>Error: ' + escapeHtml(e.message) + '</p></div>');
-    })
-    .adminGetGuestList();
-}
-
 function setGuestFilter(filterKey, btnEl) {
   activeGuestFilter = filterKey;
   document.querySelectorAll('.f-pill-btn').forEach(function(b) { b.classList.remove('active'); });
@@ -835,16 +890,31 @@ function filterGuestTable() { renderGuestTable(); }
 
 function renderGuestTable() {
   var query = (document.getElementById('guest-search-field').value || '').toLowerCase();
+  var selChannel = (document.getElementById('filter-channel-select')?.value || '');
+  var selAgency = (document.getElementById('filter-agency-select')?.value || '');
+  var selReferent = (document.getElementById('filter-referent-select')?.value || '');
+
   var filtered = allGuestsData.filter(function(g) {
     var matchFilter = activeGuestFilter === 'all' || g.status === activeGuestFilter;
-    var matchSearch = !query || (g.name || '').toLowerCase().indexOf(query) >= 0 || (g.email || '').toLowerCase().indexOf(query) >= 0 || (g.code || '').toLowerCase().indexOf(query) >= 0;
-    return matchFilter && matchSearch;
+    var matchChannel = !selChannel || g.channel === selChannel;
+    var matchAgency = !selAgency || g.agency === selAgency;
+    var matchReferent = !selReferent || g.referent === selReferent;
+
+    var matchSearch = !query ||
+      (g.name || '').toLowerCase().indexOf(query) >= 0 ||
+      (g.email || '').toLowerCase().indexOf(query) >= 0 ||
+      (g.code || '').toLowerCase().indexOf(query) >= 0 ||
+      (g.channel || '').toLowerCase().indexOf(query) >= 0 ||
+      (g.agency || '').toLowerCase().indexOf(query) >= 0 ||
+      (g.referent || '').toLowerCase().indexOf(query) >= 0;
+
+    return matchFilter && matchChannel && matchAgency && matchReferent && matchSearch;
   });
 
   setElText('guest-total-label', 'Mostrando ' + filtered.length + ' de ' + allGuestsData.length + ' invitados');
 
   if (!filtered.length) {
-    setElHtml('guest-table-wrapper', '<div class="empty-state-box"><div class="icon">&#128269;</div><p>No se encontraron invitados</p></div>');
+    setElHtml('guest-table-wrapper', '<div class="empty-state-box"><div class="icon">&#128269;</div><p>No se encontraron invitados con los filtros seleccionados</p></div>');
     return;
   }
 
@@ -858,10 +928,12 @@ function renderGuestTable() {
       + '<td style="width:36px;text-align:center;"><input type="checkbox" class="guest-cb" data-code="' + escapeHtml(g.code) + '" onchange="onCheckboxChange()"></td>'
       + '<td class="td-code-txt">' + escapeHtml(g.code) + '</td>'
       + '<td class="td-name-txt">' + escapeHtml(g.name) + '</td>'
-      + '<td class="td-email-txt">' + escapeHtml(g.email || '') + '</td>'
+      + '<td style="font-size:12px;color:#cbd5e1;">' + escapeHtml(g.channel || '—') + '</td>'
+      + '<td style="font-size:12px;color:#cbd5e1;">' + escapeHtml(g.agency || '—') + '</td>'
+      + '<td style="font-size:12px;color:#7dd3fc;font-weight:600;">' + escapeHtml(g.referent || '—') + '</td>'
       + '<td>' + renderStatusBadge(g.status) + '</td>'
-      + '<td style="text-align:center; color:#fff;">' + (g.totalSeats || '—') + '</td>'
-      + '<td>' + renderMailBadge(g.mailStatus) + '</td>'
+      + '<td style="text-align:center; color:#fff; font-weight:700;">' + (g.totalSeats || '—') + '</td>'
+      + '<td class="td-email-txt">' + escapeHtml(g.email || '') + '</td>'
       + '<td><div style="display:flex; gap:6px;">'
         + '<button class="btn btn-outline-cta btn-sm" title="Copiar link de invitación" onclick="copyGuestLink(\'' + safeLink + '\', this)">&#128279;</button>'
         + '<a href="' + waUrl + '" target="_blank" class="btn btn-green-cta btn-sm" title="Enviar por WhatsApp" style="text-decoration:none;">&#128172;</a>'
