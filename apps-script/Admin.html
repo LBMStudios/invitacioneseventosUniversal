@@ -244,10 +244,10 @@
     /* ── TABLES & FORMS ───────────────────────────── */
     .toolbar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
     .search-input-box { flex: 1; min-width: 220px; position: relative; }
-    .search-input-box input { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px 10px 40px; color: #fff; font-size: 13px; font-family: inherit; outline: none; transition: all 0.15s; }
+    .search-input-box input { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px 10px 38px; color: #fff; font-size: 13px; font-family: inherit; outline: none; transition: all 0.15s; }
     .search-input-box input::placeholder { color: var(--text-sub); }
     .search-input-box input:focus { border-color: rgba(56,189,248,0.5); background: rgba(255,255,255,0.1); box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12); }
-    .search-ic-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-sub); font-size: 14px; pointer-events: none; }
+    .search-ic-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-sub); font-size: 13px; pointer-events: none; line-height: 1; }
 
     .filter-btn-group { display: flex; gap: 6px; flex-wrap: wrap; }
     .f-pill-btn { padding: 8px 14px; border-radius: 99px; border: 1px solid var(--border); background: transparent; color: var(--text-sub); font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; font-family: inherit; }
@@ -482,7 +482,7 @@
       <div id="tab-guests" class="tab-pane-content" style="display:none;">
         <div class="toolbar-row">
           <div class="search-input-box">
-            <span class="search-ic-icon">&#9906;</span>
+            <span class="search-ic-icon">&#128269;</span>
             <input type="text" id="guest-search-field" placeholder="Buscar por nombre, email o c&oacute;digo&hellip;" oninput="filterGuestTable()">
           </div>
           <div class="filter-btn-group">
