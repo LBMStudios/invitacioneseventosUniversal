@@ -2195,6 +2195,33 @@ function adminDeleteGuest(code) {
 }
 
 /**
+ * Elimina múltiples invitados por sus códigos.
+ * codes: array de strings (códigos de invitados)
+ * Elimina de atrás hacia adelante para no desplazar las filas.
+ */
+function adminDeleteGuests(codes) {
+  if (!codes || !codes.length) return { ok: true, deleted: 0 };
+  const sheet = getSheet_(SHEET_INVITADOS);
+
+  // Recopilar todas las filas a eliminar
+  const rows = [];
+  const notFound = [];
+  codes.forEach(function(code) {
+    const row = findGuestRow_(sheet, code);
+    if (row) rows.push(row);
+    else notFound.push(code);
+  });
+
+  // Eliminar de mayor a menor para no desplazar índices
+  rows.sort(function(a, b) { return b - a; });
+  rows.forEach(function(row) { sheet.deleteRow(row); });
+
+  try { generarReporteCine_Silent_(); } catch (_) {}
+  return { ok: true, deleted: rows.length, notFound: notFound };
+}
+
+
+/**
  * Devuelve la configuración del evento para el panel.
  */
 function adminGetConfig() {

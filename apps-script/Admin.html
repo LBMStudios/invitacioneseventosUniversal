@@ -27,6 +27,36 @@
       --sw: 256px;
     }
 
+    /* ── BULK ACTION BAR ───────────────────────────── */
+    #bulk-action-bar {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 18px;
+      margin-bottom: 10px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      border-radius: 10px;
+      backdrop-filter: blur(12px);
+      animation: bulkBarIn 0.18s ease;
+    }
+    @keyframes bulkBarIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    #bulk-count-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fca5a5;
+      flex: 1;
+    }
+    .guest-cb {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--pink);
+      cursor: pointer;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
@@ -464,6 +494,13 @@
           <button class="btn btn-outline-cta btn-sm" onclick="exportGuestsCSV()">&#11015; CSV</button>
         </div>
 
+        <!-- ── BARRA DE ACCIONES MÚLTIPLES ── -->
+        <div id="bulk-action-bar">
+          <span id="bulk-count-label">0 seleccionados</span>
+          <button id="bulk-delete-btn" class="btn btn-sm" style="background:rgba(239,68,68,0.25);border:1px solid rgba(239,68,68,0.6);color:#fca5a5;font-weight:600;" onclick="deleteSelectedGuests()">&#128465; Eliminar seleccionados</button>
+          <button class="btn btn-sm btn-outline-cta" onclick="document.querySelectorAll('.guest-cb').forEach(function(c){c.checked=false}); updateBulkBar();">&#215; Deseleccionar</button>
+        </div>
+
         <div id="guest-table-wrapper" class="table-glass-card">
           <div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando invitados&hellip;</p></div>
         </div>
@@ -814,7 +851,8 @@ function renderGuestTable() {
     var safeLink = (g.link || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
     var waUrl = getWhatsAppUrlForGuest(g);
 
-    return '<tr>'
+    return '<tr data-code="' + escapeHtml(g.code) + '">'
+      + '<td style="width:36px;text-align:center;"><input type="checkbox" class="guest-cb" data-code="' + escapeHtml(g.code) + '" onchange="onCheckboxChange()"></td>'
       + '<td class="td-code-txt">' + escapeHtml(g.code) + '</td>'
       + '<td class="td-name-txt">' + escapeHtml(g.name) + '</td>'
       + '<td class="td-email-txt">' + escapeHtml(g.email || '') + '</td>'
@@ -854,8 +892,59 @@ function copyGuestLink(linkUrl, btnEl) {
   });
 }
 
+/* ── SELECCIÓN MÚLTIPLE ─────────────────────────────── */
+function toggleSelectAll(cb) {
+  document.querySelectorAll('.guest-cb').forEach(function(c) { c.checked = cb.checked; });
+  updateBulkBar();
+}
+
+function onCheckboxChange() {
+  var all = document.querySelectorAll('.guest-cb');
+  var checked = document.querySelectorAll('.guest-cb:checked');
+  var selAllCb = document.getElementById('select-all-cb');
+  if (selAllCb) {
+    selAllCb.checked = checked.length === all.length && all.length > 0;
+    selAllCb.indeterminate = checked.length > 0 && checked.length < all.length;
+  }
+  updateBulkBar();
+}
+
+function updateBulkBar() {
+  var checked = document.querySelectorAll('.guest-cb:checked');
+  var bar = document.getElementById('bulk-action-bar');
+  if (!bar) return;
+  if (checked.length > 0) {
+    bar.style.display = 'flex';
+    var lbl = document.getElementById('bulk-count-label');
+    if (lbl) lbl.textContent = checked.length + ' invitado' + (checked.length !== 1 ? 's' : '') + ' seleccionado' + (checked.length !== 1 ? 's' : '');
+  } else {
+    bar.style.display = 'none';
+  }
+}
+
+function deleteSelectedGuests() {
+  var checked = document.querySelectorAll('.guest-cb:checked');
+  if (!checked.length) return;
+  var codes = Array.from(checked).map(function(c) { return c.getAttribute('data-code'); });
+  var plural = codes.length > 1;
+  if (!confirm('Eliminar ' + codes.length + ' invitado' + (plural ? 's' : '') + '?\n\n' + codes.join(', ') + '\n\nEsta acción NO se puede deshacer.')) return;
+  var delBtn = document.getElementById('bulk-delete-btn');
+  if (delBtn) { delBtn.disabled = true; delBtn.textContent = 'Eliminando…'; }
+  google.script.run
+    .withSuccessHandler(function(res) {
+      showToast(res.deleted + ' invitado' + (res.deleted !== 1 ? 's' : '') + ' eliminado' + (res.deleted !== 1 ? 's' : ''), 'success');
+      loadGuestsList(); loadDashboardStats();
+    })
+    .withFailureHandler(function(e) {
+      showToast('Error: ' + e.message, 'error');
+      if (delBtn) { delBtn.disabled = false; delBtn.innerHTML = '&#128465; Eliminar seleccionados'; }
+    })
+    .adminDeleteGuests(codes);
+}
+
+/* ── ELIMINAR UNO ───────────────────────────────────── */
 function deleteGuestEntry(code, name) {
-  if (!confirm('Eliminar a ' + name + ' (' + code + ')?\n\nEsta acción no se puede deshacer.')) return;
+  if (!confirm('Eliminar a ' + name + ' (' + code + ')?\n\nEsta acci\u00f3n no se puede deshacer.')) return;
   google.script.run
     .withSuccessHandler(function() { showToast(name + ' eliminado', 'success'); loadGuestsList(); loadDashboardStats(); })
     .withFailureHandler(function(e) { showToast('Error: ' + e.message, 'error'); })
