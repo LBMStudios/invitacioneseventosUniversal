@@ -2616,3 +2616,65 @@ function addVipDoor_(name, companionName, seats) {
   return { ok: true, code: res.code, name: name, seats: numSeats };
 }
 
+
+// ═══════════════════════════════════════════════════════════════════════
+// HERRAMIENTA DE ADMINISTRACIÓN: Borrar todos los datos (mantiene headers)
+// ═══════════════════════════════════════════════════════════════════════
+
+/**
+ * Borra TODAS las filas de datos de la hoja Invitados manteniendo
+ * únicamente la fila de encabezados (fila 1).
+ *
+ * ⚠️ ACCIÓN IRREVERSIBLE — ejecutar solo cuando se quiera empezar de cero.
+ *
+ * Cómo ejecutar:
+ *   Apps Script editor → selector de función → "clearAllData" → ▶ Run
+ */
+function clearAllData() {
+  const ss    = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const sheet = ss.getSheetByName(SHEET_INVITADOS);
+
+  if (!sheet) {
+    SpreadsheetApp.getUi().alert('❌ No se encontró la hoja "' + SHEET_INVITADOS + '"');
+    return;
+  }
+
+  const totalRows = sheet.getLastRow();
+
+  if (totalRows <= 1) {
+    SpreadsheetApp.getUi().alert('ℹ️ La hoja ya está vacía (solo tiene headers). Nada que borrar.');
+    return;
+  }
+
+  const dataRows = totalRows - 1;
+
+  const ui   = SpreadsheetApp.getUi();
+  const resp = ui.alert(
+    '⚠️ CONFIRMACIÓN FINAL',
+    'Se van a borrar ' + dataRows + ' fila(s) de la hoja "' + SHEET_INVITADOS + '".\n\n' +
+    'ESTA ACCIÓN ES IRREVERSIBLE. ¿Confirmás?',
+    ui.ButtonSet.YES_NO
+  );
+
+  if (resp !== ui.Button.YES) {
+    ui.alert('Operación cancelada. No se borró nada.');
+    return;
+  }
+
+  sheet.deleteRows(2, dataRows);
+
+  const reportSheet = ss.getSheetByName('Reporte Cine Movie');
+  if (reportSheet && reportSheet.getLastRow() > 1) {
+    reportSheet.deleteRows(2, reportSheet.getLastRow() - 1);
+  }
+
+  ui.alert(
+    '✅ Listo',
+    'Se borraron ' + dataRows + ' fila(s).\n\n' +
+    'La hoja quedó limpia con solo los headers.\n' +
+    'Podés cargar los invitados reales.',
+    ui.ButtonSet.OK
+  );
+
+  Logger.log('clearAllData: ' + dataRows + ' filas borradas — ' + new Date().toISOString());
+}
