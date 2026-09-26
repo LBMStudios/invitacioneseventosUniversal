@@ -1,75 +1,75 @@
-# Universal Assistance · Eventos 2026 (Coyote vs. Acme)
+# Universal Assistance Â· Eventos 2026 (Coyote vs. Acme)
 
-Sistema integral de gestión de eventos: envío de invitaciones personalizadas por mail, landing page interactiva con confirmación de asistencia (RSVP) y aplicación web de control de accesos (Check-in QR en puerta).
-
----
-
-## 🧩 Módulos del Sistema
-
-### 📩 1. Envío de Invitaciones y Backend (`apps-script/`)
-- **Ubicación**: [`apps-script/`](./apps-script/)
-- **Descripción**: Módulo servidor alojado en Google Apps Script que conecta con Google Sheets.
-- **Archivos clave**:
-  - `Código.gs`: Genera los códigos de invitación únicos (`UA-xxx`), procesa las respuestas RSVP, construye y envía los correos electrónicos HTML personalizados con código QR adjunto.
-  - `Admin.html`: Interfaz administrativa integrada en la planilla para el envío masivo o probatorio de invitaciones.
-
-### 💌 2. Invitación Digital / Landing Page (`firebase/public/index.html`)
-- **Ubicación**: [`firebase/public/index.html`](./firebase/public/index.html)
-- **Descripción**: Sitio web interactivo para los invitados.
-- **Archivos clave**:
-  - `app.js`: Procesa la invitación desde la URL (`?i=UA-DEMO-001`), despliega los datos personalizados del invitado y registra la confirmación de asistencia (RSVP).
-  - `styles.css`: Estilos visuales con la identidad corporativa de Universal Assistance (celeste/lila), diseño responsive (mobile, tablet, desktop) y animaciones.
-
-### 📱 3. App Web de Escaneo / Check-in QR (`firebase/public/checkin.html`)
-- **Ubicación**: [`firebase/public/checkin.html`](./firebase/public/checkin.html)
-- **Descripción**: Aplicación web optimizada para el personal en la entrada del evento.
-- **Archivos clave**:
-  - `checkin.js` + `qrcode.min.js`: Utiliza la cámara del dispositivo móvil/tablet para escanear el código QR presentado por el invitado, validando el ingreso en tiempo real contra la base de datos de Google Sheets y registrando el horario de acceso.
-
-### 📊 4. Portal Admin Web (`firebase/public/admin.html`)
-- **Ubicación**: [`firebase/public/admin.html`](./firebase/public/admin.html)
-- **Descripción**: Dashboard de monitoreo web para consultar el listado de asistentes, confirmaciones de asistencia y métricas en tiempo real.
+Sistema integral de gestiÃ³n de eventos: envÃ­o de invitaciones personalizadas por mail, landing page interactiva con confirmaciÃ³n de asistencia (RSVP) y aplicaciÃ³n web de control de accesos (Check-in QR en puerta).
 
 ---
 
-## 📐 Estructura del Repositorio
+## ð§© MÃ³dulos del Sistema
+
+### ð© 1. EnvÃ­o de Invitaciones y Backend (`apps-script/`)
+- **UbicaciÃ³n**: [`apps-script/`](./apps-script/)
+- **DescripciÃ³n**: MÃ³dulo servidor alojado en Google Apps Script que conecta con Google Sheets.
+- **Archivos clave**:
+  - `CÃ³digo.gs`: Genera los cÃ³digos de invitaciÃ³n Ãºúnicos (`UA-xxx`), procesa las respuestas RSVP, construye y envÃ­a los correos electrÃ³únicos HTML personalizados con cÃ³digo QR adjunto.
+  - `Admin.html`: Interfaz administrativa integrada en la planilla para el envÃ­o masivo o probatorio de invitaciones.
+
+### ð 2. InvitaciÃ³n Digital / Landing Page (`firebase/public/index.html`)
+- **UbicaciÃ³n**: [`firebase/public/index.html`](./firebase/public/index.html)
+- **DescripciÃ³n**: Sitio web interactivo para los invitados.
+- **Archivos clave**:
+  - `app.js`: Procesa la invitaciÃ³n desde la URL (`?i=UA-DEMO-001`), despliega los datos personalizados del invitado y registra la confirmaciÃ³n de asistencia (RSVP).
+  - `styles.css`: Estilos visuales con la identidad corporativa de Universal Assistance (celeste/lila), diseÃ±o responsive (mobile, tablet, desktop) y animaciones.
+
+### ð± 3. App Web de Escaneo / Check-in QR (`firebase/public/checkin.html`)
+- **UbicaciÃ³n**: [`firebase/public/checkin.html`](./firebase/public/checkin.html)
+- **DescripciÃ³n**: AplicaciÃ³n web optimizada para el personal en la entrada del evento.
+- **Archivos clave**:
+  - `checkin.js` + `qrcode.min.js`: Utiliza la cÃ¡mara del dispositivo mÃ³vil/tablet para escanear el cÃ³digo QR presentado por el invitado, validando el ingreso en tiempo real contra la base de datos de Google Sheets y registrando el horario de acceso.
+
+### ð 4. Portal Admin Web (`firebase/public/admin.html`)
+- **UbicaciÃ³n**: [`firebase/public/admin.html`](./firebase/public/admin.html)
+- **DescripciÃ³n**: Dashboard de monitoreo web para consultar el listado de asistentes, confirmaciones de asistencia y mÃ©tricas en tiempo real.
+
+---
+
+## ð Estructura del Repositorio
 
 ```text
-UAInvitacón/
-├── apps-script/                   # Backend en Google Apps Script
-│   ├── .clasp.json                # Configuración de Clasp para sincronización
-│   ├── appsscript.json            # Manifest del proyecto Apps Script
-│   ├── Admin.html                 # Panel Admin integrado en GAS
-│   └── Código.gs                  # Lógica del backend y servidor de correo
-├── firebase/                      # Aplicación Web Frontend (Firebase Hosting)
-│   ├── .firebaserc                # Proyecto Firebase vinculado (ua-eventos-uy)
-│   ├── firebase.json              # Configuración de Hosting y rutas
-│   └── public/                    # Archivos estáticos públicos
-│       ├── index.html             # Landing Page / Invitación digital
-│       ├── admin.html             # Portal Admin Web
-│       ├── checkin.html           # App de Escaneo Check-in QR
-│       ├── checkin.js             # Lógica del escáner y validación de QR
-│       ├── app.js                 # Lógica interactiva RSVP y parallax
-│       ├── styles.css             # Estilos globales y responsive
-│       ├── manifest.json          # PWA Manifest
-│       └── assets/                # Imágenes y recursos gráficos del evento
-├── docs/                          # Documentación del proyecto
-│   ├── INSTRUCCIONES_GOOGLE_SHEETS.md # Guía operativa para planilla de invitados
-│   ├── CONTROL_DE_CALIDAD.md      # Lista de verificación de QA
-│   ├── history/                   # Historial de versiones y notas históricas
-│   └── previews/                  # Previsualizaciones e imágenes del sistema
-├── data/                          # Ejemplos y datos de prueba (.csv)
-├── PUBLICAR_CAMBIOS.bat           # Script automatizado de despliegue (GAS + Firebase)
-└── README.md                      # Documentación principal
+UAInvitacÃ³n/
+âââ apps-script/                   # Backend en Google Apps Script
+â   âââ .clasp.json                # ConfiguraciÃ³n de Clasp para sincronizaciÃ³n
+â   âââ appsscript.json            # Manifest del proyecto Apps Script
+â   âââ Admin.html                 # Panel Admin integrado en GAS
+â   âââ CÃ³digo.gs                  # LÃ³gica del backend y servidor de correo
+âââ firebase/                      # AplicaciÃ³n Web Frontend (Firebase Hosting)
+â   âââ .firebaserc                # Proyecto Firebase vinculado (ua-eventos-uy)
+â   âââ firebase.json              # ConfiguraciÃ³n de Hosting y rutas
+â   âââ public/                    # Archivos estÃ¡ticos pÃºblicos
+â       âââ index.html             # Landing Page / InvitaciÃ³n digital
+â       âââ admin.html             # Portal Admin Web
+â       âââ checkin.html           # App de Escaneo Check-in QR
+â       âââ checkin.js             # LÃ³gica del escÃ¡ner y validaciÃ³n de QR
+â       âââ app.js                 # LÃ³gica interactiva RSVP y parallax
+â       âââ styles.css             # Estilos globales y responsive
+â       âââ manifest.json          # PWA Manifest
+â       âââ assets/                # ImÃ¡genes y recursos grÃ¡ficos del evento
+âââ docs/                          # DocumentaciÃ³n del proyecto
+â   âââ INSTRUCCIONES_GOOGLE_SHEETS.md # GuÃ­a operativa para planilla de invitados
+â   âââ CONTROL_DE_CALIDAD.md      # Lista de verificaciÃ³n de QA
+â   âââ history/                   # Historial de versiones y notas histÃ³ricas
+â   âââ previews/                  # Previsualizaciones e imÃ¡genes del sistema
+âââ data/                          # Ejemplos y datos de prueba (.csv)
+âââ PUBLICAR_CAMBIOS.bat           # Script automatizado de despliegue (GAS + Firebase)
+âââ README.md                      # DocumentaciÃ³n principal
 ```
 
 ---
 
-## 🚀 Despliegue
+## ð Despliegue
 
 ### 1. Despliegue Automatizado (Recomendado)
-Ejecutar el script `PUBLICAR_CAMBIOS.bat` en la raíz del proyecto. Este script:
-1. Sincroniza y despliega el código backend en Google Apps Script mediante `clasp`.
+Ejecutar el script `PUBLICAR_CAMBIOS.bat` en la raÃ­z del proyecto. Este script:
+1. Sincroniza y despliega el cÃ³digo backend en Google Apps Script mediante `clasp`.
 2. Publica los cambios del frontend en Firebase Hosting.
 
 ### 2. Despliegue Manual
@@ -89,6 +89,6 @@ firebase deploy --only hosting --project ua-eventos-uy
 
 ---
 
-## 📚 Documentación Adicional
-- 📖 [Instrucciones Google Sheets](./docs/INSTRUCCIONES_GOOGLE_SHEETS.md)
-- ✅ [Control de Calidad (QA)](./docs/CONTROL_DE_CALIDAD.md)
+## ð DocumentaciÃ³n Adicional
+- ð [Instrucciones Google Sheets](./docs/INSTRUCCIONES_GOOGLE_SHEETS.md)
+- â [Control de Calidad (QA)](./docs/CONTROL_DE_CALIDAD.md)
