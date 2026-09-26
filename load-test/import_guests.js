@@ -1,4 +1,4 @@
-﻿const fs   = require('fs');
+const fs   = require('fs');
 const path = require('path');
 const os   = require('os');
 
@@ -223,9 +223,9 @@ OM TRAVEL		AGENCIA	OM TRAVEL	2	AB`;
     // Formatear nombre completo
     let fullName = (titleCase(nombre) + ' ' + titleCase(apellido)).trim();
     if (nombre.toUpperCase() === 'EXTRA') {
-      fullName = `Extra ${titleCase(apellido)} (${convenio || canal || 'UA'})`;
+      fullName = `[CUPO] ${titleCase(apellido)} (${convenio || canal || 'UA'})`;
     } else if (nombre.toUpperCase() === 'TRAVELOZ' || nombre.toUpperCase() === 'DESTINICO' || nombre.toUpperCase() === 'OM TRAVEL') {
-      fullName = `Cupo ${titleCase(nombre)} (${convenio || canal || 'Agencia'})`;
+      fullName = `[CUPO] ${titleCase(nombre)} (${convenio || canal || 'Agencia'})`;
     }
 
     const inviteLink = `${LANDING_URL}?i=${code}`;

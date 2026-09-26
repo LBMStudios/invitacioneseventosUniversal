@@ -1,0 +1,1412 @@
+{
+  "timestamp": "2026-08-19T02:22:26.444Z",
+  "totalEmails": 234,
+  "sent": 234,
+  "errors": 0,
+  "details": [
+    {
+      "email": "laura.caprio@semm.com.uy",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.43466896397@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "andres.rodriguez@semm.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.87279584352@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "diego.decarlini@semm.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.50511077611@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "paola.pradie@semm.com.uy",
+      "count": 5,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.19125655779@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "juan.voelker@semm.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.58886629380@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "nconde@asesp.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.99700237122@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mnaumis@asesp.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.66013010138@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "lhernandez@asesp.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.20143046057@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "egdebellis@asesp.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.14415528538@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ayaffe@asesp.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.92934465132@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ahoffmann@asesp.com.uy",
+      "count": 5,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.57892295287@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "servicioscomplementarios@hospitalevangelico.com",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.92464076015@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jlmunoz@hospitalevangelico.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.96416907514@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gerencia@hospitalevangelico.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.35231259791@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ca72787@casmu.com",
+      "count": 4,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.39591825091@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "alopez@summum.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.33942690741@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "nlabat@summum.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.25839455308@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "alejandra@saavedraseguros.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.47259769614@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "delia@dvsseguros.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.31394008701@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "elisa.costa@cosem.com.uy",
+      "count": 4,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.87177437951@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "santiago.fleitas@cosem.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.73273278140@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gabrielo.goicoechea@cosem.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.69346618883@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jbarreto@amsj.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.50962371071@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gamorin@asistencial.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.26088988770@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jguillen@asistencial.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.31358740552@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gustavoburghi@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.44503719100@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "stortorella@asistencial.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.55859751336@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fberve@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.53636797838@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "laura.fernandez@seguroamericano.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.54211509025@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "facundo.quirosaldana@seguroamericano.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.53019892820@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fernanda.cabrera@seguroamericano.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.21984823010@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ariel.bango@seguroamericano.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.62816937595@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "rosario.cuadro@seguroamericano.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.37276159083@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "laura@rissoseguros.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.62582110876@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jorgegerez@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.15643884472@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jorge.ferraguz@mp.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.68232123708@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "natalia.caimi@oca.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.56277688908@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gperez@oca.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.39670174475@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "florencia.diaz@oca.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.76468306595@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "imarino@oca.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.35149961971@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "llandoni@smi.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.18535323980@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jbenitez@santander.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.17853262491@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "sabrina.otero@santander.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.83512152471@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "rmontossi@itau.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.49932691544@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "maria_ines.sturla@itau.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.21249637251@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mnunez@itau.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.56102538163@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "murioste@bbvads.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.72080691626@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "joaquinmatias.tolosa@bbvads.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.26319744804@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "agustin.cirilli@sbi.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.41333959851@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gustavo.spinella@sbi.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.38285776996@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fabian.giovanola@sbi.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.76973789090@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "camila.migales@sbi.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.47639694466@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "yamila.barrera@sbi.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.46221262548@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "achebi@sistarbanc.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.88523976788@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "vberton@sistarbanc.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.45616735404@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jefecomercial@sapp.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.74923342691@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "veronica.correa@portoservicios.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.86540075424@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "acamiou@ua.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.50443653430@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jquintana@ua.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.32271169265@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gconti@coit.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.93963668993@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jleone@coit.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.99847597861@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "lu_537@hotmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.34563931436@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "al_alfaro@hotmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.27696998580@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "sandraoglia@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.65102934759@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "vmendez@ua.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.57316657941@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "info@conosurviajes.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.34762663561@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mario@conosurviajes.uy",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.72093820859@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "javier@conosurviajes.uy",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.77834412649@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "diego.correa@melitour.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.64277632669@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "giulia@tryolabs.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.14451015175@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "sabrina@tryolabs.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.84090852267@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "adriana@rumbosturismo.com",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.40195856662@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "alejandro@rumbosturismo.com",
+      "count": 3,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.57236700295@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "virginia@rumbosturismo.com",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.26072683900@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "maira@genersol.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.49705423877@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mediaz@bioerix.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.37033850736@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fnavia@bioerix.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.22039106234@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "aquinta@bioerix.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.91652595965@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ines.giro@ams.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.28268643245@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "reservas@airclass.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.20151769339@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "agarcia@brendisol.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.92512605707@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ines.barrabino@aon.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.83344748917@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jmokosce@edefreitas.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.27693296982@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "cg@greycon.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.18301156470@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "info@masiniseguros.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.74511888361@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "vbonfiglio@nuevosiglo.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.79982024662@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ricardo@hausmannbroker.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.87244848033@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "garciacorbo@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.67099507596@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jvidiella@lablibra.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.28512536820@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "info@flseguros.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.71792465589@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "reservas2@sendasturismo.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.93581066582@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "agustina.magnani@traveloz.com.uy",
+      "count": 5,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.77781927393@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "santiagorodriguez@destinico.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.17970547175@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "bettina@mercurioviajes.com.uy",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.30567767710@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ivanna@mercurioviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.18440975959@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jorgelina@mercurioviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.91557841470@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "tatiana@mercurioviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.66612293723@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gustavo.pereira@activetravel.com.uy",
+      "count": 3,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.93804718023@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gonzalo.pere@activetravel.com.uy",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.63101180029@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "federico.alonso@activetravel.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.19954020662@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "magdalena@batistaviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.66971625114@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "beatriz@batistaviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.61250477751@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "martin@batistaviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.65809770063@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gmoreira3@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.91943953586@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "contaduria@cycviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.22782593601@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "carolina.negro@consolidtravel.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.23846046817@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "carolina.schultz@vyt.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.46322346940@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "alejandro.perciavalle@vyt.com.uy",
+      "count": 2,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.12986701908@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gabriela@vyt.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.29517890200@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "francisca@sinfronteras.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.24260766045@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fabiana@sinfronteras.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.58835757766@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "amelegatti@delsurviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.73417141205@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "martin@ibuseguros.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.28671510912@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "silvana@grupoatom.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.92285219649@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "rafael@grupoatom.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.59569899116@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ccabana@tuviaje.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.34592695291@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "paula@tuviaje.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.24367802956@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "sebastian@tuviaje.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.64976306528@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "andrea@libertyuruguay.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.91728643144@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "virginia.guerra@libertyuruguay.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.76274356934@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ventas@zafiroviajes.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.35976671189@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "juanpablo@libertyuruguay.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.69614097599@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "marcelo.bergalo@libertyuruguay.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.82041402409@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "juanandres@batistaviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.57428186463@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "test-p98wh7z52@srv1.mail-tester.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.47635877809@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "isabel@batista.travel",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.25163119084@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "enrique@rumbosturismo.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.72084147004@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "sabreu@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.33442667570@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mcamiuo@buemes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.90230042040@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ichaine@buemes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.71988022577@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "alexia@constantinidi.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.88983693719@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "aeropuerto@jorgemartinez.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.65199405636@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "agustin@novoturismo.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.78320001987@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "asosa@hiperviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.47260689779@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "aseijas@travellerviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.62167941548@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "amagnoni@bntours.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.40974985282@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ana@sinfronteras.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.58466517107@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "alejandro.leal@e-travels.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.92151290186@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "amontano@jorgemartinez.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.39894119295@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "arussi@jorgemartinez.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.86302335865@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "carlosperez@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.54336948241@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "carolina.rizzo@libertyuruguay.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.48731734579@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "receptivocolonia@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.94779997377@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "daniel@libertyuruguay.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.92385124027@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "cecilia@ceciliaregules.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.67321113952@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "cguzman@jorgemartinez.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.15505038604@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "dgarcia@creditravel.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.49781182496@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "enzo.cusati@globaltours.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.55666495895@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "federico@novoturismo.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.70110065010@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fcousillas@experience.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.16564291827@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fpereira@delsurviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.75578236929@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fede@mevuelo.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.36025538966@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fleon@travellerviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.18350309373@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gabriel.bonavita.gb@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.76066563231@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "glopez@jpsantos.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.12575116676@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gmartin@jpsantos.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.29204437408@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gabriela.zimerman@vyt.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.30426002619@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "geral@emegeviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.13947288142@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ggomez@jorgemartinez.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.41545939670@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "administracion@mactravel.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190221.50932209203@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ignacio.curti@dcomtravel.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.77085116003@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jblanco@travellerviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.72479278098@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "josefina@syncroviajes.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.94658905770@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "joel@azulviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.28547149067@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "karen@novoturismo.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.99029201782@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ltorres@jorgemartinez.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.28760707770@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "lorenzo@mactravel.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.48272499155@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "lsabatel@cisplatinauruguay.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.68848433497@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "marcelo@libertyuruguay.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.49618349141@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "luciano@campomar.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.61433696265@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mara@emegeviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.45822011716@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "marianoel@turispayviqjes.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.55617737302@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mateo@carrascoviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.49324161249@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "matias.sosa@traveloz.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.11913164278@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mayra.peirano@e-travels.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.19407092843@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "maximiliano@novoturismo.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.18430075570@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "maximiliano@lamana.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.79366263218@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "contable@sinfronteras.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.86024023081@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "nicolas@personaloperadora.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.62882673055@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "pablo@ciceroneuruguay.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.94204085637@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ramiro.bilbao@mevuelo.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.91317164974@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "pablo@azulviajes.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.90067145997@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "recepcion@jorgemartinez.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.84856747826@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "vipturismouruguay@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.37820997836@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "silvia@melitour.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.79491941363@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "horizonte.agenciadeviaje@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.25866466759@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "soledad@libertyuruguay.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.77712837480@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ventaspando@viajaconbea.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.45695119614@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "turismovivirviajando@gmail.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.22142953791@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "aluna@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.21139575474@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "bbulloni@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.89260009595@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fgarcia@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.83445149427@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "glopez@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.79566404763@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gvarela@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.32941653264@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jordonez@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.45934358028@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "jmotasu@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.47387672498@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mcorrea@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.38651684492@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "rabbate@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.73818096073@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "rgarciarena@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.63194249538@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "aoyarbide@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.71173271055@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "frosselli@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.73386173544@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gcairoli@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.63166464171@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "pzanet@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.47000114035@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fblankleider@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.57053716095@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "cbouzan@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.25746016152@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "nhernandez@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.19759884191@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "cdorner@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.75512923152@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "stournier@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.99355427255@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ebroggi@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.72717547100@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fjaime@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.30340421507@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fstipo@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.15850701269@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "frivero@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.49134924752@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gtournier@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.44655476770@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "lacosta@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.71876415869@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mpagani@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.17551478599@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "nseoane@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.10891316580@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "vzegarra@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.50440211686@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "wfernandez@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.87522933101@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "gvera@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.99957817408@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mbarboza@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.75283911978@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "mcosta@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.80290661304@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "salvarez@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.36620825839@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ccorrea@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.68966654686@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "fpombo@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.28219449947@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "amarquez@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.87787966199@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "abideau@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.20564966544@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "bvitola@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.67591664880@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ltur@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.20741227925@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "rfontana@sevens.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.64495863113@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "alejandra@melitour.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.75562940277@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "carmen@melitour.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.19180847600@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "ntorres@summum.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.89832910710@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "vgugliotta@summum.com.uy",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.61961335381@smtp-relay.mailin.fr>"
+    },
+    {
+      "email": "test@delete.com",
+      "count": 1,
+      "status": "ENVIADO",
+      "msgId": "<202608190222.19222196743@smtp-relay.mailin.fr>"
+    }
+  ]
+}

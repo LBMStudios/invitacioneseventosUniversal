@@ -3,41 +3,3691 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UA Eventos — Panel de Administración</title>
+  <title>UA Eventos &#8212; Panel Admin</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23071938'/><rect x='2' y='2' width='60' height='60' rx='14' fill='none' stroke='%2338bdf8' stroke-width='2.5'/><text x='32' y='46' text-anchor='middle' font-family='Arial, sans-serif' font-size='36' font-weight='900' fill='%23ffffff'>u</text></svg>">
+  <link rel="icon" type="image/png" href="https://ua-eventos-uy.web.app/assets/logo-ua-white-icon.png">
+  <link rel="shortcut icon" type="image/png" href="https://ua-eventos-uy.web.app/assets/logo-ua-white-icon.png">
+  <link rel="apple-touch-icon" href="https://ua-eventos-uy.web.app/assets/logo-ua-white-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: #071938;
-      font-family: 'Inter', sans-serif;
+    :root {
+      --navy:      #071938;
+      --navy-dark: #040f26;
+      --navy-mid:  #0d2654;
+      --purple:    #321c54;
+      --pink:      #ee1f73;
+      --pink-glow: #ff2e83;
+      --cyan:      #38bdf8;
+      --cyan-light:#7dd3fc;
+      --green:     #22c55e;
+      --yellow:    #f59e0b;
+      --red:       #ef4444;
+      --white:     #ffffff;
+      --text-main: #f8fafc;
+      --text-sub:  #94a3b8;
+      --border:    rgba(255,255,255,0.16);
+      --glass:     rgba(255,255,255,0.07);
+      --sw:        256px;
     }
-    .admin-container {
-      width: 100vw;
-      height: 100vh;
+
+    .excel-dropzone-box {
+      border: 2px dashed rgba(56, 189, 248, 0.45);
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 12px;
+    }
+    .excel-dropzone-box:hover {
+      border-color: var(--pink);
+      background: rgba(238, 31, 115, 0.08);
+      transform: translateY(-2px);
+    }
+    .excel-dropzone-icon {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+    .excel-dropzone-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .excel-dropzone-sub {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 3px;
+    }
+
+    /* ── BULK ACTION BAR ───────────────────────────── */
+    #bulk-action-bar {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 18px;
+      margin-bottom: 10px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      border-radius: 10px;
+      backdrop-filter: blur(12px);
+      animation: bulkBarIn 0.18s ease;
+    }
+    @keyframes bulkBarIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    #bulk-count-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fca5a5;
+      flex: 1;
+    }
+    .guest-cb {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--pink);
+      cursor: pointer;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      background: var(--navy);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    /* ── CANVAS BACKGROUND (Exact match to event landing page) ── */
+    .app { display: flex; height: 100vh; overflow: hidden; position: relative; }
+
+    .bg-canvas {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(circle at 85% 95%, rgba(238, 31, 115, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.28) 0%, transparent 40%),
+        linear-gradient(160deg, #071938 0%, #0d2654 45%, #251246 100%);
+    }
+
+    /* Floating ambient light particles */
+    .bg-glow-orb-1 {
+      position: fixed; top: -100px; right: -100px; width: 450px; height: 450px;
+      background: radial-gradient(circle, rgba(238, 31, 115, 0.18) 0%, transparent 70%);
+      pointer-events: none; z-index: 0; animation: floatOrb 15s ease-in-out infinite alternate;
+    }
+    .bg-glow-orb-2 {
+      position: fixed; bottom: -150px; left: 10%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+      pointer-events: none; z-index: 0; animation: floatOrb 18s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes floatOrb { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(-30px) scale(1.1); } }
+
+    .main { flex: 1; overflow-y: auto; position: relative; z-index: 1; display: flex; flex-direction: column; }
+
+    /* ── HEADER ───────────────────────────────────── */
+    .top-header {
+      height: 60px; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(7, 25, 56, 0.75);
+      border-bottom: 1px solid var(--border);
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+      position: sticky; top: 0; z-index: 50; flex-shrink: 0;
+    }
+
+    .brand-header-left { display: flex; align-items: center; gap: 12px; }
+    .ua-brand-group { display: flex; align-items: center; gap: 8px; }
+    .ua-brand-icon {
+      width: 30px; height: 30px; background: #fff; border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 19px; color: var(--navy); line-height: 1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .ua-brand-title { font-size: 11px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: 0.2px; }
+    .zurich-tag { font-size: 10px; color: rgba(255,255,255,0.6); padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.22); display: flex; align-items: center; gap: 4px; }
+    .zurich-tag strong { color: #fff; font-weight: 800; letter-spacing: 0.5px; }
+    .movie-logo-tag { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.5px; display: flex; align-items: center; gap: 2px; }
+    .movie-logo-tag .star { color: var(--pink); font-size: 14px; transform: translateY(-1px); }
+
+    
+    /* ── HEADER REFRESH ALL BUTTON ── */
+    .btn-refresh-all-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(238, 31, 115, 0.2), rgba(56, 189, 248, 0.2));
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+    .btn-refresh-all-header:hover {
+      background: linear-gradient(135deg, #ee1f73, #0284c7);
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(238, 31, 115, 0.45);
+      transform: translateY(-1px);
+    }
+    .btn-refresh-all-header .refresh-icon-svg {
+      transition: transform 0.4s ease, color 0.2s ease;
+      color: #38bdf8;
+    }
+    .btn-refresh-all-header:hover .refresh-icon-svg {
+      color: #ffffff;
+      transform: rotate(180deg);
+    }
+    .btn-refresh-all-header.syncing .refresh-icon-svg {
+      animation: spinIcon 1s linear infinite;
+    }
+    @keyframes spinIcon {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ── SIDEBAR ──────────────────────────────────── */
+    .sidebar {
+      width: var(--sw); flex-shrink: 0;
+      background: rgba(4, 15, 38, 0.95);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; z-index: 20;
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+    .s-event-card { padding: 22px 20px 18px; border-bottom: 1px solid var(--border); }
+    .event-badge-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 99px; padding: 3px 12px; margin-bottom: 10px;
+    }
+    .badge-dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: pulseDot 2s infinite; }
+    @keyframes pulseDot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.3; transform:scale(0.8); } }
+    .badge-text { font-size: 9px; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 1.1px; }
+
+    .s-title { font-size: 16px; font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -0.3px; }
+    .s-title .coyote { color: var(--cyan-light); }
+    .s-title .vs-badge {
+      background: var(--pink); color: #fff; font-size: 9px; font-weight: 900;
+      padding: 1px 6px; border-radius: 99px; display: inline-block; transform: rotate(-5deg); margin: 0 2px;
+      box-shadow: 0 2px 8px rgba(238, 31, 115, 0.5);
+    }
+    .s-title .acme { color: var(--pink); }
+    .s-subtitle { font-size: 11px; color: var(--text-sub); margin-top: 5px; font-weight: 500; }
+
+    .nav { flex: 1; padding: 12px 0; overflow-y: auto; }
+    .nav-group-label { font-size: 9px; font-weight: 800; color: rgba(148, 163, 184, 0.45); text-transform: uppercase; letter-spacing: 1.2px; padding: 14px 20px 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer;
+      color: var(--text-sub); font-weight: 500; font-size: 13px;
+      transition: all 0.18s ease; border-left: 3px solid transparent;
+      -webkit-user-select: none; user-select: none;
+    }
+    .nav-item:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-item.active { color: var(--cyan); background: rgba(56, 189, 248, 0.14); border-left-color: var(--cyan); font-weight: 700; }
+    .nav-icon { width: 18px; text-align: center; font-size: 14px; opacity: 0.85; }
+    .nav-item.active .nav-icon { opacity: 1; }
+    .nav-badge-count { margin-left: auto; background: rgba(56, 189, 248, 0.2); color: var(--cyan); font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 99px; }
+
+    .s-footer { padding: 14px 20px; border-top: 1px solid var(--border); font-size: 11px; color: rgba(148, 163, 184, 0.5); }
+    .s-refresh-btn { color: var(--cyan); font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 5px; margin-bottom: 4px; transition: opacity 0.15s; }
+    .s-refresh-btn:hover { opacity: 0.7; }
+
+    /* ── HERO BANNER IN DASHBOARD ─────────────────── */
+    .dashboard-hero {
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+      border: 1px solid var(--border); border-radius: 22px;
+      padding: 34px 38px; margin-bottom: 24px;
+      -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35); position: relative; overflow: hidden;
+      animation: heroIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    .dashboard-hero::before {
+      content: ''; position: absolute; top: -70px; right: -70px; width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(238, 31, 115, 0.28) 0%, transparent 70%); pointer-events: none;
+    }
+
+    .hero-pill-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 99px; padding: 4px 14px; margin-bottom: 12px; }
+    .hero-pill-tag span { font-size: 10px; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 1.2px; }
+
+    .hero-main-title { font-size: 44px; font-weight: 900; line-height: 1; letter-spacing: -1px; margin-bottom: 10px; }
+    .hero-main-title .t-coyote { background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-main-title .t-vs { background: linear-gradient(135deg, #ef2f83, #ee1f73); color: #fff; font-size: 22px; font-weight: 900; padding: 2px 14px; border-radius: 99px; display: inline-block; transform: translateY(-6px) rotate(-4deg); box-shadow: 0 4px 15px rgba(238, 31, 115, 0.5); margin: 0 8px; }
+    .hero-main-title .t-acme { color: var(--pink); text-shadow: 0 0 30px rgba(238, 31, 115, 0.4); }
+
+    .hero-desc-bold { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .hero-desc-sub  { font-size: 13px; color: var(--text-sub); margin-bottom: 24px; }
+
+    .hero-info-chips { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-chip-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 10px 18px; display: flex; align-items: center; gap: 10px; transition: border-color 0.2s; }
+    .hero-chip-item:hover { border-color: rgba(56, 189, 248, 0.4); }
+    .hero-chip-icon { font-size: 16px; color: var(--cyan); }
+    .hero-chip-lbl  { font-size: 9px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.8px; }
+    .hero-chip-val  { font-size: 13px; font-weight: 700; color: #fff; }
+
+    /* ── STATS & PROGRESS ─────────────────────────── */
+    .stats-grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; margin-bottom: 20px; }
+    .stat-glass-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px; padding: 22px 20px; backdrop-filter: blur(20px);
+      position: relative; overflow: hidden; transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .stat-glass-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.28); }
+    .stat-top-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .stat-label-txt  { font-size: 9px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .stat-number-val { font-size: 38px; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 4px; }
+    .stat-number-val.cyan   { color: var(--cyan); }
+    .stat-number-val.green  { color: var(--green); }
+    .stat-number-val.yellow { color: var(--yellow); }
+    .stat-number-val.red    { color: var(--red); }
+    .stat-number-val.pink   { color: var(--pink); }
+    .stat-foot-txt   { font-size: 11px; color: var(--text-sub); }
+
+    /* ── CLICKABLE KPI CARDS ── */
+    .clickable-card {
+      cursor: pointer !important;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+    }
+    .clickable-card:hover {
+      transform: translateY(-4px) scale(1.02) !important;
+      border-color: rgba(56, 189, 248, 0.5) !important;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45), 0 0 25px rgba(56, 189, 248, 0.25) !important;
+    }
+    .stat-foot-txt span.kpi-arrow { font-size: 10px; margin-left: 4px; opacity: 0.8; }
+
+    /* ── CINEMA SEATING MAP MODAL ── */
+    /* ── HIGH-END CINEMA SEATING MAP ── */
+    .cinema-modal-overlay {
+      position: fixed; inset: 0; z-index: 10000;
+      background: rgba(4, 15, 36, 0.92);
+      backdrop-filter: blur(16px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s ease;
+    }
+    .cinema-modal-overlay.active {
+      opacity: 1; visibility: visible;
+    }
+    .cinema-modal-card {
+      background: linear-gradient(155deg, #091e42 0%, #051329 60%, #0f172a 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 24px;
+      width: 100%; max-width: 980px; max-height: 92vh;
+      overflow-y: auto;
+      padding: 28px 36px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8), 0 0 50px rgba(56, 189, 248, 0.2);
       position: relative;
     }
-    iframe {
+    .cinema-modal-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 16px;
+    }
+    .cinema-modal-title { font-size: 20px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 10px; }
+    .cinema-modal-sub { font-size: 12px; color: var(--text-sub); margin-top: 4px; }
+    .cinema-close-btn {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; font-size: 22px; width: 36px; height: 36px; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s ease; line-height: 1;
+    }
+    .cinema-close-btn:hover { background: rgba(239, 47, 131, 0.3); border-color: #ef2f83; color: #ef2f83; }
+
+    .cinema-screen-container {
+      text-align: center; margin: 10px 0 25px;
+      position: relative; perspective: 500px;
+    }
+    .cinema-screen-arc {
+      background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 40%, rgba(56,189,248,0.7) 100%);
+      color: #071938; font-weight: 900; font-size: 13px;
+      letter-spacing: 3px; text-transform: uppercase;
+      padding: 12px 50px; border-radius: 12px 12px 36px 36px;
+      transform: rotateX(-16deg);
+      box-shadow: 0 18px 45px rgba(56, 189, 248, 0.6), 0 0 35px rgba(255,255,255,0.5);
+      display: inline-block;
+      border-bottom: 3px solid #38bdf8;
+    }
+    .cinema-screen-beam {
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      width: 80%; height: 160px;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0.02) 80%, transparent 100%);
+      clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+      pointer-events: none; z-index: 1;
+    }
+
+    .cinema-grid-hall {
+      display: flex; flex-direction: column; gap: 9px;
+      align-items: center; margin: 30px 0 24px;
+      position: relative; z-index: 2;
+    }
+    .cinema-row { display: flex; gap: 6px; align-items: center; }
+    .cinema-row-label {
+      font-size: 11px; font-weight: 800; color: #7dd3fc;
+      width: 26px; height: 22px; border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cinema-aisle { width: 28px; text-align: center; }
+
+    /* Butaca de Cine 3D */
+    .cinema-seat {
+      width: 22px; height: 22px;
+      border-radius: 6px 6px 4px 4px;
+      cursor: pointer; transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative; display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+      padding: 2px 2px 3px;
+    }
+    .cinema-seat::before {
+      content: ''; width: 70%; height: 5px; border-radius: 3px 3px 0 0;
+      background: rgba(255,255,255,0.3); opacity: 0.8;
+    }
+    .cinema-seat::after {
+      content: ''; width: 85%; height: 8px; border-radius: 2px 2px 4px 4px;
+      background: rgba(0,0,0,0.25);
+    }
+
+    /* Confirmados (Verde Neón Brillante) */
+    .cinema-seat.seat-confirmed {
+      background: linear-gradient(145deg, #22c55e 0%, #15803d 100%) !important;
+      border: 1px solid #4ade80 !important;
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.5), inset 0 1px 1px rgba(255,255,255,0.5) !important;
+    }
+    .cinema-seat.seat-confirmed::before { background: #86efac !important; }
+
+    /* Reservados (Cian Eléctrico) */
+    .cinema-seat.seat-reserved {
+      background: linear-gradient(145deg, #0284c7 0%, #0369a1 100%) !important;
+      border: 1px solid #38bdf8 !important;
+      box-shadow: 0 4px 10px rgba(56, 189, 248, 0.4), inset 0 1px 1px rgba(255,255,255,0.4) !important;
+    }
+    .cinema-seat.seat-reserved::before { background: #bae6fd !important; }
+
+    /* Libres (Gris Oscuro Metal) */
+    .cinema-seat.seat-free {
+      background: linear-gradient(145deg, rgba(51, 65, 85, 0.8) 0%, rgba(30, 41, 59, 0.9) 100%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
+    }
+    .cinema-seat.seat-free::before { background: rgba(255, 255, 255, 0.2) !important; }
+
+    .cinema-seat:hover {
+      transform: translateY(-5px) scale(1.45) !important;
+      z-index: 20 !important;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6), 0 0 20px currentColor !important;
+    }
+
+    .cinema-legend-bar {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 12px 18px; font-size: 12px; color: #cbd5e1;
+    }
+    .legend-item { display: flex; align-items: center; gap: 8px; }
+    .seat-dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+    .seat-dot-confirmed { background: #22c55e; box-shadow: 0 0 8px rgba(34, 197, 94, 0.6); }
+    .seat-dot-reserved { background: #0284c7; box-shadow: 0 0 8px rgba(56, 189, 248, 0.4); }
+    .seat-dot-free { background: rgba(255, 255, 255, 0.2); }
+
+    .progress-glass-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 18px; padding: 20px 24px; margin-bottom: 20px; }
+    .progress-top-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .progress-title-txt { font-size: 13px; font-weight: 700; color: #fff; }
+    .progress-pct-txt { font-size: 26px; font-weight: 900; color: var(--cyan); }
+    .progress-track-bg { height: 8px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; }
+
+    /* Multi-Select Dropdown Component */
+    .ms-container {
+      position: relative;
+      display: inline-block;
+      min-width: 160px;
+      max-width: 250px;
+      flex: 1;
+    }
+    .ms-trigger {
       width: 100%;
-      height: 100%;
-      border: none;
+      background: rgba(11, 33, 73, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 10px;
+      color: #ffffff;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .ms-trigger:hover {
+      background: rgba(16, 45, 98, 0.95);
+      border-color: var(--cyan);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+    }
+    .ms-trigger .ms-arrow {
+      margin-left: 6px;
+      font-size: 10px;
+      opacity: 0.8;
+      color: var(--cyan);
+    }
+    .ms-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 5px;
+      min-width: 230px;
+      max-width: 320px;
+      max-height: 280px;
+      overflow-y: auto;
+      background: #091a38;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.85);
+      padding: 8px;
+      z-index: 2000;
+      display: none;
+      backdrop-filter: blur(12px);
+    }
+    .ms-menu.open {
       display: block;
+      animation: msFadeIn 0.15s ease-out;
+    }
+    @keyframes msFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .ms-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #e2e8f0;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+    .ms-item:hover {
+      background: rgba(56, 189, 248, 0.18);
+      color: #ffffff;
+    }
+    .ms-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--cyan);
+      cursor: pointer;
+    }
+    .ms-item.ms-header-item {
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 6px;
+      padding-bottom: 8px;
+      font-weight: 800;
+      color: var(--cyan);
+    }
+    .progress-fill-bar { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--pink)); border-radius: 99px; transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    /* ── BUTTONS ──────────────────────────────────── */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 22px; border-radius: 99px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; font-family: inherit; transition: all 0.2s ease; white-space: nowrap; user-select: none; }
+    .btn-pink-cta { background: linear-gradient(135deg, #ef2f83, #e91673); color: #fff; box-shadow: 0 6px 20px rgba(238, 31, 115, 0.35); }
+    .btn-pink-cta:hover { background: linear-gradient(135deg, #ff3d8f, #f2187d); box-shadow: 0 8px 28px rgba(238, 31, 115, 0.5); transform: translateY(-1px); }
+    .btn-cyan-cta { background: var(--cyan); color: var(--navy-dark); font-weight: 800; box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3); }
+    .btn-cyan-cta:hover { background: #56c8fa; transform: translateY(-1px); box-shadow: 0 8px 25px rgba(56, 189, 248, 0.45); }
+    .btn-green-cta { background: #25d366; color: #fff; font-weight: 800; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35); }
+    .btn-green-cta:hover { background: #20bd5a; transform: translateY(-1px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+    .btn-outline-cta { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.28); }
+    .btn-outline-cta:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(56, 189, 248, 0.12); }
+    .btn-danger-ghost { background: rgba(239, 68, 68, 0.12); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.25); }
+    .btn-danger-ghost:hover { background: rgba(239, 68, 68, 0.22); }
+    .btn-sm { padding: 6px 14px; font-size: 11px; }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none !important; transform: none !important; }
+
+    /* ── TABLES & FORMS ───────────────────────────── */
+    .toolbar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .search-input-box { flex: 1; min-width: 220px; position: relative; display: flex; align-items: center; }
+    .search-input-box input { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px 10px 42px !important; color: #fff; font-size: 13px; font-family: inherit; outline: none; transition: all 0.15s; }
+    .search-input-box input::placeholder { color: var(--text-sub); opacity: 0.8; }
+    .search-input-box input:focus { border-color: rgba(56,189,248,0.5); background: rgba(255,255,255,0.1); box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12); }
+    .search-ic-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-sub); display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 2; }
+    .search-ic-icon svg { width: 16px; height: 16px; stroke: var(--text-sub); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .filter-btn-group { display: flex; gap: 6px; flex-wrap: wrap; }
+    .f-pill-btn { padding: 8px 14px; border-radius: 99px; border: 1px solid var(--border); background: transparent; color: var(--text-sub); font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .f-pill-btn:hover { color: #fff; border-color: rgba(56,189,248,0.4); }
+    .f-pill-btn.active { background: rgba(56, 189, 248, 0.15); color: var(--cyan); border-color: rgba(56, 189, 248, 0.4); font-weight: 700; }
+
+    .form-select-sm {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px 12px;
+      color: var(--text-main);
+      font-size: 12px;
+      font-family: inherit;
+      outline: none;
+      cursor: pointer;
+      max-width: 220px;
+      transition: all 0.15s;
+    }
+    .form-select-sm:focus { border-color: rgba(56,189,248,0.5); }
+    .form-select-sm option { background: #0d2654; color: #fff; }
+
+    .table-glass-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      overflow-x: auto !important;
+      overflow-y: auto !important;
+      max-height: 68vh;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
+    .table-glass-card::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    .table-glass-card::-webkit-scrollbar-track {
+      background: rgba(4, 15, 38, 0.6);
+      border-radius: 99px;
+    }
+    .table-glass-card::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.4);
+      border-radius: 99px;
+    }
+    .table-glass-card::-webkit-scrollbar-thumb:hover {
+      background: var(--pink);
+    }
+    table { width: 100%; min-width: 1250px; border-collapse: separate; border-spacing: 0; }
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 12px 18px;
+      text-align: left;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      background: #081a3b !important;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.12s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(56, 189, 248, 0.07); }
+    tbody td { padding: 12px 18px; font-size: 13px; vertical-align: middle; }
+    .td-code-txt { font-family: monospace; color: var(--cyan); font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .td-name-txt { font-weight: 700; color: #fff; }
+    .td-email-txt { color: var(--text-sub); font-size: 12px; }
+
+    .status-pill-badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 99px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+    .sp-green  { background: rgba(34, 197, 94, 0.15);  color: var(--green); }
+    .sp-red    { background: rgba(239, 68, 68, 0.15);  color: var(--red); }
+    .sp-yellow { background: rgba(245, 158, 11, 0.15); color: var(--yellow); }
+    .sp-muted  { background: rgba(255,255,255,0.08);  color: var(--text-sub); }
+    .sp-cyan   { background: rgba(56, 189, 248, 0.15); color: var(--cyan); }
+    .sp-pink   { background: rgba(238, 31, 115, 0.15); color: var(--pink); }
+
+    .content-card-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.13); border-radius: 18px; padding: 26px; margin-bottom: 16px; backdrop-filter: blur(20px); }
+    .card-head-row { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .card-head-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .card-head-title { font-size: 16px; font-weight: 800; color: #fff; }
+    .card-head-sub   { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
+
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-field-group { display: flex; flex-direction: column; gap: 6px; }
+    label { font-size: 10px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.9px; }
+    input[type=text], input[type=email], textarea { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 11px 16px; color: #fff; font-size: 13px; font-family: inherit; outline: none; transition: all 0.15s; width: 100%; }
+    input::placeholder, textarea::placeholder { color: rgba(148, 163, 184, 0.5); }
+    input:focus, textarea:focus { border-color: rgba(56, 189, 248, 0.5); background: rgba(255,255,255,0.1); box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12); }
+    textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+
+    /* ── ALERTS & TOAST ───────────────────────────── */
+    .alert-banner { display: flex; gap: 12px; align-items: flex-start; padding: 14px 18px; border-radius: 14px; font-size: 12px; line-height: 1.6; margin-bottom: 16px; }
+    .alert-yellow { background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); color: #fcd34d; }
+
+    #toast { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+    .toast-msg-item { background: rgba(7, 25, 56, 0.95); border: 1px solid rgba(255,255,255,0.18); border-radius: 14px; padding: 14px 22px; font-size: 13px; font-weight: 600; color: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.6); animation: toastIn 0.25s ease; max-width: 340px; backdrop-filter: blur(20px); }
+    .toast-msg-item.success { border-color: rgba(34, 197, 94, 0.5); color: var(--green); }
+    .toast-msg-item.error   { border-color: rgba(239, 68, 68, 0.5); color: var(--red); }
+    @keyframes toastIn { from { opacity:0; transform:translateX(28px); } to { opacity:1; transform:none; } }
+
+    /* ── CONFIRM MODAL DIALOG (IFRAME SAFE) ───────── */
+    #confirm-modal-backdrop {
+      display: none; position: fixed; inset: 0; z-index: 999999;
+      background: rgba(4, 20, 45, 0.82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    #confirm-modal-box {
+      background: #0b2149; border: 2px solid #38bdf8; border-radius: 20px;
+      max-width: 440px; width: 100%; padding: 26px 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.85);
+      animation: modalPopIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); color: #fff; font-family: inherit;
+    }
+    @keyframes modalPopIn {
+      from { opacity: 0; transform: scale(0.92) translateY(12px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .loading-spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.25); border-top-color: var(--cyan); border-radius: 50%; animation: spin 0.5s linear infinite; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .empty-state-box { text-align: center; padding: 56px 20px; color: var(--text-sub); }
+    .empty-state-box .icon { font-size: 38px; margin-bottom: 12px; opacity: 0.5; }
+
+    code { background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 6px; font-size: 11px; font-family: monospace; }
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.22); border-radius: 99px; }
+
+    /* ── ADAPTACIÓN RESPONSIVA (CELULARES, TABLETS Y PC) ──────────── */
+    .mobile-menu-btn {
+      display: none;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      border-radius: 10px;
+      padding: 6px 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 15, 38, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 85;
+    }
+
+    @media (max-width: 992px) {
+      .mobile-menu-btn { display: inline-flex; }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        bottom: 0;
+        width: 280px;
+        z-index: 100;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 10px 0 40px rgba(0,0,0,0.8);
+      }
+      .sidebar.open {
+        transform: translateX(280px);
+      }
+      .sidebar-overlay.active {
+        display: block;
+      }
+
+      .top-header { padding: 0 16px; }
+      .content { padding: 16px !important; }
+      .form-grid-2 { grid-template-columns: 1fr !important; }
+      .toolbar-row { flex-direction: column; align-items: stretch; }
+      .filter-btn-group { overflow-x: auto; padding-bottom: 4px; }
+    }
+
+    @media (max-width: 768px) {
+      .stats-summary-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+      .stat-card-glass { padding: 14px 16px !important; }
+      .stat-number-val { font-size: 22px !important; }
+      .card-head-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .zurich-tag { display: none; }
+      .top-header { height: 56px; }
+      #toast { left: 16px; right: 16px; bottom: 16px; }
+      .toast-msg-item { max-width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-summary-grid { grid-template-columns: 1fr !important; }
+      .btn { padding: 10px 16px; font-size: 12px; width: 100%; justify-content: center; }
+      .f-pill-btn { padding: 6px 10px; font-size: 11px; }
+      .search-input-box { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="admin-container">
-    <iframe 
-      id="adminFrame"
-      src="https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec?page=admin" 
-      allow="clipboard-read; clipboard-write"
-      title="UA Eventos — Panel de Administración">
-    </iframe>
+
+<div class="bg-canvas"></div>
+<div class="bg-glow-orb-1"></div>
+<div class="bg-glow-orb-2"></div>
+
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebarMenu()"></div>
+
+<div class="app">
+
+  <!-- ════════════════════ SIDEBAR ════════════════════ -->
+  <aside class="sidebar" id="main-sidebar">
+    <div class="s-event-card">
+      <div class="event-badge-pill">
+        <div class="badge-dot" id="sidebar-status-dot"></div>
+        <span class="badge-text" id="sidebar-status-text">Evento activo</span>
+      </div>
+      <div class="s-title">
+        <span class="coyote">COYOTE</span> <span class="vs-badge">VS</span> <span class="acme">ACME</span>
+      </div>
+      <div class="s-subtitle">Jueves 27 de agosto &middot; 20:00 hs</div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-group-label">Panel</div>
+      <div class="nav-item active" onclick="switchTab('dashboard')">
+        <span class="nav-icon">&#9783;</span> Dashboard
+      </div>
+
+      <div class="nav-group-label">Invitados</div>
+      <div class="nav-item" onclick="switchTab('guests')">
+        <span class="nav-icon">&#9786;</span> Lista completa
+        <span class="nav-badge-count" id="badge-total-count">0</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('add')">
+        <span class="nav-icon">&#10133;</span> Agregar invitado
+      </div>
+
+      <div class="nav-group-label">Comunicaci&oacute;n</div>
+      <div class="nav-item" onclick="switchTab('send')">
+        <span class="nav-icon">&#9993;</span> Enviar invitaciones
+      </div>
+      <div class="nav-item" onclick="switchTab('reminders')">
+        <span class="nav-icon">&#9201;</span> Recordatorios
+      </div>
+
+      <div class="nav-group-label">Día del Evento</div>
+      <a class="nav-item" href="https://ua-eventos-uy.web.app/checkin.html" target="_blank" style="text-decoration:none; color:var(--cyan); background:rgba(56, 189, 248, 0.08); border-left:3px solid var(--cyan);">
+        <span class="nav-icon">🎟️</span> Modo Check-In (Puerta)
+        <span style="font-size:9px; background:var(--pink); color:#fff; font-weight:900; padding:2px 7px; border-radius:99px; margin-left:auto;">EN VIVO</span>
+      </a>
+
+      <div class="nav-group-label">Sistema</div>
+      <div class="nav-item" onclick="switchTab('config')">
+        <span class="nav-icon">&#9967;</span> Configuraci&oacute;n
+      </div>
+    </nav>
+
+    <div class="s-footer">
+      <span class="s-refresh-btn" onclick="loadAllData()">&#8635; Actualizar datos</span>
+      <div>UA Eventos &middot; Panel Admin</div>
+    </div>
+  </aside>
+
+  <!-- ════════════════════ MAIN AREA ════════════════════ -->
+  <main class="main">
+
+    <header class="top-header">
+      <div class="brand-header-left">
+        <button class="mobile-menu-btn" onclick="toggleSidebarMenu()">&#9776; Men&uacute;</button>
+        <div class="ua-brand-group" style="align-items:center;">
+          <img src="https://ua-eventos-uy.web.app/assets/logo-ua-zurich.svg?v=1" alt="Universal Assistance - A company of Zurich" style="height: 36px; width: auto; display: block;">
+        </div>
+      </div>
+      <div class="brand-header-right" style="display: flex; align-items: center; gap: 16px;">
+        <button id="header-btn-refresh-all" class="btn-refresh-all-header" onclick="toolActualizarTodo()" title="Ejecutar Sincronización Completa">
+          <svg class="refresh-icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M2.5 22v-6h6"></path>
+            <path d="M2 11.5a10 10 0 0 1 18.8-4.3L21.5 8M22 12.5a10 10 0 0 1-18.8 4.3L2.5 16"></path>
+          </svg>
+          <span>ACTUALIZAR TODO</span>
+        </button>
+        <div style="height: 20px; width: 1px; background: rgba(255, 255, 255, 0.18);"></div>
+        <img src="https://ua-eventos-uy.web.app/assets/logo-movie-white.svg?v=5" alt="Movie" style="height: 26px; width: auto; display: block;">
+      </div>
+    </header>
+
+    <div class="content" style="padding-top:24px;">
+
+      <!-- ── DASHBOARD ────────────────────────────────────────── -->
+      <div id="tab-dashboard" class="tab-pane-content" style="display:block;">
+        <div class="dashboard-hero">
+          <div class="hero-pill-tag">
+            <span>✩ FUNCI&Oacute;N DE CINE EXCLUSIVA - UNIVERSAL ASSISTANCE</span>
+          </div>
+          <div class="hero-main-title">
+            <span class="t-coyote">COYOTE</span>
+            <span class="t-vs">VS</span>
+            <span class="t-acme">ACME</span>
+          </div>
+          <div class="hero-desc-bold">Una noche de cine para compartir.</div>
+          <div class="hero-desc-sub">Queremos compartir contigo una funci&oacute;n especial.</div>
+
+          <div class="hero-info-chips">
+            <div class="hero-chip-item">
+              <span class="hero-chip-icon">&#128197;</span>
+              <div>
+                <div class="hero-chip-lbl">Fecha</div>
+                <div class="hero-chip-val">Jueves 27 de agosto</div>
+              </div>
+            </div>
+            <div class="hero-chip-item">
+              <span class="hero-chip-icon">&#128336;</span>
+              <div>
+                <div class="hero-chip-lbl">Hora</div>
+                <div class="hero-chip-val">20:00 hs (Llegada 19:30 hs)</div>
+              </div>
+            </div>
+            <div class="hero-chip-item">
+              <span class="hero-chip-icon">&#128205;</span>
+              <div>
+                <div class="hero-chip-lbl">Lugar</div>
+                <div class="hero-chip-val">Movie Montevideo Shopping</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid-container" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));">
+          <div class="stat-glass-card clickable-card" onclick="filterFromKpi('all')" title="Ver la lista completa de todas las invitaciones">
+            <div class="stat-top-accent" style="background:var(--cyan)"></div>
+            <div class="stat-label-txt">Total Invitaciones</div>
+            <div class="stat-number-val cyan" id="s-total">&#8212;</div>
+            <div class="stat-foot-txt">pases registrados <span class="kpi-arrow">➔</span></div>
+          </div>
+          <div class="stat-glass-card clickable-card" onclick="filterFromKpi('Confirmado')" title="Ver la lista de asistentes confirmados">
+            <div class="stat-top-accent" style="background:var(--green)"></div>
+            <div class="stat-label-txt">Asistentes en Sala</div>
+            <div class="stat-number-val green" id="s-confirmed-seats">&#8212;</div>
+            <div class="stat-foot-txt" id="s-confirmed-desc">37 titulares + acompañantes <span class="kpi-arrow">➔</span></div>
+          </div>
+          <div class="stat-glass-card clickable-card" onclick="filterFromKpi('unconfirmed')" title="Ver la lista de invitaciones pendientes y expiradas">
+            <div class="stat-top-accent" style="background:var(--yellow)"></div>
+            <div class="stat-label-txt">Pendientes / Expirados</div>
+            <div class="stat-number-val yellow" id="s-pending">&#8212;</div>
+            <div class="stat-foot-txt" id="s-pending-desc">sin confirmar aún <span class="kpi-arrow">➔</span></div>
+          </div>
+          <div class="stat-glass-card clickable-card" onclick="switchTab('send')" title="Ir a la sección de envío de invitaciones por correo">
+            <div class="stat-top-accent" style="background:var(--pink)"></div>
+            <div class="stat-label-txt">Emails Enviados</div>
+            <div class="stat-number-val pink" id="s-withEmail">&#8212;</div>
+            <div class="stat-foot-txt" id="s-noEmail-desc">107 por enviar / WhatsApp <span class="kpi-arrow">➔</span></div>
+          </div>
+        </div>
+
+        <div class="progress-glass-box clickable-card" onclick="openCinemaSeatModal()" style="cursor:pointer; padding:18px 24px;" title="Hacé clic para ver el mapa interactivo de butacas del cine Movie">
+          <div class="progress-top-row" style="margin-bottom:10px;">
+            <span class="progress-title-txt" style="font-size:13px;">🎬 <strong>Ocupación Sala Movie Montevideo:</strong> <span id="s-cap-text" style="color:var(--text-main); font-weight:800;">76 / 300 Butacas</span> <span style="color:var(--green); font-size:12px; margin-left:8px; font-weight:700;" id="s-cap-avail">(224 disponibles)</span></span>
+            <span class="progress-pct-txt" id="s-rate" style="color:var(--cyan); font-weight:900; font-size:15px;">25.3%</span>
+          </div>
+          <div class="progress-track-bg" style="height:10px; border-radius:99px;">
+            <div class="progress-fill-bar" id="s-rate-bar" style="width:25.3%; background:linear-gradient(90deg, var(--cyan), var(--green)); border-radius:99px;"></div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="btn btn-pink-cta" onclick="switchTab('send')">&#9993; Enviar invitaciones</button>
+          <button class="btn btn-cyan-cta" onclick="switchTab('guests')">Ver lista completa</button>
+          <button class="btn btn-outline-cta" onclick="switchTab('add')">&#10133; Agregar invitado</button>
+          <button class="btn btn-outline-cta" onclick="switchTab('reminders')">&#9201; Enviar recordatorios</button>
+        </div>
+      </div>
+
+      <!-- ── GUESTS LIST ──────────────────────────────────────── -->
+      <div id="tab-guests" class="tab-pane-content" style="display:none;">
+        <div class="toolbar-row">
+          <div class="search-input-box">
+            <span class="search-ic-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
+            <input type="text" id="guest-search-field" style="padding-left: 45px !important;" placeholder="Buscar por nombre, email o c&oacute;digo&hellip;" oninput="filterGuestTable()">
+          </div>
+          <div class="filter-btn-group">
+            <button class="f-pill-btn active" onclick="setGuestFilter('all',this)">Todos</button>
+            <button class="f-pill-btn" onclick="setGuestFilter('Confirmado',this)">Confirmados</button>
+            <button class="f-pill-btn" onclick="setGuestFilter('No asiste',this)">No asisten</button>
+            <button class="f-pill-btn" onclick="setGuestFilter('Pendiente',this)">Pendientes</button>
+            <button class="f-pill-btn" onclick="setGuestFilter('Expirado',this)">🚫 Expirados / Bloqueados</button>
+            <button class="f-pill-btn" onclick="setGuestFilter('Lista de Espera',this)">📋 Lista de Espera</button>
+          </div>
+          <button class="btn btn-outline-cta btn-sm" onclick="exportGuestsCSV()">&#11015; CSV</button>
+        </div>
+
+        <div class="toolbar-row" style="margin-top: -6px; gap: 8px; flex-wrap: wrap;">
+          <div id="ms-filter-stage" class="ms-container"></div>
+          <div id="ms-filter-channel" class="ms-container"></div>
+          <div id="ms-filter-agency" class="ms-container"></div>
+          <div id="ms-filter-referent" class="ms-container"></div>
+        </div>
+
+        <!-- ── BARRA DE ACCIONES MÚLTIPLES ── -->
+        <div id="bulk-action-bar">
+          <span id="bulk-count-label">0 seleccionados</span>
+          <button id="bulk-delete-btn" class="btn btn-sm" style="background:rgba(239,68,68,0.25);border:1px solid rgba(239,68,68,0.6);color:#fca5a5;font-weight:600;" onclick="deleteSelectedGuests()">&#128465; Eliminar seleccionados</button>
+          <button class="btn btn-sm btn-outline-cta" onclick="document.querySelectorAll('.guest-cb').forEach(function(c){c.checked=false}); updateBulkBar();">&#215; Deseleccionar</button>
+        </div>
+
+        <div id="guest-table-wrapper" class="table-glass-card">
+          <div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando invitados&hellip;</p></div>
+        </div>
+        <div id="guest-total-label" style="font-size:12px; color:var(--text-sub); margin-top:10px;"></div>
+      </div>
+
+      <!-- ── ADD GUESTS ───────────────────────────────────────── -->
+      <div id="tab-add" class="tab-pane-content" style="display:none;">
+        <div class="content-card-box" style="border: 2px solid rgba(56, 189, 248, 0.4); background: linear-gradient(135deg, rgba(7,25,56,0.95), rgba(11,33,73,0.95));">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(238,31,115,0.2); border:1px solid rgba(238,31,115,0.4); color:var(--pink)">🔄</div>
+              <div class="card-head-title" style="color:#fff; font-weight:800;">ACTUALIZAR TODO (Sync Completa)</div>
+            </div>
+            <div style="font-size:12px; color:var(--text-sub); margin-bottom:16px; line-height:1.5;">Ejecuta el pipeline completo de sincronización: limpia caché, sincroniza invitados desde Hoja1, actualiza Hoja3 externa, genera códigos UA-NNN, genera links de invitación (Col J) y regenera el Reporte de Sala Movie.</div>
+            <button class="btn btn-pink-cta btn-sm" id="tool-refresh-all-btn" onclick="toolActualizarTodo()">🔄 Ejecutar Actualizar Todo</button>
+            <div id="tool-refresh-all-res" style="margin-top:10px; font-size:12px;"></div>
+          </div>
+
+          <div class="content-card-box">
+          <div class="card-head-row">
+            <div class="card-head-icon" style="background:rgba(56,189,248,0.18); border:1px solid rgba(56,189,248,0.3); color:var(--cyan)">&#10133;</div>
+            <div>
+              <div class="card-head-title">Invitado individual</div>
+              <div class="card-head-sub">El c&oacute;digo UA-NNN y link personalizado se generan autom&aacute;ticamente.</div>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-field-group">
+              <label>Nombre completo *</label>
+              <input type="text" id="add-single-name" placeholder="Ej: Mar&iacute;a Gonz&aacute;lez">
+            </div>
+            <div class="form-field-group">
+              <label>Email</label>
+              <input type="email" id="add-single-email" placeholder="Ej: mgonzalez@empresa.com">
+            </div>
+          </div>
+          <button class="btn btn-cyan-cta" id="add-single-btn" onclick="submitSingleGuest()">&#10133; Agregar invitado</button>
+          <div id="add-single-result" style="margin-top:12px; font-size:13px;"></div>
+        </div>
+
+        <!-- ── IMPORTAR DESDE EXCEL O TEXTO ───────────────────── -->
+        <div class="content-card-box">
+          <div class="card-head-row">
+            <div class="card-head-icon" style="background:rgba(238,31,115,0.18); border:1px solid rgba(238,31,115,0.3); color:var(--pink)">📊</div>
+            <div>
+              <div class="card-head-title">Importar desde Excel (.xlsx / .csv)</div>
+              <div class="card-head-sub">Sub&iacute; tu planilla de Excel oficial (ej: <code>EVENTO CINE - UA.xlsx</code>) o peg&aacute; una lista de texto. Mapea autom&aacute;ticamente Nombre, Apellido, Canal, Convenio, Asientos y Referente.</div>
+            </div>
+          </div>
+
+          <!-- DROPZONE DE ARCHIVO EXCEL -->
+          <div class="excel-dropzone-box" id="excel-dropzone" onclick="document.getElementById('excel-file-input').click()">
+            <input type="file" id="excel-file-input" accept=".xlsx, .xls, .csv" style="display:none" onchange="handleExcelFileUpload(event)">
+            <div class="excel-dropzone-icon">📁 📊</div>
+            <div class="excel-dropzone-title">Clic aqu&iacute; o arrastr&aacute; tu archivo de Excel (.xlsx / .csv)</div>
+            <div class="excel-dropzone-sub">Soporta la planilla oficial de 6 columnas o la lista exportada del sistema</div>
+          </div>
+
+          <div style="text-align:center; font-size:11px; color:var(--text-sub); margin:12px 0; font-weight:600;">&#8212; O PEG&Aacute; DESDE EL PORTAPAPELES &#8212;</div>
+
+          <div class="form-field-group" style="margin-bottom:14px;">
+            <label>Lista de invitados (Texto plano)</label>
+            <textarea id="bulk-text-input" placeholder="Marianna, Tomasi, FUNCIONARIO SURVIEW, OFICINA, 2, AM/MT&#10;Laura, Caprio, SALUD, SEMM, 2, AM/MT"></textarea>
+          </div>
+          <div id="bulk-preview-box" style="margin-bottom:14px; font-size:12px; color:var(--text-sub);"></div>
+          <div style="display:flex; gap:10px;">
+            <button class="btn btn-outline-cta" onclick="previewBulkImport()">&#128065; Previsualizar</button>
+            <button class="btn btn-pink-cta" id="bulk-import-btn" onclick="submitBulkImport()">&#11014; Importar invitados</button>
+          </div>
+          <div id="bulk-import-result" style="margin-top:12px; font-size:13px;"></div>
+        </div>
+      </div>
+
+      <!-- ── SEND INVITATIONS ─────────────────────────────────── -->
+      <div id="tab-send" class="tab-pane-content" style="display:none;">
+        <div class="toolbar-row">
+          <div class="search-input-box">
+            <span class="search-ic-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
+            <input type="text" id="send-search-field" style="padding-left: 45px !important;" placeholder="Buscar por nombre, email o código…" oninput="renderSendList()">
+          </div>
+
+          <div class="filter-btn-group">
+            <button class="f-pill-btn active" data-sf="all" onclick="setSendFilter('all',this)">Todos</button>
+            <button class="f-pill-btn" data-sf="pending" onclick="setSendFilter('pending',this)">Sin enviar</button>
+            <button class="f-pill-btn" data-sf="sent" onclick="setSendFilter('sent',this)">Ya enviados</button>
+          </div>
+        </div>
+
+        <div class="toolbar-row" style="margin-top: -6px; gap: 8px; flex-wrap: wrap;">
+          <div id="ms-send-stage" class="ms-container"></div>
+          <div id="ms-send-channel" class="ms-container"></div>
+          <div id="ms-send-agency" class="ms-container"></div>
+          <div id="ms-send-referent" class="ms-container"></div>
+          <div id="ms-send-rsvp" class="ms-container"></div>
+        </div>
+
+        <div class="toolbar-row" style="margin-top: 4px; justify-content: space-between;">
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; color:#fff; font-weight:600;">
+            <input type="checkbox" id="send-select-all" onchange="toggleSendAll(this.checked)" style="width:16px; height:16px; accent-color:var(--cyan);">
+            Seleccionar todos los visibles
+          </label>
+          <span style="font-size:13px; color:var(--text-sub)">Seleccionados: <strong id="send-selected-count" style="color:var(--cyan); font-size:15px;">0</strong></span>
+        </div>
+
+        <div style="display:flex; gap:12px; margin-bottom:16px;">
+          <button class="btn btn-outline-cta" id="send-demo-btn" onclick="triggerSendDemo()">&#129514; Enviar DEMO a seleccionados</button>
+          <button class="btn btn-pink-cta" id="send-prod-btn" onclick="triggerSendProd()">&#9993; Enviar invitaci&oacute;n REAL</button>
+        </div>
+
+        <div class="alert-banner alert-yellow">
+          <span>&#9888;</span>
+          <div><strong>Env&iacute;o REAL:</strong> envia el email definitivo al invitado. <strong>DEMO:</strong> incluye banner de prueba y no altera el estado final. <span id="quota-indicator" style="color:var(--cyan);font-weight:700;"></span></div>
+        </div>
+
+        <div id="send-guest-list" class="table-glass-card">
+          <div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando&hellip;</p></div>
+        </div>
+        <div id="send-result-box" style="margin-top:14px; font-size:13px;"></div>
+      </div>
+
+      <!-- ── REMINDERS ────────────────────────────────────────── -->
+      <div id="tab-reminders" class="tab-pane-content" style="display:none;">
+
+        <!-- Selector de Sub-pestañas de Recordatorios -->
+        <div style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:14px;">
+          <button id="rem-tab-btn-confirmed" class="f-pill-btn active" onclick="switchRemSubtab('confirmed')" style="display:flex; align-items:center; gap:8px; padding:10px 18px; font-size:13px; font-weight:800; border-radius:12px;">
+            <span>🟢</span> 1. A Confirmados <span id="rem-pill-count-confirmed" class="badge-count" style="background:#22c55e; color:#000; font-weight:900; padding:2px 8px; border-radius:99px; font-size:11px;">0</span>
+          </button>
+          <button id="rem-tab-btn-pending" class="f-pill-btn" onclick="switchRemSubtab('pending')" style="display:flex; align-items:center; gap:8px; padding:10px 18px; font-size:13px; font-weight:800; border-radius:12px;">
+            <span>🟡</span> 2. A Pendientes <span id="rem-pill-count-pending" class="badge-count" style="background:#eab308; color:#000; font-weight:900; padding:2px 8px; border-radius:99px; font-size:11px;">0</span>
+          </button>
+          <button id="rem-tab-btn-referents" class="f-pill-btn" onclick="switchRemSubtab('referents')" style="display:flex; align-items:center; gap:8px; padding:10px 18px; font-size:13px; font-weight:800; border-radius:12px;">
+            <span>📢</span> 3. A Referentes (Equipos) <span class="badge-count" style="background:#38bdf8; color:#000; font-weight:900; padding:2px 8px; border-radius:99px; font-size:11px;">7</span>
+          </button>
+        </div>
+
+        <!-- ═══ SUB-PANEL 1: A CONFIRMADOS ═══ -->
+        <div id="rem-subtab-confirmed" class="rem-subtab-pane">
+          <div class="content-card-box">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(34,197,94,0.18); border:1px solid rgba(34,197,94,0.3); color:var(--green)">🎟️</div>
+              <div>
+                <div class="card-head-title">Recordatorio Final a Confirmados (24h Previas)</div>
+                <div class="card-head-sub">Envío con Código QR de acceso, pop & bebida y horario de recepción (19:30 hs). Programado para el 26/08 a las 10:00 hs.</div>
+              </div>
+            </div>
+
+            <!-- Métricas rápidas de confirmados -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:18px;">
+              <div style="background:rgba(7,25,56,0.6); border:1px solid rgba(34,197,94,0.3); border-radius:12px; padding:12px 16px;">
+                <div style="font-size:11px; color:#86efac; font-weight:800; text-transform:uppercase;">Pases Confirmados</div>
+                <div id="rem-stat-conf-guests" style="font-size:24px; font-weight:900; color:#fff; margin-top:2px;">0</div>
+              </div>
+              <div style="background:rgba(7,25,56,0.6); border:1px solid rgba(56,189,248,0.3); border-radius:12px; padding:12px 16px;">
+                <div style="font-size:11px; color:#7dd3fc; font-weight:800; text-transform:uppercase;">Butacas Ocupadas en Sala</div>
+                <div id="rem-stat-conf-seats" style="font-size:24px; font-weight:900; color:#fff; margin-top:2px;">0</div>
+              </div>
+            </div>
+
+            <!-- Toolbar y Lista -->
+            <div class="toolbar-row" style="margin-bottom:12px;">
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; color:#fff; font-weight:600;">
+                <input type="checkbox" id="rem-select-all" onchange="toggleRemAll(this.checked)" style="width:16px; height:16px; accent-color:var(--cyan);">
+                Seleccionar todos los confirmados
+              </label>
+              <span style="font-size:13px; color:var(--text-sub)">Seleccionados: <strong id="rem-selected-count" style="color:var(--cyan); font-size:15px;">0</strong></span>
+            </div>
+
+            <div id="rem-guest-list" class="table-glass-card" style="max-height:300px; overflow-y:auto; margin-bottom:16px;">
+              <div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando confirmados&hellip;</p></div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+              <button class="btn btn-pink-cta" id="rem-send-btn" onclick="triggerSendReminders()">✉️ Enviar recordatorios seleccionados</button>
+              <button class="btn btn-outline-cta" id="rem-auto-btn" onclick="toolScheduleAutoReminder()">⏰ Programar envío automático (26/08 10:00 hs)</button>
+              <button class="btn btn-cyan-cta" onclick="toggleConfirmedPreview()" style="margin-left:auto;">👁️ Ver diseño del correo</button>
+            </div>
+
+            <!-- Vista previa desplegable del correo de confirmados -->
+            <div id="rem-confirmed-preview-box" style="display:none; margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.1);">
+              <div style="font-size:11px; font-weight:800; color:var(--cyan); text-transform:uppercase; margin-bottom:10px;">👁️ Vista previa del correo de recordatorio (24h antes):</div>
+              <div style="background:#071938; border:2px solid #22c55e; border-radius:16px; padding:20px; color:#ffffff; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; max-width:500px; margin:0 auto; box-shadow:0 12px 30px rgba(0,0,0,0.5);">
+                <div style="font-size:10px; font-weight:800; color:#86efac; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">RECORDATORIO · MAÑANA EN EL MOVIE</div>
+                <h2 style="margin:0 0 12px 0; font-size:22px; color:#fff; font-weight:900;">¡MAÑANA ES LA FUNCIÓN! 🎬</h2>
+                <p style="font-size:13px; color:#e2e8f0; line-height:1.5; margin-bottom:16px;">
+                  ¡Hola <strong>[Nombre]</strong>! Te recordamos que mañana te esperamos para disfrutar juntos de <strong>Coyote vs. Acme</strong>.
+                </p>
+                <div style="background:#0f295a; border-radius:10px; padding:12px; font-size:12px; line-height:1.6; margin-bottom:16px;">
+                  📍 <strong>Lugar:</strong> Movie Montevideo Shopping<br>
+                  ⏰ <strong>Horario:</strong> 19:30 hs Recepción · 20:00 hs Inicio puntual<br>
+                  🎟️ <strong>Tus Entradas:</strong> Válido para 2 personas<br>
+                  🍿 <strong>Beneficio:</strong> Pop & Bebida incluidos de cortesía
+                </div>
+                <div style="text-align:center; padding:12px; background:#fff; border-radius:12px; width:140px; margin:0 auto 14px auto;">
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-DEMO" style="width:140px; height:140px; display:block;">
+                  <div style="color:#000; font-size:10px; font-weight:800; margin-top:4px;">CÓDIGO: UA-DEMO</div>
+                </div>
+                <div style="text-align:center; font-size:11px; color:#94a3b8;">Presentá este código QR en la entrada de la sala.</div>
+              </div>
+            </div>
+
+            <div id="rem-result-box" style="margin-top:12px; font-size:13px;"></div>
+          </div>
+        </div>
+
+        <!-- ═══ SUB-PANEL 2: A PENDIENTES ═══ -->
+        <div id="rem-subtab-pending" class="rem-subtab-pane" style="display:none;">
+          <div class="content-card-box">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(234,179,8,0.18); border:1px solid rgba(234,179,8,0.3); color:var(--yellow)">⏳</div>
+              <div>
+                <div class="card-head-title">Recordatorio de Urgencia a Pendientes</div>
+                <div class="card-head-sub">Avisa a los invitados que aún no respondieron que los cupos son limitados hasta agotar capacidad de sala.</div>
+              </div>
+            </div>
+
+            <!-- Métricas rápidas de pendientes -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:18px;">
+              <div style="background:rgba(7,25,56,0.6); border:1px solid rgba(234,179,8,0.3); border-radius:12px; padding:12px 16px;">
+                <div style="font-size:11px; color:#fde047; font-weight:800; text-transform:uppercase;">Invitaciones Pendientes</div>
+                <div id="rem-stat-pend-count" style="font-size:24px; font-weight:900; color:#fff; margin-top:2px;">0</div>
+              </div>
+              <div style="background:rgba(7,25,56,0.6); border:1px solid rgba(239,68,68,0.3); border-radius:12px; padding:12px 16px;">
+                <div style="font-size:11px; color:#fca5a5; font-weight:800; text-transform:uppercase;">Disponibilidad</div>
+                <div style="font-size:18px; font-weight:900; color:#fff; margin-top:5px;">Cupos Limitados</div>
+              </div>
+            </div>
+
+            <div class="toolbar-row" style="margin-bottom:12px;">
+              <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; color:#fff; font-weight:600;">
+                <input type="checkbox" id="rem-pend-select-all" onchange="toggleRemPendAll(this.checked)" style="width:16px; height:16px; accent-color:var(--yellow);">
+                Seleccionar todos los pendientes
+              </label>
+              <span style="font-size:13px; color:var(--text-sub)">Seleccionados: <strong id="rem-pend-selected-count" style="color:var(--yellow); font-size:15px;">0</strong></span>
+            </div>
+
+            <div id="rem-pending-guest-list" class="table-glass-card" style="max-height:300px; overflow-y:auto; margin-bottom:16px;">
+              <div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando pendientes&hellip;</p></div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-yellow-cta" style="background:var(--yellow); color:#000; font-weight:800;" onclick="triggerSendUnconfirmedReminder()">⏰ Enviar recordatorio a seleccionados</button>
+              <button class="btn btn-cyan-cta" onclick="togglePendingPreview()" style="margin-left:auto;">👁️ Ver mensaje de urgencia</button>
+            </div>
+
+            <!-- Vista previa desplegable del recordatorio de pendientes -->
+            <div id="rem-pending-preview-box" style="display:none; margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.1);">
+              <div style="font-size:11px; font-weight:800; color:var(--yellow); text-transform:uppercase; margin-bottom:10px;">👁️ Vista previa del correo a pendientes:</div>
+              <div style="background:#071938; border:2px solid #eab308; border-radius:16px; padding:20px; color:#ffffff; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; max-width:500px; margin:0 auto; box-shadow:0 12px 30px rgba(0,0,0,0.5);">
+                <div style="font-size:10px; font-weight:800; color:#fde047; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">ÚLTIMOS CUPOS · CONFIRMACIÓN REQUERIDA</div>
+                <h2 style="margin:0 0 12px 0; font-size:22px; color:#fff; font-weight:900;">¡NO TE QUEDES SIN TUS ENTRADAS! 🍿</h2>
+                <p style="font-size:13px; color:#e2e8f0; line-height:1.5; margin-bottom:14px;">
+                  ¡Hola <strong>[Nombre]</strong>! Te recordamos que tenés una invitación reservada para la función exclusiva de <strong>Coyote vs. Acme</strong>.
+                </p>
+                <div style="background:rgba(234,179,8,0.15); border:1px solid #eab308; border-radius:10px; padding:12px; font-size:12px; line-height:1.5; color:#fef08a; margin-bottom:16px;">
+                  ⚠️ <strong>Cupos estrictamente limitados:</strong> Se asignan por orden de confirmación hasta agotar capacidad.
+                </div>
+                <div style="text-align:center;">
+                  <span style="display:inline-block; background:#ee1f73; color:#fff; font-weight:800; font-size:14px; padding:12px 28px; border-radius:999px; text-decoration:none;">Confirmar mi Asistencia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ SUB-PANEL 3: A REFERENTES Y EQUIPOS ═══ -->
+        <div id="rem-subtab-referents" class="rem-subtab-pane" style="display:none;">
+          <div class="content-card-box" style="border: 1px solid rgba(56,189,248,0.4); background: rgba(11,33,73,0.6);">
+            <div class="card-head-row">
+              <div class="card-head-icon" style="background:rgba(56,189,248,0.18); border:1px solid rgba(56,189,248,0.3); color:var(--cyan)">📢</div>
+              <div>
+                <div class="card-head-title">Distribución de Pases a Referentes y Equipos</div>
+                <div class="card-head-sub">Mensajes directos personalizados para agencias y jefes con el desglose exacto de sus accesos (1 titular + pases para su equipo).</div>
+              </div>
+            </div>
+
+            <div class="form-grid-2" style="margin-bottom:14px;">
+              <div class="form-field-group">
+                <label>Seleccionar Referente / Agencia</label>
+                <select id="clarify-guest-select" onchange="renderClarifyMessage()" class="form-select-sm" style="width:100%; height:42px; border-radius:12px; max-width:none;">
+                  <option value="angela">Angela Hoffmann (6 accesos: 1 personal + 5 pases para vendedores)</option>
+                  <option value="paola">Paola Pradie (5 accesos: 1 personal + 4 pases para vendedores)</option>
+                  <option value="nadia">Nadia Núñez (5 accesos: 1 personal + 4 pases para vendedores)</option>
+                  <option value="agustina">Agustina Magnani (5 accesos: 1 personal + 4 pases para equipo)</option>
+                  <option value="elisa">Elisa Costa (4 accesos: 1 personal + 3 pases para equipo)</option>
+                  <option value="laura">Laura Caprio (3 accesos: 1 personal + 2 pases para equipo)</option>
+                  <option value="karen">Karen Ramillo / Myriam Cardozo (3 accesos: 1 personal + 2 pases para equipo)</option>
+                  <option value="lucas_test">🧪 PRUEBA — Lucas Beathyate (2 accesos)</option>
+                </select>
+              </div>
+              <div class="form-field-group">
+                <label>Teléfono (opcional para abrir directo en WhatsApp)</label>
+                <input type="text" id="clarify-phone" placeholder="Ej: 59899123456" oninput="renderClarifyMessage()">
+              </div>
+            </div>
+
+            <div style="margin-bottom:14px;">
+              <label>Mensaje para enviar (editable)</label>
+              <textarea id="clarify-msg-text" oninput="updateClarifyLivePreview()" style="width:100%; height:120px; font-size:13px; line-height:1.5; color:#fff; background:rgba(4,15,38,0.85); border:1px solid rgba(56,189,248,0.3); border-radius:12px; padding:12px;"></textarea>
+            </div>
+
+            <!-- VISTA PREVIA EN VIVO DEL CORREO REAL -->
+            <div style="margin-bottom:16px;">
+              <label style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>👁️ Vista Previa del Correo Real (Tal cual le llegará al referente)</span>
+                <span style="font-size:10px; color:var(--cyan); font-weight:800;">LIVE HTML EMAIL PREVIEW</span>
+              </label>
+              <div id="clarify-email-live-preview" style="background:#071938; border:2px solid #38bdf8; border-radius:16px; padding:20px; color:#ffffff; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; max-width:540px; margin:0 auto; box-shadow:0 12px 30px rgba(0,0,0,0.5); overflow:hidden;">
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-cyan-cta btn-sm" onclick="copyClarifyMessage(this)">📋 Copiar mensaje</button>
+              <a id="clarify-wa-link" href="#" target="_blank" class="btn btn-green-cta btn-sm" style="text-decoration:none;">💬 Abrir en WhatsApp</a>
+              <button id="clarify-mail-btn" class="btn btn-pink-cta btn-sm" onclick="sendClarifyEmail(this)">✉️ Enviar este mensaje por Mail</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ POST-EVENTO ESPECIAL ═══ -->
+        <div class="content-card-box" style="margin-top:24px; border: 1px solid rgba(238,31,115,0.3); background: rgba(238,31,115,0.06);">
+          <div class="card-head-row">
+            <div class="card-head-icon" style="background:rgba(238,31,115,0.18); border:1px solid rgba(238,31,115,0.3); color:var(--pink)">📸</div>
+            <div>
+              <div class="card-head-title">Acciones Post-Evento</div>
+              <div class="card-head-sub">Envío de agradecimiento y enlace al álbum de fotos de la velada para los asistentes que concurrieron.</div>
+            </div>
+          </div>
+          <button class="btn btn-cyan-cta" onclick="triggerSendThankYouEmails()">📸 Despachar Correo de Agradecimiento (+ Galería de Fotos)</button>
+        </div>
+
+      </div>
+
+      <!-- ── CONFIG ───────────────────────────────────────────── -->
+      <div id="tab-config" class="tab-pane-content" style="display:none;">
+        <div class="content-card-box">
+          <div class="card-head-row">
+            <div class="card-head-icon" style="background:rgba(34,197,94,0.18); border:1px solid rgba(34,197,94,0.3); color:var(--green)">&#9967;</div>
+            <div>
+              <div class="card-head-title">Detalles del evento</div>
+              <div class="card-head-sub">Los cambios se guardan directamente en la pesta&ntilde;a Configuracion de Google Sheets.</div>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field-group"><label>Nombre del evento</label><input type="text" id="cfg-name" placeholder="Coyote vs. Acme"></div>
+            <div class="form-field-group"><label>Marca</label><input type="text" id="cfg-brand" placeholder="Universal Assistance"></div>
+            <div class="form-field-group"><label>Fecha</label><input type="text" id="cfg-date" placeholder="27/08/2026"></div>
+            <div class="form-field-group"><label>Hora del evento</label><input type="text" id="cfg-time" placeholder="20:00"></div>
+            <div class="form-field-group"><label>Hora sugerida de llegada</label><input type="text" id="cfg-arrival" placeholder="19:30"></div>
+            <div class="form-field-group"><label>Lugar</label><input type="text" id="cfg-venue" placeholder="Movie Montevideo Shopping"></div>
+            <div class="form-field-group" style="grid-column: 1 / -1;"><label>URL Google Maps</label><input type="text" id="cfg-maps" placeholder="https://maps.google.com/..."></div>
+            <div class="form-field-group"><label>Email de contacto</label><input type="email" id="cfg-email" placeholder="eventos@ua.com.uy"></div>
+            <div class="form-field-group"><label>Tel&eacute;fono de contacto</label><input type="text" id="cfg-phone" placeholder="2901 7378"></div>
+            <div class="form-field-group">
+              <label>Estado del evento</label>
+              <select id="cfg-status" onchange="updateEventStatusBadge(this.value)" style="width:100%; padding:11px 14px; background:rgba(255,255,255,0.06); border:1px solid var(--border); border-radius:10px; color:#fff; font-size:13px; font-weight:700;">
+                <option value="active">🟢 EVENTO ACTIVO (Boletería Abierta)</option>
+                <option value="prep">🟡 EN PREPARACIÓN (Fase de pruebas)</option>
+                <option value="ended">🔴 FINALIZADO (Cierre de sala)</option>
+              </select>
+            </div>
+            <div class="form-field-group">
+              <label>Tema de Colores del Evento</label>
+              <select id="cfg-theme" onchange="applyThemePreset(this.value)" style="width:100%; padding:11px 14px; background:rgba(255,255,255,0.06); border:1px solid var(--border); border-radius:10px; color:#fff; font-size:13px; font-weight:700;">
+                <option value="coyote">🎬 Coyote vs. Acme (Cyan & Magenta)</option>
+                <option value="gold">🏆 Universal Premium (Dorado & Azul Noche)</option>
+                <option value="emerald">🌿 Zurich Esmeralda (Esmeralda & Cyan)</option>
+                <option value="neon">🌌 Neón Cyber (Violeta & Neón Pink)</option>
+              </select>
+            </div>
+            <div class="form-field-group" style="grid-column: 1 / -1;"><label>Texto principal del email</label><input type="text" id="cfg-intro"></div>
+            <div class="form-field-group" style="grid-column: 1 / -1;"><label>Mensaje de confirmaci&oacute;n</label><input type="text" id="cfg-confirm"></div>
+          </div>
+
+          <div style="display:flex; gap:10px; margin-top:16px;">
+            <button class="btn btn-pink-cta" id="cfg-save-btn" onclick="saveEventConfig()">&#128190; Guardar configuraci&oacute;n</button>
+            <button class="btn btn-outline-cta" onclick="loadEventConfig()">&#8635; Recargar</button>
+          </div>
+          <div id="cfg-result-box" style="margin-top:12px; font-size:13px;"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<div id="toast"></div>
+
+<!-- Custom In-App Modal Dialog (Safe for iframes) -->
+<div id="confirm-modal-backdrop">
+  <div id="confirm-modal-box">
+    <div id="confirm-modal-icon" style="font-size:38px; margin-bottom:12px; text-align:center;">⚠️</div>
+    <div id="confirm-modal-title" style="font-size:18px; font-weight:900; text-align:center; color:#fff; margin-bottom:8px; letter-spacing:0.3px;"></div>
+    <div id="confirm-modal-msg" style="font-size:13px; color:#cbd5e1; line-height:1.6; text-align:center; margin-bottom:22px; white-space:pre-wrap;"></div>
+    <div style="display:flex; gap:12px; justify-content:center;">
+      <button id="confirm-modal-cancel" class="btn btn-outline-cta" style="flex:1; border-color:rgba(255,255,255,0.2); color:#e2e8f0;">Cancelar</button>
+      <button id="confirm-modal-ok" class="btn btn-danger-cta" style="flex:1;">Confirmar</button>
+    </div>
   </div>
+</div>
+
+<!-- ════════════════════ JAVASCRIPT LOGIC ════════════════════ -->
+<script>
+function showConfirmModal(opts) {
+  return new Promise(function(resolve) {
+    var backdrop = document.getElementById('confirm-modal-backdrop');
+    var titleEl = document.getElementById('confirm-modal-title');
+    var msgEl = document.getElementById('confirm-modal-msg');
+    var iconEl = document.getElementById('confirm-modal-icon');
+    var okBtn = document.getElementById('confirm-modal-ok');
+    var cancelBtn = document.getElementById('confirm-modal-cancel');
+
+    if (!backdrop) {
+      resolve(true);
+      return;
+    }
+
+    titleEl.textContent = opts.title || '¿Estás seguro?';
+    msgEl.textContent = opts.message || '';
+    iconEl.textContent = opts.icon || (opts.danger ? '🗑️' : '⚠️');
+    okBtn.textContent = opts.confirmText || 'Confirmar';
+    cancelBtn.textContent = opts.cancelText || 'Cancelar';
+
+    if (opts.danger) {
+      okBtn.className = 'btn btn-danger-cta';
+      okBtn.style.background = '#ef4444';
+      okBtn.style.borderColor = '#ef4444';
+      okBtn.style.color = '#ffffff';
+    } else {
+      okBtn.className = 'btn btn-pink-cta';
+      okBtn.style.background = '';
+      okBtn.style.borderColor = '';
+      okBtn.style.color = '#ffffff';
+    }
+
+    backdrop.style.display = 'flex';
+
+    function cleanup() {
+      backdrop.style.display = 'none';
+      okBtn.onclick = null;
+      cancelBtn.onclick = null;
+    }
+
+    okBtn.onclick = function() {
+      cleanup();
+      resolve(true);
+    };
+
+    cancelBtn.onclick = function() {
+      cleanup();
+      resolve(false);
+    };
+  });
+}
+
+function apiCall(action, params) {
+  params = params || {};
+  return new Promise(function(resolve, reject) {
+    if (typeof google !== 'undefined' && google.script && google.script.run) {
+      if (action === 'adminList') {
+        google.script.run.withSuccessHandler(function(res) { resolve({ ok: true, guests: res }); }).withFailureHandler(reject).adminGetGuestList();
+        return;
+      }
+      if (action === 'adminStats') {
+        google.script.run.withSuccessHandler(function(res) { resolve({ ok: true, stats: res }); }).withFailureHandler(reject).adminGetStats();
+        return;
+      }
+      if (action === 'adminConfig') {
+        google.script.run.withSuccessHandler(function(res) { resolve({ ok: true, config: res }); }).withFailureHandler(reject).adminGetConfig();
+        return;
+      }
+      if (action === 'updateGuest') {
+        google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).adminUpdateGuest(params);
+        return;
+      }
+      if (action === 'deleteGuest') {
+        google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).adminDeleteGuest(params.code);
+        return;
+      }
+      if (action === 'bulkDelete') {
+        var cList = Array.isArray(params.codes) ? params.codes : (params.codes || '').split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+        google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).adminDeleteGuests(cList);
+        return;
+      }
+      if (action === 'addGuest') {
+        google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).adminAddGuest(params.name || '', params.email || '');
+        return;
+      }
+      if (action === 'sendClarification') {
+        google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).adminSendClarificationEmail(params.targetKey || '', params.msg || '');
+        return;
+      }
+    }
+
+    var baseUrl = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec';
+    var query = '?action=' + encodeURIComponent(action);
+    if (params && typeof params === 'object') {
+      Object.keys(params).forEach(function(k) {
+        if (params[k] !== undefined && params[k] !== null) {
+          query += '&' + encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+        }
+      });
+    }
+    fetch(baseUrl + query)
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        if (res && res.ok !== false) resolve(res);
+        else reject(new Error(res && res.error ? res.error : 'Error en la solicitud'));
+      })
+      .catch(reject);
+  });
+}
+
+var allGuestsData = [];
+var activeGuestFilter = 'all';
+var activeSendFilter = 'all';
+var knownGuestStatusMap = {};
+var isFirstLoad = true;
+var notifiedSet = {}; // Registro permanente de toasts ya mostrados (code+status)
+var LANDING_URL = 'https://ua-eventos-uy.web.app/coyote-vs-acme';
+
+function playChimeSound() {
+  try {
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(587.33, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.15);
+    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.3);
+  } catch (_) {}
+}
+
+function showLiveRSVPToast(guest) {
+  // Evitar mostrar la misma notificación dos veces
+  var notifKey = guest.code + '::' + guest.status;
+  if (notifiedSet[notifKey]) return;
+  notifiedSet[notifKey] = true;
+
+  var isConfirm = guest.status === 'Confirmado';
+  var icon = isConfirm ? '🎉' : '❌';
+  var title = isConfirm ? '¡NUEVA CONFIRMACIÓN EN TIEMPO REAL!' : 'Respuesta Registrada';
+  var seatsText = isConfirm ? ' • ' + (guest.totalSeats || 1) + ' asiento(s)' : '';
+
+  var container = document.getElementById('rsvp-live-toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'rsvp-live-toast-container';
+    container.style.cssText = 'position:fixed; bottom:24px; left:24px; z-index:99999; display:flex; flex-direction:column; gap:10px; pointer-events:none;';
+    document.body.appendChild(container);
+  }
+
+  var toast = document.createElement('div');
+  toast.style.cssText = 'pointer-events:auto; background:rgba(7, 25, 56, 0.96); border:2px solid ' + (isConfirm ? '#4ade80' : '#f87171') + '; border-radius:16px; padding:16px 20px; color:#fff; font-family:inherit; box-shadow:0 12px 45px rgba(0,0,0,0.75); display:flex; align-items:center; gap:14px; animation:toastIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275); backdrop-filter:blur(20px); max-width:380px;';
+
+  toast.innerHTML = '<div style="font-size:32px; line-height:1; flex-shrink:0;">' + icon + '</div>'
+    + '<div style="flex:1;">'
+      + '<div style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:' + (isConfirm ? '#4ade80' : '#f87171') + ';">' + title + '</div>'
+      + '<div style="font-size:14px; font-weight:800; color:#fff; margin-top:3px;">' + escapeHtml(guest.name) + seatsText + '</div>'
+      + (guest.companionName ? '<div style="font-size:11px; color:#cbd5e1; margin-top:2px;">Acompañante: ' + escapeHtml(guest.companionName) + '</div>' : '')
+    + '</div>'
+    + '<button onclick="this.parentElement.remove()" style="background:transparent; border:none; color:#94a3b8; font-size:20px; cursor:pointer; padding:0 4px;">&times;</button>';
+
+  container.appendChild(toast);
+  playChimeSound();
+
+  setTimeout(function() {
+    if (toast.parentNode) {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(20px)';
+      toast.style.transition = 'all 0.3s ease';
+      setTimeout(function() { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 300);
+    }
+  }, 9000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadAllData();
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var tab = params.get('tab');
+    if (tab) switchTab(tab);
+  } catch (_) {}
+  // Polling automático cada 10 segundos
+  setInterval(function() {
+    loadDashboardStats();
+    loadGuestsList(true);
+  }, 10000);
+});
+
+function loadAllData() {
+  loadDashboardStats();
+  loadGuestsList();
+  loadEventConfig();
+}
+
+function loadGuestsList(silent) {
+  try {
+    var CACHE_VER = 'v189_brevo_agencias_imported';
+    if (localStorage.getItem('UA_ADMIN_VER') !== CACHE_VER) {
+      localStorage.removeItem('UA_ADMIN_GUESTS_CACHE');
+      localStorage.removeItem('UA_ADMIN_STATS_CACHE');
+      localStorage.setItem('UA_ADMIN_VER', CACHE_VER);
+    }
+    var localCached = localStorage.getItem('UA_ADMIN_GUESTS_CACHE');
+    if (localCached) {
+      var parsed = JSON.parse(localCached);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        allGuestsData = parsed;
+        setElText('badge-total-count', parsed.length);
+        populateDynamicFilters(parsed);
+        renderGuestTable();
+        silent = true;
+      }
+    }
+  } catch (_) {}
+
+  if (!silent && (!allGuestsData || allGuestsData.length === 0)) {
+    setElHtml('guest-table-wrapper', '<div class="empty-state-box"><div class="loading-spinner"></div><p style="margin-top:12px">Cargando invitados&hellip;</p></div>');
+  }
+
+  function handleGuestsSuccess(guests) {
+    if (!Array.isArray(guests)) guests = [];
+
+    // En la primera carga, registrar todos los estados actuales como "ya conocidos"
+    if (isFirstLoad) {
+      guests.forEach(function(g) {
+        notifiedSet[g.code + '::' + g.status] = true;
+      });
+    } else {
+      // Solo mostrar toast para cambios de estado REALES
+      guests.forEach(function(g) {
+        var prevStatus = knownGuestStatusMap[g.code];
+        if ((g.status === 'Confirmado' || g.status === 'No asiste') && prevStatus !== g.status && prevStatus !== undefined) {
+          showLiveRSVPToast(g); // showLiveRSVPToast ya verifica notifiedSet internamente
+        }
+      });
+    }
+
+    knownGuestStatusMap = {};
+    guests.forEach(function(g) { knownGuestStatusMap[g.code] = g.status; });
+    isFirstLoad = false;
+
+    allGuestsData = guests;
+    try {
+      localStorage.setItem('UA_ADMIN_GUESTS_CACHE', JSON.stringify(guests));
+    } catch (_) {}
+
+    setElText('badge-total-count', guests.length);
+    populateDynamicFilters(guests);
+    renderGuestTable();
+  }
+
+  function handleGuestsError(e) {
+    if ((!allGuestsData || allGuestsData.length === 0) && !silent) {
+      setElHtml('guest-table-wrapper', '<div class="empty-state-box"><p style="color:#ef4444">Error al cargar invitados: ' + escapeHtml(e.message || String(e)) + '</p><button class="btn btn-sm btn-pink-cta" style="margin-top:12px" onclick="loadGuestsList()">Reintentar</button></div>');
+    }
+  }
+
+  apiCall('adminList')
+    .then(function(res) {
+      if (res && res.ok && Array.isArray(res.guests)) {
+        handleGuestsSuccess(res.guests);
+      } else if (res && Array.isArray(res)) {
+        handleGuestsSuccess(res);
+      } else {
+        handleGuestsError(new Error(res && res.error ? res.error : 'Respuesta inválida del servidor.'));
+      }
+    })
+    .catch(function(err) {
+      if (typeof google !== 'undefined' && google.script && google.script.run) {
+        google.script.run
+          .withSuccessHandler(handleGuestsSuccess)
+          .withFailureHandler(handleGuestsError)
+          .adminGetGuestList();
+      } else {
+        handleGuestsError(err);
+      }
+    });
+}
+
+var msState = {}; // Guarda la selección de cada dropdown multi-select
+
+function buildMultiSelect(elementId, icon, labelText, options, onChangeCb) {
+  var container = document.getElementById(elementId);
+  if (!container) return;
+
+  if (!msState[elementId]) {
+    msState[elementId] = []; // Array vacío = TODOS seleccionados por defecto
+  }
+
+  var selected = msState[elementId];
+  var isAll = selected.length === 0;
+
+  var buttonText = icon + ' Todos los ' + labelText;
+  if (!isAll) {
+    if (selected.length === 1) {
+      buttonText = icon + ' ' + selected[0];
+    } else {
+      buttonText = icon + ' ' + selected.length + ' ' + labelText + ' sel.';
+    }
+  }
+
+  var html = '<button class="ms-trigger" onclick="toggleMsMenu(\'' + elementId + '\', event)">'
+    + '<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escapeHtml(buttonText) + '</span>'
+    + '<span class="ms-arrow">▼</span>'
+    + '</button>'
+    + '<div class="ms-menu" id="menu-' + elementId + '">'
+    + '<label class="ms-item ms-header-item">'
+      + '<input type="checkbox" ' + (isAll ? 'checked' : '') + ' onchange="toggleMsAll(\'' + elementId + '\', this.checked, \'' + onChangeCb + '\')">'
+      + '<span>(Seleccionar Todos)</span>'
+    + '</label>';
+
+  options.forEach(function(opt) {
+    var isChecked = isAll || selected.indexOf(opt) >= 0;
+    html += '<label class="ms-item">'
+      + '<input type="checkbox" class="ms-cb-' + elementId + '" value="' + escapeHtml(opt) + '" ' + (isChecked ? 'checked' : '') + ' onchange="onMsItemChange(\'' + elementId + '\', \'' + onChangeCb + '\')">'
+      + '<span>' + escapeHtml(opt) + '</span>'
+      + '</label>';
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+function toggleMsMenu(elementId, e) {
+  if (e) e.stopPropagation();
+  var menu = document.getElementById('menu-' + elementId);
+  if (!menu) return;
+  var isOpen = menu.classList.contains('open');
+  document.querySelectorAll('.ms-menu').forEach(function(m) { m.classList.remove('open'); });
+  if (!isOpen) menu.classList.add('open');
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.ms-container')) {
+    document.querySelectorAll('.ms-menu').forEach(function(m) { m.classList.remove('open'); });
+  }
+});
+
+function toggleMsAll(elementId, checked, callbackName) {
+  msState[elementId] = [];
+  document.querySelectorAll('.ms-cb-' + elementId).forEach(function(cb) {
+    cb.checked = checked;
+  });
+  updateMsButtonText(elementId);
+  if (window[callbackName]) window[callbackName]();
+}
+
+function onMsItemChange(elementId, callbackName) {
+  var allCbs = Array.from(document.querySelectorAll('.ms-cb-' + elementId));
+  var checkedCbs = allCbs.filter(function(cb) { return cb.checked; });
+  
+  if (checkedCbs.length === allCbs.length || checkedCbs.length === 0) {
+    msState[elementId] = [];
+    allCbs.forEach(function(cb) { cb.checked = true; });
+    var headerCb = document.querySelector('#' + elementId + ' .ms-header-item input');
+    if (headerCb) headerCb.checked = true;
+  } else {
+    msState[elementId] = checkedCbs.map(function(cb) { return cb.value; });
+    var headerCb = document.querySelector('#' + elementId + ' .ms-header-item input');
+    if (headerCb) headerCb.checked = false;
+  }
+
+  updateMsButtonText(elementId);
+  if (window[callbackName]) window[callbackName]();
+}
+
+function updateMsButtonText(elementId) {
+  var selected = msState[elementId] || [];
+  var isAll = selected.length === 0;
+  var triggerBtn = document.querySelector('#' + elementId + ' .ms-trigger span');
+  if (!triggerBtn) return;
+
+  var labelMap = {
+    'ms-filter-stage': ['📨', 'Etapas'],
+    'ms-filter-channel': ['🏢', 'Canales'],
+    'ms-filter-agency': ['🤝', 'Convenios / Agencias'],
+    'ms-filter-referent': ['👤', 'Referentes UA'],
+    'ms-send-stage': ['📨', 'Etapas'],
+    'ms-send-channel': ['🏢', 'Canales'],
+    'ms-send-agency': ['🤝', 'Convenios / Agencias'],
+    'ms-send-referent': ['👤', 'Referentes UA'],
+    'ms-send-rsvp': ['👥', 'Estados RSVP']
+  };
+
+  var meta = labelMap[elementId] || ['🔍', 'Filtro'];
+  var icon = meta[0];
+  var labelText = meta[1];
+
+  var buttonText = icon + ' Todos los ' + labelText;
+  if (!isAll) {
+    if (selected.length === 1) {
+      buttonText = icon + ' ' + selected[0];
+    } else {
+      buttonText = icon + ' ' + selected.length + ' ' + labelText + ' sel.';
+    }
+  }
+  triggerBtn.textContent = buttonText;
+}
+
+function getSelectedMultiValues(elementId) {
+  return msState[elementId] || [];
+}
+
+function populateDynamicFilters(guests) {
+  var stages = ['1er Envío', '2do Envío', 'Envío Manual'];
+  var channels = Array.from(new Set(guests.map(function(g) { return g.channel; }).filter(Boolean))).sort();
+  var agencies = Array.from(new Set(guests.map(function(g) { return g.agency; }).filter(Boolean))).sort();
+  var referents = Array.from(new Set(guests.map(function(g) { return g.referent; }).filter(Boolean))).sort();
+  var rsvps = ['Confirmado', 'No asiste', 'Pendiente'];
+
+  // Construir MultiSelects para la pestaña Lista de Invitados
+  buildMultiSelect('ms-filter-stage', '📨', 'Etapas', stages, 'filterGuestTable');
+  buildMultiSelect('ms-filter-channel', '🏢', 'Canales', channels, 'filterGuestTable');
+  buildMultiSelect('ms-filter-agency', '🤝', 'Convenios / Agencias', agencies, 'filterGuestTable');
+  buildMultiSelect('ms-filter-referent', '👤', 'Referentes UA', referents, 'filterGuestTable');
+
+  // Construir MultiSelects para la pestaña Enviar Invitaciones
+  buildMultiSelect('ms-send-stage', '📨', 'Etapas', stages, 'renderSendList');
+  buildMultiSelect('ms-send-channel', '🏢', 'Canales', channels, 'renderSendList');
+  buildMultiSelect('ms-send-agency', '🤝', 'Convenios / Agencias', agencies, 'renderSendList');
+  buildMultiSelect('ms-send-referent', '👤', 'Referentes UA', referents, 'renderSendList');
+  buildMultiSelect('ms-send-rsvp', '👥', 'Estados RSVP', rsvps, 'renderSendList');
+}
+
+function toggleSidebarMenu() {
+  var sb = document.getElementById('main-sidebar');
+  var ov = document.getElementById('sidebar-overlay');
+  if (sb && ov) {
+    sb.classList.toggle('open');
+    ov.classList.toggle('active');
+  }
+}
+
+function closeMobileSidebar() {
+  var sb = document.getElementById('main-sidebar');
+  var ov = document.getElementById('sidebar-overlay');
+  if (sb && sb.classList.contains('open')) {
+    sb.classList.remove('open');
+    if (ov) ov.classList.remove('active');
+  }
+}
+
+function switchTab(tabId) {
+  closeMobileSidebar();
+  document.querySelectorAll('.tab-pane-content').forEach(function(pane) { pane.style.display = 'none'; });
+  document.querySelectorAll('.nav-item').forEach(function(item) { item.classList.remove('active'); });
+
+  var targetPane = document.getElementById('tab-' + tabId);
+  if (targetPane) targetPane.style.display = 'block';
+
+  var navItems = document.querySelectorAll('.nav-item');
+  var map = { dashboard: 0, guests: 1, add: 2, send: 3, reminders: 4, config: 5 };
+  if (map[tabId] !== undefined && navItems[map[tabId]]) {
+    navItems[map[tabId]].classList.add('active');
+  }
+
+  if (tabId === 'send') renderSendList();
+  if (tabId === 'reminders') {
+    renderRemindersList();
+    renderClarifyMessage();
+  }
+}
+
+/* DASHBOARD */
+var cachedStatsData = null;
+
+// ── INDICADOR DE CUOTA DE GOOGLE ──
+function updateQuotaIndicator() {
+  var el = document.getElementById('quota-indicator');
+  if (!el) return;
+  var url = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec?action=health';
+  fetch(url).then(function(r) { return r.json(); }).then(function(data) {
+    var q = data.quota;
+    if (q === 0) {
+      el.innerHTML = '🔴 Cuota Google: <strong>AGOTADA</strong> (se renueva en ~24hs)';
+      el.style.color = 'var(--red, #ef4444)';
+      var btn = document.getElementById('send-prod-btn');
+      if (btn) { btn.disabled = true; btn.title = 'Cuota diaria de Google agotada. Reintentar mañana.'; }
+    } else if (q > 0) {
+      el.innerHTML = '🟢 Cuota Google: <strong>' + q + '</strong> emails restantes hoy';
+      el.style.color = 'var(--green, #22c55e)';
+      var btn = document.getElementById('send-prod-btn');
+      if (btn) { btn.disabled = false; btn.title = ''; }
+    } else {
+      el.innerHTML = '📧 Cuota Google: verificando...';
+      el.style.color = 'var(--cyan)';
+    }
+  }).catch(function() {
+    el.innerHTML = '📧 Cuota Google: no disponible';
+    el.style.color = 'var(--text-sub)';
+  });
+}
+
+// Actualizar cuota al cargar y cada 60 segundos
+setTimeout(updateQuotaIndicator, 3000);
+setInterval(updateQuotaIndicator, 60000);
+
+function loadDashboardStats() {
+  try {
+    var localStats = localStorage.getItem('UA_ADMIN_STATS_CACHE');
+    if (localStats) {
+      var parsedStats = JSON.parse(localStats);
+      applyStats(parsedStats);
+    }
+  } catch (_) {}
+
+  apiCall('adminStats')
+    .then(function(res) {
+      if (res && res.ok && res.stats) applyStats(res.stats);
+      else if (res && res.total !== undefined) applyStats(res);
+    })
+    .catch(function(e) {
+      if (typeof google !== 'undefined' && google.script && google.script.run) {
+        google.script.run
+          .withSuccessHandler(applyStats)
+          .withFailureHandler(function(err) { showToast('Error al cargar stats: ' + (err.message || err), 'error'); })
+          .adminGetStats();
+      } else {
+        showToast('Error al cargar stats: ' + (e.message || e), 'error');
+      }
+    });
+}
+
+function applyStats(s) {
+  if (!s) return;
+  cachedStatsData = s;
+  
+  var confirmedGuestsCount = 0;
+  var confirmedSeatsCount = 0;
+  if (typeof allGuestsData !== 'undefined' && Array.isArray(allGuestsData) && allGuestsData.length > 0) {
+    allGuestsData.forEach(function(g) {
+      if (g.status === 'Confirmado') {
+        confirmedGuestsCount++;
+        confirmedSeatsCount += (Number(g.totalSeats) || 2);
+      }
+    });
+  } else {
+    confirmedGuestsCount = s.confirmed || 0;
+    confirmedSeatsCount = s.confirmedSeats || 0;
+  }
+
+  var companionsCount = Math.max(0, confirmedSeatsCount - confirmedGuestsCount);
+  var maxCap = (s && s.maxCapacity) ? s.maxCapacity : 300;
+  var freeSeats = Math.max(0, maxCap - confirmedSeatsCount);
+  var occupancyPct = Math.min(100, Math.round((confirmedSeatsCount / maxCap) * 1000) / 10);
+
+  setElText('s-total', s.total || 0);
+  
+  // Asistentes en sala (76 en grande)
+  setElText('s-confirmed-seats', confirmedSeatsCount);
+  setElHtml('s-confirmed-desc', '<strong>' + confirmedGuestsCount + ' pases</strong> (' + confirmedGuestsCount + ' tit. + ' + companionsCount + ' acomp.) <span class="kpi-arrow">➔</span>');
+  
+  var unconfirmedCount = 0;
+  var expiredCount = 0;
+  if (typeof allGuestsData !== 'undefined' && Array.isArray(allGuestsData) && allGuestsData.length > 0) {
+    allGuestsData.forEach(function(g) {
+      if (g.status === 'Expirado' || g.status === 'Pendiente' || !g.status) {
+        unconfirmedCount++;
+        if (g.status === 'Expirado') expiredCount++;
+      }
+    });
+  } else {
+    unconfirmedCount = Math.max(0, (s.total || 0) - confirmedGuestsCount - (s.notAttending || 0));
+    expiredCount = unconfirmedCount;
+  }
+
+  setElText('s-pending', unconfirmedCount);
+  var pendingPct = s.total ? Math.round((unconfirmedCount / s.total) * 100) : 0;
+  setElHtml('s-pending-desc', 'sin confirmar (' + expiredCount + ' expirados) <span class="kpi-arrow">➔</span>');
+
+  setElText('s-withEmail', s.withEmail || 0);
+  setElHtml('s-noEmail-desc', '<strong>' + (s.noEmail || 0) + '</strong> por enviar / manual <span class="kpi-arrow">➔</span>');
+  
+  // Ocupación de sala Movie
+  setElText('s-cap-text', confirmedSeatsCount + ' / ' + maxCap + ' Butacas');
+  setElText('s-cap-avail', '(' + freeSeats + ' disponibles)');
+  setElText('s-rate', occupancyPct + '%');
+  
+  var bar = document.getElementById('s-rate-bar');
+  if (bar) {
+    bar.style.width = occupancyPct + '%';
+    bar.style.background = 'linear-gradient(90deg, var(--cyan), var(--green))';
+  }
+
+  try {
+    localStorage.setItem('UA_ADMIN_STATS_CACHE', JSON.stringify(s));
+  } catch (_) {}
+}
+
+function filterFromKpi(filterKey) {
+  switchTab('guests');
+  var pillBtns = document.querySelectorAll('.f-pill-btn');
+  var targetBtn = pillBtns[0];
+  if (filterKey === 'Confirmado') targetBtn = pillBtns[1];
+  else if (filterKey === 'No asiste') targetBtn = pillBtns[2];
+  else if (filterKey === 'Pendiente' || filterKey === 'unconfirmed') targetBtn = pillBtns[3];
+  else if (filterKey === 'Expirado') targetBtn = pillBtns[4];
+  else if (filterKey === 'Lista de Espera') targetBtn = pillBtns[5];
+  
+  setGuestFilter(filterKey, targetBtn);
+}
+
+function openCinemaSeatModal() {
+  var modal = document.getElementById('cinemaSeatModal');
+  if (!modal) return;
+  renderCinemaSeatGrid();
+  modal.classList.add('active');
+}
+
+function closeCinemaSeatModal(e) {
+  if (e && e.target && e.target.id !== 'cinemaSeatModal' && !e.target.classList.contains('cinema-close-btn')) return;
+  var modal = document.getElementById('cinemaSeatModal');
+  if (modal) modal.classList.remove('active');
+}
+
+function renderCinemaSeatGrid() {
+  var container = document.getElementById('cinema-grid-hall');
+  if (!container) return;
+
+  var totalCap = (cachedStatsData && cachedStatsData.maxCapacity) ? cachedStatsData.maxCapacity : 300;
+  
+  var confirmedSeatsCount = 0;
+  var confirmedGuestsCount = 0;
+  var totalAssignedSeatsCount = 0;
+
+  if (allGuestsData && allGuestsData.length > 0) {
+    allGuestsData.forEach(function(g) {
+      var seats = Number(g.totalSeats || 2);
+      if (g.status === 'Confirmado') {
+        confirmedSeatsCount += seats;
+        confirmedGuestsCount++;
+      }
+      totalAssignedSeatsCount += seats;
+    });
+  } else if (cachedStatsData) {
+    confirmedSeatsCount = cachedStatsData.confirmedSeats || 7;
+    confirmedGuestsCount = cachedStatsData.confirmed || 5;
+    totalAssignedSeatsCount = cachedStatsData.totalSeats || 436;
+  }
+
+  var confirmedCount = Math.min(confirmedSeatsCount, totalCap);
+  var reservedCount = Math.min(Math.max(totalAssignedSeatsCount - confirmedCount, 0), totalCap - confirmedCount);
+  var freeCount = Math.max(totalCap - confirmedCount - reservedCount, 0);
+
+  setElText('m-stat-confirmed', confirmedCount);
+  setElText('m-stat-guests', confirmedGuestsCount);
+  setElText('m-stat-reserved', reservedCount);
+  setElText('m-stat-free', freeCount);
+  setElText('m-stat-cap', totalCap);
+
+  var rows = 15;
+  var colsPerRow = Math.ceil(totalCap / rows);
+  var rowLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O'];
+  var currentSeatIndex = 0;
+  var gridHtml = '';
+
+  for (var r = 0; r < rows; r++) {
+    var letter = rowLetters[r] || ('R' + (r+1));
+    gridHtml += '<div class="cinema-row">';
+    gridHtml += '<span class="cinema-row-label">' + letter + '</span>';
+
+    for (var c = 1; c <= colsPerRow; c++) {
+      currentSeatIndex++;
+      if (currentSeatIndex > totalCap) break;
+
+      if (c === 11) {
+        gridHtml += '<div class="cinema-aisle"></div>';
+      }
+
+      var seatClass = 'seat-free';
+      var seatStatus = 'Disponible / Libre';
+
+      if (currentSeatIndex <= confirmedCount) {
+        seatClass = 'seat-confirmed';
+        seatStatus = '🟢 ASISTENCIA CONFIRMADA';
+      } else if (currentSeatIndex <= (confirmedCount + reservedCount)) {
+        seatClass = 'seat-reserved';
+        seatStatus = '🔵 LUGAR RESERVADO (Pendiente)';
+      }
+
+      var tooltip = 'Fila ' + letter + ' · Asiento ' + c + ' | Estado: ' + seatStatus;
+      gridHtml += '<div class="cinema-seat ' + seatClass + '" title="' + escapeHtml(tooltip) + '"></div>';
+    }
+
+    gridHtml += '<span class="cinema-row-label">' + letter + '</span>';
+    gridHtml += '</div>';
+  }
+
+  container.innerHTML = gridHtml;
+}
+
+function setGuestFilter(filterKey, btnEl) {
+  activeGuestFilter = filterKey;
+  document.querySelectorAll('.f-pill-btn').forEach(function(b) { b.classList.remove('active'); });
+  btnEl.classList.add('active');
+  renderGuestTable();
+}
+
+function renderStatusBadge(status) {
+  if (status === 'Confirmado') return '<span class="status-pill-badge sp-green">✅ Confirmado</span>';
+  if (status === 'No asiste')  return '<span class="status-pill-badge sp-red">❌ No asiste</span>';
+  if (status === 'Expirado' || status === 'Bloqueado') return '<span class="status-pill-badge" style="background:rgba(239,68,68,0.18);border:1px solid rgba(239,68,68,0.4);color:#fca5a5;">🚫 Expirado</span>';
+  if (status === 'Lista de Espera') return '<span class="status-pill-badge" style="background:rgba(238,31,115,0.18);border:1px solid rgba(238,31,115,0.4);color:#f472b6;">📋 Lista de Espera</span>';
+  return '<span class="status-pill-badge sp-yellow">⏳ Pendiente</span>';
+}
+
+function renderMailBadge(mailStatus) {
+  var s = String(mailStatus || '').trim();
+  if (!s || s === '' || s === 'Pendiente' || s === 'Pendiente de envío' || s === 'Sin enviar' || s === 'SIN ENVIAR') {
+    return '<span class="status-pill-badge sp-yellow">⏳ PENDIENTE DE ENVÍO</span>';
+  }
+  if (s.indexOf('DEMO') >= 0) {
+    return '<span class="status-pill-badge sp-purple" style="background:rgba(168,85,247,0.18); border:1px solid rgba(168,85,247,0.4); color:#c084fc;" title="' + escapeHtml(s) + '">🧪 DEMO</span>';
+  }
+  if (s.indexOf('Error') >= 0 || s.indexOf('Falló') >= 0 || s.indexOf('No se pudo') >= 0) {
+    return '<span class="status-pill-badge sp-red" title="' + escapeHtml(s) + '">❌ ERROR</span>';
+  }
+  return '<span class="status-pill-badge sp-green" title="' + escapeHtml(s) + '">✉️ ENVIADO</span>';
+}
+
+function renderOpenBadge(openedAt, mailStatus, responseDate, status) {
+  var openStr = String(openedAt || '').trim();
+  var statusStr = String(mailStatus || '').trim();
+  var respStr = String(responseDate || '').trim();
+  var stateStr = String(status || '').trim();
+
+  var isOpened = openStr || statusStr.indexOf('Abierto') >= 0 || respStr || stateStr === 'Confirmado' || stateStr === 'No asiste';
+
+  if (isOpened) {
+    var displayTime = 'Registrado';
+    if (openStr) {
+      displayTime = openStr.replace(/^Abierto\s*\(?/i, '').replace(/\)?$/, '');
+    } else if (statusStr.indexOf('Abierto') >= 0) {
+      displayTime = statusStr.replace(/.*Abierto\s*/i, '');
+    } else if (respStr) {
+      displayTime = respStr;
+    }
+    return '<span class="status-pill-badge sp-green" style="background:rgba(34,197,94,0.18); border:1px solid rgba(34,197,94,0.4); color:#4ade80;" title="Ingresó a la invitación/mail">👁️ ABIERTO (' + escapeHtml(displayTime) + ')</span>';
+  }
+
+  return '<span style="color:var(--text-sub); font-size:11px;">— NO ABIERTO</span>';
+}
+
+function normalizeStr(s) {
+  if (!s) return '';
+  var clean = String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  var noPunct = clean.replace(/[^a-z0-9]/g, '');
+  return clean + ' ' + noPunct;
+}
+
+function filterGuestTable() {
+  var rawQuery = (document.getElementById('guest-search-field').value || '').trim();
+  if (rawQuery.length > 0 && activeGuestFilter !== 'all') {
+    activeGuestFilter = 'all';
+    document.querySelectorAll('.f-pill-btn').forEach(function(b) {
+      if (b.textContent.trim().indexOf('Todos') >= 0) b.classList.add('active');
+      else b.classList.remove('active');
+    });
+  }
+  renderGuestTable();
+}
+
+function renderGuestTable() {
+  var rawQuery = (document.getElementById('guest-search-field').value || '').trim();
+  var queryNorm = (rawQuery || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  var queryTerms = queryNorm.split(/\s+/).filter(function(t) { return t.length > 0; });
+
+  var selStages = getSelectedMultiValues('ms-filter-stage');
+  var selChannels = getSelectedMultiValues('ms-filter-channel');
+  var selAgencies = getSelectedMultiValues('ms-filter-agency');
+  var selReferents = getSelectedMultiValues('ms-filter-referent');
+
+  var filtered = allGuestsData.filter(function(g) {
+    var matchSearch = true;
+    if (queryTerms.length > 0) {
+      var codeClean = String(g.code || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      var gText = [
+        g.name, g.email, g.code, codeClean, g.channel, g.agency,
+        g.referent, g.stage, g.companionName, g.phone
+      ].map(normalizeStr).join(' ');
+
+      matchSearch = queryTerms.every(function(term) {
+        var termClean = term.replace(/[^a-z0-9]/g, '');
+        return gText.indexOf(term) >= 0 || (termClean.length > 2 && gText.indexOf(termClean) >= 0);
+      });
+    }
+
+    var matchFilter = activeGuestFilter === 'all' || 
+      (activeGuestFilter === 'unconfirmed' ? (g.status === 'Expirado' || g.status === 'Pendiente' || !g.status) : g.status === activeGuestFilter);
+    var matchStage = selStages.length === 0 || selStages.indexOf(g.stage || '1er Envío') >= 0;
+    var matchChannel = selChannels.length === 0 || selChannels.indexOf(g.channel) >= 0;
+    var matchAgency = selAgencies.length === 0 || selAgencies.indexOf(g.agency) >= 0;
+    var matchReferent = selReferents.length === 0 || selReferents.indexOf(g.referent) >= 0;
+
+    return matchSearch && matchFilter && matchStage && matchChannel && matchAgency && matchReferent;
+  });
+
+  var totalLabel = 'Mostrando ' + filtered.length + ' de ' + allGuestsData.length + ' invitados';
+  if (rawQuery) {
+    totalLabel += ' · Búsqueda: "' + rawQuery + '"';
+  }
+  setElText('guest-total-label', totalLabel);
+
+  if (!filtered.length) {
+    setElHtml('guest-table-wrapper', '<div class="empty-state-box"><div class="icon">&#128269;</div><p>No se encontraron invitados que coincidan con <strong>"' + escapeHtml(rawQuery) + '"</strong></p><button class="btn btn-outline-cta btn-sm" style="margin-top:10px;" onclick="document.getElementById(\'guest-search-field\').value=\'\'; filterGuestTable();">Limpiar búsqueda</button></div>');
+    return;
+  }
+
+  var rowsHtml = filtered.map(function(g) {
+    var safeCode = String(g.code || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    var safeName = escapeHtml(g.name || '').replace(/'/g, "\\'");
+    var safeLink = String(g.link || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    var waUrl = getWhatsAppUrlForGuest(g);
+
+    var nameDisplay = escapeHtml(g.name);
+    if (g.name && (g.name.indexOf('Cupo') === 0 || g.name.indexOf('Extra') === 0)) {
+      nameDisplay = '<span class="status-pill-badge sp-cyan" style="margin-right:6px; font-size:10px; padding:2px 6px;">🎟️ CUPO</span>' + nameDisplay;
+    }
+
+    var stageBadgeClass = (g.stage === '2do Envío') ? 'sp-pink' : 'sp-cyan';
+    var companionDisplay = (g.companionName && g.companionName.trim())
+      ? '<div style="font-size:11px; color:#38bdf8; font-weight:500; margin-top:2px;">👥 ' + escapeHtml(g.companionName) + '</div>'
+      : '';
+
+    return '<tr data-code="' + escapeHtml(g.code) + '">'
+      + '<td style="width:36px;text-align:center;"><input type="checkbox" class="guest-cb" data-code="' + escapeHtml(g.code) + '" onchange="onCheckboxChange()"></td>'
+      + '<td class="td-code-txt">' + escapeHtml(g.code) + '</td>'
+      + '<td class="td-name-txt">' + nameDisplay + companionDisplay + '</td>'
+      + '<td class="td-email-txt">' + (g.email ? escapeHtml(g.email) : '<span style="color:var(--text-sub);">—</span>') + '</td>'
+      + '<td><span class="status-pill-badge ' + stageBadgeClass + '" style="font-size:10px;">' + escapeHtml(g.stage || '1er Envío') + '</span></td>'
+      + '<td style="font-size:12px;color:#cbd5e1;">' + escapeHtml(g.channel || '—') + '</td>'
+      + '<td style="font-size:12px;color:#cbd5e1;">' + escapeHtml(g.agency || '—') + '</td>'
+      + '<td style="font-size:12px;color:#7dd3fc;font-weight:600;">' + escapeHtml(g.referent || '—') + '</td>'
+      + '<td>' + renderStatusBadge(g.status) + '</td>'
+      + '<td style="text-align:center; color:#fff; font-weight:700;">' + (g.totalSeats || '—') + '</td>'
+      + '<td>' + renderMailBadge(g.mailStatus) + '</td>'
+      + '<td>' + renderOpenBadge(g.openedAt, g.mailStatus, g.responseDate, g.status) + '</td>'
+      + '<td><div style="display:flex; gap:4px; justify-content:center;">'
+        + '<button class="btn btn-outline-cta btn-sm" title="Editar invitado (nombre, email, pases, etc.)" onclick="openEditGuestModal(\'' + safeCode + '\')">&#9998;</button>'
+        + '<button class="btn btn-outline-cta btn-sm" title="Copiar texto del mensaje para mail" onclick="copyGuestText(\'' + safeCode + '\', this)">&#128203;</button>'
+        + '<button class="btn btn-outline-cta btn-sm" title="Copiar link de invitación" onclick="copyGuestLink(\'' + safeLink + '\', this)">&#128279;</button>'
+        + '<a href="' + waUrl + '" target="_blank" class="btn btn-green-cta btn-sm" title="Enviar por WhatsApp" style="text-decoration:none;">&#128172;</a>'
+        + '<button class="btn btn-danger-ghost btn-sm" title="Eliminar invitado" onclick="deleteGuestEntry(\'' + safeCode + '\', \'' + safeName + '\')">&#128465;</button>'
+      + '</div></td>'
+    + '</tr>';
+  }).join('');
+
+  setElHtml('guest-table-wrapper', '<table><thead><tr><th style="width:36px;text-align:center;"><input type="checkbox" id="select-all-cb" onclick="toggleSelectAll(this)"></th><th>C&oacute;digo</th><th>Nombre</th><th>Email</th><th>Etapa</th><th>Canal</th><th>Convenio / Agencia</th><th>Referente UA</th><th>Estado</th><th style="text-align:center;">Asientos</th><th>Env&iacute;o Mail</th><th>Apertura Mail</th><th style="text-align:center;">Acciones</th></tr></thead><tbody>' + rowsHtml + '</tbody></table>');
+}
+
+function getInvitationTextForGuest(g) {
+  var inviteUrl = g.link || (LANDING_URL + '?i=' + encodeURIComponent(g.code));
+  var firstName = (g.name || 'Invitado').split(' ')[0];
+  var seatsNum = g.totalSeats || 2;
+  var seatsStr = seatsNum + ' entrada' + (seatsNum > 1 ? 's' : '');
+  var isConfirmed = (g.status || '').toLowerCase() === 'confirmado';
+
+  if (isConfirmed) {
+    var compText = (g.companionName && g.companionName.trim()) ? ' (' + g.companionName.trim() + ')' : '';
+    return '¡Hola ' + firstName + '! 👋\n\n' +
+      'Te escribimos de parte de *Universal Assistance* para confirmar tus lugares para nuestra función exclusiva de cine:\n\n' +
+      '🎬 *Película:* Coyote vs. Acme\n' +
+      '🗓️ *Fecha:* Jueves 27 de Agosto (la próxima semana)\n' +
+      '⏰ *Horario:* 19:30 hs (Recepción y acreditación) · 20:00 hs (Función puntual)\n' +
+      '📍 *Lugar:* Movie Montevideo Shopping\n' +
+      '🍿 *Pop y bebida:* Cortesía de Universal Assistance\n\n' +
+      '🎟️ *Tus lugares confirmados:* ' + seatsStr + compText + '\n' +
+      '🎫 *Código de reserva:* ' + g.code + '\n\n' +
+      '👉 Podés ver tu entrada digital y código QR de acceso aquí:\n' +
+      inviteUrl + '\n\n' +
+      '¡Te esperamos para compartir una gran noche! 🍿✨\n' +
+      '----------------------------------------\n' +
+      'Universal Assistance Uruguay';
+  }
+
+  var isExtra = (g.name || '').toUpperCase().indexOf('EXTRA') >= 0 ||
+                (g.name || '').toUpperCase().indexOf('SORTEO') >= 0 ||
+                (g.name || '').toUpperCase().indexOf('CUPO') >= 0;
+
+  if (isExtra) {
+    return 'Universal Assistance tiene el agrado de invitarte a una función exclusiva de cine 🎬\n\n' +
+      '🍿 Película: Coyote vs. Acme\n' +
+      '🗓️ Fecha: Jueves 27 de Agosto\n' +
+      '⏰ Horario: 19:30 hs (Recepción y acreditación) · 20:00 hs (Función puntual)\n' +
+      '📍 Lugar: Movie Montevideo Shopping\n' +
+      '🎟️ Accesos: ' + seatsStr + '\n' +
+      '🍿 Incluye: Pop y bebida cortesía de Universal Assistance\n\n' +
+      '⚠️ IMPORTANTE:\n' +
+      'Esta invitación es personal e intransferible. Los cupos de la sala son estrictamente limitados.\n\n' +
+      '👉 Confirmá tu lugar ingresando aquí:\n' +
+      inviteUrl + '\n\n' +
+      '¡Te esperamos!\n' +
+      'Universal Assistance Uruguay';
+  } else {
+    return '¡Hola ' + firstName + '! 👋\n\n' +
+      'Universal Assistance tiene el agrado de invitarte a una función exclusiva de cine 🎬\n\n' +
+      '🍿 Película: Coyote vs. Acme\n' +
+      '🗓️ Fecha: Jueves 27 de Agosto\n' +
+      '⏰ Horario: 19:30 hs (Recepción y acreditación) · 20:00 hs (Función puntual)\n' +
+      '📍 Lugar: Movie Montevideo Shopping\n' +
+      '🎟️ Tu Pase: ' + seatsStr + '\n' +
+      '🍿 Incluye: Pop y bebida cortesía de Universal Assistance\n\n' +
+      '⚠️ IMPORTANTE:\n' +
+      'Esta invitación es personal e intransferible. Los cupos de la sala son estrictamente limitados.\n\n' +
+      '👉 Confirmá tu lugar ingresando aquí:\n' +
+      inviteUrl + '\n\n' +
+      '¡Te esperamos para compartir una gran noche de cine!\n' +
+      '----------------------------------------\n' +
+      'Universal Assistance Uruguay';
+  }
+}
+
+function copyGuestText(code, btnEl) {
+  var guest = allGuestsData.find(function(item) { return item.code === code; });
+  if (!guest) { showToast('No se encontró el invitado', 'error'); return; }
+  var textMsg = getInvitationTextForGuest(guest);
+  navigator.clipboard.writeText(textMsg).then(function() {
+    var orig = btnEl.innerHTML; btnEl.innerHTML = '&#9989;'; btnEl.disabled = true;
+    setTimeout(function() { btnEl.innerHTML = orig; btnEl.disabled = false; }, 1800);
+    showToast('Texto de mensaje copiado al portapapeles', 'success');
+  });
+}
+
+function getWhatsAppUrlForGuest(g) {
+  var phone = (g.phone || '').replace(/\D/g, '');
+  if (phone) {
+    if (phone.indexOf('09') === 0 && phone.length === 9) {
+      phone = '598' + phone.substring(1);
+    } else if (phone.indexOf('9') === 0 && phone.length === 8) {
+      phone = '598' + phone;
+    }
+  }
+  var textMsg = getInvitationTextForGuest(g);
+  var encodedMsg = encodeURIComponent(textMsg);
+  if (phone) {
+    return 'https://wa.me/' + phone + '?text=' + encodedMsg;
+  } else {
+    return 'https://wa.me/?text=' + encodedMsg;
+  }
+}
+
+function copyGuestLink(linkUrl, btnEl) {
+  if (!linkUrl) { showToast('Sin link generado', 'error'); return; }
+  navigator.clipboard.writeText(linkUrl).then(function() {
+    var orig = btnEl.innerHTML; btnEl.innerHTML = '&#9989;'; btnEl.disabled = true;
+    setTimeout(function() { btnEl.innerHTML = orig; btnEl.disabled = false; }, 1800);
+    showToast('Link copiado al portapapeles', 'success');
+  });
+}
+
+/* ── SELECCIÓN MÚLTIPLE ─────────────────────────────── */
+function toggleSelectAll(cb) {
+  document.querySelectorAll('.guest-cb').forEach(function(c) { c.checked = cb.checked; });
+  updateBulkBar();
+}
+
+function onCheckboxChange() {
+  var all = document.querySelectorAll('.guest-cb');
+  var checked = document.querySelectorAll('.guest-cb:checked');
+  var selAllCb = document.getElementById('select-all-cb');
+  if (selAllCb) {
+    selAllCb.checked = checked.length === all.length && all.length > 0;
+    selAllCb.indeterminate = checked.length > 0 && checked.length < all.length;
+  }
+  updateBulkBar();
+}
+
+function updateBulkBar() {
+  var checked = document.querySelectorAll('.guest-cb:checked');
+  var bar = document.getElementById('bulk-action-bar');
+  if (!bar) return;
+  if (checked.length > 0) {
+    bar.style.display = 'flex';
+    var lbl = document.getElementById('bulk-count-label');
+    if (lbl) lbl.textContent = checked.length + ' invitado' + (checked.length !== 1 ? 's' : '') + ' seleccionado' + (checked.length !== 1 ? 's' : '');
+  } else {
+    bar.style.display = 'none';
+  }
+}
+
+function calculateStatsFromLocal(guests) {
+  if (!Array.isArray(guests)) guests = [];
+  var total = guests.length;
+  var confirmed = guests.filter(function(g) { return g.status === 'Confirmado'; }).length;
+  var notAttending = guests.filter(function(g) { return g.status === 'No asiste'; }).length;
+  var pending = guests.filter(function(g) { return !g.status || g.status === 'Pendiente'; }).length;
+  var totalSeats = guests.reduce(function(s, g) { return s + (Number(g.totalSeats) || 2); }, 0);
+  var confirmedSeats = guests.filter(function(g) { return g.status === 'Confirmado'; }).reduce(function(s, g) { return s + (Number(g.totalSeats) || 2); }, 0);
+  var sentKeywords = ['enviado', 'Enviado', 'ENVIADO', 'Sent', 'sent', 'Abierto', 'abierto', 'Entregado', 'entregado'];
+  var withEmail = guests.filter(function(g) {
+    var ms = String(g.mailStatus || '').trim();
+    if (!ms || ms.startsWith('Pendiente')) return false;
+    return sentKeywords.some(function(kw) { return ms.indexOf(kw) >= 0; });
+  }).length;
+  var noEmail = total - withEmail;
+  var responseRate = total > 0 ? Math.round((confirmed + notAttending) / total * 100) : 0;
+  return {
+    total: total,
+    confirmed: confirmed,
+    notAttending: notAttending,
+    pending: pending,
+    withEmail: withEmail,
+    noEmail: noEmail,
+    totalSeats: totalSeats,
+    confirmedSeats: confirmedSeats,
+    responseRate: responseRate,
+    maxCapacity: 300
+  };
+}
+
+function deleteSelectedGuests() {
+  var checked = document.querySelectorAll('.guest-cb:checked');
+  if (!checked.length) return;
+  var codes = Array.from(checked).map(function(c) { return c.getAttribute('data-code'); });
+  var plural = codes.length > 1;
+
+  showConfirmModal({
+    title: '¿Eliminar ' + codes.length + ' invitado' + (plural ? 's' : '') + '?',
+    message: codes.join(', ') + '\n\nEsta acción NO se puede deshacer.',
+    confirmText: '🗑️ Eliminar ' + codes.length,
+    cancelText: 'Cancelar',
+    danger: true
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+    
+    // Optimistic UI Instantáneo (0ms)
+    var targetSet = new Set(codes);
+    codes.forEach(function(code) {
+      var tr = document.querySelector('tr[data-code="' + code + '"]');
+      if (tr) {
+        tr.style.opacity = '0';
+        tr.style.transform = 'translateX(20px)';
+        tr.style.transition = 'all 0.2s ease';
+        setTimeout(function() { if (tr.parentNode) tr.parentNode.removeChild(tr); }, 200);
+      }
+    });
+
+    allGuestsData = allGuestsData.filter(function(g) { return !targetSet.has(g.code); });
+    try { localStorage.setItem('UA_ADMIN_GUESTS_CACHE', JSON.stringify(allGuestsData)); } catch (_) {}
+    setElText('badge-total-count', allGuestsData.length);
+    populateDynamicFilters(allGuestsData);
+    applyStats(calculateStatsFromLocal(allGuestsData));
+    updateBulkBar();
+    showToast(codes.length + ' invitado' + (plural ? 's' : '') + ' eliminado' + (plural ? 's' : ''), 'success');
+
+    // Persistir en backend
+    apiCall('bulkDelete', { codes: codes })
+      .then(function() {
+        showToast('✅ ' + codes.length + ' invitados eliminados en Google Sheets', 'success');
+      })
+      .catch(function(err) {
+        showToast('❌ Error al eliminar en Sheets: ' + (err.message || err), 'error');
+      });
+  });
+}
+
+/* ── ELIMINAR UNO (OPTIMISTIC 0ms) ───────────────────────────────────── */
+function deleteGuestEntry(code, name) {
+  showConfirmModal({
+    title: '¿Eliminar invitado?',
+    message: 'Vas a eliminar a ' + name + ' (' + code + ').\n\nEsta acción no se puede deshacer.',
+    confirmText: '🗑️ Eliminar',
+    cancelText: 'Cancelar',
+    danger: true
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+    
+    // Optimistic UI Instantáneo (0ms)
+    var tr = document.querySelector('tr[data-code="' + code + '"]');
+    if (tr) {
+      tr.style.opacity = '0';
+      tr.style.transform = 'translateX(20px)';
+      tr.style.transition = 'all 0.2s ease';
+      setTimeout(function() { if (tr.parentNode) tr.parentNode.removeChild(tr); }, 200);
+    }
+    
+    allGuestsData = allGuestsData.filter(function(g) { return g.code !== code; });
+    try { localStorage.setItem('UA_ADMIN_GUESTS_CACHE', JSON.stringify(allGuestsData)); } catch (_) {}
+    setElText('badge-total-count', allGuestsData.length);
+    populateDynamicFilters(allGuestsData);
+    applyStats(calculateStatsFromLocal(allGuestsData));
+    showToast(name + ' eliminado', 'success');
+
+    // Persistir en backend
+    apiCall('deleteGuest', { code: code })
+      .then(function() {
+        showToast('✅ ' + name + ' eliminado de Google Sheets', 'success');
+      })
+      .catch(function(err) {
+        showToast('❌ Error al eliminar en Sheets: ' + (err.message || err), 'error');
+      });
+  });
+}
+
+function exportGuestsCSV() {
+  var headers = ['Codigo', 'Nombre', 'Email', 'Telefono', 'Estado', 'Canal', 'ConvenioAgencia', 'ReferenteUA', 'Asientos', 'Link', 'MailStatus'];
+  var rows = allGuestsData.map(function(g) {
+    return [g.code, g.name, g.email, g.phone, g.status, g.channel, g.agency, g.referent, g.totalSeats, g.link, g.mailStatus].map(function(v) { return '"' + String(v || '').replace(/"/g, '""') + '"'; });
+  });
+  var blob = new Blob(['\uFEFF' + [headers].concat(rows).map(function(r) { return r.join(','); }).join('\n')], { type: 'text/csv;charset=utf-8' });
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'invitados_ua.csv'; a.click();
+}
+
+/* ADD GUESTS */
+function submitSingleGuest() {
+  var name = (document.getElementById('add-single-name').value || '').trim();
+  var email = (document.getElementById('add-single-email').value || '').trim();
+  if (!name) { showToast('El nombre es obligatorio', 'error'); return; }
+  setBtnLoading('add-single-btn', 'Agregando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('add-single-btn', '&#10133; Agregar invitado');
+      document.getElementById('add-single-name').value = ''; document.getElementById('add-single-email').value = '';
+      setElHtml('add-single-result', '<span style="color:var(--green)">&#9989; ' + escapeHtml(name) + ' agregado como <strong>' + res.code + '</strong></span>');
+      showToast(name + ' agregado como ' + res.code, 'success');
+      loadGuestsList(); loadDashboardStats();
+    })
+    .withFailureHandler(function(e) {
+      resetBtnState('add-single-btn', '&#10133; Agregar invitado');
+      setElHtml('add-single-result', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>');
+    })
+    .adminAddGuest(name, email);
+}
+
+function extractSmartGuestClient(rawName, rawEmail, rawChannel, rawAgency, rawSeats, rawReferent) {
+  var name = String(rawName || '').trim();
+  var email = String(rawEmail || '').trim();
+  var channel = String(rawChannel || '').trim();
+  var agency = String(rawAgency || '').trim();
+  var referent = String(rawReferent || '').trim();
+  var seats = parseInt(rawSeats, 10) || 2;
+
+  // Extraer email embebido si vino pegado en el nombre
+  var emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i;
+  var match = name.match(emailRegex);
+
+  if (match) {
+    if (!email) email = match[1].toLowerCase();
+    name = name.replace(emailRegex, '').replace(/[<>'"`(),;:\t]/g, '').trim();
+  }
+
+  // Si el nombre quedó vacío pero hay un correo (ej. "abritos@ua.com.uy")
+  if (!name && email) {
+    var prefix = email.split('@')[0];
+    name = prefix.replace(/[._-]/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+  }
+
+  name = name.replace(/['"`]/g, '').trim();
+
+  if (name.toUpperCase() === 'EXTRA' || name.toUpperCase() === 'CUPO') {
+    name = 'Cupo ' + (agency || channel || 'UA');
+  }
+
+  return {
+    name: name,
+    email: email,
+    channel: channel,
+    agency: agency,
+    seats: seats,
+    referent: referent
+  };
+}
+
+var parsedExcelGuests = [];
+
+function handleExcelFileUpload(event) {
+  var file = event.target.files[0];
+  if (!file) return;
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var data = new Uint8Array(e.target.result);
+      var workbook = XLSX.read(data, { type: 'array' });
+      var firstSheetName = workbook.SheetNames[0];
+      var worksheet = workbook.Sheets[firstSheetName];
+      var jsonRows = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+      if (!jsonRows || !jsonRows.length) {
+        showToast('El archivo Excel está vacío', 'error');
+        return;
+      }
+
+      parsedExcelGuests = [];
+      var previewLines = [];
+
+      for (var i = 0; i < jsonRows.length; i++) {
+        var row = jsonRows[i];
+        if (!row || !row.length) continue;
+
+        var col0 = String(row[0] || '').trim();
+        var col1 = String(row[1] || '').trim();
+
+        if (col0.toUpperCase() === 'NOMBRE' || col0.indexOf('27/8') >= 0 || col0.toUpperCase() === 'CODIGO' || col0.toUpperCase() === 'CÓDIGO') {
+          continue;
+        }
+
+        var nom = col0;
+        var ape = col1;
+        var canal = String(row[2] || '').trim();
+        var convenio = String(row[3] || '').trim();
+        var asientos = parseInt(row[4], 10) || 2;
+        var referente = String(row[5] || '').trim();
+        var emailStage1 = String(row[6] || '').trim();
+        var emailStage2 = String(row[7] || '').trim();
+
+        if (nom || col1) {
+          var initialName = (nom + (ape && ape.indexOf('@') === -1 ? ' ' + ape : '')).trim();
+          if (ape.indexOf('@') >= 0 && !emailStage1 && !emailStage2) {
+            emailStage1 = ape;
+          }
+
+          if (emailStage1) {
+            var g1 = extractSmartGuestClient(initialName, emailStage1, canal, convenio, asientos, referente);
+            g1.stage = '1er Envío';
+            if (g1.name || g1.email) {
+              parsedExcelGuests.push(g1);
+              previewLines.push('• ' + escapeHtml(g1.name) + ' &lt;' + escapeHtml(g1.email) + '&gt; (1er Envío) | ' + escapeHtml(g1.agency || g1.channel || '—'));
+            }
+          }
+
+          if (emailStage2 && emailStage2.toLowerCase() !== emailStage1.toLowerCase()) {
+            var g2 = extractSmartGuestClient(initialName, emailStage2, canal, convenio, asientos, referente);
+            g2.stage = '2do Envío';
+            if (g2.name || g2.email) {
+              parsedExcelGuests.push(g2);
+              previewLines.push('• ' + escapeHtml(g2.name) + ' &lt;' + escapeHtml(g2.email) + '&gt; (2do Envío) | ' + escapeHtml(g2.agency || g2.channel || '—'));
+            }
+          }
+
+          if (!emailStage1 && !emailStage2) {
+            var g0 = extractSmartGuestClient(initialName, '', canal, convenio, asientos, referente);
+            g0.stage = '1er Envío';
+            if (g0.name) {
+              parsedExcelGuests.push(g0);
+              previewLines.push('• ' + escapeHtml(g0.name) + ' (sin email - 1er Envío) | ' + escapeHtml(g0.agency || g0.channel || '—'));
+            }
+          }
+        }
+      }
+
+      setElHtml('bulk-preview-box', '<strong style="color:var(--cyan)">✅ ' + parsedExcelGuests.length + ' invitados leídos desde Excel ("' + escapeHtml(file.name) + '"):</strong><br>' + previewLines.slice(0, 6).join('<br>') + (previewLines.length > 6 ? '<br>… y ' + (previewLines.length - 6) + ' más.' : ''));
+      showToast('Excel leído: ' + parsedExcelGuests.length + ' invitados listos para importar', 'success');
+    } catch (err) {
+      showToast('Error al leer Excel: ' + err.message, 'error');
+    }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function parseBulkText() {
+  if (parsedExcelGuests && parsedExcelGuests.length > 0) {
+    return parsedExcelGuests;
+  }
+  return document.getElementById('bulk-text-input').value.split('\n').map(function(line) {
+    if (!line || !line.trim()) return null;
+    var parts = line.split(/[,\t|]/).map(function(p) { return p.trim(); }).filter(Boolean);
+    if (!parts.length) return null;
+
+    var namePart = parts[0] || '';
+    var emailPart = parts[1] || '';
+    var channelPart = parts[2] || '';
+    var agencyPart = parts[3] || '';
+    var seatsPart = parts[4] || 2;
+    var referentPart = parts[5] || '';
+
+    return extractSmartGuestClient(namePart, emailPart, channelPart, agencyPart, seatsPart, referentPart);
+  }).filter(Boolean);
+}
+
+function previewBulkImport() {
+  var lines = parseBulkText();
+  if (!lines.length) { setElText('bulk-preview-box', 'Sin datos.'); return; }
+  setElHtml('bulk-preview-box', '<strong style="color:var(--cyan)">' + lines.length + ' invitado(s) detectados:</strong><br>' + lines.slice(0, 5).map(function(l) { return '• ' + escapeHtml(l.name) + ' — ' + (l.agency || l.channel || l.email || 'UA'); }).join('<br>') + (lines.length > 5 ? '<br>… y ' + (lines.length - 5) + ' más.' : ''));
+}
+
+function submitBulkImport() {
+  var guests = parseBulkText();
+  if (!guests.length) { showToast('La lista está vacía', 'error'); return; }
+  setBtnLoading('bulk-import-btn', 'Importando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('bulk-import-btn', '&#11014; Importar lista');
+      parsedExcelGuests = [];
+      document.getElementById('bulk-text-input').value = '';
+      var fileInput = document.getElementById('excel-file-input');
+      if (fileInput) fileInput.value = '';
+      setElText('bulk-preview-box', '');
+
+      var msg = '<span style="color:var(--green)">&#9989; ' + res.added + ' invitado(s) importado(s) correctamente a Google Sheets.</span>';
+      if (res.skipped > 0) {
+        msg += '<br><span style="color:var(--yellow); font-size:12px; margin-top:4px; display:block;">⚠️ ' + res.skipped + ' duplicado(s) omitido(s) automáticamente para evitar registros repetidos:</span>';
+        if (res.duplicatesList && res.duplicatesList.length) {
+          msg += '<span style="color:var(--text-sub); font-size:11px;">' + res.duplicatesList.map(escapeHtml).join(', ') + (res.skipped > res.duplicatesList.length ? '...' : '') + '</span>';
+        }
+      }
+      setElHtml('bulk-import-result', msg);
+      showToast(res.added + ' importados' + (res.skipped > 0 ? ' (' + res.skipped + ' duplicados omitidos)' : ''), 'success');
+      loadGuestsList(); loadDashboardStats();
+    })
+    .withFailureHandler(function(e) {
+      resetBtnState('bulk-import-btn', '&#11014; Importar lista');
+      setElHtml('bulk-import-result', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>');
+    })
+    .adminImportGuests(guests);
+}
+
+/* SEND INVITATIONS */
+function setSendFilter(filterKey, btnEl) {
+  activeSendFilter = filterKey;
+  document.querySelectorAll('[data-sf]').forEach(function(b) { b.classList.remove('active'); });
+  btnEl.classList.add('active'); renderSendList();
+}
+
+function renderSendList() {
+  var query = (document.getElementById('send-search-field')?.value || '').toLowerCase().trim();
+
+  var selStages = getSelectedMultiValues('ms-send-stage');
+  var selChannels = getSelectedMultiValues('ms-send-channel');
+  var selAgencies = getSelectedMultiValues('ms-send-agency');
+  var selReferents = getSelectedMultiValues('ms-send-referent');
+  var selRsvps = getSelectedMultiValues('ms-send-rsvp');
+
+  var list = allGuestsData.filter(function(g) {
+    // Filtro por estado de envío de mail
+    if (activeSendFilter === 'pending' && (g.mailStatus && g.mailStatus !== '' && g.mailStatus !== 'Pendiente' && g.mailStatus !== 'Pendiente de envío')) return false;
+    if (activeSendFilter === 'sent' && (!g.mailStatus || g.mailStatus === '' || g.mailStatus === 'Pendiente' || g.mailStatus === 'Pendiente de envío')) return false;
+
+    var matchStage = selStages.length === 0 || selStages.indexOf(g.stage || '1er Envío') >= 0;
+    var matchChannel = selChannels.length === 0 || selChannels.indexOf(g.channel) >= 0;
+    var matchAgency = selAgencies.length === 0 || selAgencies.indexOf(g.agency) >= 0;
+    var matchReferent = selReferents.length === 0 || selReferents.indexOf(g.referent) >= 0;
+    var matchRsvp = selRsvps.length === 0 || selRsvps.indexOf(g.status) >= 0;
+
+    if (!matchStage || !matchChannel || !matchAgency || !matchReferent || !matchRsvp) return false;
+
+    // Búsqueda texto
+    if (query) {
+      var matchSearch =
+        (g.name || '').toLowerCase().indexOf(query) >= 0 ||
+        (g.email || '').toLowerCase().indexOf(query) >= 0 ||
+        (g.code || '').toLowerCase().indexOf(query) >= 0 ||
+        (g.channel || '').toLowerCase().indexOf(query) >= 0 ||
+        (g.agency || '').toLowerCase().indexOf(query) >= 0 ||
+        (g.referent || '').toLowerCase().indexOf(query) >= 0;
+      if (!matchSearch) return false;
+    }
+
+    return true;
+  });
+
+  if (!list.length) {
+    setElHtml('send-guest-list', '<div class="empty-state-box"><div class="icon">&#128140;</div><p>No hay invitados que coincidan con los filtros aplicados</p></div>');
+    updateSendCount(); return;
+  }
+
+  setElHtml('send-guest-list', list.map(function(g) {
+    var agencyTxt = g.agency ? ' <span style="color:var(--text-sub); font-size:11px; font-weight:400;">(' + escapeHtml(g.agency) + ')</span>' : '';
+    var stageTag = g.stage === 'Envío Manual' ? ' <span style="background:rgba(234,179,8,0.15); border:1px solid rgba(234,179,8,0.4); color:#fde047; font-size:10px; font-weight:700; padding:2px 7px; border-radius:6px; margin-left:6px;">📋 Manual</span>' : '';
+    return '<div style="display:flex; align-items:center; gap:14px; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.06);">'
+      + '<input type="checkbox" class="send-chk" data-code="' + escapeHtml(g.code) + '" onchange="updateSendCount()" style="width:16px; height:16px; accent-color:var(--cyan);">'
+      + '<div style="font-weight:700; color:#fff; flex:1; overflow:hidden; text-overflow:ellipsis;">' + escapeHtml(g.name) + agencyTxt + stageTag + '</div>'
+      + '<div style="color:var(--text-sub); font-size:12px; flex:1; overflow:hidden; text-overflow:ellipsis;">' + escapeHtml(g.email || '—') + '</div>'
+      + '<div>' + renderStatusBadge(g.status) + '</div>'
+      + '<div>' + renderMailBadge(g.mailStatus) + '</div>'
+    + '</div>';
+  }).join(''));
+  updateSendCount();
+}
+
+function toggleSendAll(checked) { document.querySelectorAll('.send-chk').forEach(function(x) { x.checked = checked; }); updateSendCount(); }
+function updateSendCount() { setElText('send-selected-count', document.querySelectorAll('.send-chk:checked').length); }
+function getSelectedSendCodes() { return Array.from(document.querySelectorAll('.send-chk:checked')).map(function(c) { return c.dataset.code; }); }
+
+function triggerSendDemo() {
+  var codes = getSelectedSendCodes();
+  if (!codes.length) { showToast('Seleccioná al menos un invitado', 'error'); return; }
+
+  var alreadySent = [];
+  codes.forEach(function(code) {
+    var g = allGuestsData.find(function(item) { return item.code === code; });
+    if (g && g.mailStatus && g.mailStatus.indexOf('DEMO') >= 0) {
+      alreadySent.push('• ' + (g.name || 'Invitado') + ' (' + (g.email || g.code) + ')');
+    }
+  });
+
+  var title = 'Enviar DEMO a ' + codes.length + ' persona(s)';
+  var msg = '';
+  if (alreadySent.length > 0) {
+    title = '🧪 RE-ENVÍO DE DEMO DETECTADO';
+    msg = 'Ya se le envió un correo de DEMO previamente a ' + alreadySent.length + ' persona(s):\n\n' +
+      alreadySent.slice(0, 5).join('\n') +
+      (alreadySent.length > 5 ? '\n… y ' + (alreadySent.length - 5) + ' más.' : '') +
+      '\n\n¿Estás seguro que querés VOLVER A ENVIARLE el DEMO?';
+  } else {
+    msg = '¿Deseás enviar el correo de prueba DEMO a los ' + codes.length + ' invitados seleccionados?';
+  }
+
+  showConfirmModal({
+    title: title,
+    message: msg,
+    confirmText: '🧪 Enviar DEMO',
+    cancelText: 'Cancelar'
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+
+    var BATCH_SIZE = 15;
+    var batches = [];
+    for (var i = 0; i < codes.length; i += BATCH_SIZE) {
+      batches.push(codes.slice(i, i + BATCH_SIZE));
+    }
+
+    var totalSent = 0;
+    var totalErrors = 0;
+    var currentBatchIdx = 0;
+
+    function runDemoBatch() {
+      if (currentBatchIdx >= batches.length) {
+        resetBtnState('send-demo-btn', '&#129514; Enviar DEMO a seleccionados');
+        var finishMsg = '<span style="color:var(--green)">&#9989; DEMO Finalizado: ' + totalSent + ' de ' + codes.length + ' enviados con éxito.' + (totalErrors > 0 ? ' (' + totalErrors + ' con error)' : '') + '</span>';
+        setElHtml('send-result-box', finishMsg);
+        showToast(totalSent + ' DEMO enviados' + (totalErrors > 0 ? ' (' + totalErrors + ' errores)' : ''), totalErrors > 0 ? 'warning' : 'success');
+        loadGuestsList(); loadDashboardStats();
+        return;
+      }
+
+      var batch = batches[currentBatchIdx];
+      var currentProcessed = Math.min((currentBatchIdx + 1) * BATCH_SIZE, codes.length);
+      var statusLabel = 'Enviando DEMO (' + currentProcessed + '/' + codes.length + ') — ✅ ' + totalSent + ' | ❌ ' + totalErrors;
+      setBtnLoading('send-demo-btn', statusLabel);
+      setElHtml('send-result-box', '<span style="color:var(--cyan)">⏳ ' + statusLabel + '</span>');
+
+      google.script.run
+        .withSuccessHandler(function(res) {
+          if (res && res.sent) totalSent += res.sent;
+          if (res && res.errors && res.errors.length) totalErrors += res.errors.length;
+          currentBatchIdx++;
+          setTimeout(runDemoBatch, 1000);
+        })
+        .withFailureHandler(function(e) {
+          totalErrors += batch.length;
+          currentBatchIdx++;
+          setTimeout(runDemoBatch, 1500);
+        })
+        .adminSendDemoEmails(batch);
+    }
+
+    runDemoBatch();
+  });
+}
+
+function triggerSendProd() {
+  var rawCodes = getSelectedSendCodes();
+  if (!rawCodes.length) { showToast('Seleccioná al menos un invitado', 'error'); return; }
+
+  // Filtrar automáticamente los códigos que ya fueron enviados previamente
+  var codes = [];
+  var skippedAlreadySent = [];
+  var skippedNoEmail = [];
+
+  rawCodes.forEach(function(code) {
+    var g = allGuestsData.find(function(item) { return item.code === code; });
+    if (!g) { codes.push(code); return; }
+    // Omitir ya enviados
+    if (g.mailStatus && (g.mailStatus.indexOf('Enviado') >= 0 || g.mailStatus.indexOf('enviad') >= 0 || g.mailStatus.indexOf('Abierto') >= 0)) {
+      skippedAlreadySent.push((g.name || 'Invitado') + ' (' + (g.email || g.code) + ')');
+    // Omitir sin email válido (NO TENGO, vacío, sin @)
+    } else if (!g.email || g.email.trim().toUpperCase() === 'NO TENGO' || g.email.indexOf('@') < 0) {
+      skippedNoEmail.push((g.name || 'Invitado') + ' (sin email)');
+    } else {
+      codes.push(code);
+    }
+  });
+
+  if (!codes.length) {
+    showToast('Los invitados seleccionados ya recibieron su mail anteriormente. No hay envíos pendientes.', 'warning');
+    return;
+  }
+
+  var promptText = '¿Enviar invitación REAL a ' + codes.length + ' persona(s)?';
+  if (skippedAlreadySent.length > 0) {
+    promptText += '\n\n💡 Se omitirán ' + skippedAlreadySent.length + ' invitado(s) ya enviados.';
+  }
+  if (skippedNoEmail.length > 0) {
+    promptText += '\n\n📋 Se omitirán ' + skippedNoEmail.length + ' invitado(s) sin email (entrega manual).';
+  }
+
+  showConfirmModal({
+    title: '¿Confirmar Envío de Invitaciones?',
+    message: promptText,
+    confirmText: '🚀 Enviar ' + codes.length + ' Invitaciones',
+    cancelText: 'Cancelar'
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+
+    var BATCH_SIZE = 30;
+    var batches = [];
+    for (var i = 0; i < codes.length; i += BATCH_SIZE) {
+      batches.push(codes.slice(i, i + BATCH_SIZE));
+    }
+
+    var totalSent = 0;
+    var totalErrors = 0;
+    var totalSkipped = 0;
+    var currentBatchIdx = 0;
+    var allErrorMessages = [];
+    var allSkippedDetails = [];
+
+  function runProdBatch() {
+    if (currentBatchIdx >= batches.length) {
+      resetBtnState('send-prod-btn', '&#9993; Enviar invitación REAL');
+      var finishMsg = '<span style="color:' + (totalSent > 0 ? 'var(--green)' : 'var(--red)') + '">&#9989; Envío completado: ' + totalSent + ' de ' + codes.length + ' invitaciones despachadas.' + (totalErrors > 0 ? ' (' + totalErrors + ' con error)' : '') + '</span>';
+      if (totalSkipped > 0) finishMsg += '<br><span style="color:var(--text-sub)">📋 ' + totalSkipped + ' omitidas (sin email o ya enviadas)</span>';
+      if (allErrorMessages.length > 0) finishMsg += '<br><br><span style="color:var(--red);font-weight:700;">⚠️ DETALLE DE ERRORES:</span><br><span style="color:var(--red)">' + allErrorMessages.join('<br>') + '</span>';
+      if (allSkippedDetails.length > 0) finishMsg += '<br><br><span style="color:var(--text-sub)">📋 Detalle omitidos:</span><br><small style="color:var(--text-sub)">' + allSkippedDetails.join('<br>') + '</small>';
+      setElHtml('send-result-box', finishMsg);
+      showToast(totalSent + ' invitaciones enviadas' + (totalErrors > 0 ? ' (' + totalErrors + ' con error)' : ''), totalErrors > 0 ? 'warning' : 'success');
+      loadGuestsList(); loadDashboardStats();
+      updateQuotaIndicator();
+      return;
+    }
+
+    var batch = batches[currentBatchIdx];
+    var currentProcessed = Math.min((currentBatchIdx + 1) * BATCH_SIZE, codes.length);
+    var statusLabel = 'Enviando (' + currentProcessed + '/' + codes.length + ') — ✅ ' + totalSent + ' | ❌ ' + totalErrors;
+    setBtnLoading('send-prod-btn', statusLabel);
+    setElHtml('send-result-box', '<span style="color:var(--cyan)">⏳ ' + statusLabel + '</span>');
+
+    google.script.run
+      .withSuccessHandler(function(res) {
+        console.log('[SEND] Batch result:', JSON.stringify(res));
+        if (res && res.quotaExhausted) {
+          resetBtnState('send-prod-btn', '&#9993; Enviar invitación REAL');
+          allErrorMessages.push('Cuota diaria de Google agotada.');
+          setElHtml('send-result-box', '<span style="color:var(--yellow)">⚠️ Cuota diaria de Google agotada. Enviados hasta ahora: ' + totalSent + '. Reintentar cuando Google renueve la cuota (~24hs).</span>');
+          showToast('Cuota de Google agotada. ' + totalSent + ' enviados.', 'warning');
+          updateQuotaIndicator();
+          return;
+        }
+        if (res && res.sent) totalSent += res.sent;
+        if (res && res.skipped) totalSkipped += res.skipped;
+        if (res && res.skippedDetails) allSkippedDetails = allSkippedDetails.concat(res.skippedDetails);
+        if (res && res.errors && res.errors.length) {
+          totalErrors += res.errors.length;
+          allErrorMessages = allErrorMessages.concat(res.errors);
+        }
+        currentBatchIdx++;
+        setTimeout(runProdBatch, 1000);
+      })
+      .withFailureHandler(function(e) {
+        console.error('[SEND] Batch FAILURE:', e);
+        var errText = e.message || String(e);
+        allErrorMessages.push('ERROR SERVIDOR: ' + errText);
+        totalErrors += batch.length;
+        currentBatchIdx++;
+        setTimeout(runProdBatch, 2000);
+      })
+      .adminSendProductionEmails(batch);
+  }
+
+    runProdBatch();
+  });
+}
+
+/* REMINDERS SUB-TABS & LOGIC */
+function switchRemSubtab(subtabId) {
+  document.querySelectorAll('.rem-subtab-pane').forEach(function(p) { p.style.display = 'none'; });
+  ['confirmed', 'pending', 'referents'].forEach(function(k) {
+    var btn = document.getElementById('rem-tab-btn-' + k);
+    if (btn) btn.classList.remove('active');
+  });
+
+  var targetPane = document.getElementById('rem-subtab-' + subtabId);
+  if (targetPane) targetPane.style.display = 'block';
+
+  var activeBtn = document.getElementById('rem-tab-btn-' + subtabId);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  if (subtabId === 'confirmed') renderRemindersList();
+  if (subtabId === 'pending') renderPendingRemindersList();
+  if (subtabId === 'referents') renderClarifyMessage();
+}
+
+function toggleConfirmedPreview() {
+  var box = document.getElementById('rem-confirmed-preview-box');
+  if (box) box.style.display = (box.style.display === 'none' || !box.style.display) ? 'block' : 'none';
+}
+
+function togglePendingPreview() {
+  var box = document.getElementById('rem-pending-preview-box');
+  if (box) box.style.display = (box.style.display === 'none' || !box.style.display) ? 'block' : 'none';
+}
+
+function renderRemindersList() {
+  var confirmed = allGuestsData.filter(function(g) { return g.status === 'Confirmado'; });
+  var confirmedWithEmail = confirmed.filter(function(g) { return g.email && g.email.includes('@'); });
+  var totalSeats = confirmed.reduce(function(acc, g) { return acc + (Number(g.totalSeats) || 2); }, 0);
+
+  setElText('rem-pill-count-confirmed', confirmed.length);
+  setElText('rem-stat-conf-guests', confirmed.length);
+  setElText('rem-stat-conf-seats', totalSeats);
+
+  if (!confirmedWithEmail.length) {
+    setElHtml('rem-guest-list', '<div class="empty-state-box"><div class="icon">&#10004;</div><p>No hay confirmados con email registrado</p></div>');
+    updateRemCount(); return;
+  }
+
+  setElHtml('rem-guest-list', confirmedWithEmail.map(function(g) {
+    var companionTxt = g.companionName ? '<span style="color:#7dd3fc; font-size:11px; margin-left:6px;">(Acomp: ' + escapeHtml(g.companionName) + ')</span>' : '';
+    return '<div style="display:flex; align-items:center; gap:14px; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.06);">'
+      + '<input type="checkbox" class="rem-chk" data-code="' + escapeHtml(g.code) + '" onchange="updateRemCount()" style="width:16px; height:16px; accent-color:var(--cyan);">'
+      + '<div style="font-weight:700; color:#fff; flex:1;">' + escapeHtml(g.name) + companionTxt + '</div>'
+      + '<div style="color:var(--text-sub); font-size:12px; flex:1;">' + escapeHtml(g.email) + '</div>'
+      + '<div>' + renderStatusBadge(g.status) + '</div>'
+      + '<div style="font-size:11px; color:var(--cyan); font-weight:700;">' + (g.totalSeats ? g.totalSeats + ' butaca(s)' : '2 butacas') + '</div>'
+    + '</div>';
+  }).join(''));
+  updateRemCount();
+}
+
+function renderPendingRemindersList() {
+  var pending = allGuestsData.filter(function(g) { return !g.status || g.status === 'Pendiente'; });
+  setElText('rem-pill-count-pending', pending.length);
+  setElText('rem-stat-pend-count', pending.length);
+
+  if (!pending.length) {
+    setElHtml('rem-pending-guest-list', '<div class="empty-state-box"><div class="icon">🎉</div><p>¡No hay invitaciones pendientes! Todos han respondido.</p></div>');
+    updateRemPendCount(); return;
+  }
+
+  setElHtml('rem-pending-guest-list', pending.map(function(g) {
+    var waUrl = getWhatsAppUrlForGuest(g);
+    var agencyTxt = g.agency ? ' <span style="color:var(--text-sub); font-size:11px;">(' + escapeHtml(g.agency) + ')</span>' : '';
+    return '<div style="display:flex; align-items:center; gap:14px; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.06);">'
+      + '<input type="checkbox" class="rem-pend-chk" data-code="' + escapeHtml(g.code) + '" onchange="updateRemPendCount()" style="width:16px; height:16px; accent-color:var(--yellow);">'
+      + '<div style="font-weight:700; color:#fff; flex:1;">' + escapeHtml(g.name) + agencyTxt + '</div>'
+      + '<div style="color:var(--text-sub); font-size:12px; flex:1;">' + escapeHtml(g.email || 'Sin email (WhatsApp)') + '</div>'
+      + '<div>' + renderStatusBadge(g.status) + '</div>'
+      + '<a href="' + waUrl + '" target="_blank" class="btn btn-green-cta btn-sm" title="Enviar recordatorio por WhatsApp" style="text-decoration:none; padding:4px 8px; font-size:11px;">💬 WhatsApp</a>'
+    + '</div>';
+  }).join(''));
+  updateRemPendCount();
+}
+
+function toggleRemAll(checked) { document.querySelectorAll('.rem-chk').forEach(function(x) { x.checked = checked; }); updateRemCount(); }
+function updateRemCount() { setElText('rem-selected-count', document.querySelectorAll('.rem-chk:checked').length); }
+function getSelectedRemCodes() { return Array.from(document.querySelectorAll('.rem-chk:checked')).map(function(c) { return c.dataset.code; }); }
+
+function toggleRemPendAll(checked) { document.querySelectorAll('.rem-pend-chk').forEach(function(x) { x.checked = checked; }); updateRemPendCount(); }
+function updateRemPendCount() { setElText('rem-pend-selected-count', document.querySelectorAll('.rem-pend-chk:checked').length); }
+function getSelectedRemPendCodes() { return Array.from(document.querySelectorAll('.rem-pend-chk:checked')).map(function(c) { return c.dataset.code; }); }
+
+function triggerSendReminders() {
+  var codes = getSelectedRemCodes();
+  if (!codes.length) { showToast('Seleccioná al menos un invitado', 'error'); return; }
+
+  showConfirmModal({
+    title: '¿Enviar recordatorios?',
+    message: '¿Deseás enviar recordatorio a los ' + codes.length + ' invitado(s) confirmado(s) seleccionados?',
+    confirmText: '✉️ Enviar ' + codes.length,
+    cancelText: 'Cancelar'
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+    setBtnLoading('rem-send-btn', 'Enviando…');
+    google.script.run
+      .withSuccessHandler(function(res) {
+        resetBtnState('rem-send-btn', '✉️ Enviar recordatorios seleccionados');
+        setElHtml('rem-result-box', '<span style="color:var(--green)">&#9989; ' + res.sent + ' recordatorio(s) enviados.</span>');
+        showToast(res.sent + ' recordatorios enviados', 'success');
+        loadGuestsList();
+      })
+      .withFailureHandler(function(e) { resetBtnState('rem-send-btn', '✉️ Enviar recordatorios seleccionados'); showToast('Error: ' + e.message, 'error'); })
+      .adminSendReminders(codes);
+  });
+}
+
+function triggerSendUnconfirmedReminder() {
+  var codes = getSelectedRemPendCodes();
+  if (!codes.length) {
+    codes = allGuestsData.filter(function(g) { return (!g.status || g.status === 'Pendiente') && g.email && g.email.includes('@'); }).map(function(g) { return g.code; });
+  }
+  if (!codes.length) {
+    showToast('No hay invitados pendientes con email para enviar.', 'warning');
+    return;
+  }
+
+  showConfirmModal({
+    title: '⚠️ Recordatorio a Pendientes',
+    message: '¿Deseás enviar el correo de recordatorio urgente a los ' + codes.length + ' invitados PENDIENTES?',
+    confirmText: '🚀 Despachar a ' + codes.length,
+    cancelText: 'Cancelar'
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+    showToast('Despachando recordatorio a ' + codes.length + ' pendientes...', 'info');
+    apiCall('sendProd', { codes: codes.join(',') })
+      .then(function(res) {
+        showToast('Recordatorio enviado a ' + (res.sent || codes.length) + ' pendientes', 'success');
+        loadGuestsList();
+      })
+      .catch(function(err) {
+        showToast('Error al enviar: ' + err.message, 'error');
+      });
+  });
+}
+
+function triggerSendThankYouEmails() {
+  var photoUrl = prompt('Ingresá la URL del álbum de fotos del evento (Google Drive / Fotos / Web):', 'https://ua-eventos-uy.web.app/galeria-fotos');
+  if (!photoUrl) return;
+  showToast('Para enviar los correos de agradecimiento post-evento a los confirmados, podés ejecutar en tu terminal: node scripts/send_thankyou.js "' + photoUrl + '"', 'info');
+}
+
+/* TOOLS */
+
+function toolActualizarTodo() {
+  showConfirmModal({
+    title: '¿Sincronización Completa?',
+    message: 'Se ejecutarán las siguientes tareas:\n\n' +
+      '1️⃣ Limpiar Caché\n' +
+      '2️⃣ Sincronizar invitados desde Hoja1\n' +
+      '3️⃣ Actualizar Hoja3 externa\n' +
+      '4️⃣ Generar códigos UA-NNN faltantes\n' +
+      '5️⃣ Generar links de invitación\n' +
+      '6️⃣ Regenerar Reporte de Sala Movie',
+    confirmText: '🔄 Ejecutar Sincronización',
+    cancelText: 'Cancelar'
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+
+    showToast('Iniciando sincronización completa...', 'info');
+    var btnHeader = document.getElementById('header-btn-refresh-all');
+    var btnTool = document.getElementById('tool-refresh-all-btn');
+    if (btnHeader) { btnHeader.disabled = true; btnHeader.classList.add('syncing'); }
+    if (btnTool) btnTool.disabled = true;
+
+    function finishSync(ok, msg) {
+      if (btnHeader) { btnHeader.disabled = false; btnHeader.classList.remove('syncing'); }
+      if (btnTool) btnTool.disabled = false;
+      showToast(msg, ok ? 'success' : 'warning');
+      loadAllData();
+    }
+
+    if (typeof google !== 'undefined' && google.script && google.script.run) {
+      google.script.run
+        .withSuccessHandler(function(res) {
+          finishSync(res && res.ok, res && res.ok ? '✅ ¡Sincronización completa exitosa!' : '⚠️ Sincronización finalizada con observaciones');
+        })
+        .withFailureHandler(function(err) {
+          finishSync(false, '❌ Error: ' + (err.message || err));
+        })
+        .adminActualizarTodo();
+    } else {
+      fetch('https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec?action=actualizarTodo')
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+          finishSync(res && res.ok, '✅ ¡Sincronización completa exitosa!');
+        })
+        .catch(function(err) {
+          finishSync(false, '❌ Error al actualizar: ' + err);
+        });
+    }
+  });
+}
+
+function toolGenerateWhatsApp() {
+  setBtnLoading('tool-wa-btn', 'Generando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-wa-btn', 'Ejecutar');
+      setElHtml('tool-wa-res', '<span style="color:var(--green)">&#9989; Enlaces de WhatsApp generados en la Columna K.</span>');
+      showToast('Formulas WhatsApp generadas en Sheet', 'success');
+      loadGuestsList();
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-wa-btn', 'Ejecutar'); setElHtml('tool-wa-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminGenerateWhatsAppLinks();
+}
+
+function toolScheduleAutoReminder() {
+  setBtnLoading('tool-sched-btn', 'Programando…');
+  if (document.getElementById('rem-auto-btn')) setBtnLoading('rem-auto-btn', 'Programando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-sched-btn', 'Programar');
+      if (document.getElementById('rem-auto-btn')) resetBtnState('rem-auto-btn', '&#9200; Programar envío automático (26/08 10:00 hs)');
+      setElHtml('tool-sched-res', '<span style="color:var(--green)">&#9989; Activador programado para el ' + escapeHtml(res.scheduledDate) + '</span>');
+      showToast('Recordatorio automático programado para ' + res.scheduledDate, 'success');
+    })
+    .withFailureHandler(function(e) {
+      resetBtnState('tool-sched-btn', 'Programar');
+      if (document.getElementById('rem-auto-btn')) resetBtnState('rem-auto-btn', '&#9200; Programar envío automático (26/08 10:00 hs)');
+      setElHtml('tool-sched-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>');
+    })
+    .adminScheduleAutoReminder();
+}
+
+function toolGenerateLinks() {
+  setBtnLoading('tool-links-btn', 'Generando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-links-btn', 'Ejecutar');
+      setElHtml('tool-links-res', '<span style="color:var(--green)">&#9989; ' + res.generated + ' links generados.</span>');
+      showToast(res.generated + ' links generados', 'success');
+      loadGuestsList();
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-links-btn', 'Ejecutar'); setElHtml('tool-links-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminGenerateLinks();
+}
+
+function toolGenerateCodes() {
+  setBtnLoading('tool-codes-btn', 'Generando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-codes-btn', 'Ejecutar');
+      setElHtml('tool-codes-res', '<span style="color:var(--green)">&#9989; ' + res.generated + ' códigos generados.</span>');
+      showToast(res.generated + ' códigos generados', 'success');
+      loadGuestsList();
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-codes-btn', 'Ejecutar'); setElHtml('tool-codes-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminGenerateMissingCodes();
+}
+
+function toolRegenReport() {
+  setBtnLoading('tool-report-btn', 'Generando…');
+  google.script.run
+    .withSuccessHandler(function() {
+      resetBtnState('tool-report-btn', 'Ejecutar');
+      setElHtml('tool-report-res', '<span style="color:var(--green)">&#9989; Reporte regenerado.</span>');
+      showToast('Reporte actualizado', 'success');
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-report-btn', 'Ejecutar'); setElHtml('tool-report-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminRegenerateReport();
+}
+
+function toolVerifySender() {
+  setBtnLoading('tool-verify-btn', 'Verificando…');
+  google.script.run
+    .withSuccessHandler(function(res) {
+      resetBtnState('tool-verify-btn', 'Verificar');
+      setElHtml('tool-verify-res', res.valid ? '<span style="color:var(--green)">&#9989; Remitente autorizado (' + escapeHtml(res.activeAccount) + ')</span>' : '<span style="color:var(--red)">&#10060; No coincide con ' + escapeHtml(res.senderRequired) + '</span>');
+    })
+    .withFailureHandler(function(e) { resetBtnState('tool-verify-btn', 'Verificar'); setElHtml('tool-verify-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+    .adminVerifySender();
+}
+
+function toolClearAllGuests() {
+  showConfirmModal({
+    title: '🚨 VACIAR TODA LA LISTA',
+    message: '¿Estás seguro de que querés VACIAR TODA LA LISTA de invitados?\n\nSe eliminarán todas las filas de datos de la planilla.',
+    confirmText: '🗑️ Sí, vaciar lista',
+    cancelText: 'Cancelar',
+    danger: true
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+
+    setBtnLoading('tool-clear-btn', 'Eliminando…');
+    google.script.run
+      .withSuccessHandler(function(res) {
+        resetBtnState('tool-clear-btn', 'Vaciar lista');
+        setElHtml('tool-clear-res', '<span style="color:var(--green)">&#9989; Se eliminaron ' + res.deleted + ' invitados.</span>');
+        showToast('Lista vaciada correctamente', 'success');
+        loadGuestsList(); loadDashboardStats();
+      })
+      .withFailureHandler(function(e) { resetBtnState('tool-clear-btn', 'Vaciar lista'); setElHtml('tool-clear-res', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>'); })
+      .adminClearAllGuests();
+  });
+}
+
+/* CONFIG & THEMES */
+function applyThemePreset(preset) {
+  var root = document.documentElement;
+  if (preset === 'gold') {
+    root.style.setProperty('--pink', '#d97706');
+    root.style.setProperty('--pink-glow', '#f59e0b');
+    root.style.setProperty('--cyan', '#fbbf24');
+    root.style.setProperty('--cyan-light', '#fef08a');
+  } else if (preset === 'emerald') {
+    root.style.setProperty('--pink', '#059669');
+    root.style.setProperty('--pink-glow', '#10b981');
+    root.style.setProperty('--cyan', '#34d399');
+    root.style.setProperty('--cyan-light', '#a7f3d0');
+  } else if (preset === 'neon') {
+    root.style.setProperty('--pink', '#f43f5e');
+    root.style.setProperty('--pink-glow', '#fb7185');
+    root.style.setProperty('--cyan', '#a855f7');
+    root.style.setProperty('--cyan-light', '#e9d5ff');
+  } else {
+    root.style.setProperty('--pink', '#ee1f73');
+    root.style.setProperty('--pink-glow', '#ff2e83');
+    root.style.setProperty('--cyan', '#38bdf8');
+    root.style.setProperty('--cyan-light', '#7dd3fc');
+  }
+}
+
+function updateEventStatusBadge(status) {
+  var badgeText = document.getElementById('sidebar-status-text');
+  var badgeDot = document.getElementById('sidebar-status-dot');
+  if (!badgeText) return;
+  if (status === 'prep') {
+    badgeText.textContent = 'EN PREPARACIÓN';
+    badgeText.style.color = '#f59e0b';
+    if (badgeDot) badgeDot.style.background = '#f59e0b';
+  } else if (status === 'ended') {
+    badgeText.textContent = 'EVENTO FINALIZADO';
+    badgeText.style.color = '#ef4444';
+    if (badgeDot) badgeDot.style.background = '#ef4444';
+  } else {
+    badgeText.textContent = 'EVENTO ACTIVO';
+    badgeText.style.color = 'var(--cyan)';
+    if (badgeDot) badgeDot.style.background = 'var(--cyan)';
+  }
+}
+
+function loadEventConfig() {
+  google.script.run
+    .withSuccessHandler(function(cfg) {
+      var map = {
+        'cfg-name': 'Nombre del evento', 'cfg-brand': 'Marca', 'cfg-date': 'Fecha', 'cfg-time': 'Hora',
+        'cfg-arrival': 'Hora sugerida de llegada', 'cfg-venue': 'Lugar', 'cfg-maps': 'Dirección / Maps',
+        'cfg-email': 'Correo de contacto', 'cfg-phone': 'Teléfono de contacto',
+        'cfg-intro': 'Texto principal', 'cfg-confirm': 'Mensaje de confirmación',
+        'cfg-status': 'Estado del evento', 'cfg-theme': 'Tema de colores'
+      };
+      Object.keys(map).forEach(function(id) {
+        var input = document.getElementById(id);
+        if (input && cfg[map[id]] !== undefined) input.value = cfg[map[id]];
+      });
+      if (cfg['Tema de colores']) applyThemePreset(cfg['Tema de colores']);
+      if (cfg['Estado del evento']) updateEventStatusBadge(cfg['Estado del evento']);
+    })
+    .withFailureHandler(function(e) { showToast('Error al cargar config: ' + e.message, 'error'); })
+    .adminGetConfig();
+}
+
+function saveEventConfig() {
+  var data = {
+    'Nombre del evento': getVal('cfg-name'), 'Marca': getVal('cfg-brand'), 'Fecha': getVal('cfg-date'),
+    'Hora': getVal('cfg-time'), 'Hora sugerida de llegada': getVal('cfg-arrival'), 'Lugar': getVal('cfg-venue'),
+    'Dirección / Maps': getVal('cfg-maps'), 'Correo de contacto': getVal('cfg-email'),
+    'Teléfono de contacto': getVal('cfg-phone'), 'Texto principal': getVal('cfg-intro'),
+    'Mensaje de confirmación': getVal('cfg-confirm'),
+    'Estado del evento': getVal('cfg-status'), 'Tema de colores': getVal('cfg-theme')
+  };
+  setBtnLoading('cfg-save-btn', 'Guardando…');
+  google.script.run
+    .withSuccessHandler(function() {
+      resetBtnState('cfg-save-btn', '&#128190; Guardar configuración');
+      setElHtml('cfg-result-box', '<span style="color:var(--green)">&#9989; Configuración guardada correctamente.</span>');
+      showToast('Configuración guardada', 'success');
+      applyThemePreset(data['Tema de colores']);
+      updateEventStatusBadge(data['Estado del evento']);
+    })
+    .withFailureHandler(function(e) {
+      resetBtnState('cfg-save-btn', '&#128190; Guardar configuración');
+      setElHtml('cfg-result-box', '<span style="color:var(--red)">&#10060; ' + escapeHtml(e.message) + '</span>');
+    })
+    .adminSaveConfig(data);
+}
+
+/* UTILS */
+function escapeHtml(str) { return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function setElText(id, txt) { var el = document.getElementById(id); if (el) el.textContent = txt; }
+function setElHtml(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
+function getVal(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+
+function renderStatusBadge(status) {
+  var map = { Confirmado: 'sp-green', 'No asiste': 'sp-red', Pendiente: 'sp-yellow' };
+  return '<span class="status-pill-badge ' + (map[status] || 'sp-muted') + '">' + (status || 'Pendiente') + '</span>';
+}
+
+function renderMailBadge(mailStatus) {
+  if (!mailStatus || mailStatus === '' || mailStatus === 'Pendiente') return '<span class="status-pill-badge sp-muted">Sin enviar</span>';
+  if (mailStatus.indexOf('DEMO') >= 0) return '<span class="status-pill-badge sp-cyan">DEMO</span>';
+  if (mailStatus.indexOf('Recordatorio') >= 0) return '<span class="status-pill-badge sp-pink">Recordatorio</span>';
+  if (mailStatus.indexOf('Enviado') >= 0 || mailStatus.indexOf('Correo') >= 0) return '<span class="status-pill-badge sp-green">Enviado</span>';
+  return '<span class="status-pill-badge sp-muted">' + escapeHtml(mailStatus.substring(0, 18)) + '</span>';
+}
+
+function setBtnLoading(id, text) {
+  var btn = document.getElementById(id); if (!btn) return;
+  btn.disabled = true; btn.innerHTML = '<div class="loading-spinner"></div> ' + text;
+}
+
+function resetBtnState(id, text) {
+  var btn = document.getElementById(id); if (!btn) return;
+  btn.disabled = false; btn.innerHTML = text;
+}
+
+function openEditGuestModal(code) {
+  var guest = allGuestsData.find(function(g) { return g.code === code; });
+  if (!guest) { showToast('No se encontró el invitado', 'error'); return; }
+
+  document.getElementById('edit-guest-code').value = guest.code;
+  document.getElementById('edit-modal-code').textContent = guest.code;
+  document.getElementById('edit-guest-name').value = guest.name || '';
+  document.getElementById('edit-guest-email').value = guest.email || '';
+  document.getElementById('edit-guest-seats').value = guest.totalSeats || 2;
+  document.getElementById('edit-guest-status').value = guest.status || 'Pendiente';
+  document.getElementById('edit-guest-stage').value = guest.stage || '1er Envío';
+  document.getElementById('edit-guest-phone').value = guest.phone || '';
+  document.getElementById('edit-guest-channel').value = guest.channel || '';
+  document.getElementById('edit-guest-agency').value = guest.agency || '';
+  document.getElementById('edit-guest-referent').value = guest.referent || '';
+
+  var modal = document.getElementById('edit-guest-modal');
+  if (modal) modal.style.display = 'flex';
+}
+
+function closeEditGuestModal(e) {
+  if (e && e.target && e.target.id !== 'edit-guest-modal') return;
+  var modal = document.getElementById('edit-guest-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+function saveGuestEdits(e) {
+  if (e) e.preventDefault();
+  var code = document.getElementById('edit-guest-code').value;
+  var data = {
+    code: code,
+    name: document.getElementById('edit-guest-name').value.trim(),
+    email: document.getElementById('edit-guest-email').value.trim(),
+    totalSeats: parseInt(document.getElementById('edit-guest-seats').value, 10) || 2,
+    status: document.getElementById('edit-guest-status').value,
+    stage: document.getElementById('edit-guest-stage').value,
+    phone: document.getElementById('edit-guest-phone').value.trim(),
+    channel: document.getElementById('edit-guest-channel').value.trim(),
+    agency: document.getElementById('edit-guest-agency').value.trim(),
+    referent: document.getElementById('edit-guest-referent').value.trim()
+  };
+
+  // Optimistic UI Instantáneo (0ms)
+  var idx = allGuestsData.findIndex(function(g) { return g.code === code; });
+  if (idx >= 0) {
+    Object.assign(allGuestsData[idx], data);
+    try { localStorage.setItem('UA_ADMIN_GUESTS_CACHE', JSON.stringify(allGuestsData)); } catch (_) {}
+    renderGuestTable();
+    populateDynamicFilters(allGuestsData);
+    applyStats(calculateStatsFromLocal(allGuestsData));
+  }
+  closeEditGuestModal();
+  showToast('Guardando cambios de ' + (data.name || code) + '...', 'info');
+
+  apiCall('updateGuest', data)
+    .then(function(res) {
+      showToast('✅ Invitado ' + (data.name || code) + ' guardado en Google Sheets', 'success');
+    })
+    .catch(function(err) {
+      showToast('❌ Error al guardar en Sheets: ' + (err.message || err), 'error');
+    });
+}
+
+var clarifyTemplates = {
+  angela: { name: 'Angela', total: 6, team: 5 },
+  paola: { name: 'Paola', total: 5, team: 4 },
+  nadia: { name: 'Nadia', total: 5, team: 4 },
+  agustina: { name: 'Agustina', total: 5, team: 4 },
+  elisa: { name: 'Elisa', total: 4, team: 3 },
+  laura: { name: 'Laura', total: 3, team: 2 },
+  karen: { name: 'Karen', total: 3, team: 2 },
+  lucas_test: { name: 'Lucas', total: 2, team: 1 }
+};
+
+function renderClarifyMessage() {
+  var selEl = document.getElementById('clarify-guest-select');
+  if (!selEl) return;
+  var selKey = selEl.value;
+  var meta = clarifyTemplates[selKey] || clarifyTemplates.angela;
+  var inputPhone = (document.getElementById('clarify-phone').value || '').replace(/\D/g, '');
+
+  var isPluralTeam = meta.team > 1;
+  var teamText = isPluralTeam ? 'pases para tu equipo/vendedores' : 'pase para tu equipo';
+  if (meta.name === 'Karen') teamText = 'pases para el equipo';
+
+  var msg = '¡Hola ' + meta.name + '! Te escribo de parte del equipo de Universal Assistance. Te pido disculpas si te llegaron correos repetidos en las últimas horas; estuvimos haciendo una actualización en nuestra plataforma de invitaciones y el servidor despachó varias copias por error.\n\n' +
+    'Quedate ' + (meta.name === 'Karen' ? 'tranquila' : 'tranquila/o') + ' que tenés disponibles ' + meta.total + ' accesos en total (1 invitación personal + ' + meta.team + ' ' + teamText + '). Todos los links están 100% activos y podés distribuirlos sin problemas.\n\nImportante: el registro previo es obligatorio para asegurar los lugares de cada invitado/a a través del link que le corresponde.\n\n¡Nos vemos en la función de cine! 🍿';
+
+  var txtArea = document.getElementById('clarify-msg-text');
+  if (txtArea) txtArea.value = msg;
+
+  var waUrl = inputPhone ? ('https://wa.me/' + inputPhone + '?text=' + encodeURIComponent(msg)) : ('https://wa.me/?text=' + encodeURIComponent(msg));
+  var linkBtn = document.getElementById('clarify-wa-link');
+  if (linkBtn) linkBtn.href = waUrl;
+
+  updateClarifyLivePreview();
+}
+
+function updateClarifyLivePreview() {
+  var txt = (document.getElementById('clarify-msg-text')?.value || '').trim();
+  var prevEl = document.getElementById('clarify-email-live-preview');
+  if (!prevEl) return;
+
+  var safeText = escapeHtml(txt).replace(/\n/g, '<br>');
+
+  prevEl.innerHTML = '<div style="background:#071938; padding:16px 20px; border-bottom:1px solid rgba(56,189,248,0.3); border-radius:12px 12px 0 0; margin:-20px -20px 16px -20px;">'
+    + '<div style="font-size:16px; font-weight:900; color:#ffffff; letter-spacing:0.5px;">UNIVERSAL ASSISTANCE</div>'
+    + '<div style="font-size:9px; font-weight:800; color:#38bdf8; letter-spacing:0.8px; margin-top:2px;">A COMPANY OF ZURICH · ASISTENCIA AL VIAJERO</div>'
+  + '</div>'
+  + '<div style="font-size:10px; font-weight:800; color:#38bdf8; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">FUNCIÓN EXCLUSIVA · MOVIE MONTEVIDEO SHOPPING</div>'
+  + '<div style="font-size:20px; font-weight:900; color:#ffffff; margin-bottom:14px;">COYOTE VS ACME</div>'
+  + '<div style="background:#16356e; border:1px solid #38bdf8; border-radius:10px; padding:12px 14px; margin-bottom:16px;">'
+    + '<div style="font-size:9px; font-weight:800; color:#38bdf8; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:2px;">COMUNICADO OFICIAL</div>'
+    + '<div style="font-size:13px; font-weight:800; color:#ffffff;">Aclaración sobre tus invitaciones</div>'
+  + '</div>'
+  + '<div style="font-size:13px; color:#e2e8f0; line-height:1.65; margin-bottom:18px;">' + safeText + '</div>'
+  + '<div style="background:#071938; border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:12px; text-align:center; margin-bottom:16px;">'
+    + '<div style="font-size:10px; font-weight:800; color:#38bdf8;">DETALLES DEL EVENTO</div>'
+    + '<div style="font-size:12px; color:#ffffff; font-weight:700; margin-top:3px;">Jueves 27 de Agosto · 20:00 hs (Llegada: 19:30 hs)</div>'
+    + '<div style="font-size:11px; color:#cbd5e1; margin-top:1px;">Movie Montevideo Shopping</div>'
+  + '</div>'
+  + '<div style="border-top:1px solid rgba(56,189,248,0.3); text-align:center; margin:-20px; margin-top:0; padding:14px 20px; background:#071938; border-radius:0 0 12px 12px;">'
+    + '<div style="font-weight:900; font-size:11px; color:#ffffff;">UNIVERSAL ASSISTANCE URUGUAY</div>'
+    + '<div style="font-size:10px; color:#38bdf8; margin-top:2px; font-weight:700;">Tel: 2901 7378 &nbsp;|&nbsp; lucasb@ua.com.uy</div>'
+  + '</div>';
+}
+
+function copyClarifyMessage(btnEl) {
+  var txtArea = document.getElementById('clarify-msg-text');
+  if (!txtArea) return;
+  navigator.clipboard.writeText(txtArea.value).then(function() {
+    var orig = btnEl.innerHTML; btnEl.innerHTML = '✅ Copiado'; btnEl.disabled = true;
+    setTimeout(function() { btnEl.innerHTML = orig; btnEl.disabled = false; }, 1800);
+    showToast('Mensaje copiado al portapapeles', 'success');
+  });
+}
+
+function sendClarifyEmail(btnEl) {
+  var selEl = document.getElementById('clarify-guest-select');
+  if (!selEl) { showToast('Error: no se encontró el selector de contactos.', 'error'); return; }
+  var selKey = selEl.value;
+  var txt = (document.getElementById('clarify-msg-text').value || '').trim();
+  if (!txt) { showToast('El mensaje está vacío.', 'error'); return; }
+  var selectedOption = selEl.querySelector('option[value="' + selKey + '"]');
+  var selectedLabel = selectedOption ? selectedOption.textContent : selKey;
+
+  showConfirmModal({
+    title: '¿Enviar mail de aclaración?',
+    message: 'Destinatario:\n' + selectedLabel + '\n\n¿Confirmar envío oficial por correo?',
+    confirmText: '✉️ Enviar Correo',
+    cancelText: 'Cancelar'
+  }).then(function(confirmed) {
+    if (!confirmed) return;
+
+    btnEl.disabled = true;
+    btnEl.innerHTML = '⏳ Enviando mail…';
+    btnEl.style.opacity = '0.5';
+
+    function onSuccess(res) {
+      btnEl.style.opacity = '1';
+      showToast('Mail enviado con éxito a ' + (res.name || selectedLabel), 'success');
+
+      if (selectedOption) selectedOption.remove();
+
+      if (selEl.options.length > 0) {
+        selEl.selectedIndex = 0;
+        btnEl.disabled = false;
+        btnEl.innerHTML = '✉️ Enviar este mensaje por Mail';
+        renderClarifyMessage();
+      } else {
+        document.getElementById('clarify-msg-text').value = '';
+        var prevEl = document.getElementById('clarify-email-live-preview');
+        if (prevEl) prevEl.innerHTML = '<div style="text-align:center;padding:30px;"><div style="font-size:40px;margin-bottom:12px;">✅</div><div style="font-size:16px;font-weight:800;color:#4ade80;">¡Todos los mails de aclaración fueron enviados!</div></div>';
+        btnEl.disabled = true;
+        btnEl.innerHTML = '✅ Todos enviados';
+      }
+    }
+
+    function onError(err) {
+      btnEl.disabled = false;
+      btnEl.innerHTML = '✉️ Enviar este mensaje por Mail';
+      btnEl.style.opacity = '1';
+      var errMsg = (err && err.message) ? err.message : String(err);
+      showToast('Error al enviar mail: ' + errMsg, 'error');
+    }
+
+    if (typeof google !== 'undefined' && google.script && google.script.run) {
+      google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onError).adminSendClarificationEmail(selKey, txt);
+    } else {
+      apiCall('sendClarification', { targetKey: selKey, msg: txt })
+        .then(function(res) {
+          if (res && res.ok) onSuccess(res);
+          else onError(new Error(res && res.error ? res.error : 'Error desconocido del servidor'));
+        })
+        .catch(function(err) {
+          onError(err);
+        });
+    }
+  });
+}
+</script>
+
+<!-- ── MODAL EDICIÓN COMPLETA DE INVITADO ── -->
+<div id="edit-guest-modal" onclick="closeEditGuestModal(event)" style="display:none; position:fixed; inset:0; background:rgba(4,15,38,0.85); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+  <div class="content-card-box" onclick="event.stopPropagation()" style="width:100%; max-width:560px; max-height:92vh; overflow-y:auto; border:1px solid rgba(56,189,248,0.4); box-shadow:0 24px 60px rgba(0,0,0,0.7); position:relative; margin:0;">
+    <div class="card-head-row">
+      <div class="card-head-icon" style="background:rgba(56,189,248,0.15); color:var(--cyan);">✏️</div>
+      <div>
+        <div class="card-head-title">Editar Invitado <span id="edit-modal-code" class="td-code-txt" style="margin-left:8px;"></span></div>
+        <div class="card-head-sub">Modificá el nombre, email, cantidad de pases/asientos y organización.</div>
+      </div>
+      <button onclick="closeEditGuestModal()" style="margin-left:auto; background:none; border:none; color:var(--text-sub); font-size:24px; cursor:pointer; padding:0 8px;">&times;</button>
+    </div>
+
+    <form id="edit-guest-form" onsubmit="saveGuestEdits(event)">
+      <input type="hidden" id="edit-guest-code">
+
+      <div class="form-grid-2">
+        <div class="form-field-group">
+          <label>Nombre Completo</label>
+          <input type="text" id="edit-guest-name" required placeholder="Ej: Juan Pérez">
+        </div>
+        <div class="form-field-group">
+          <label>Correo Electrónico</label>
+          <input type="text" id="edit-guest-email" placeholder="ejemplo@email.com">
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-field-group">
+          <label>🎟️ Pases / Accesos (Asientos)</label>
+          <input type="number" id="edit-guest-seats" min="1" max="20" required style="font-weight:800; color:var(--cyan); font-size:16px;">
+        </div>
+        <div class="form-field-group">
+          <label>Estado RSVP</label>
+          <select id="edit-guest-status" class="form-select-sm" style="width:100%; height:42px; border-radius:12px; max-width:none;">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Confirmado">Confirmado</option>
+            <option value="No asiste">No asiste</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-field-group">
+          <label>Etapa de Envío</label>
+          <select id="edit-guest-stage" class="form-select-sm" style="width:100%; height:42px; border-radius:12px; max-width:none;">
+            <option value="1er Envío">1er Envío</option>
+            <option value="2do Envío">2do Envío</option>
+            <option value="Envío Manual">Envío Manual</option>
+          </select>
+        </div>
+        <div class="form-field-group">
+          <label>Teléfono</label>
+          <input type="text" id="edit-guest-phone" placeholder="099123456">
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-field-group">
+          <label>Canal</label>
+          <input type="text" id="edit-guest-channel" placeholder="Ej: Comercial, Broker">
+        </div>
+        <div class="form-field-group">
+          <label>Convenio / Agencia</label>
+          <input type="text" id="edit-guest-agency" placeholder="Ej: Itaú, Casmu">
+        </div>
+      </div>
+
+      <div class="form-field-group" style="margin-bottom:20px;">
+        <label>Referente UA</label>
+        <input type="text" id="edit-guest-referent" placeholder="Ej: Alejandro Méndez">
+      </div>
+
+      <div style="display:flex; gap:12px; justify-content:flex-end; border-top:1px solid var(--border); padding-top:16px;">
+        <button type="button" class="btn btn-secondary" onclick="closeEditGuestModal()">Cancelar</button>
+        <button type="submit" id="save-edit-guest-btn" class="btn btn-cta">&#9989; Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ── MODAL MAPA VISUAL DE SALA DE CINE ── -->
+<div class="cinema-modal-overlay" id="cinemaSeatModal" onclick="closeCinemaSeatModal(event)">
+  <div class="cinema-modal-card" onclick="event.stopPropagation()">
+    <div class="cinema-modal-header">
+      <div>
+        <div class="cinema-modal-title">🎬 Mapa de Ocupación de Sala de Cine</div>
+        <div class="cinema-modal-sub">Movie Montevideo Shopping · Función Especial Coyote vs. Acme</div>
+      </div>
+      <button class="cinema-close-btn" onclick="closeCinemaSeatModal()">&times;</button>
+    </div>
+
+    <!-- PANTALLA DE CINE 3D CON HAZ DE LUZ -->
+    <div class="cinema-screen-container">
+      <div class="cinema-screen-arc">🎬 PANTALLA MOVIE MONTEVIDEO SHOPPING</div>
+      <div class="cinema-screen-beam"></div>
+    </div>
+
+    <!-- MAPA DE BUTACAS DE SALA -->
+    <div id="cinema-grid-hall" class="cinema-grid-hall"></div>
+
+    <!-- LEYENDA Y RESUMEN DE SALA -->
+    <div class="cinema-legend-bar">
+      <div class="legend-item"><span class="seat-dot seat-dot-confirmed"></span> Confirmados: <strong id="m-stat-confirmed" style="color:#4ade80;">0</strong> butacas (<span id="m-stat-guests" style="color:#fff; font-weight:700;">0</span> invitados con acompañantes)</div>
+      <div class="legend-item"><span class="seat-dot seat-dot-reserved"></span> Reservados: <strong id="m-stat-reserved" style="color:#7dd3fc;">0</strong> (pendientes)</div>
+      <div class="legend-item"><span class="seat-dot seat-dot-free"></span> Libres: <strong id="m-stat-free" style="color:#94a3b8;">0</strong> butacas</div>
+      <div class="legend-item" style="margin-left:auto;">Capacidad Sala: <strong id="m-stat-cap" style="color:#fff;">300</strong></div>
+    </div>
+
+    <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-size:11px; color:var(--text-sub);">💡 <i>Entradas generales en sala. Se van iluminando en verde a medida que los invitados confirman asistencia.</i></div>
+      <button class="btn btn-cyan-cta btn-sm" onclick="closeCinemaSeatModal()">Cerrar Mapa</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

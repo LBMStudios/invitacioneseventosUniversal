@@ -1,0 +1,1309 @@
+[
+  {
+    "email": "seguros@vd.com.uy",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2026-06-12T14:18:51.868+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "ffernandez@seguroshermes.com.uy",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2026-06-12T14:18:51.868+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "fczarnievicz@gmail.com",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2026-06-12T14:18:51.868+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "esoria@outlook.com",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2026-06-12T14:18:51.868+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "contacto@soriaseguros.com",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2026-06-12T14:18:51.868+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "gustavo.spinella@sbi.uy",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2025-07-21T18:09:50.120+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "veronica.ruidiaz@sbi.uy",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2025-07-21T18:09:26.434+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "camila.gonzalez@sbi.uy",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2025-07-21T18:09:07.323+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "yamila.barrera@sbi.uy",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2025-07-21T18:07:51.548+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "pablo.souberville@sbi.uy",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2025-07-21T18:07:06.298+02:00",
+    "rawAttributes": {}
+  },
+  {
+    "email": "podasoc@adinet.com.uy",
+    "nombre": "RAFAEL",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:57:25.641+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PODESTA",
+      "NOMBRE": "RAFAEL"
+    }
+  },
+  {
+    "email": "lkeen@adinet.com.uy",
+    "nombre": "LIDIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:57:25.641+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "A KEEN",
+      "NOMBRE": "LIDIA"
+    }
+  },
+  {
+    "email": "humbertopla@movinet.com.uy",
+    "nombre": "HUMBERTO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:57:25.641+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PLA",
+      "NOMBRE": "HUMBERTO"
+    }
+  },
+  {
+    "email": "estebanmartinez@casurseguros.com",
+    "nombre": "ESTEBAN",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:57:25.641+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MARTINEZ",
+      "NOMBRE": "ESTEBAN"
+    }
+  },
+  {
+    "email": "delia@dvsseguros.com",
+    "nombre": "Delia",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59899699356",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.364+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Vilaro",
+      "NOMBRE": "Delia",
+      "SMS": "59899699356"
+    }
+  },
+  {
+    "email": "susana@ruffaliniseguros.com",
+    "nombre": "Susana",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59899688572",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.363+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Ruffaljni",
+      "NOMBRE": "Susana",
+      "SMS": "59899688572"
+    }
+  },
+  {
+    "email": "saavedramariaalejandra@gmail.com",
+    "nombre": "Bernardo",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59899662329",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.363+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Valperin",
+      "NOMBRE": "Bernardo",
+      "SMS": "59899662329"
+    }
+  },
+  {
+    "email": "gmseguros1@gmail.com",
+    "nombre": "MARCELO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59899622255",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.362+01:00",
+    "rawAttributes": {
+      "NOMBRE": "MARCELO",
+      "SMS": "59899622255"
+    }
+  },
+  {
+    "email": "jmokosce@edefreitas.com",
+    "nombre": "Joel",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.361+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Mokosce",
+      "NOMBRE": "Joel"
+    }
+  },
+  {
+    "email": "acazarian@edefreitas.com",
+    "nombre": "Andrea",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59898592816",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.347+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Cazarian",
+      "NOMBRE": "Andrea",
+      "SMS": "59898592816"
+    }
+  },
+  {
+    "email": "alejandra.mainard@mercermarshbeneficios.com",
+    "nombre": "Alejandra",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59897464885",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.340+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Mainard",
+      "NOMBRE": "Alejandra",
+      "SMS": "59897464885"
+    }
+  },
+  {
+    "email": "jlockhart@futuro.com.uy",
+    "nombre": "Jacky",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59896416404",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.338+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Lockhart",
+      "NOMBRE": "Jacky",
+      "SMS": "59896416404"
+    }
+  },
+  {
+    "email": "gruposegurosuy@gmail.com",
+    "nombre": "RUBEN",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59896403333",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.338+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Rossi",
+      "NOMBRE": "RUBEN",
+      "SMS": "59896403333"
+    }
+  },
+  {
+    "email": "franco.cattani@mercermarshbeneficios.com",
+    "nombre": "Franco",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59896364126",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:42.338+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Cattani",
+      "NOMBRE": "Franco",
+      "SMS": "59896364126"
+    }
+  },
+  {
+    "email": "ignacio.exposito@lockton.com",
+    "nombre": "Ignacio",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59895322954",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.707+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Exp?sito",
+      "NOMBRE": "Ignacio",
+      "SMS": "59895322954"
+    }
+  },
+  {
+    "email": "martin@lcseguros.com.uy",
+    "nombre": "Martin",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "59894197201",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.698+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Sosa",
+      "NOMBRE": "Martin",
+      "SMS": "59894197201"
+    }
+  },
+  {
+    "email": "ltomasi@edefreitas.com",
+    "nombre": "LETIZIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.680+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "TOMASI",
+      "NOMBRE": "LETIZIA"
+    }
+  },
+  {
+    "email": "libertador@dupontgarmendia.com",
+    "nombre": "OFICINA LIBERTADOR",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.669+01:00",
+    "rawAttributes": {
+      "NOMBRE": "OFICINA LIBERTADOR"
+    }
+  },
+  {
+    "email": "laura@rissoseguros.com.uy",
+    "nombre": "LAURA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.589+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "SUAREZ",
+      "NOMBRE": "LAURA"
+    }
+  },
+  {
+    "email": "juanraul@montevideo.com.uy",
+    "nombre": "JUAN RAUL",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.573+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "RODRIGUEZ",
+      "NOMBRE": "JUAN RAUL"
+    }
+  },
+  {
+    "email": "macarena@pfseguros.com.uy",
+    "nombre": "MACARENA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.565+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "ORTIZ",
+      "NOMBRE": "MACARENA"
+    }
+  },
+  {
+    "email": "jgfurtadoseguros@gmail.com",
+    "nombre": "JORGE",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.564+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "FURTADO",
+      "NOMBRE": "JORGE"
+    }
+  },
+  {
+    "email": "jdiego@ampseg.com.uy",
+    "nombre": "JUAN DIEGO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.563+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MARTINEZ",
+      "NOMBRE": "JUAN DIEGO"
+    }
+  },
+  {
+    "email": "ivanapronzolino@ipseguros.com.uy",
+    "nombre": "IVANA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.560+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PRONZOLINO",
+      "NOMBRE": "IVANA"
+    }
+  },
+  {
+    "email": "info@masiniseguros.com",
+    "nombre": "MASINI SEGUROS",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.559+01:00",
+    "rawAttributes": {
+      "NOMBRE": "MASINI SEGUROS"
+    }
+  },
+  {
+    "email": "info@centraldeseguros.com.uy",
+    "nombre": "CATY",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.559+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MECHULAM",
+      "NOMBRE": "CATY"
+    }
+  },
+  {
+    "email": "ines.barrabino@aon.com",
+    "nombre": "INES",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.558+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "BARRABINO",
+      "NOMBRE": "INES"
+    }
+  },
+  {
+    "email": "ignacio.plaz@heyseguros.com",
+    "nombre": "IGNACIO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.557+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PLAZ",
+      "NOMBRE": "IGNACIO"
+    }
+  },
+  {
+    "email": "gonzalo@masiniseguros.com",
+    "nombre": "GONZALO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.549+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MASINI",
+      "NOMBRE": "GONZALO"
+    }
+  },
+  {
+    "email": "ghazarian.seguros@gmail.com",
+    "nombre": "CARLOS",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.546+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "GHAZARIAN",
+      "NOMBRE": "CARLOS"
+    }
+  },
+  {
+    "email": "garciacorbo@gmail.com",
+    "nombre": "SUSANA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:37.543+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "GARCIA",
+      "NOMBRE": "SUSANA"
+    }
+  },
+  {
+    "email": "g.zipitria.romero@gmail.com",
+    "nombre": "gaston sipitria",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.556+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "corredor de seguros",
+      "NOMBRE": "gaston sipitria"
+    }
+  },
+  {
+    "email": "florencia.mujica@lockton.com",
+    "nombre": "FLORENCIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.553+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MUJICA",
+      "NOMBRE": "FLORENCIA"
+    }
+  },
+  {
+    "email": "flopez@segurosmk.com",
+    "nombre": "FEDERICO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.552+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "LOPEZ",
+      "NOMBRE": "FEDERICO"
+    }
+  },
+  {
+    "email": "ferlas@adinet.com.uy",
+    "nombre": "FL SEGUROS",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.549+01:00",
+    "rawAttributes": {
+      "NOMBRE": "FL SEGUROS"
+    }
+  },
+  {
+    "email": "felipezseguros@gmail.com",
+    "nombre": "MARTIN",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.549+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "FELIPEZ",
+      "NOMBRE": "MARTIN"
+    }
+  },
+  {
+    "email": "felipe.dehaedo@lockton.com",
+    "nombre": "FELIPE",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.549+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "DEHAEDO",
+      "NOMBRE": "FELIPE"
+    }
+  },
+  {
+    "email": "fberve@gmail.com",
+    "nombre": "FERNANDO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.547+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "BERVEJILLO",
+      "NOMBRE": "FERNANDO"
+    }
+  },
+  {
+    "email": "enrique@podestaseguros.com",
+    "nombre": "ENRIQUE",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.540+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PODESTA",
+      "NOMBRE": "ENRIQUE"
+    }
+  },
+  {
+    "email": "emilia.diaz@aon.com",
+    "nombre": "EMILIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.540+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "DIAZ",
+      "NOMBRE": "EMILIA"
+    }
+  },
+  {
+    "email": "elc@futuro.com.uy",
+    "nombre": "ENRIQUE",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.537+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "LOPEZ",
+      "NOMBRE": "ENRIQUE"
+    }
+  },
+  {
+    "email": "ehugo@edefreitas.com",
+    "nombre": "ERICA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.537+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "HUGO",
+      "NOMBRE": "ERICA"
+    }
+  },
+  {
+    "email": "diaz.seguros@gmail.com",
+    "nombre": "REYNALDO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.530+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "D?AZ",
+      "NOMBRE": "REYNALDO"
+    }
+  },
+  {
+    "email": "ddupont@dupontygarmendia.com",
+    "nombre": "DANIEL",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.528+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "DUPONT",
+      "NOMBRE": "DANIEL"
+    }
+  },
+  {
+    "email": "martin@ruffaliniseguros.com",
+    "nombre": "MARTIN",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.525+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "RUFFALINI",
+      "NOMBRE": "MARTIN"
+    }
+  },
+  {
+    "email": "cristinaferres@gmail.com",
+    "nombre": "CRISTINA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.523+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "FERRES",
+      "NOMBRE": "CRISTINA"
+    }
+  },
+  {
+    "email": "crism@montevideo.com.uy",
+    "nombre": "MARIA CRISTINA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.523+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PORCIRES",
+      "NOMBRE": "MARIA CRISTINA"
+    }
+  },
+  {
+    "email": "corredores@centroseguros.com.uy",
+    "nombre": "ALEJANDRO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.522+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "ATHAIDES",
+      "NOMBRE": "ALEJANDRO"
+    }
+  },
+  {
+    "email": "correa@csasociados.com.uy",
+    "nombre": "RAFAEL",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.522+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "CORREA",
+      "NOMBRE": "RAFAEL"
+    }
+  },
+  {
+    "email": "contacto@lcseguros.com.uy",
+    "nombre": "LC SEGUROS",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.522+01:00",
+    "rawAttributes": {
+      "NOMBRE": "LC SEGUROS"
+    }
+  },
+  {
+    "email": "cleman@vera.com.uy",
+    "nombre": "CLEMAN SEGUROS",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.521+01:00",
+    "rawAttributes": {
+      "NOMBRE": "CLEMAN SEGUROS"
+    }
+  },
+  {
+    "email": "claudia@lcseguros.com.uy",
+    "nombre": "CLAUDIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.519+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "ARAUJO",
+      "NOMBRE": "CLAUDIA"
+    }
+  },
+  {
+    "email": "susan@lucas-calcraft.com.uy",
+    "nombre": "Susan",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.515+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "McConnell?",
+      "NOMBRE": "Susan"
+    }
+  },
+  {
+    "email": "matias@edefreitas.com",
+    "nombre": "MATIAS",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.513+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "DE FREITAS",
+      "NOMBRE": "MATIAS"
+    }
+  },
+  {
+    "email": "ceciliabentancor@hotmail.com",
+    "nombre": "CECILIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.512+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "DUARTE",
+      "NOMBRE": "CECILIA"
+    }
+  },
+  {
+    "email": "uruguayseguros@gmail.com",
+    "nombre": "EDUARDO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.510+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "CORREA",
+      "NOMBRE": "EDUARDO"
+    }
+  },
+  {
+    "email": "uy31596@adinet.com.uy",
+    "nombre": "CESAR",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.509+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "SORDO",
+      "NOMBRE": "CESAR"
+    }
+  },
+  {
+    "email": "seguros@lucas-calcraft.com.uy",
+    "nombre": "LUCAS CALCRAFT",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.500+01:00",
+    "rawAttributes": {
+      "NOMBRE": "LUCAS CALCRAFT"
+    }
+  },
+  {
+    "email": "scaroneseguros@gmail.com",
+    "nombre": "LORENA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.498+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "SCARONE",
+      "NOMBRE": "LORENA"
+    }
+  },
+  {
+    "email": "sbrandam@brandamlaurino.com",
+    "nombre": "SILVINA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.497+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "BRANDAM",
+      "NOMBRE": "SILVINA"
+    }
+  },
+  {
+    "email": "bvsanden@hotmail.com",
+    "nombre": "BERND",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.496+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "VON SANDEN",
+      "NOMBRE": "BERND"
+    }
+  },
+  {
+    "email": "santiago.martoy@asegurar.com.uy",
+    "nombre": "SANTIAGO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:32.495+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MARTOY",
+      "NOMBRE": "SANTIAGO"
+    }
+  },
+  {
+    "email": "berroseguros@adinet.com.uy",
+    "nombre": "VIRGINIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.144+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "BERRO",
+      "NOMBRE": "VIRGINIA"
+    }
+  },
+  {
+    "email": "rpena@futuro.com.uy",
+    "nombre": "RUBEN",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.144+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PENA",
+      "NOMBRE": "RUBEN"
+    }
+  },
+  {
+    "email": "mcruces03@gmail.com",
+    "nombre": "MARIA EUGENIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.143+01:00",
+    "rawAttributes": {
+      "NOMBRE": "MARIA EUGENIA"
+    }
+  },
+  {
+    "email": "vdupont@dupontgarmendia.com",
+    "nombre": "VERONICA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.142+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "DUPONT",
+      "NOMBRE": "VERONICA"
+    }
+  },
+  {
+    "email": "roque@edefreitas.com",
+    "nombre": "ROQUE",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.142+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "DE FREITAS",
+      "NOMBRE": "ROQUE"
+    }
+  },
+  {
+    "email": "atlantidaseguros@gmail.com",
+    "nombre": "MARIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.137+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "SANCHEZ",
+      "NOMBRE": "MARIA"
+    }
+  },
+  {
+    "email": "asorribas@brandamlaurino.com",
+    "nombre": "ALEJANDRA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.137+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "SORRIBAS",
+      "NOMBRE": "ALEJANDRA"
+    }
+  },
+  {
+    "email": "robmacha@vera.com.uy",
+    "nombre": "ROBERTO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.136+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MACHADO",
+      "NOMBRE": "ROBERTO"
+    }
+  },
+  {
+    "email": "ricardo@hausmannbroker.com",
+    "nombre": "RICARDO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.132+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "HAUSMANN",
+      "NOMBRE": "RICARDO"
+    }
+  },
+  {
+    "email": "raul.narancio@narancio.com",
+    "nombre": "RAUL",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.127+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "NARANCIO",
+      "NOMBRE": "RAUL"
+    }
+  },
+  {
+    "email": "rafael@uriosteseguros.com.uy",
+    "nombre": "RAFAEL",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.125+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "URIOSTE",
+      "NOMBRE": "RAFAEL"
+    }
+  },
+  {
+    "email": "anikb2011@hotmail.com",
+    "nombre": "ANIK",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.125+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "BUSCARONS",
+      "NOMBRE": "ANIK"
+    }
+  },
+  {
+    "email": "poloydina@gmail.com",
+    "nombre": "DINA Y CLEMAN",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.119+01:00",
+    "rawAttributes": {
+      "NOMBRE": "DINA Y CLEMAN"
+    }
+  },
+  {
+    "email": "plaurino@brandamlaurino.com",
+    "nombre": "PABLO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.118+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "LAURINO",
+      "NOMBRE": "PABLO"
+    }
+  },
+  {
+    "email": "pialabat@labatseguros.com.uy",
+    "nombre": "PIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.116+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "LABAT",
+      "NOMBRE": "PIA"
+    }
+  },
+  {
+    "email": "patricia@labatseguros.com.uy",
+    "nombre": "PATRICIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.106+01:00",
+    "rawAttributes": {
+      "NOMBRE": "PATRICIA"
+    }
+  },
+  {
+    "email": "panettaseguros@gmail.com",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.101+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PANETTA"
+    }
+  },
+  {
+    "email": "alina.ramos@lockton.com",
+    "nombre": "ALINA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.097+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "RAMOS",
+      "NOMBRE": "ALINA"
+    }
+  },
+  {
+    "email": "osvaldo@segurosbarros.com.uy",
+    "nombre": "OSVALDO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.096+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "BARROS",
+      "NOMBRE": "OSVALDO"
+    }
+  },
+  {
+    "email": "michelenaseguros@gmail.com",
+    "nombre": "MICHELENA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.096+01:00",
+    "rawAttributes": {
+      "NOMBRE": "MICHELENA"
+    }
+  },
+  {
+    "email": "alicia@pfseguros.com.uy",
+    "nombre": "ALICIA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.095+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "GARCIA",
+      "NOMBRE": "ALICIA"
+    }
+  },
+  {
+    "email": "noellabat@labatseguros.com.uy",
+    "nombre": "NOEL",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.091+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "LABAT",
+      "NOMBRE": "NOEL"
+    }
+  },
+  {
+    "email": "alejandro@lucas-calcraft.com.uy",
+    "nombre": "ALEJANDRO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.090+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "SOSA",
+      "NOMBRE": "ALEJANDRO"
+    }
+  },
+  {
+    "email": "alejandra@saavedraseguros.com.uy",
+    "nombre": "Aalejandra",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.089+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "Saavedra",
+      "NOMBRE": "Aalejandra"
+    }
+  },
+  {
+    "email": "alberto.puig@ngs.com.uy",
+    "nombre": "ALBERTO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.086+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "PUIG",
+      "NOMBRE": "ALBERTO"
+    }
+  },
+  {
+    "email": "aiksa@rasseguros.com",
+    "nombre": "AIKSA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.084+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MILETIC",
+      "NOMBRE": "AIKSA"
+    }
+  },
+  {
+    "email": "natasha.tarrech@aon.com",
+    "nombre": "NATASHA",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.082+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "TARRECH",
+      "NOMBRE": "NATASHA"
+    }
+  },
+  {
+    "email": "mjgnazzo@centroseguros.com.uy",
+    "nombre": "MARIA JOSE",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.079+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "GNAZZO",
+      "NOMBRE": "MARIA JOSE"
+    }
+  },
+  {
+    "email": "acarracedo@brandamlaurino.com",
+    "nombre": "ALBERTO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.072+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "CARRACEDO",
+      "NOMBRE": "ALBERTO"
+    }
+  },
+  {
+    "email": "abravo28@gmail.com",
+    "nombre": "ALVARO",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.071+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "BRAVO",
+      "NOMBRE": "ALVARO"
+    }
+  },
+  {
+    "email": "monce@adinet.com.uy",
+    "nombre": "",
+    "apellido": "",
+    "empresa": "Corredor de Seguros",
+    "telefono": "",
+    "cargo": "",
+    "createdAt": "2024-12-12T14:21:27.068+01:00",
+    "rawAttributes": {
+      "APELLIDOS": "MONTIEL"
+    }
+  }
+]

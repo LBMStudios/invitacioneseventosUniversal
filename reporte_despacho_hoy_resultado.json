@@ -1,0 +1,644 @@
+{
+  "timestamp": "2026-08-27T11:56:47.928Z",
+  "successCount": 106,
+  "failCount": 0,
+  "total": 106,
+  "details": [
+    {
+      "email": "mtomasi@ua.com.uy",
+      "name": "Marianna Tomasi",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "laura.caprio@semm.com.uy",
+      "name": "Laura Caprio",
+      "ok": true,
+      "passes": 2
+    },
+    {
+      "email": "karina.macadar@semm.com.uy",
+      "name": "Darío Czeszler",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ahoffmann@asesp.com.uy",
+      "name": "Angela Hoffman",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "sperroni@asesp.com.uy",
+      "name": "Sandra Perroni",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ca72787@casmu.com",
+      "name": "Nadia NuñEz",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "mfirpo@summum.com.uy",
+      "name": "Mariana Firpo",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "elisa.costa@cosem.com.uy",
+      "name": "Elisa Costa",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "vpica@itau.com.uy",
+      "name": "Virginia Pica",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "pablo.perez@itau.com.uy",
+      "name": "Pablo Perez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "jefecomercial@sapp.com.uy",
+      "name": "Fernanda Fontes",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "acamiou@ua.com.uy",
+      "name": "Ana Camiou",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "abritos@ua.com.uy",
+      "name": "Ana Laura Britos",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ceciliam@ua.com.uy",
+      "name": "Cecilia Mendez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "jquintana@ua.com.uy",
+      "name": "Jimena Quintana",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "speronagonzalez@gmail.com",
+      "name": "Sebastian Perona",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "vmendez@ua.com.uy",
+      "name": "Valentina Mendez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "emisiones@ua.com.uy",
+      "name": "Sofia Ramirez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "contable@ua.com.uy",
+      "name": "Yhonson Choca",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "pananikian@sunlive.com.uy",
+      "name": "Pablo Ananikian",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "alejandrom@ua.com.uy",
+      "name": "Alejandro Mendez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "paulaa@ua.com.uy",
+      "name": "Paula Aramendia",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "diego.correa@melitour.com.uy",
+      "name": "Diego Correa",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ignacio@sinfronteras.com.uy",
+      "name": "Nacho",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "spazos@delsurviajes.com.uy",
+      "name": "Susana Pasos",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "amelegatti@delsurviajes.com.uy",
+      "name": "Andrea Melegati",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "renovaciones.dlc@gmail.com",
+      "name": "Margaret Bittencourt",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "tikinga@gmail.com",
+      "name": "Enzo Figueira",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "valirig@hotmail.com",
+      "name": "Valentina Irigaray",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ccabana@tuviaje.uy",
+      "name": "Cecilia",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "pablo@libertyuruguay.com.uy",
+      "name": "Pablo Rasocvich",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ivanna@mercurioviajes.com.uy",
+      "name": "Ivanna",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "tatiana@mercurioviajes.com.uy",
+      "name": "Tatiana",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "vmendezaramendia@gmail.com",
+      "name": "Victoria Méndez Aramendía",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "carmen@melitour.com.uy",
+      "name": "Carmen Galan",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "flores.pereira15@gmail.com",
+      "name": "Florencia Flores",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "paraanacom@hotmail.com",
+      "name": "Anahir Aguilar",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "elianakarinarossini@gmail.com",
+      "name": "Karina Rossini",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "fmaglione@jpsantos.com.uy",
+      "name": "Fabrizio Maglione",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "lucia.amestoy@amestoyuruguay.com",
+      "name": "Lucia Amestoy",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "mmosca@canal4.com.uy",
+      "name": "Mariano Mosca",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "whelou@canal4.com.uy",
+      "name": "W. Helou",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "bperdomo@canal4.com.uy",
+      "name": "B. Perdomo",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "jolivera@canal4.com.uy",
+      "name": "J. Olivera",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "cobranzas@dcom.uy",
+      "name": "Belén Arbiza",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "servicioscomplementarios@hospitalevangelico.com",
+      "name": "Myriam Cardozo",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "natalia.doglio@anda.com.uy",
+      "name": "Natalia Doglio (Pase 1 - Adulto + 2 Niños)",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "gconti@coitviajes.com.uy",
+      "name": "Ana Gabriela Conti",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "clarabachino@gmail.com",
+      "name": "Clara Bachino",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "nanuronchetti@gmail.com",
+      "name": "Laura Ronchetti",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "facundoqsz@gmail.com",
+      "name": "valentin quiro saldaña",
+      "ok": true,
+      "passes": 2
+    },
+    {
+      "email": "juanguaglianoni@gmail.com",
+      "name": "Juan Pablo Guaglianoni",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "virodial72000@gmail.com",
+      "name": "Victoria Diano",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "deluccasantiago@gmail.com",
+      "name": "Santiago Deluca",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "virginia@rumbosturismo.com",
+      "name": "Virginia Willebald",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "pamela.zabala@universal-assistance.com",
+      "name": "Pamela Zabala",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "fiorella.ancheta@cosem.com.uy",
+      "name": "Fiorella Ancheta",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "flordesign.uy@gmail.com",
+      "name": "Florencia Cánepa",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ekikam@hotmail.com",
+      "name": "Erika Martin",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "jorgelina@mercurioviajes.com.uy",
+      "name": "Jorgelina arrigoni",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "federico.alonso@activetravel.com.uy",
+      "name": "Federico Alonso",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "jmossi@sunlive.com.uy",
+      "name": "Javier Mossi",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "anipoli@jorgemartinez.com.uy",
+      "name": "Aldo Nipoli",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "lronchetti@jorgemartinez.com.uy",
+      "name": "PABLO SCHIPILOV",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "macarena.perez@dcomtravel.com",
+      "name": "Maca Perez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "mcamiou@buemes.com.uy",
+      "name": "Maria Camiou",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "cecilia@pintoviajar.com",
+      "name": "Cecilia Pinto",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "jleone@coit.com.uy",
+      "name": "MARIANELA IBIÑETE",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "fquinteros@jorgemartinez.com.uy",
+      "name": "Florencia Quinteros",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "renaalmeida2810@gmail.com",
+      "name": "Renata Almeida Suárez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "grodriguez@jorgemartinez.com.uy",
+      "name": "Gerardo Rodriguez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ignacio.curti@dcomtravel.com",
+      "name": "IGNACIO CURTI",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "mreyes@jorgemartinez.com.uy",
+      "name": "Monica Reyes",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "carolinathomas@destinico.com",
+      "name": "Marcos Miraglia",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "flopicostan@gmail.com",
+      "name": "Florencia Costanzo",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "coitinoluciana@gmail.com",
+      "name": "Luciana Coitiño",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "valentinaolivera@destinico.com",
+      "name": "Vale Olivera",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "camilawalch@destinico.com",
+      "name": "Camila Walch",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "anaclararrieta1@gmail.com",
+      "name": "Anaclara Arrieta",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "victoriadesouzanu@gmail.com",
+      "name": "Victoria de Souza",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "guadaplaceres4@gmail.com",
+      "name": "Guadalupe Placeres",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "belengallo@destinico.com",
+      "name": "Belen gallo",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "car.varela@hotmail.com",
+      "name": "Carla Varela",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "amparo.schelotto@traveloz.com.uy",
+      "name": "Amparo Schelotto",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ayelenaa18@gmail.com",
+      "name": "Ayelen Alvarez acland",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "mariajmendez.91@gmail.com",
+      "name": "María José Méndez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "albe0629@gmail.com",
+      "name": "Fernando Otazu",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "alfonso.souto@aldeasinfantiles.org.uy",
+      "name": "Joaquin Alfonso",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "paulinamariamendez@gmail.com",
+      "name": "Paulina Mendez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "jorgecosta@tuviaje.uy",
+      "name": "Jorge Costa Tu viaje",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ntorres@summum.com.uy",
+      "name": "NANCY TORRES",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "vgugliotta@summum.com.uy",
+      "name": "vittoria gugliotta",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "gpiastra@hotmail.com",
+      "name": "Gabriel Piastra",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "abrazionis@jorgemartinez.com.uy",
+      "name": "Angel Brazionis",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "vcardoso@jorgemartinez.com.uy",
+      "name": "Victoria Cardoso",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "fnader@jorgemartinez.com.uy",
+      "name": "FERNANDO NADER",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "lsanchez@jorgemartinez.com.uy",
+      "name": "Lorena Sanchez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "rcapote22@gmail.com",
+      "name": "Rodolfo Capote",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "elizabeth.mendez@cresteo.com",
+      "name": "Elizabeth Méndez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "veroseque@gmail.com",
+      "name": "Verónica Sequeiros",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "constanza.rubil@anda.com.uy",
+      "name": "Juan Pablo Escobar",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "natalia.delossantos@anda.com.uy",
+      "name": "Natalia de los Santos",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "diego.massia@libertyuruguay.com.uy",
+      "name": "Diego Massia",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "fedehornes95@gmail.com",
+      "name": "Federico Hornes",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "natalia.gurtet@gmail.com",
+      "name": "Natalia Gonzalez",
+      "ok": true,
+      "passes": 1
+    },
+    {
+      "email": "ibramohamad87@gmail.com",
+      "name": "Ibrahim Al Mohammad",
+      "ok": true,
+      "passes": 1
+    }
+  ]
+}

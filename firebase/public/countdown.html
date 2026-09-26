@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coyote vs. Acme | Cuenta Regresiva Oficial · Universal Assistance</title>
+  <meta name="description" content="Cuenta regresiva oficial para la avant-première exclusiva de Coyote vs. Acme en Movie Montevideo Shopping por Universal Assistance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0404;
+      --coyote-crimson: #e50914;
+      --acme-red: #d90429;
+      --acme-yellow: #ffb703;
+      --coyote-cyan: #38bdf8;
+      --text-white: #ffffff;
+      --text-gold: #fde047;
+      --card-bg: rgba(20, 6, 6, 0.78);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        linear-gradient(180deg, rgba(8, 2, 2, 0.55) 0%, rgba(15, 3, 3, 0.72) 40%, rgba(6, 1, 1, 0.95) 100%),
+        url('/assets/coyote-bg.jpg');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--text-white);
+      font-family: 'Montserrat', 'Outfit', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Desert Sunset Lighting */
+    .screen-ambient-glow {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 70vh;
+      background: radial-gradient(ellipse at 50% 20%, rgba(229, 9, 20, 0.22) 0%, rgba(255, 183, 3, 0.1) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .screen-container {
+      width: 100%;
+      max-width: 1300px;
+      padding: clamp(16px, 3vw, 28px) clamp(16px, 3.5vw, 32px) 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      z-index: 1;
+      text-align: center;
+    }
+
+    /* TOP BRANDING BAR */
+    .top-brand-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1080px;
+      padding: 10px 22px;
+      background: rgba(15, 3, 3, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      margin-bottom: 12px;
+    }
+
+    .top-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .top-ua-logo {
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+
+    .top-brand-divider {
+      width: 1px;
+      height: 18px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .top-event-tag {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #f1f5f9;
+      text-transform: uppercase;
+    }
+
+    .top-badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(229, 9, 20, 0.25);
+      border: 1px solid var(--coyote-crimson);
+      color: #ffffff;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--coyote-crimson);
+      box-shadow: 0 0 10px var(--coyote-crimson);
+      animation: flashPulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes flashPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(1.4); }
+    }
+
+    /* OFFICIAL 3D LOGO HERO */
+    .coyote-logo-hero {
+      margin: 8px 0 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .official-movie-logo {
+      width: clamp(260px, 48vw, 540px);
+      height: auto;
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 25px rgba(229, 9, 20, 0.45));
+      transition: transform 0.4s ease;
+    }
+
+    .official-movie-logo:hover {
+      transform: scale(1.02);
+    }
+
+    .movie-theatrical-date {
+      margin-top: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(14px, 2.2vw, 19px);
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-gold);
+      text-shadow: 0 2px 14px rgba(255, 183, 3, 0.6), 0 0 20px rgba(0, 0, 0, 0.9);
+    }
+
+    .movie-venue-subtext {
+      font-size: clamp(12px, 1.6vw, 14px);
+      font-weight: 600;
+      color: #cbd5e1;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    .movie-venue-subtext strong {
+      color: #ffffff;
+    }
+
+    /* COUNTDOWN CARD (OFFICIAL THEATRICAL STYLE) */
+    .theatrical-countdown-card {
+      width: 100%;
+      max-width: 1020px;
+      background: var(--card-bg);
+      border: 2px solid rgba(229, 9, 20, 0.45);
+      border-radius: 28px;
+      padding: clamp(20px, 3.5vw, 36px) clamp(16px, 3.5vw, 40px);
+      box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.95),
+        0 0 45px rgba(229, 9, 20, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      position: relative;
+      overflow: hidden;
+      margin: 10px 0;
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .theatrical-countdown-card.stage-urgent {
+      border-color: #ff0033 !important;
+      box-shadow: 
+        0 30px 90px rgba(0, 0, 0, 0.95),
+        0 0 65px rgba(255, 0, 51, 0.65) !important;
+      animation: cardTensionPulse 1s infinite alternate;
+    }
+
+    @keyframes cardTensionPulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.008); }
+    }
+
+    .card-top-title {
+      font-size: clamp(11px, 1.8vw, 13px);
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-gold);
+      margin-bottom: 18px;
+      text-shadow: 0 0 12px rgba(255, 183, 3, 0.5);
+    }
+
+    /* BIG DIGITS GRID */
+    .clock-display-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(8px, 2.2vw, 22px);
+    }
+
+    .digit-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(35, 10, 10, 0.95) 0%, rgba(12, 3, 3, 0.98) 100%);
+      border: 1.5px solid rgba(229, 9, 20, 0.4);
+      border-radius: 20px;
+      padding: clamp(14px, 2.5vw, 24px) clamp(16px, 3vw, 32px);
+      min-width: clamp(90px, 16vw, 160px);
+      box-shadow: 
+        0 18px 40px rgba(0, 0, 0, 0.75),
+        inset 0 2px 4px rgba(255, 255, 255, 0.15);
+      position: relative;
+    }
+
+    .digit-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(48px, 9.5vw, 98px);
+      font-weight: 900;
+      line-height: 0.95;
+      color: #ffffff;
+      font-variant-numeric: tabular-nums;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+      letter-spacing: -2px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .digit-num.val-urgent {
+      color: #ff0033 !important;
+      text-shadow: 0 0 45px rgba(255, 0, 51, 0.95) !important;
+    }
+
+    .digit-tag {
+      font-size: clamp(9.5px, 1.6vw, 12px);
+      font-weight: 900;
+      color: var(--acme-yellow);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .clock-sep {
+      font-size: clamp(36px, 7vw, 72px);
+      font-weight: 900;
+      color: var(--coyote-crimson);
+      text-shadow: 0 0 20px rgba(229, 9, 20, 0.8);
+      margin-top: -14px;
+      animation: sepBlink 1s step-end infinite;
+    }
+
+    @keyframes sepBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+
+    /* PERIMETER PROGRESS BAR */
+    .progress-track-wrapper {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      margin: 22px 0 16px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, var(--acme-yellow) 0%, var(--coyote-crimson) 100%);
+      box-shadow: 0 0 16px var(--coyote-crimson);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    /* ROTATING ETIQUETTE & STORYLINE TIPS */
+    .theatrical-message-box {
+      margin-top: 10px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(13px, 1.9vw, 16px);
+      font-weight: 600;
+      color: #f1f5f9;
+      letter-spacing: 0.3px;
+      transition: opacity 0.5s ease;
+    }
+
+    .theatrical-message-box strong {
+      color: var(--acme-yellow);
+      font-weight: 800;
+    }
+
+    /* MOVIE STILLS SHOWCASE (3-COL) */
+    .official-stills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .still-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #020617;
+      border: 1.5px solid rgba(229, 9, 20, 0.35);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .still-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: var(--acme-yellow);
+      box-shadow: 0 16px 36px rgba(255, 183, 3, 0.35);
+    }
+
+    .still-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .still-card:hover .still-photo {
+      transform: scale(1.06);
+    }
+
+    .still-tag-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 8px 12px;
+      background: linear-gradient(0deg, rgba(10, 2, 2, 0.95) 0%, rgba(10, 2, 2, 0.65) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      text-align: left;
+    }
+
+    .still-tag-eyebrow {
+      font-size: 9px;
+      font-weight: 900;
+      color: var(--coyote-crimson);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .still-tag-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    /* SHOWTIME GRAND FINALE (00:00) */
+    .showtime-grand-banner {
+      display: none;
+      animation: grandZoomIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    .showtime-grand-banner h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(34px, 7vw, 78px);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--acme-yellow);
+      text-shadow: 0 0 45px rgba(255, 183, 3, 0.95);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    .showtime-grand-banner p {
+      font-size: clamp(15px, 2.5vw, 22px);
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    @keyframes grandZoomIn {
+      0% { opacity: 0; transform: scale(0.6); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* OPERATOR CONTROLS (FLOATING BOTTOM PILLS) */
+    .operator-controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      z-index: 10;
+    }
+
+    .ctrl-pill-btn {
+      background: rgba(25, 6, 6, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 9px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .ctrl-pill-btn:hover {
+      background: rgba(229, 9, 20, 0.3);
+      border-color: var(--coyote-crimson);
+      transform: translateY(-2px);
+    }
+
+    .ctrl-pill-btn.active {
+      background: var(--coyote-crimson);
+      border-color: var(--coyote-crimson);
+      box-shadow: 0 0 24px rgba(229, 9, 20, 0.65);
+    }
+
+    /* FOOTER */
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .footer-legal-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .zurich-glow {
+      color: var(--coyote-cyan);
+      font-weight: 800;
+    }
+
+    /* Clean Screen Projection Mode */
+    body.clean-screen .operator-controls-row,
+    body.clean-screen .top-brand-bar,
+    body.clean-screen footer {
+      opacity: 0.08;
+      transition: opacity 0.3s ease;
+    }
+    body.clean-screen:hover .operator-controls-row,
+    body.clean-screen:hover .top-brand-bar,
+    body.clean-screen:hover footer {
+      opacity: 1;
+    }
+
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      .official-stills-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .top-brand-bar {
+        flex-direction: column;
+        gap: 6px;
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-ambient-glow"></div>
+  <canvas id="confettiCanvas"></canvas>
+
+  <div class="screen-container">
+    <!-- TOP INSTITUTIONAL BRANDING -->
+    <div class="top-brand-bar">
+      <div class="top-brand-left">
+        <img src="/assets/logo-ua-zurich.svg" alt="Universal Assistance - A Company of Zurich" class="top-ua-logo">
+        <div class="top-brand-divider"></div>
+        <span class="top-event-tag">Avant Première Oficial</span>
+      </div>
+      <div class="top-badge-live">
+        <span class="pulse-dot"></span>
+        <span>Movie Montevideo Shopping</span>
+      </div>
+    </div>
+
+    <!-- OFFICIAL MOVIE LOGO HERO -->
+    <header class="coyote-logo-hero">
+      <img src="/assets/coyote-official-tt.png" alt="Coyote vs. Acme" class="official-movie-logo">
+      <div class="movie-theatrical-date">Avant Première · Jueves 27 de Agosto · 20:00 hs</div>
+      <div class="movie-venue-subtext">Recepción y entrega de Pop & Refresco desde las <strong>19:30 hs</strong></div>
+    </header>
+
+    <!-- MAIN THEATRICAL COUNTDOWN MONOLITH -->
+    <main class="theatrical-countdown-card" id="mainCard">
+      <div class="card-top-title" id="cardStatusTitle">
+        ⏱️ Cuenta Regresiva para la Función Especial
+      </div>
+
+      <!-- DIGIT DISPLAY -->
+      <div class="clock-display-row" id="clockGrid">
+        <div class="digit-block" id="blockDays">
+          <span class="digit-num" id="numDays">00</span>
+          <span class="digit-tag">Días</span>
+        </div>
+        <div class="clock-sep" id="sepDays">:</div>
+
+        <div class="digit-block" id="blockHours">
+          <span class="digit-num" id="numHours">00</span>
+          <span class="digit-tag">Horas</span>
+        </div>
+        <div class="clock-sep">:</div>
+
+        <div class="digit-block" id="blockMins">
+          <span class="digit-num" id="numMins">10</span>
+          <span class="digit-tag">Minutos</span>
+        </div>
+        <div class="clock-sep">:</div>
+
+        <div class="digit-block" id="blockSecs">
+          <span class="digit-num" id="numSecs">00</span>
+          <span class="digit-tag">Segundos</span>
+        </div>
+      </div>
+
+      <!-- PROGRESS TRACK -->
+      <div class="progress-track-wrapper">
+        <div class="progress-bar-fill" id="progressBar" style="width: 100%;"></div>
+      </div>
+
+      <!-- ROTATING MOVIE LORE & PRE-SHOW ETIQUETTE -->
+      <div class="theatrical-message-box" id="tipsText">
+        💥 <strong>La Trama:</strong> Tras 70 años de artefactos defectuosos, Wile E. Coyote demanda a la corporación ACME en el juicio del siglo.
+      </div>
+
+      <!-- OFFICIAL STILLS GALLERY -->
+      <div class="official-stills-grid">
+        <div class="still-card">
+          <img src="/assets/movie-courtroom.jpg" alt="Wile E. Coyote en el Juicio" class="still-photo" loading="lazy">
+          <div class="still-tag-overlay">
+            <span class="still-tag-eyebrow">⚖️ EVIDENCIA #001</span>
+            <span class="still-tag-title">Wile E. Coyote en el estrado</span>
+          </div>
+        </div>
+        <div class="still-card">
+          <img src="/assets/movie-blueprint.jpg" alt="El Coyote y los Planos de ACME" class="still-photo" loading="lazy">
+          <div class="still-tag-overlay">
+            <span class="still-tag-eyebrow">🚀 PLANOS ACME</span>
+            <span class="still-tag-title">Revisión de artefactos fallidos</span>
+          </div>
+        </div>
+        <div class="still-card">
+          <img src="/assets/coyote-popcorn.png" alt="Wile E. Coyote con Popcorn" class="still-photo" loading="lazy" style="object-fit: contain; background: radial-gradient(circle, rgba(40,10,10,0.9), #050101);">
+          <div class="still-tag-overlay">
+            <span class="still-tag-eyebrow">🍿 COMBO CINE</span>
+            <span class="still-tag-title">Cortesía Universal Assistance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOWTIME BANNER AT 00:00 -->
+      <div class="showtime-grand-banner" id="showBanner">
+        <h2>🎬 ¡QUE COMIENCE LA FUNCIÓN! 🍿</h2>
+        <p>Apaguen las luces, acomódense y disfruten de <strong>Coyote vs. Acme</strong>.</p>
+      </div>
+    </main>
+
+    <!-- OPERATOR CONTROLS -->
+    <div class="operator-controls-row">
+      <button class="ctrl-pill-btn active" id="btnModeLive" onclick="setMode('live')">🗓️ Fecha Oficial (27 Ago 20:00)</button>
+      <button class="ctrl-pill-btn" id="btnMode10Min" onclick="setMode('timer', 10)">⏱️ Modo Sala 10 Min</button>
+      <button class="ctrl-pill-btn" id="btnMode5Min" onclick="setMode('timer', 5)">⏱️ Modo 5 Min</button>
+      <button class="ctrl-pill-btn" id="btnReset" onclick="restartTimer()" style="display:none;">🔄 Reiniciar</button>
+      <button class="ctrl-pill-btn" onclick="toggleFullScreen()">⛶ Pantalla Completa (F11)</button>
+      <button class="ctrl-pill-btn" onclick="toggleClean()">👁️ Ocultar Controles (C)</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-legal-row">
+        <span>UNIVERSAL ASSISTANCE URUGUAY</span>
+        <span>·</span>
+        <span class="zurich-glow">A COMPANY OF ZURICH</span>
+        <span>·</span>
+        <span>MOVIE MONTEVIDEO SHOPPING</span>
+      </div>
+      <div>© 2026 Warner Bros. Pictures & Ketchup Entertainment · Todos los derechos reservados</div>
+    </footer>
+  </div>
+
+  <script>
+    const EVENT_TARGET_DATE = new Date('2026-08-27T20:00:00-03:00').getTime();
+
+    const MESSAGES = [
+      "💥 <strong>La Trama:</strong> Tras 70 años de artefactos defectuosos, Wile E. Coyote demanda a la corporación ACME en el juicio del siglo.",
+      "⚖️ <strong>El Juicio del Siglo:</strong> Una batalla legal épica y desopilante entre el legendario Coyote y el gigante corporativo.",
+      "🍿 <strong>Pop & Refresco:</strong> Disfruten de su combo cortesía de Universal Assistance.",
+      "⭐ <strong>Elenco Estelar:</strong> Con Will Forte, John Cena y Lana Condor, combinando animación clásica y acción real.",
+      "📵 <strong>Etiqueta de Sala:</strong> Por favor silencien o apaguen sus teléfonos celulares antes de comenzar.",
+      "🎬 <strong>Función Puntual:</strong> Las luces se atenuarán y las puertas de la sala cerrarán al inicio de la proyección.",
+      "🚀 <strong>Warner Bros. Pictures:</strong> Una historia de determinación, ingenio y pura diversión para compartir juntos."
+    ];
+
+    let currentMode = 'live';
+    let totalSecs = 600;
+    let remainingSecs = 600;
+    let timerInt = null;
+    let msgIdx = 0;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('mode') === '10m' || params.get('timer') === '10') {
+        setMode('timer', 10);
+      } else if (params.get('timer')) {
+        setMode('timer', parseInt(params.get('timer'), 10) || 10);
+      } else {
+        startLive();
+      }
+
+      setInterval(rotateTips, 6000);
+    });
+
+    function startLive() {
+      clearInterval(timerInt);
+      currentMode = 'live';
+      updateButtons();
+      document.getElementById('cardStatusTitle').textContent = '⏱️ TIEMPO RESTANTE PARA LA AVANT PREMIÈRE';
+      document.getElementById('btnReset').style.display = 'none';
+      document.getElementById('blockDays').style.display = 'flex';
+      document.getElementById('sepDays').style.display = 'block';
+
+      function tickLive() {
+        const now = Date.now();
+        const diff = EVENT_TARGET_DATE - now;
+
+        if (diff <= 0) {
+          triggerShowtime();
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('numDays').textContent = String(days).padStart(2, '0');
+        document.getElementById('numHours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('numMins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('numSecs').textContent = String(secs).padStart(2, '0');
+
+        const pct = Math.min(100, Math.max(0, 100 - (diff / (7 * 24 * 3600 * 1000) * 100)));
+        document.getElementById('progressBar').style.width = pct + '%';
+      }
+
+      tickLive();
+      timerInt = setInterval(tickLive, 1000);
+    }
+
+    function setMode(mode, minutes = 10) {
+      if (mode === 'live') {
+        startLive();
+        return;
+      }
+
+      clearInterval(timerInt);
+      currentMode = 'timer';
+      totalSecs = minutes * 60;
+      remainingSecs = totalSecs;
+      updateButtons();
+
+      document.getElementById('cardStatusTitle').textContent = `⏱️ INICIO DE FUNCIÓN EN ${minutes} MINUTOS · SALA MOVIE`;
+      document.getElementById('btnReset').style.display = 'inline-flex';
+      document.getElementById('blockDays').style.display = 'none';
+      document.getElementById('sepDays').style.display = 'none';
+      document.getElementById('showBanner').style.display = 'none';
+      document.getElementById('clockGrid').style.display = 'flex';
+
+      function tickTimer() {
+        if (remainingSecs <= 0) {
+          triggerShowtime();
+          return;
+        }
+
+        const mins = Math.floor(remainingSecs / 60);
+        const secs = remainingSecs % 60;
+
+        document.getElementById('numHours').textContent = '00';
+        document.getElementById('numMins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('numSecs').textContent = String(secs).padStart(2, '0');
+
+        const pct = (remainingSecs / totalSecs) * 100;
+        document.getElementById('progressBar').style.width = pct + '%';
+
+        // Alerta de alta tensión (< 60s)
+        if (remainingSecs <= 60) {
+          document.getElementById('mainCard').classList.add('stage-urgent');
+          document.getElementById('numSecs').classList.add('val-urgent');
+          document.getElementById('cardStatusTitle').textContent = '🚨 ¡ÚLTIMO MINUTO! POR FAVOR TOMEN SUS ASIENTOS';
+        } else {
+          document.getElementById('mainCard').classList.remove('stage-urgent');
+          document.getElementById('numSecs').classList.remove('val-urgent');
+        }
+
+        remainingSecs--;
+      }
+
+      tickTimer();
+      timerInt = setInterval(tickTimer, 1000);
+    }
+
+    function restartTimer() {
+      setMode('timer', totalSecs / 60);
+    }
+
+    function updateButtons() {
+      document.getElementById('btnModeLive').classList.toggle('active', currentMode === 'live');
+      document.getElementById('btnMode10Min').classList.toggle('active', currentMode === 'timer' && totalSecs === 600);
+      document.getElementById('btnMode5Min').classList.toggle('active', currentMode === 'timer' && totalSecs === 300);
+    }
+
+    function triggerShowtime() {
+      clearInterval(timerInt);
+      document.getElementById('clockGrid').style.display = 'none';
+      document.getElementById('showBanner').style.display = 'block';
+      document.getElementById('progressBar').style.width = '0%';
+      document.getElementById('cardStatusTitle').textContent = '🎬 ¡FUNCIÓN INICIADA!';
+      launchConfetti();
+    }
+
+    function rotateTips() {
+      const el = document.getElementById('tipsText');
+      if (!el) return;
+      el.style.opacity = '0';
+      setTimeout(() => {
+        msgIdx = (msgIdx + 1) % MESSAGES.length;
+        el.innerHTML = MESSAGES[msgIdx];
+        el.style.opacity = '1';
+      }, 500);
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+      }
+    }
+
+    function toggleClean() {
+      document.body.classList.toggle('clean-screen');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'f' || e.key === 'F') toggleFullScreen();
+      if (e.key === 'c' || e.key === 'C') toggleClean();
+      if (e.key === '1') setMode('timer', 10);
+      if (e.key === '5') setMode('timer', 5);
+      if (e.key === 'l' || e.key === 'L') setMode('live');
+    });
+
+    function launchConfetti() {
+      const canvas = document.getElementById('confettiCanvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ['#e50914', '#ffb703', '#38bdf8', '#ffffff', '#fb8500'];
+
+      for (let i = 0; i < 180; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          size: Math.random() * 9 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: Math.random() * 4 - 2,
+          vy: Math.random() * 5 + 3,
+          rot: Math.random() * 360,
+          vrot: Math.random() * 10 - 5
+        });
+      }
+
+      let frames = 0;
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.vrot;
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rot * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+          ctx.restore();
+
+          if (p.y > canvas.height) {
+            p.y = -10;
+            p.x = Math.random() * canvas.width;
+          }
+        });
+
+        frames++;
+        if (frames < 500) requestAnimationFrame(animate);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      animate();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+[
+  {
+    "id": 19,
+    "name": "Envio masivo 13 8 2026",
+    "folderId": 1,
+    "uniqueSubscribers": 100,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 18,
+    "name": "Sorteo Expoturismo 2026",
+    "folderId": 1,
+    "uniqueSubscribers": 13,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 17,
+    "name": "Contactos que participan en las conversaciones",
+    "folderId": 16,
+    "uniqueSubscribers": 1,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 14,
+    "name": "identified_contacts",
+    "folderId": 13,
+    "uniqueSubscribers": 0,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 13,
+    "name": "Participantes Agro en Punta",
+    "folderId": 1,
+    "uniqueSubscribers": 212,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 12,
+    "name": "Cotizaron y dejaron mail en web",
+    "folderId": 1,
+    "uniqueSubscribers": 1452,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 11,
+    "name": "Agencias",
+    "folderId": 1,
+    "uniqueSubscribers": 188,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 10,
+    "name": "BROU",
+    "folderId": 1,
+    "uniqueSubscribers": 97,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 9,
+    "name": "Itaú",
+    "folderId": 1,
+    "uniqueSubscribers": 1170,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 8,
+    "name": "Santander",
+    "folderId": 1,
+    "uniqueSubscribers": 77,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 7,
+    "name": "OCA",
+    "folderId": 1,
+    "uniqueSubscribers": 4558,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 6,
+    "name": "Corredores de Seguro",
+    "folderId": 1,
+    "uniqueSubscribers": 103,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 5,
+    "name": "Convenios de Salud",
+    "folderId": 1,
+    "uniqueSubscribers": 23,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  },
+  {
+    "id": 4,
+    "name": "UA lista 001 - Masivo",
+    "folderId": 1,
+    "uniqueSubscribers": 51051,
+    "totalBlacklisted": 0,
+    "totalSubscribers": 0
+  }
+]

@@ -1,0 +1,888 @@
+{
+  "timestamp": "2026-08-26T16:11:36.180Z",
+  "total": 110,
+  "sentCount": 110,
+  "errorCount": 0,
+  "results": [
+    {
+      "email": "mtomasi@ua.com.uy",
+      "name": "Marianna Tomasi",
+      "code": "UA-004",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.80458148954@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "laura.caprio@semm.com.uy",
+      "name": "Laura Caprio",
+      "code": "UA-DF9F77B2",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.56931397750@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "laura.caprio@semm.com.uy",
+      "name": "Extra Vendedor",
+      "code": "UA-9CF6443E",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.14231702382@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "karina.macadar@semm.com.uy",
+      "name": "Karina Macadar",
+      "code": "UA-98B43977",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.22710199545@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "juan.borrelli@semm.com.uy",
+      "name": "Juan Jose Borreli",
+      "code": "UA-1615D3F1",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.34643272059@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ahoffmann@asesp.com.uy",
+      "name": "Angela Hoffman",
+      "code": "UA-DDC44D12",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.27834714847@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "sperroni@asesp.com.uy",
+      "name": "Sandra Perroni",
+      "code": "UA-D88A84A6",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.39680632822@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "servicioscomplementarios@hospitalevangelico.com",
+      "name": "Myriam Cardozo",
+      "code": "UA-FE5ED687",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.12453356022@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ca72787@casmu.com",
+      "name": "Nadia NuñEz",
+      "code": "UA-8F23F9C7",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.16914080340@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "mfirpo@summum.com.uy",
+      "name": "Mariana Firpo",
+      "code": "UA-0C8E2AA8",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.90134635187@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "elisa.costa@cosem.com.uy",
+      "name": "Elisa Costa",
+      "code": "UA-1A61CF1F",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.69917916133@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "vpica@itau.com.uy",
+      "name": "Virginia Pica",
+      "code": "UA-6C4127A7",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.62139331281@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "pablo.perez@itau.com.uy",
+      "name": "Pablo Perez",
+      "code": "UA-DF9DAD65",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.16225129964@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "jefecomercial@sapp.com.uy",
+      "name": "Fernanda Fontes",
+      "code": "UA-9D6A8016",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.36557917748@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "acamiou@ua.com.uy",
+      "name": "Ana Camiou",
+      "code": "UA-A73CA7A0",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.99532314814@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "abritos@ua.com.uy",
+      "name": "Ana Laura Britos",
+      "code": "UA-CC8EB366",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.38925638808@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ssagario@bigcheese.com.uy",
+      "name": "Silvana Sagario",
+      "code": "UA-001D7FF5",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.51692833895@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ceciliam@ua.com.uy",
+      "name": "Cecilia Mendez",
+      "code": "UA-05F95A3A",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.80783481135@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "jquintana@ua.com.uy",
+      "name": "Jimena Quintana",
+      "code": "UA-F2364BFD",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.40494405249@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "asilva@ua.com.uy",
+      "name": "Thoilme Silva",
+      "code": "UA-87DD1420",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.54562054923@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "speronagonzalez@gmail.com",
+      "name": "Sebastian Perona",
+      "code": "UA-CECA30E6",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.84299260620@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "vmendez@ua.com.uy",
+      "name": "Valentina Mendez",
+      "code": "UA-C2726D57",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261610.97171886959@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "emisiones@ua.com.uy",
+      "name": "Sofia Ramirez",
+      "code": "UA-1D94AFD0",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.63498205353@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "contable@ua.com.uy",
+      "name": "Yhonson Choca",
+      "code": "UA-CAE070ED",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.22091847911@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "pananikian@sunlive.com.uy",
+      "name": "Pablo Ananikian",
+      "code": "UA-23DC8C37",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.11603083086@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "alejandrom@ua.com.uy",
+      "name": "Alejandro Mendez",
+      "code": "UA-C898D8F9",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.22027304164@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "paulaa@ua.com.uy",
+      "name": "Paula Aramendia",
+      "code": "UA-C6704E59",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.73798644518@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "diego.correa@melitour.com.uy",
+      "name": "Diego Correa",
+      "code": "UA-25045D75",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.47645142077@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "veronica.sanchiz@pwc.com",
+      "name": "Veronica Sanchiz",
+      "code": "UA-1AACF6C2",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.90614318837@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ricardo@hausmannbroker.com",
+      "name": "Ricardo Hausman",
+      "code": "UA-B22FADDC",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.25623223191@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "reservas@sendasturismo.com",
+      "name": "Grisel Olivera",
+      "code": "UA-148857CD",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.84751295833@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "victoria@batistaviajes.com.uy",
+      "name": "Victoria Blanco",
+      "code": "UA-2D660500",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.51923057914@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ignacio@sinfronteras.com.uy",
+      "name": "Nacho",
+      "code": "UA-A20A3578",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.54788627716@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "spazos@delsurviajes.com.uy",
+      "name": "Susana Pasos",
+      "code": "UA-D5047B58",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.17529514079@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "amelegatti@delsurviajes.com.uy",
+      "name": "Andrea Melegati",
+      "code": "UA-20642072",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.78672396879@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "renovaciones.dlc@gmail.com",
+      "name": "Margaret Bittencourt",
+      "code": "UA-CE0A1B71",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.97612156101@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "tikinga@gmail.com",
+      "name": "Enzo Figueira",
+      "code": "UA-E1398250",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.63404195255@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "natalia.doglio@anda.com.uy",
+      "name": "Natalia Doglio",
+      "code": "UA-CF5493C0",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.30516148205@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "valirig@hotmail.com",
+      "name": "Valentina Irigaray",
+      "code": "UA-B387F788",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.71058227730@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ccabana@tuviaje.uy",
+      "name": "Cecilia",
+      "code": "UA-D4AB1964",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.27543066264@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "pablo@libertyuruguay.com.uy",
+      "name": "Pablo Rasocvich",
+      "code": "UA-D29D1CDD",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.54073210811@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ivanna@mercurioviajes.com.uy",
+      "name": "Ivanna",
+      "code": "UA-D2D0AE66",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.81728437604@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "tatiana@mercurioviajes.com.uy",
+      "name": "Tatiana",
+      "code": "UA-96126469",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.78655560636@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "vmendezaramendia@gmail.com",
+      "name": "Victoria Méndez Aramendía",
+      "code": "UA-BA5D8F1D",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.64689563489@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "flores.pereira15@gmail.com",
+      "name": "Florencia Flores",
+      "code": "UA-F104E515",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.19701200344@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "paraanacom@hotmail.com",
+      "name": "Anahir Aguilar",
+      "code": "UA-67244620",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.66460959065@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "elianakarinarossini@gmail.com",
+      "name": "Karina Rossini",
+      "code": "UA-0A597B97",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.17594482617@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "fmaglione@jpsantos.com.uy",
+      "name": "Fabrizio Maglione",
+      "code": "UA-6DD558DE",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.66963985602@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "lucia.amestoy@amestoyuruguay.com",
+      "name": "Lucia Amestoy",
+      "code": "UA-49D8E751",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.28543608706@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "gconti@coitviajes.com.uy",
+      "name": "Ana Gabriela Conti",
+      "code": "UA-786E6F9F",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.39695139614@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "clarabachino@gmail.com",
+      "name": "Clara Bachino",
+      "code": "UA-95205518",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.39325423589@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "nanuronchetti@gmail.com",
+      "name": "Laura Ronchetti",
+      "code": "UA-2D32F6A9",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.29836836563@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "facundoqsz@gmail.com",
+      "name": "valentin quiro saldaña",
+      "code": "UA-C5944342",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.96579990132@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "juanguaglianoni@gmail.com",
+      "name": "Juan Pablo Guaglianoni",
+      "code": "UA-53700A22",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.25992501727@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "facundoqsz@gmail.com",
+      "name": "Facundo Quiró Saldaña",
+      "code": "UA-8EE3F33C",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.69871246561@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "virodial72000@gmail.com",
+      "name": "Victoria Diano",
+      "code": "UA-8350D348",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.35079813313@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "deluccasantiago@gmail.com",
+      "name": "Santiago Deluca",
+      "code": "UA-6EFB79C7",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.86645990815@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "virginia@rumbosturismo.com",
+      "name": "Virginia Willebald",
+      "code": "UA-96126457",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.99561674650@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "pamela.zabala@universal-assistance.com",
+      "name": "Pamela Zabala",
+      "code": "UA-96126458",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.57321115561@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "fiorella.ancheta@cosem.com.uy",
+      "name": "Fiorella Ancheta",
+      "code": "UA-96126459",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.93333556948@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "flordesign.uy@gmail.com",
+      "name": "Florencia Cánepa",
+      "code": "UA-96126460",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.24826728323@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ekikam@hotmail.com",
+      "name": "Erika Martin",
+      "code": "UA-724E3E54",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.55773275651@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "jorgelina@mercurioviajes.com.uy",
+      "name": "Jorgelina arrigoni",
+      "code": "UA-F81908EB-J",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.74758306169@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "federico.alonso@activetravel.com.uy",
+      "name": "Federico Alonso",
+      "code": "UA-96126470",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.43871189936@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "jmossi@sunlive.com.uy",
+      "name": "Javier Mossi",
+      "code": "UA-96126473",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.11370865546@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "anipoli@jorgemartinez.com.uy",
+      "name": "Aldo Nipoli",
+      "code": "UA-96126489",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.29246212989@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "lronchetti@jorgemartinez.com.uy",
+      "name": "PABLO SCHIPILOV",
+      "code": "UA-96126492",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.39823893443@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "macarena.perez@dcomtravel.com",
+      "name": "Maca Perez",
+      "code": "UA-12B86D7F",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.17647926692@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "mcamiou@buemes.com.uy",
+      "name": "Maria Camiou",
+      "code": "UA-96126517",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.18234086837@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "cecilia@pintoviajar.com",
+      "name": "Cecilia Pinto",
+      "code": "UA-96126522",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.44211190321@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "jleone@coit.com.uy",
+      "name": "MARIANELA IBIÑETE",
+      "code": "UA-96126531",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.67143217289@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "fquinteros@jorgemartinez.com.uy",
+      "name": "Florencia Quinteros",
+      "code": "UA-98620424",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.14676764984@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "renaalmeida2810@gmail.com",
+      "name": "Renata Almeida Suárez",
+      "code": "UA-98620437",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.78446281733@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "grodriguez@jorgemartinez.com.uy",
+      "name": "Gerardo Rodriguez",
+      "code": "UA-98620454",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.37576786712@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ignacio.curti@dcomtravel.com",
+      "name": "IGNACIO CURTI",
+      "code": "UA-98620458",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.57287587199@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "mreyes@jorgemartinez.com.uy",
+      "name": "Monica Reyes",
+      "code": "UA-98620475",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.89609516638@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "carolinathomas@destinico.com",
+      "name": "Marcos Miraglia",
+      "code": "UA-98620492",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.55032634669@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "flopicostan@gmail.com",
+      "name": "Florencia Costanzo",
+      "code": "UA-98620493",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.34271215660@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "coitinoluciana@gmail.com",
+      "name": "Luciana Coitiño",
+      "code": "UA-98620494",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.67973860447@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "valentinaolivera@destinico.com",
+      "name": "Vale Olivera",
+      "code": "UA-98620495",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.15338247501@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "camilawalch@destinico.com",
+      "name": "Camila Walch",
+      "code": "UA-98620496",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.88617753765@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "anaclararrieta1@gmail.com",
+      "name": "Anaclara Arrieta",
+      "code": "UA-98620498",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.22190275124@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "victoriadesouzanu@gmail.com",
+      "name": "Victoria de Souza",
+      "code": "UA-98620499",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.77634280355@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "guadaplaceres4@gmail.com",
+      "name": "Guadalupe Placeres",
+      "code": "UA-98620501",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.46781385235@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "belengallo@destinico.com",
+      "name": "Belen gallo",
+      "code": "UA-98620503",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.85953151462@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "car.varela@hotmail.com",
+      "name": "Carla Varela",
+      "code": "UA-98620504",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.13733972175@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "amparo.schelotto@traveloz.com.uy",
+      "name": "Amparo Schelotto",
+      "code": "UA-98620505",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.93640428896@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ayelenaa18@gmail.com",
+      "name": "Ayelen Alvarez acland",
+      "code": "UA-98620510",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.51687441759@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "mariajmendez.91@gmail.com",
+      "name": "María José Méndez",
+      "code": "UA-98620531",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.73776932697@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "albe0629@gmail.com",
+      "name": "Fernando Otazu",
+      "code": "UA-98620532",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.54104997739@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "alfonso.souto@aldeasinfantiles.org.uy",
+      "name": "Joaquin Alfonso",
+      "code": "UA-98620534",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.23420221916@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "paulinamariamendez@gmail.com",
+      "name": "Paulina Mendez",
+      "code": "UA-98620529",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.38337765999@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "jorgecosta@tuviaje.uy",
+      "name": "Jorge Costa Tu viaje",
+      "code": "UA-98620540",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.82479770896@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "jleone@coitviajes.com.uy",
+      "name": "Juan Francisco Richelli",
+      "code": "UA-AFE37A09",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.43413880626@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ntorres@summum.com.uy",
+      "name": "NANCY TORRES",
+      "code": "UA-98620602",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.57945610972@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "vgugliotta@summum.com.uy",
+      "name": "vittoria gugliotta",
+      "code": "UA-98620603",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.43379436945@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "gpiastra@hotmail.com",
+      "name": "Gabriel Piastra",
+      "code": "UA-98620604",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.42081469694@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "abrazionis@jorgemartinez.com.uy",
+      "name": "Angel Brazionis",
+      "code": "UA-98620605",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.44889463583@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "vcardoso@jorgemartinez.com.uy",
+      "name": "Victoria Cardoso",
+      "code": "UA-98620606",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.10408418610@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "fnader@jorgemartinez.com.uy",
+      "name": "FERNANDO NADER",
+      "code": "UA-98620607",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.91071008490@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "lsanchez@jorgemartinez.com.uy",
+      "name": "Lorena Sanchez",
+      "code": "UA-98620609",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.91056843295@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "rcapote22@gmail.com",
+      "name": "Rodolfo Capote",
+      "code": "UA-98620611",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.51332199175@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "elizabeth.mendez@cresteo.com",
+      "name": "Elizabeth Méndez",
+      "code": "UA-98620613",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.75089683404@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "veroseque@gmail.com",
+      "name": "Verónica Sequeiros",
+      "code": "UA-5E3A75FC",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.99051593792@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "constanza.rubil@anda.com.uy",
+      "name": "Juan Pablo Escobar",
+      "code": "UA-3CB0003E",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.55415010044@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "natalia.delossantos@anda.com.uy",
+      "name": "Natalia de los Santos",
+      "code": "UA-4AF01B2F",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.34592745388@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "diego.massia@libertyuruguay.com.uy",
+      "name": "Diego Massia",
+      "code": "UA-98620617",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.48970679375@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "helenahallerm@gmail.com",
+      "name": "Helena Haller",
+      "code": "UA-98620500",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.95633684288@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "natalia.gurtet@gmail.com",
+      "name": "Natalia Gonzalez",
+      "code": "UA-159954F6",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.52867747936@smtp-relay.mailin.fr>\"}\n"
+    },
+    {
+      "email": "ibramohamad87@gmail.com",
+      "name": "Ibrahim Al Mohammad",
+      "code": "UA-529B6D22",
+      "statusCode": 201,
+      "success": true,
+      "response": "{\"messageId\":\"<202608261611.70566653817@smtp-relay.mailin.fr>\"}\n"
+    }
+  ]
+}

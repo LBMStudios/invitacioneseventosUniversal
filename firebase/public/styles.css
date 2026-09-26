@@ -48,14 +48,11 @@ button, input { font: inherit; }
   justify-content: space-between;
   gap: 20px;
 }
-.ua-brand { display: flex; align-items: center; gap: 16px; }
-.ua-brand__logo { height: 42px; width: auto; max-width: 260px; object-fit: contain; }
-.ua-brand__company { color: #ffffff; font-size: 15px; font-weight: 350; opacity: 0.9; white-space: nowrap; }
-.ua-brand__zurich { display: flex; align-items: center; margin-left: 2px; }
-.ua-brand__zurich svg { display: block; height: 32px; width: auto; }
+.ua-brand { display: flex; align-items: center; }
+.ua-brand__logo-full { height: 42px; width: auto; max-width: 380px; object-fit: contain; display: block; }
 
 .ua-header__right { display: flex; align-items: center; gap: 18px; }
-.ua-header__movie-logo { height: 30px; width: auto; object-fit: contain; }
+.ua-header__movie-logo { height: 36px; width: auto; max-width: 220px; object-fit: contain; }
 .header-cta,
 .hero-cta,
 .button {
@@ -73,17 +70,24 @@ button, input { font: inherit; }
   transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
 }
 .header-cta {
-  color: #fff;
-  border: 1px solid rgba(22, 201, 234, 0.6);
-  background: rgba(22, 201, 234, 0.1);
-  min-height: 38px;
-  padding: 0 18px;
-  font-size: 13px;
-  font-weight: 700;
+  color: #ffffff;
+  border: 2px solid #16c9ea;
+  background: linear-gradient(135deg, rgba(22, 201, 234, 0.25), rgba(11, 78, 162, 0.5));
+  min-height: 48px;
+  padding: 0 26px;
+  font-size: 15px;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 20px rgba(22, 201, 234, 0.35);
+  transition: all 0.2s ease;
 }
-.header-cta:hover,
-.hero-cta:hover,
-.button:hover { transform: translateY(-1px); }
+.header-cta:hover {
+  background: linear-gradient(135deg, #16c9ea, #0b4ea2);
+  border-color: #7be7ff;
+  color: #ffffff;
+  box-shadow: 0 6px 26px rgba(22, 201, 234, 0.55);
+  transform: translateY(-2px) scale(1.03);
+}
 
 .invite-shell {
   position: relative;
@@ -219,6 +223,60 @@ button, input { font: inherit; }
   border: 1px solid rgba(255,255,255,.78);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
+}
+
+.urgency-banner-card {
+  background: linear-gradient(135deg, rgba(7, 25, 56, 0.96) 0%, rgba(15, 33, 73, 0.98) 100%);
+  border: 1px solid rgba(239, 47, 131, 0.4);
+  border-left: 5px solid #ef2f83;
+  border-radius: var(--radius-xl);
+  padding: 18px 24px 18px 26px;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 30px rgba(239, 47, 131, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+.urgency-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  background: #ef2f83;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(239, 47, 131, 0.45);
+  text-transform: uppercase;
+}
+.urgency-banner-content {
+  color: #ffffff;
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+.urgency-banner-content strong {
+  display: block;
+  font-size: 1.08rem;
+  font-weight: 850;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+.urgency-highlight {
+  color: #38bdf8;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.urgency-banner-content p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.88rem;
 }
 .trailer-card { padding: 0; overflow: hidden; background: #052c62; }
 .trailer-card__header {
@@ -411,7 +469,7 @@ textarea::placeholder {
   .ua-brand__logo { width: 158px; }
   .ua-brand__divider,
   .ua-brand__company { display: none; }
-  .header-cta { padding: 0 15px; min-height: 44px; font-size: 13px; }
+  .header-cta { padding: 0 20px; min-height: 46px; font-size: 14px; font-weight: 850; }
   .invite-shell { padding-top: 24px; }
   .page-container { width: min(100% - 22px, 620px); }
   .hero-copy { max-width: none; padding-top: 160px; }
@@ -1282,11 +1340,11 @@ textarea::placeholder {
 }
 
 .title-acme {
-  background: linear-gradient(135deg, #0b4ea2 0%, #ef2f83 100%);
+  background: linear-gradient(135deg, #ff4da6 0%, #ef2f83 55%, #d80067 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 4px 12px rgba(239, 47, 131, 0.18));
+  filter: drop-shadow(0 4px 16px rgba(239, 47, 131, 0.6)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
 /* Sello Oficial de Asistencia al Viajero */
@@ -1921,12 +1979,15 @@ body {
 }
 
 .ticket-qr-img {
-  width: 128px;
-  height: 128px;
+  width: 135px;
+  height: 135px;
   border-radius: 12px;
   background: #ffffff;
   padding: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 .ticket-qr-label {
@@ -1952,12 +2013,15 @@ body {
 }
 
 .success-qr-img {
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 170px;
   border-radius: 16px;
   background: #ffffff;
   padding: 10px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 .success-qr-code {
@@ -2009,18 +2073,28 @@ html, body {
   overflow-x: hidden;
 }
 
+@media (max-width: 768px) {
+  .ua-brand__logo-full {
+    height: 30px;
+  }
+  .ua-header__movie-logo {
+    height: 26px;
+  }
+}
+
 @media (max-width: 480px) {
   .ua-header__inner {
     padding: 10px 14px;
     gap: 8px;
   }
 
-  .ua-brand__logo {
-    height: 18px;
+  .ua-brand__logo-full {
+    height: 24px;
   }
 
-  .ua-brand__company {
-    font-size: 10px;
+  .ua-header__movie-logo {
+    height: 20px;
+  }
   }
 
   .header-cta {
@@ -2464,7 +2538,196 @@ html, body {
 
 .ticket-card-option.active .tcard-radio-indicator::after {
   content: "✓";
-  color: #071938;
-  font-weight: 900;
+  color: #ffffff;
   font-size: 14px;
+  font-weight: 900;
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD TOTAL ULTRA-FLUIDA: CELULARES, TABLETS Y PC
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .hero-ticket-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .ticket-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 12px 18px !important;
+  }
+  .hero-title {
+    font-size: clamp(2.2rem, 7vw, 3rem) !important;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem !important;
+  }
+  .hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .hero-actions .button {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 48px;
+  }
+  .ticket-card {
+    padding: 22px 18px !important;
+  }
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .movie-trailer-box iframe {
+    height: 230px !important;
+  }
+  .event-details-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .ticket-choice-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .section-padding {
+    padding: 36px 16px !important;
+  }
+  .success-qr-box {
+    width: 100% !important;
+    padding: 16px !important;
+  }
+  .button {
+    padding: 14px 20px !important;
+    font-size: 0.95rem !important;
+  }
+  .header-actions {
+    gap: 8px !important;
+  }
+}
+
+/* ── ESTILOS DE CUPOS LIMITADOS & SALA LLENA ── */
+.notice--soldout {
+  background: linear-gradient(135deg, rgba(185, 28, 28, 0.95), rgba(127, 29, 29, 0.98)) !important;
+  border: 2px solid #ef4444 !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 40px rgba(239, 68, 68, 0.35) !important;
+}
+.notice__badge--soldout {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.5) !important;
+}
+.capacity-alert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  background: rgba(254, 240, 138, 0.15);
+  border: 1px solid #fde047;
+  color: #fde047;
+  box-shadow: 0 0 16px rgba(253, 224, 71, 0.2);
+}
+.capacity-alert-badge--danger {
+  background: rgba(254, 202, 202, 0.2);
+  border-color: #f87171;
+  color: #f87171;
+  box-shadow: 0 0 16px rgba(248, 113, 113, 0.3);
+}
+
+/* ── ESTILOS DE CAMPOS CON DATOS PRECARGADOS VS EJEMPLOS ── */
+.field-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.field-tag {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 99px;
+  letter-spacing: 0.4px;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.tag-precargado {
+  background: rgba(34, 197, 94, 0.2) !important;
+  border: 1px solid rgba(34, 197, 94, 0.45) !important;
+  color: #4ade80 !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.2) !important;
+}
+
+.tag-ejemplo {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Dato Precargado Real */
+.input-precargado {
+  background: rgba(56, 189, 248, 0.12) !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.15) !important;
+}
+
+/* Dato de Ejemplo / Vacío */
+.input-ejemplo {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  font-style: italic !important;
+}
+
+/* Placeholder ultra translúcido para ejemplos (fainter / más transparente) */
+.rsvp-form input::placeholder,
+.input-ejemplo::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+  opacity: 0.35 !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+.rsvp-form input:focus::placeholder {
+  color: rgba(255, 255, 255, 0.12) !important;
+  opacity: 0.2 !important;
+}
+
+/* Al hacer clic o enfocar cualquier input */
+.rsvp-form input {
+  cursor: text !important;
+  transition: all 0.25s ease !important;
+}
+
+.rsvp-form input:focus {
+  background: rgba(56, 189, 248, 0.18) !important;
+  border-color: #38bdf8 !important;
+  color: #ffffff !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.28), 0 0 16px rgba(56, 189, 248, 0.2) !important;
 }

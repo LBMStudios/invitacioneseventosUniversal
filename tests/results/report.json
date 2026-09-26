@@ -4,9 +4,7 @@
       "C:\\Program Files\\nodejs\\node.exe",
       "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\node_modules\\@playwright\\test\\cli.js",
       "test",
-      "--config=playwright.config.js",
-      "--project=chromium",
-      "specs/e2e.spec.js"
+      "--config=playwright.config.js"
     ],
     "configFile": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\playwright.config.js",
     "rootDir": "C:/Users/Lucas Rossi/Downloads/UAInvitacón/tests/specs",
@@ -20,7 +18,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "projects": [
@@ -29,7 +27,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "chromium",
         "name": "chromium",
@@ -45,7 +43,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "mobile-chrome",
         "name": "mobile-chrome",
@@ -84,6 +82,611 @@
   },
   "suites": [
     {
+      "title": "a11y.spec.js",
+      "file": "a11y.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "08 - Accesibilidad (axe-core)",
+          "file": "a11y.spec.js",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Sin violaciones criticas en la pagina principal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22033,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:40:27.440Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-abcce2fac7701fe531e9",
+              "file": "a11y.spec.js",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "Sin violaciones serias en el formulario RSVP",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10686,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:40:50.372Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-cc110dd1724bb40509f1",
+              "file": "a11y.spec.js",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "Todos los inputs tienen labels asociados",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7969,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:01.092Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-0e79e77d9a283cb9d40a",
+              "file": "a11y.spec.js",
+              "line": 48,
+              "column": 3
+            },
+            {
+              "title": "El formulario tiene atributo role o semantica correcta",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3418,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:09.142Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-a71b02129eb4e43f8185",
+              "file": "a11y.spec.js",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "Los botones tienen texto descriptivo (no vacios)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18205,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:12.594Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-4fc138f000394cc566d5",
+              "file": "a11y.spec.js",
+              "line": 76,
+              "column": 3
+            },
+            {
+              "title": "La pagina tiene un h1 unico",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6234,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:30.819Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-fc67e79b6976f7e4b032",
+              "file": "a11y.spec.js",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "Las imagenes tienen atributo alt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7052,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:37.071Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-e4a39b80a6696c6aae71",
+              "file": "a11y.spec.js",
+              "line": 96,
+              "column": 3
+            },
+            {
+              "title": "Reporte completo axe: contar todas las violaciones",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5699,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "    Violaciones axe:\n"
+                        },
+                        {
+                          "text": "      critical : 0\n"
+                        },
+                        {
+                          "text": "      serious  : 0\n"
+                        },
+                        {
+                          "text": "      moderate : 0\n"
+                        },
+                        {
+                          "text": "      minor    : 0\n"
+                        },
+                        {
+                          "text": "      Passes   : 41\n"
+                        },
+                        {
+                          "text": "      inappl.  : 46\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:44.138Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-5e61e6ddf65da1d427fa",
+              "file": "a11y.spec.js",
+              "line": 111,
+              "column": 3
+            },
+            {
+              "title": "Sin violaciones criticas en la pagina principal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 21772,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:40:27.484Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-ee8074846eb558cad7f7",
+              "file": "a11y.spec.js",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "Sin violaciones serias en el formulario RSVP",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 12838,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:40:50.108Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-cf0234b2dede9dce0dfb",
+              "file": "a11y.spec.js",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "Todos los inputs tienen labels asociados",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 9031,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:03.215Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-6c7c4faa5be1e31bd1e4",
+              "file": "a11y.spec.js",
+              "line": 48,
+              "column": 3
+            },
+            {
+              "title": "El formulario tiene atributo role o semantica correcta",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 8537,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:12.283Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-2579f9451e803d8665bf",
+              "file": "a11y.spec.js",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "Los botones tienen texto descriptivo (no vacios)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 10783,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:20.855Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-81eb0c896f46529fb807",
+              "file": "a11y.spec.js",
+              "line": 76,
+              "column": 3
+            },
+            {
+              "title": "La pagina tiene un h1 unico",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5969,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:31.906Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-da15c50dd7eabc122c80",
+              "file": "a11y.spec.js",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "Las imagenes tienen atributo alt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 6955,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:37.892Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-bb2813ef3485105d8dc7",
+              "file": "a11y.spec.js",
+              "line": 96,
+              "column": 3
+            },
+            {
+              "title": "Reporte completo axe: contar todas las violaciones",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5962,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "    Violaciones axe:\n"
+                        },
+                        {
+                          "text": "      critical : 0\n"
+                        },
+                        {
+                          "text": "      serious  : 0\n"
+                        },
+                        {
+                          "text": "      moderate : 0\n"
+                        },
+                        {
+                          "text": "      minor    : 0\n"
+                        },
+                        {
+                          "text": "      Passes   : 41\n"
+                        },
+                        {
+                          "text": "      inappl.  : 46\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:44.930Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2629bfe6b43df460208f-3863bdeed0809f737c22",
+              "file": "a11y.spec.js",
+              "line": 111,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "e2e.spec.js",
       "file": "e2e.spec.js",
       "column": 0,
@@ -109,15 +712,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5667,
+                      "duration": 21468,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:02:58.439Z",
+                      "startTime": "2026-08-10T15:40:27.468Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -143,15 +746,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3412,
+                      "duration": 8950,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:04.677Z",
+                      "startTime": "2026-08-10T15:40:49.822Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -177,15 +780,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3460,
+                      "duration": 6578,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:08.103Z",
+                      "startTime": "2026-08-10T15:40:58.860Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -211,15 +814,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1757,
+                      "duration": 3233,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:11.575Z",
+                      "startTime": "2026-08-10T15:41:05.625Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -228,6 +831,142 @@
                 }
               ],
               "id": "616cc0f313d283bb66d2-5787b08432286d2559f1",
+              "file": "e2e.spec.js",
+              "line": 65,
+              "column": 3
+            },
+            {
+              "title": "Carga con demo=1 y muestra el formulario",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 21280,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:40:27.506Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-2eb6362920dcd3a1451a",
+              "file": "e2e.spec.js",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "El spinner desaparece al cargar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 12938,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:40:49.820Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-2174e1ec2260e93acf14",
+              "file": "e2e.spec.js",
+              "line": 44,
+              "column": 3
+            },
+            {
+              "title": "No hay errores criticos de consola",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 6247,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:02.979Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-4e501e6c6ae78d243f5f",
+              "file": "e2e.spec.js",
+              "line": 53,
+              "column": 3
+            },
+            {
+              "title": "El titulo de la pagina es correcto",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5701,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:09.413Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-f5e7278b29dec7479187",
               "file": "e2e.spec.js",
               "line": 65,
               "column": 3
@@ -253,15 +992,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2863,
+                      "duration": 5465,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:13.344Z",
+                      "startTime": "2026-08-10T15:41:09.049Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -287,15 +1026,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2604,
+                      "duration": 14374,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:16.219Z",
+                      "startTime": "2026-08-10T15:41:14.552Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -321,15 +1060,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1908,
+                      "duration": 6903,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:18.836Z",
+                      "startTime": "2026-08-10T15:41:29.000Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -355,15 +1094,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2484,
+                      "duration": 4982,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:20.756Z",
+                      "startTime": "2026-08-10T15:41:36.031Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -389,15 +1128,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2994,
+                      "duration": 3918,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:23.267Z",
+                      "startTime": "2026-08-10T15:41:41.031Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -406,6 +1145,176 @@
                 }
               ],
               "id": "616cc0f313d283bb66d2-db59d8b1b3cf9887d01c",
+              "file": "e2e.spec.js",
+              "line": 104,
+              "column": 3
+            },
+            {
+              "title": "El contador regresivo muestra numeros",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 11335,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:15.135Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-b282c5190c69bf93ec84",
+              "file": "e2e.spec.js",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "El boton de confirmar es visible y esta habilitado",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 7977,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:26.566Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-d508944cd8127d015252",
+              "file": "e2e.spec.js",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "El boton de declinar es visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4585,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:34.658Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-a1d2e892f5b2b274a019",
+              "file": "e2e.spec.js",
+              "line": 95,
+              "column": 3
+            },
+            {
+              "title": "El iframe oculto de envio existe",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4728,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:39.262Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-407838c9aefd94855c81",
+              "file": "e2e.spec.js",
+              "line": 100,
+              "column": 3
+            },
+            {
+              "title": "Las opciones de ticket (solo / con acompanante) existen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5675,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:44.005Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-fbe0a6673705ea755d4c",
               "file": "e2e.spec.js",
               "line": 104,
               "column": 3
@@ -431,15 +1340,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 8316,
+                      "duration": 10667,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:26.276Z",
+                      "startTime": "2026-08-10T15:41:44.968Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -465,15 +1374,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5020,
+                      "duration": 7685,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:34.605Z",
+                      "startTime": "2026-08-10T15:41:55.651Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -499,15 +1408,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5268,
+                      "duration": 10418,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:39.639Z",
+                      "startTime": "2026-08-10T15:42:03.351Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -533,15 +1442,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5370,
+                      "duration": 6617,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:44.920Z",
+                      "startTime": "2026-08-10T15:42:13.798Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -550,6 +1459,142 @@
                 }
               ],
               "id": "616cc0f313d283bb66d2-d8e14ccb665e96abb255",
+              "file": "e2e.spec.js",
+              "line": 138,
+              "column": 3
+            },
+            {
+              "title": "Flujo completo: rellenar y confirmar solo",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 7094,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:49.695Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-9be12baaef228a23749a",
+              "file": "e2e.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "La pantalla de exito muestra el QR",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 10492,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:41:56.809Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-14d9b35e29588d0eeaf1",
+              "file": "e2e.spec.js",
+              "line": 122,
+              "column": 3
+            },
+            {
+              "title": "El boton de descarga de entrada aparece tras confirmar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 10486,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:42:07.356Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-1e01b0476c6afebd733f",
+              "file": "e2e.spec.js",
+              "line": 132,
+              "column": 3
+            },
+            {
+              "title": "El codigo QR es correcto (contiene UA-)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 6397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:42:17.899Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-70736a9adeabc5b880e2",
               "file": "e2e.spec.js",
               "line": 138,
               "column": 3
@@ -575,15 +1620,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 5345,
+                      "duration": 6004,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:50.305Z",
+                      "startTime": "2026-08-10T15:42:20.431Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -592,6 +1637,40 @@
                 }
               ],
               "id": "616cc0f313d283bb66d2-13672a97e8951f3654e3",
+              "file": "e2e.spec.js",
+              "line": 155,
+              "column": 3
+            },
+            {
+              "title": "Declinar: boton y pantalla de no asistencia",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 6275,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:42:24.315Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-f4d024a248175fbef908",
               "file": "e2e.spec.js",
               "line": 155,
               "column": 3
@@ -606,7 +1685,7 @@
           "specs": [
             {
               "title": "Seleccionar acompanante muestra el campo de nombre",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -617,20 +1696,123 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2761,
-                      "errors": [],
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 7056,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:191:54",
+                        "location": {
+                          "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                          "column": 54,
+                          "line": 191
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 189 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#optionPair'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 190 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#companionFieldsGroup'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveClass(\u001b[35m/hidden/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 191 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#formCompanionName'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 192 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m\n \u001b[90m 194 |\u001b[39m   test(\u001b[32m'Flujo completo con acompanante'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                            "column": 54,
+                            "line": 191
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n\n\n  189 |     await page.locator('#optionPair').click();\n  190 |     await expect(page.locator('#companionFieldsGroup')).not.toHaveClass(/hidden/);\n> 191 |     await expect(page.locator('#formCompanionName')).toBeVisible({ timeout: 3000 });\n      |                                                      ^\n  192 |   });\n  193 |\n  194 |   test('Flujo completo con acompanante', async ({ page }) => {\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:191:54"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:55.662Z",
+                      "startTime": "2026-08-10T15:42:26.449Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                        "column": 54,
+                        "line": 191
+                      }
+                    },
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7032,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:191:54",
+                        "location": {
+                          "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                          "column": 54,
+                          "line": 191
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 189 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#optionPair'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 190 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#companionFieldsGroup'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveClass(\u001b[35m/hidden/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 191 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#formCompanionName'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 192 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m\n \u001b[90m 194 |\u001b[39m   test(\u001b[32m'Flujo completo con acompanante'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                            "column": 54,
+                            "line": 191
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n\n\n  189 |     await page.locator('#optionPair').click();\n  190 |     await expect(page.locator('#companionFieldsGroup')).not.toHaveClass(/hidden/);\n> 191 |     await expect(page.locator('#formCompanionName')).toBeVisible({ timeout: 3000 });\n      |                                                      ^\n  192 |   });\n  193 |\n  194 |   test('Flujo completo con acompanante', async ({ page }) => {\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:191:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-08-10T15:42:36.844Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-chromium-retry1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-chromium-retry1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-chromium-retry1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                        "column": 54,
+                        "line": 191
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "616cc0f313d283bb66d2-cd4d2022e80b3292c9f6",
@@ -640,7 +1822,7 @@
             },
             {
               "title": "Flujo completo con acompanante",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -651,23 +1833,400 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4398,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 14947,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n\n    at fillAndConfirm (C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:31:14)\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:196:5",
+                        "location": {
+                          "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                          "column": 14,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 29 |\u001b[39m\n \u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#submitButton'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'#successState:not(.hidden)'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m }\n \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m \u001b[90m// ─────────────────────────────────────────────────────────\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                            "column": 14,
+                            "line": 31
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n\n\n  29 |\n  30 |   await page.locator('#submitButton').click();\n> 31 |   await page.waitForSelector('#successState:not(.hidden)', { timeout: 10000 });\n     |              ^\n  32 | }\n  33 |\n  34 | // ─────────────────────────────────────────────────────────\n    at fillAndConfirm (C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:31:14)\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:196:5"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:03:58.434Z",
+                      "startTime": "2026-08-10T15:42:46.896Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                        "column": 14,
+                        "line": 31
+                      }
+                    },
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16550,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n\n    at fillAndConfirm (C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:31:14)\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:196:5",
+                        "location": {
+                          "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                          "column": 14,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 29 |\u001b[39m\n \u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#submitButton'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'#successState:not(.hidden)'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m }\n \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m \u001b[90m// ─────────────────────────────────────────────────────────\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                            "column": 14,
+                            "line": 31
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n\n\n  29 |\n  30 |   await page.locator('#submitButton').click();\n> 31 |   await page.waitForSelector('#successState:not(.hidden)', { timeout: 10000 });\n     |              ^\n  32 | }\n  33 |\n  34 | // ─────────────────────────────────────────────────────────\n    at fillAndConfirm (C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:31:14)\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:196:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-08-10T15:43:04.709Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-chromium-retry1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-chromium-retry1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-chromium-retry1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                        "column": 14,
+                        "line": 31
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "616cc0f313d283bb66d2-342a99870025277775df",
+              "file": "e2e.spec.js",
+              "line": 194,
+              "column": 3
+            },
+            {
+              "title": "Seleccionar acompanante muestra el campo de nombre",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 6557,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:191:54",
+                        "location": {
+                          "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                          "column": 54,
+                          "line": 191
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 189 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#optionPair'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 190 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#companionFieldsGroup'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveClass(\u001b[35m/hidden/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 191 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#formCompanionName'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 192 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m\n \u001b[90m 194 |\u001b[39m   test(\u001b[32m'Flujo completo con acompanante'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                            "column": 54,
+                            "line": 191
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n\n\n  189 |     await page.locator('#optionPair').click();\n  190 |     await expect(page.locator('#companionFieldsGroup')).not.toHaveClass(/hidden/);\n> 191 |     await expect(page.locator('#formCompanionName')).toBeVisible({ timeout: 3000 });\n      |                                                      ^\n  192 |   });\n  193 |\n  194 |   test('Flujo completo con acompanante', async ({ page }) => {\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:191:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:42:30.616Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-mobile-chrome\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-mobile-chrome\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-mobile-chrome\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-mobile-chrome\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                        "column": 54,
+                        "line": 191
+                      }
+                    },
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 7362,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:191:54",
+                        "location": {
+                          "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                          "column": 54,
+                          "line": 191
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 189 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#optionPair'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 190 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#companionFieldsGroup'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveClass(\u001b[35m/hidden/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 191 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#formCompanionName'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m3000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 192 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m\n \u001b[90m 194 |\u001b[39m   test(\u001b[32m'Flujo completo con acompanante'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                            "column": 54,
+                            "line": 191
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#formCompanionName')\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for locator('#formCompanionName')\u001b[22m\n\n\n  189 |     await page.locator('#optionPair').click();\n  190 |     await expect(page.locator('#companionFieldsGroup')).not.toHaveClass(/hidden/);\n> 191 |     await expect(page.locator('#formCompanionName')).toBeVisible({ timeout: 3000 });\n      |                                                      ^\n  192 |   });\n  193 |\n  194 |   test('Flujo completo con acompanante', async ({ page }) => {\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:191:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-08-10T15:42:39.603Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-mobile-chrome-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-mobile-chrome-retry1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-mobile-chrome-retry1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompana-309fc--muestra-el-campo-de-nombre-mobile-chrome-retry1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                        "column": 54,
+                        "line": 191
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-daf0d893376a7f1cdfb6",
+              "file": "e2e.spec.js",
+              "line": 187,
+              "column": 3
+            },
+            {
+              "title": "Flujo completo con acompanante",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 16146,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n\n    at fillAndConfirm (C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:31:14)\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:196:5",
+                        "location": {
+                          "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                          "column": 14,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 29 |\u001b[39m\n \u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#submitButton'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'#successState:not(.hidden)'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m }\n \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m \u001b[90m// ─────────────────────────────────────────────────────────\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                            "column": 14,
+                            "line": 31
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n\n\n  29 |\n  30 |   await page.locator('#submitButton').click();\n> 31 |   await page.waitForSelector('#successState:not(.hidden)', { timeout: 10000 });\n     |              ^\n  32 | }\n  33 |\n  34 | // ─────────────────────────────────────────────────────────\n    at fillAndConfirm (C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:31:14)\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:196:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:42:49.618Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-mobile-chrome\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-mobile-chrome\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-mobile-chrome\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-mobile-chrome\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                        "column": 14,
+                        "line": 31
+                      }
+                    },
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 16695,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n\n    at fillAndConfirm (C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:31:14)\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:196:5",
+                        "location": {
+                          "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                          "column": 14,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 29 |\u001b[39m\n \u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#submitButton'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'#successState:not(.hidden)'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m }\n \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m \u001b[90m// ─────────────────────────────────────────────────────────\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                            "column": 14,
+                            "line": 31
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#successState:not(.hidden)') to be visible\u001b[22m\n\n\n  29 |\n  30 |   await page.locator('#submitButton').click();\n> 31 |   await page.waitForSelector('#successState:not(.hidden)', { timeout: 10000 });\n     |              ^\n  32 | }\n  33 |\n  34 | // ─────────────────────────────────────────────────────────\n    at fillAndConfirm (C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:31:14)\n    at C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js:196:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-08-10T15:43:08.374Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-mobile-chrome-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-mobile-chrome-retry1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-mobile-chrome-retry1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\test-results\\e2e-05---RSVP-Con-acompanante-Flujo-completo-con-acompanante-mobile-chrome-retry1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Lucas Rossi\\Downloads\\UAInvitacón\\tests\\specs\\e2e.spec.js",
+                        "column": 14,
+                        "line": 31
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-8275e040135ee79b45f9",
               "file": "e2e.spec.js",
               "line": 194,
               "column": 3
@@ -693,15 +2252,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 10,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2970,
+                      "duration": 4170,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:04:02.852Z",
+                      "startTime": "2026-08-10T15:43:23.797Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -710,6 +2269,40 @@
                 }
               ],
               "id": "616cc0f313d283bb66d2-9684c29b565fb9c77f5c",
+              "file": "e2e.spec.js",
+              "line": 207,
+              "column": 3
+            },
+            {
+              "title": "El modal de ubicacion existe en el DOM",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4799,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:43:27.636Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-f0dad9e719c6c9a6ff7b",
               "file": "e2e.spec.js",
               "line": 207,
               "column": 3
@@ -735,19 +2328,19 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 10,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2200,
+                      "duration": 2839,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "    DOMContentLoaded: 1811ms\n"
+                          "text": "    DOMContentLoaded: 2315ms\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:04:05.833Z",
+                      "startTime": "2026-08-10T15:43:28.280Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -773,19 +2366,19 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 10,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3245,
+                      "duration": 2356,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "    Formulario visible: 2836ms\n"
+                          "text": "    Formulario visible: 1566ms\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:04:08.043Z",
+                      "startTime": "2026-08-10T15:43:31.133Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -811,19 +2404,19 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 10,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5603,
+                      "duration": 5457,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "    Submit -> exito: 1228ms\n"
+                          "text": "    Submit -> exito: 1168ms\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-03T13:04:11.299Z",
+                      "startTime": "2026-08-10T15:43:33.503Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -835,6 +2428,120 @@
               "file": "e2e.spec.js",
               "line": 238,
               "column": 3
+            },
+            {
+              "title": "DOMContentLoaded en menos de 5 segundos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3055,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "    DOMContentLoaded: 1657ms\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:43:32.810Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-192e84818fdd55bf9fa6",
+              "file": "e2e.spec.js",
+              "line": 220,
+              "column": 3
+            },
+            {
+              "title": "El formulario aparece en menos de 10 segundos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2791,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "    Formulario visible: 1441ms\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:43:35.880Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-5fb7cbdbc38a1a80f3cf",
+              "file": "e2e.spec.js",
+              "line": 229,
+              "column": 3
+            },
+            {
+              "title": "El submit muestra exito en menos de 2 segundos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6752,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "    Submit -> exito: 1265ms\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-10T15:43:38.687Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "616cc0f313d283bb66d2-3451b39573a1aa62a3cc",
+              "file": "e2e.spec.js",
+              "line": 238,
+              "column": 3
             }
           ]
         }
@@ -843,11 +2550,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-03T13:02:57.837Z",
-    "duration": 80588.383,
-    "expected": 20,
+    "startTime": "2026-08-10T15:40:26.773Z",
+    "duration": 199389.644,
+    "expected": 52,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 4,
     "flaky": 0
   }
 }

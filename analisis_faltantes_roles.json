@@ -1,0 +1,1090 @@
+{
+  "directores_titulares": [
+    {
+      "name": "Javier Casuriaga",
+      "email": "gerencia@cycviajes.com.uy",
+      "agency": "C&C Viajes",
+      "phone": "",
+      "probableRole": "Director / Gerente / Titular"
+    },
+    {
+      "name": "Marcelo Peirano",
+      "email": "gerencia@creditravel.net",
+      "agency": "Creditravel",
+      "phone": "094419501",
+      "probableRole": "Director / Gerente / Titular"
+    },
+    {
+      "name": "Jorge Abella",
+      "email": "jorge.abella@hcviajes.com",
+      "agency": "HC Viajes",
+      "phone": "",
+      "probableRole": "Director / Gerente / Titular"
+    }
+  ],
+  "ventas_reservas": [
+    {
+      "name": "Analia",
+      "email": "ventasvipturismo@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Ventas / Reservas / Counter"
+    },
+    {
+      "name": "Maria José Pollero",
+      "email": "turismodelsur2015@hotmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Ventas / Reservas / Counter"
+    },
+    {
+      "name": "Martin Neyra",
+      "email": "mneyraviajesyturismo@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Ventas / Reservas / Counter"
+    },
+    {
+      "name": "Noelia Boucq",
+      "email": "ventas1.sommainternacional@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Ventas / Reservas / Counter"
+    },
+    {
+      "name": "Vivir Viajando",
+      "email": "turismovivirviajando@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Ventas / Reservas / Counter"
+    },
+    {
+      "name": "Lorena Tardagula",
+      "email": "ventas3@mactravel.com.uy",
+      "agency": "Mac Travel",
+      "phone": "098747522",
+      "probableRole": "Ventas / Reservas / Counter"
+    },
+    {
+      "name": "Ventaspando",
+      "email": "ventaspando@viajaconbea.com",
+      "agency": "Viaja con Bea",
+      "phone": "",
+      "probableRole": "Ventas / Reservas / Counter"
+    },
+    {
+      "name": "Lourdes Moran",
+      "email": "ventas@zafiroviajes.uy",
+      "agency": "Zafiro Viajes",
+      "phone": "099287778",
+      "probableRole": "Ventas / Reservas / Counter"
+    }
+  ],
+  "administracion_operaciones": [
+    {
+      "name": "Pablo Caballero",
+      "email": "info@donagustinviajes.com.uy",
+      "agency": "Don Agustín Viajes",
+      "phone": "091339099",
+      "probableRole": "Administración / Operaciones / Info"
+    },
+    {
+      "name": "Recepcion Grupo",
+      "email": "recepcion@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Administración / Operaciones / Info"
+    },
+    {
+      "name": "Gonzalo Muniz",
+      "email": "administracion@mactravel.com.uy",
+      "agency": "Mac Travel",
+      "phone": "091849755",
+      "probableRole": "Administración / Operaciones / Info"
+    },
+    {
+      "name": "Luz Guerrero",
+      "email": "operaciones@mactravel.com.uy",
+      "agency": "Mac Travel",
+      "phone": "",
+      "probableRole": "Administración / Operaciones / Info"
+    },
+    {
+      "name": "Nicolas Arocena",
+      "email": "contable@sinfronteras.com.uy",
+      "agency": "Sin Fronteras",
+      "phone": "",
+      "probableRole": "Administración / Operaciones / Info"
+    }
+  ],
+  "genericos_agencia": [
+    {
+      "name": "Dlviajes05",
+      "email": "dlviajes05@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Buzón General de Agencia"
+    },
+    {
+      "name": "Stella Faggiani",
+      "email": "horizonte.agenciadeviaje@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Buzón General de Agencia"
+    },
+    {
+      "name": "Horacio Nabadian",
+      "email": "viajes@newtravel.com.uy",
+      "agency": "New Travel",
+      "phone": "",
+      "probableRole": "Buzón General de Agencia"
+    }
+  ],
+  "personales_agencia": [
+    {
+      "name": "Enzo Giliberti",
+      "email": "enzo@321vola.com",
+      "agency": "321 Volá",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Aram Guergerian",
+      "email": "aram@acviajes.com.uy",
+      "agency": "AC Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "ALVARO VARZI",
+      "email": "alvaro.varzi@activetravel.com.uy",
+      "agency": "Active Travel",
+      "phone": "099547163",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Daniel Montes",
+      "email": "daniel.montes@activetravel.com.uy",
+      "agency": "Active Travel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "GUSTAVO PEREIRA",
+      "email": "gustavo.pereira@activetravel.com.uy",
+      "agency": "Active Travel",
+      "phone": "099665247",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Maximiliano Makovsky",
+      "email": "maximiliano.makovsky@activetravel.com.uy",
+      "agency": "Active Travel",
+      "phone": "094996060",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Nrumbos",
+      "email": "nrumbos@adinet.com.uy",
+      "agency": "Adinet",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Daniel Baruch",
+      "email": "dani@adventour.com.uy",
+      "agency": "Adventour",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Carlos Perez",
+      "email": "carlosperez@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "098123456",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Carolina Boucq",
+      "email": "carolina.sommainternacional@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Carolina Gomez",
+      "email": "receptivocolonia@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "093607066",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Fabiana Menendez",
+      "email": "fabiana.menendez.bqb@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Federico Antelo",
+      "email": "numantelo@hotmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gabriel Bonavita",
+      "email": "gabriel.bonavita.gb@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gonzalo Ferreira",
+      "email": "geotur.gonzalo@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gonzalo Smaldone",
+      "email": "gonzalosmaldone@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Nicolas Ruiz",
+      "email": "nicoruiz123@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "099123457",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Santiago Sosa",
+      "email": "geotur.santiago@gmail.com",
+      "agency": "Agencia de Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Sergio Dimitriadis",
+      "email": "",
+      "agency": "Agencia de Viajes",
+      "phone": "098317171",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Patricia García",
+      "email": "patricia.garcia@anda.com.uy",
+      "agency": "ANDA",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Mauro Lima",
+      "email": "mlima@andamosvolando.com",
+      "agency": "Andamos Volando",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Joel Gonzalez",
+      "email": "joel@azulviajes.com.uy",
+      "agency": "Azul Viajes",
+      "phone": "098298158",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Pablo Mendoza",
+      "email": "pablo@azulviajes.com.uy",
+      "agency": "Azul Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Alejandra Magnoni",
+      "email": "amagnoni@bntours.com",
+      "agency": "BN Tours",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Bernardo Nu",
+      "email": "bpnunez@bntours.com",
+      "agency": "BN Tours",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Mathias Gasañol",
+      "email": "mgasanol@bntours.com",
+      "agency": "BN Tours",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Natalie Fuentes",
+      "email": "natalie@bntours.com",
+      "agency": "BN Tours",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Noelia Fonsalia",
+      "email": "noela@bntours.com",
+      "agency": "BN Tours",
+      "phone": "095794232",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Estefani Costa",
+      "email": "estefani@campomar.com.uy",
+      "agency": "Campomar Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Luciano Milan",
+      "email": "luciano@campomar.com.uy",
+      "agency": "Campomar Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Pablo Romero",
+      "email": "pablo@campomar.com.uy",
+      "agency": "Campomar Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Mateo Fornaró",
+      "email": "mateo@carrascoviajes.com.uy",
+      "agency": "Carrasco Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Pablo Cammarota",
+      "email": "pablo@ciceroneuruguay.com",
+      "agency": "Cicerone Uruguay",
+      "phone": "091431672",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Lsabatel",
+      "email": "lsabatel@cisplatinauruguay.com",
+      "agency": "Cisplatina Turismo",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Maria Lorenzo",
+      "email": "maria@conexion-viajes.com",
+      "agency": "Conexión Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Natalia Ugolini",
+      "email": "natalia.ugolini@consolidtravel.com.uy",
+      "agency": "Consolid Travel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Andres Silvera",
+      "email": "asilvera@creditravel.net",
+      "agency": "Creditravel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Diego Garcia",
+      "email": "dgarcia@creditravel.com.uy",
+      "agency": "Creditravel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Diego Garcia",
+      "email": "dgarcia@creditravel.net",
+      "agency": "Creditravel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gabriela Teti",
+      "email": "gteti@creditravel.net",
+      "agency": "Creditravel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Mathias Antonacci",
+      "email": "mantonacci@creditravel.net",
+      "agency": "Creditravel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Ricardo Lawlor",
+      "email": "rlawlor@creditravel.net",
+      "agency": "Creditravel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Silvina Borges",
+      "email": "sborges@creditravel.net",
+      "agency": "Creditravel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "IGNACIO CURTI",
+      "email": "ignacio.curti@dcomtravel.com",
+      "agency": "DCOM Travel",
+      "phone": "098584025",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Fernanda Pereira",
+      "email": "fpereira@delsurviajes.com.uy",
+      "agency": "Del Sur Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Graciela Suaya",
+      "email": "gsuaya@delsurviajes.com.uy",
+      "agency": "Del Sur Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Andrea Laurente",
+      "email": "andrea@dsviajes.com.uy",
+      "agency": "DS Viajes",
+      "phone": "094412183",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Alejandro Leal",
+      "email": "alejandro.leal@e-travels.com.uy",
+      "agency": "E-Travels",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Mayra Peirano",
+      "email": "mayra.peirano@e-travels.com.uy",
+      "agency": "E-Travels",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Geraldina Curti",
+      "email": "geral@emegeviajes.com.uy",
+      "agency": "Emege Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Mara Hartwig",
+      "email": "mara@emegeviajes.com.uy",
+      "agency": "Emege Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Esteban Callorda",
+      "email": "esteban@estudiocallorda.com",
+      "agency": "Estudio Callorda",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Federico Cousillas",
+      "email": "fcousillas@experience.com.uy",
+      "agency": "Experience Travel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Enzo Cusati",
+      "email": "enzo.cusati@globaltours.com.uy",
+      "agency": "Global Tours",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Diego Palacios",
+      "email": "diego.palacios@guamatur.com",
+      "agency": "Guamatur",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Mirel Scotti",
+      "email": "mirel.scotti@hcviajes.com",
+      "agency": "HC Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Agustín Sosa",
+      "email": "asosa@hiperviajes.com.uy",
+      "agency": "HiperViajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Rodrigo Gimenez",
+      "email": "rgimenez@horizonttravel.com.uy",
+      "agency": "Horizont Travel",
+      "phone": "099673900",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Carolina White",
+      "email": "carolina@ibizaviajes.com",
+      "agency": "Ibiza Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Aeropuerto Grupo",
+      "email": "aeropuerto@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Andrea Montano",
+      "email": "amontano@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Andres Russi -Roth",
+      "email": "arussi@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "094469009",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Beatriz Garcia",
+      "email": "bgarcia@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Bruno Gonz?lez",
+      "email": "bgonzalez@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "091306910",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Carina Cobas",
+      "email": "ccobas@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Claudio Guzman",
+      "email": "cguzman@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Elias Farah",
+      "email": "efarah@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Fabricio Jourdan",
+      "email": "fjourdan@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Fernando Martinez",
+      "email": "fmartinez@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Fernando Nader",
+      "email": "fnader@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gabriel Dommarco",
+      "email": "gdommarco@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "099288087",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gerardo Rodriguez",
+      "email": "grodriguez@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "GONZALO BARBOZA",
+      "email": "gbarboza@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "098899708",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Guillermo Gomez",
+      "email": "ggomez@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Ignacio Farina",
+      "email": "ifarina@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Laura Ronchetti",
+      "email": "lronchetti@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Leticia Torres",
+      "email": "ltorres@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Monica Reyes",
+      "email": "mreyes@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Pablo Sanchez",
+      "email": "psanchez@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Veronique Muracciole",
+      "email": "vmuracciole@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "099651554",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Victoria Cardoso",
+      "email": "vcardoso@jorgemartinez.com.uy",
+      "agency": "Jorge Martínez",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gabriel Lopez",
+      "email": "glopez@jpsantos.com.uy",
+      "agency": "JP Santos",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gabriela Martin",
+      "email": "gmartin@jpsantos.com.uy",
+      "agency": "JP Santos",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Lourdes Miliscovich",
+      "email": "lmiliscovich@jpsantos.com.uy",
+      "agency": "JP Santos",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Mariela Zito",
+      "email": "mzito@jpsantos.com.uy",
+      "agency": "JP Santos",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gerardo Mello lopez",
+      "email": "damian@lamana.com.uy",
+      "agency": "La Mana Viajes",
+      "phone": "098377956",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Lautaro Bolatti",
+      "email": "lautaro@lamana.com.uy",
+      "agency": "La Mana Viajes",
+      "phone": "092816705",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Maximiliano Castillo",
+      "email": "maximiliano@lamana.com.uy",
+      "agency": "La Mana Viajes",
+      "phone": "098705596",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Valeria Sosa",
+      "email": "valeria@lamana.com.uy",
+      "agency": "La Mana Viajes",
+      "phone": "096114433",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Carolina Gonzalez",
+      "email": "carolina@libertyuruguay.com.uy",
+      "agency": "Liberty Uruguay",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Carolina Rizzo",
+      "email": "carolina.rizzo@libertyuruguay.com.uy",
+      "agency": "Liberty Uruguay",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Daniel Barzabal",
+      "email": "daniel@libertyuruguay.com.uy",
+      "agency": "Liberty Uruguay",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Diego Massia",
+      "email": "diego@libertyuruguay.com.uy",
+      "agency": "Liberty Uruguay",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Facundo Casella",
+      "email": "facundo@libertyuruguay.com.uy",
+      "agency": "Liberty Uruguay",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Marcelo Cazet",
+      "email": "marcelo@libertyuruguay.com.uy",
+      "agency": "Liberty Uruguay",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Soledad Gomez",
+      "email": "soledad@libertyuruguay.com.uy",
+      "agency": "Liberty Uruguay",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Lorenzo Ba?ales",
+      "email": "lorenzo@mactravel.com.uy",
+      "agency": "Mac Travel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Sergio Ba?ales",
+      "email": "sergio@mactravel.com.uy",
+      "agency": "Mac Travel",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Martin Diaz",
+      "email": "martin@martindiazturismo.com",
+      "agency": "Martín Díaz Turismo",
+      "phone": "099316864",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Federico Valverde",
+      "email": "fede@mevuelo.com",
+      "agency": "Me Vuelo",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Guillermo Talento",
+      "email": "guillermo.talento@mevuelo.com",
+      "agency": "Me Vuelo",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Ramiro Bilbao",
+      "email": "ramiro.bilbao@mevuelo.com",
+      "agency": "Me Vuelo",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Alejandra Palermo",
+      "email": "alejandra@melitour.com.uy",
+      "agency": "Melitour",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Magdalena Ferrari",
+      "email": "magdalena@melitour.com.uy",
+      "agency": "Melitour",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Silvia Quimpos",
+      "email": "silvia@melitour.com.uy",
+      "agency": "Melitour",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Agustin Briano",
+      "email": "agustin@novoturismo.com.uy",
+      "agency": "Novo Turismo",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Federico Rivas",
+      "email": "federico@novoturismo.com.uy",
+      "agency": "Novo Turismo",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Karen Novoturismo",
+      "email": "karen@novoturismo.com.uy",
+      "agency": "Novo Turismo",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Maximiliano Cardozo",
+      "email": "maximiliano@novoturismo.com.uy",
+      "agency": "Novo Turismo",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Lorena Ramos",
+      "email": "sanjose@orientalviajes.com.uy",
+      "agency": "Oriental Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Juliana Medero",
+      "email": "juliana@personaloperadora.com.uy",
+      "agency": "Personal Operadora",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Jussara Castro",
+      "email": "jussara@personaloperadora.com.uy",
+      "agency": "Personal Operadora",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Nicolas Vidal",
+      "email": "nicolas@personaloperadora.com.uy",
+      "agency": "Personal Operadora",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Veronica Castro",
+      "email": "veronica@personaloperadora.com.uy",
+      "agency": "Personal Operadora",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Ana Laura Hernandez",
+      "email": "ana@sinfronteras.com.uy",
+      "agency": "Sin Fronteras",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Fiorella Rammauro",
+      "email": "fiorella@sinfronteras.com.uy",
+      "agency": "Sin Fronteras",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Florencia Fegan",
+      "email": "florencia@sinfronteras.com.uy",
+      "agency": "Sin Fronteras",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Micaela Porley",
+      "email": "micaela@solutionviajes.uy",
+      "agency": "Solution Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Josefina Barofio",
+      "email": "josefina@syncroviajes.com",
+      "agency": "Syncro Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Bruno Cabrera",
+      "email": "bruno.cabrera@toctocviajes.com",
+      "agency": "TocToc Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Alberto Seijas",
+      "email": "aseijas@travellerviajes.com.uy",
+      "agency": "Traveller Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Felix Leon",
+      "email": "fleon@travellerviajes.com.uy",
+      "agency": "Traveller Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Joaquin Blanco",
+      "email": "jblanco@travellerviajes.com.uy",
+      "agency": "Traveller Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Tamara Candiota",
+      "email": "tcandiota@travellerviajes.com.uy",
+      "agency": "Traveller Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Matias Sosa",
+      "email": "matias.sosa@traveloz.com.uy",
+      "agency": "Traveloz",
+      "phone": "097665300",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Maria Noel Curbelo",
+      "email": "marianoel@turispayviqjes.com",
+      "agency": "Turispay Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Sabrina Coceres",
+      "email": "sabrina@turispayviajes.com",
+      "agency": "Turispay Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Giovanna Milesi",
+      "email": "giovanna@ventusviajes.com",
+      "agency": "Ventus Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Lorena Lopez",
+      "email": "lorena@ventusviajes.com",
+      "agency": "Ventus Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Nrumbos",
+      "email": "nrumbos@vera.com.uy",
+      "agency": "Vera",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Beatriz",
+      "email": "beatriz@viajaconbea.com",
+      "agency": "Viaja con Bea",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Alejandro Perciavalle",
+      "email": "alejandro.perciavalle@vyt.com.uy",
+      "agency": "VyT Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Gabriela Zimerman",
+      "email": "gabriela.zimerman@vyt.com.uy",
+      "agency": "VyT Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Laura Paiz",
+      "email": "laura.paiz@vyt.com.uy",
+      "agency": "VyT Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    },
+    {
+      "name": "Pablo De Azpitarte",
+      "email": "pablo.deazpitarte@vyt.com.uy",
+      "agency": "VyT Viajes",
+      "phone": "",
+      "probableRole": "Nombre Personal (Vendedor / Agente)"
+    }
+  ]
+}

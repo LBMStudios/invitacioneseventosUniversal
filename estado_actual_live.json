@@ -1,0 +1,103 @@
+{
+  "totalConfirmedPasses": 140,
+  "totalSeats": 300,
+  "maxCapacity": 300,
+  "freeSeats": 0,
+  "confirmedWithEmail": 109,
+  "confirmedWithoutEmail": 31,
+  "countAbrieronHoy": 48,
+  "pctAbrieronHoy": "44%",
+  "countAbrieronAclaracionSinHoy": 15,
+  "pendientesAclaracion": [
+    {
+      "name": "Elisa Costa",
+      "email": "elisa.costa@cosem.com.uy",
+      "agency": "COSEM",
+      "seats": 2
+    },
+    {
+      "name": "Virginia Pica",
+      "email": "vpica@itau.com.uy",
+      "agency": "ITAU",
+      "seats": 2
+    },
+    {
+      "name": "Diego Correa",
+      "email": "diego.correa@melitour.com.uy",
+      "agency": "MELITOUR",
+      "seats": 2
+    },
+    {
+      "name": "Susana Pasos",
+      "email": "SPazos@delsurviajes.com.uy",
+      "agency": "CIA DEL SUR",
+      "seats": 2
+    },
+    {
+      "name": "Florencia Flores",
+      "email": "flores.pereira15@gmail.com",
+      "agency": "MANUAL",
+      "seats": 2
+    },
+    {
+      "name": "Laura Ronchetti",
+      "email": "nanuronchetti@gmail.com",
+      "agency": "AGENCIA",
+      "seats": 3
+    },
+    {
+      "name": "Jorgelina arrigoni",
+      "email": "jorgelina@mercurioviajes.com.uy",
+      "agency": "AGENCIA",
+      "seats": 2
+    },
+    {
+      "name": "Federico Alonso",
+      "email": "federico.alonso@activetravel.com.uy",
+      "agency": "Active Travel",
+      "seats": 3
+    },
+    {
+      "name": "PABLO SCHIPILOV",
+      "email": "lronchetti@jorgemartinez.com.uy",
+      "agency": "AGENCIA",
+      "seats": 2
+    },
+    {
+      "name": "Cecilia Pinto",
+      "email": "cecilia@pintoviajar.com",
+      "agency": "MANUAL",
+      "seats": 2
+    },
+    {
+      "name": "IGNACIO CURTI",
+      "email": "ignacio.curti@dcomtravel.com",
+      "agency": "AGENCIA",
+      "seats": 2
+    },
+    {
+      "name": "Anaclara Arrieta",
+      "email": "anaclararrieta1@gmail.com",
+      "agency": "AGENCIA",
+      "seats": 2
+    },
+    {
+      "name": "Paulina Mendez",
+      "email": "paulinamariamendez@gmail.com",
+      "agency": "MANUAL",
+      "seats": 2
+    },
+    {
+      "name": "Victoria Cardoso",
+      "email": "vcardoso@jorgemartinez.com.uy",
+      "agency": "AGENCIA",
+      "seats": 2
+    },
+    {
+      "name": "Juan Pablo Escobar",
+      "email": "constanza.rubil@anda.com.uy",
+      "agency": "MANUAL",
+      "seats": 2
+    }
+  ]
+}

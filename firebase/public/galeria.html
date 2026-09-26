@@ -1,0 +1,1399 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071938">
+
+  <title>Galería de Fotos Oficial | Universal Assistance · Coyote vs. Acme</title>
+  <meta name="title" content="Galería de Fotos Oficial | Universal Assistance · Coyote vs. Acme">
+  <meta name="description" content="Reviví los mejores momentos de la Avant Premiere exclusiva de Coyote vs. Acme de Universal Assistance en Movie Montevideo Shopping.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ua-eventos-uy.web.app/galeria-fotos">
+  <meta property="og:title" content="Galería Oficial de Fotos · Universal Assistance Cine 2026">
+  <meta property="og:description" content="Reviví la función especial de Coyote vs. Acme. Mirá y descargá las fotos de la noche.">
+  <meta property="og:image" content="https://ua-eventos-uy.web.app/assets/galeria/hd/photo_001.jpg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/assets/logo-ua-white-icon.png">
+
+  <link rel="stylesheet" href="/styles.css">
+  <!-- Fancybox 5: Visualizador estándar de la industria (Zoom por doble tap, swipe suave y navegación) -->
+  <link rel="stylesheet" href="/assets/vendor/fancybox/fancybox.css">
+  <script src="/assets/vendor/fancybox/fancybox.umd.js"></script>
+  <style>
+    :root {
+      --bg-dark: #071938;
+      --bg-card: rgba(11, 33, 73, 0.75);
+      --cyan: #38bdf8;
+      --pink: #ee1f73;
+      --yellow: #f59e0b;
+      --text: #ffffff;
+      --text-sub: #cbd5e1;
+
+      /* Fancybox 5 Theme */
+      --fancybox-bg: rgba(2, 8, 23, 0.97);
+      --fancybox-color: #ffffff;
+      --fancybox-accent-color: #38bdf8;
+      --f-button-border-radius: 50%;
+      --f-button-bg: rgba(7, 25, 56, 0.85);
+      --f-button-hover-bg: #ee1f73;
+      --f-button-color: #ffffff;
+      --f-button-active-bg: #d91b65;
+    }
+
+    .fancybox__container {
+      --fancybox-backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Sin barra superior de herramientas */
+    .fancybox__toolbar {
+      display: none !important;
+    }
+
+    /* Botón flotante limpio de cerrar (✕) */
+    .fancybox__close-button,
+    .f-button.is-close-btn {
+      position: absolute !important;
+      top: 20px !important;
+      right: 20px !important;
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50% !important;
+      background: rgba(7, 25, 56, 0.88) !important;
+      border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+      color: #ffffff !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+      transition: all 0.2s ease !important;
+      z-index: 50 !important;
+    }
+    .fancybox__close-button:hover,
+    .f-button.is-close-btn:hover {
+      background: #ee1f73 !important;
+      border-color: #ee1f73 !important;
+      transform: scale(1.1) !important;
+      box-shadow: 0 0 20px rgba(238, 31, 115, 0.6) !important;
+    }
+
+    /* Flechas de navegación lateral */
+    .fancybox__nav .f-button {
+      background: rgba(7, 25, 56, 0.88);
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      color: #ffffff;
+      width: 52px;
+      height: 52px;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+    .fancybox__nav .f-button:hover {
+      background: #ee1f73;
+      border-color: #ee1f73;
+      transform: scale(1.1);
+      box-shadow: 0 0 22px rgba(238, 31, 115, 0.65);
+    }
+    .fancybox__nav .f-button.is-prev { left: 24px; }
+    .fancybox__nav .f-button.is-next { right: 24px; }
+    @media (max-width: 768px) {
+      .fancybox__nav .f-button { width: 44px; height: 44px; }
+      .fancybox__nav .f-button.is-prev { left: 12px; }
+      .fancybox__nav .f-button.is-next { right: 12px; }
+    }
+
+    /* Barra inferior limpia y discreta */
+    .fancybox__caption {
+      padding: 16px 20px !important;
+      background: linear-gradient(0deg, rgba(2, 8, 23, 0.96) 0%, rgba(2, 8, 23, 0.7) 65%, transparent 100%) !important;
+    }
+    .fb-clean-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 780px;
+      margin: 0 auto;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .fb-caption-counter {
+      color: #38bdf8;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 6px 15px;
+      border-radius: 999px;
+    }
+    .fb-caption-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .fb-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    }
+    .fb-pill-share {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    }
+    .fb-pill-share:hover {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+    .fb-pill-download {
+      background: linear-gradient(135deg, var(--pink) 0%, #d91b65 100%);
+    }
+    .fb-pill-download:hover {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(238, 31, 115, 0.6);
+    }
+    @media (max-width: 600px) {
+      .fb-clean-caption {
+        justify-content: center;
+      }
+      .fb-caption-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .fb-pill-btn {
+        justify-content: center;
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+    }
+    
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(238, 31, 115, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 40%);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    .gal-header {
+      background: rgba(7, 25, 56, 0.92);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .gal-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .gal-logo-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .gal-logo-divider {
+      height: 24px;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .gal-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 36px 20px 80px 20px;
+    }
+
+    .gal-hero-wrapper {
+      position: relative;
+      background: 
+        radial-gradient(circle at 90% 15%, rgba(238, 31, 115, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 10% 85%, rgba(56, 189, 248, 0.18) 0%, transparent 45%),
+        linear-gradient(135deg, rgba(11, 33, 73, 0.92) 0%, rgba(7, 25, 56, 0.98) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 28px;
+      padding: 44px 40px;
+      margin-bottom: 36px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      overflow: hidden;
+    }
+
+    .gal-hero-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--cyan) 30%, var(--pink) 70%, transparent 100%);
+    }
+
+    .gal-hero-content {
+      max-width: 680px;
+      z-index: 2;
+    }
+
+    .gal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(238, 31, 115, 0.12);
+      border: 1px solid rgba(238, 31, 115, 0.45);
+      color: #ff3b8d;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 16px rgba(238, 31, 115, 0.2);
+    }
+
+    .gal-title {
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: 900;
+      margin: 0 0 16px 0;
+      color: #ffffff;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .title-coyote {
+      background: linear-gradient(135deg, #38bdf8 0%, #00f2fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(56, 189, 248, 0.45));
+    }
+
+    .title-vs {
+      font-size: 0.55em;
+      font-weight: 800;
+      color: #f59e0b;
+      margin: 0 8px;
+      vertical-align: middle;
+      letter-spacing: 2px;
+      display: inline-block;
+    }
+
+    .title-acme {
+      background: linear-gradient(135deg, #ff3b8d 0%, #ee1f73 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(238, 31, 115, 0.45));
+    }
+
+    .gal-sub {
+      color: #cbd5e1;
+      font-size: 16px;
+      margin: 0;
+      line-height: 1.6;
+      max-width: 580px;
+    }
+
+    .gal-hero-poster-box {
+      flex-shrink: 0;
+      width: 180px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.2);
+      border: 2px solid rgba(56, 189, 248, 0.4);
+      transform: perspective(800px) rotateY(-8deg) rotateX(3deg);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .gal-hero-poster-box:hover {
+      transform: perspective(800px) rotateY(0deg) rotateX(0deg) scale(1.03);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9), 0 0 40px rgba(238, 31, 115, 0.35);
+    }
+
+    .gal-hero-poster-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .gal-filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .gal-filter-btn {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-sub);
+      padding: 11px 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .gal-filter-btn:hover {
+      background: rgba(56, 189, 248, 0.18);
+      color: #fff;
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .gal-filter-btn.active {
+      background: var(--cyan);
+      color: #071938;
+      border-color: var(--cyan);
+      font-weight: 800;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+    }
+
+    /* OPTIMIZACIONES MOBILE REACTIVE & ULTRA FAST */
+    html, body, button, .gal-card, .btn-cta, .view-btn {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+    }
+
+    /* TOOLBAR DE VISTAS SEGMENTED CONTROL (APPLE / PRO PHOTO STYLE) */
+    .gal-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      padding: 8px 18px;
+      background: rgba(11, 33, 73, 0.65);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: 999px;
+      backdrop-filter: blur(16px);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .gal-toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gal-toolbar-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    .gal-toolbar-badge {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--cyan);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .segmented-control {
+      display: inline-flex;
+      background: rgba(7, 25, 56, 0.85);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      gap: 3px;
+    }
+
+    .seg-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    .seg-btn svg {
+      opacity: 0.75;
+      transition: opacity 0.2s ease;
+    }
+
+    .seg-btn:active {
+      transform: scale(0.95);
+    }
+
+    .seg-btn:hover {
+      color: #ffffff;
+    }
+
+    .seg-btn:hover svg {
+      opacity: 1;
+    }
+
+    .seg-btn.active {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      font-weight: 800;
+      box-shadow: 0 2px 12px rgba(2, 132, 199, 0.5);
+    }
+
+    .seg-btn.active svg {
+      opacity: 1;
+    }
+
+    /* GRID DE FOTOS - MASONRY DINÁMICO QUE PRESERVA 100% EL ENCUADRE DE CADA FOTO (SIN RECORTES) */
+    .gal-grid {
+      margin-top: 10px;
+      transition: all 0.25s ease;
+    }
+
+    /* MODO 1: GRILLA NORMAL (MASONRY) */
+    .gal-grid.mode-grid {
+      display: block;
+      column-count: 4;
+      column-gap: 20px;
+    }
+
+    @media (max-width: 1300px) {
+      .gal-grid.mode-grid { column-count: 3; column-gap: 18px; }
+    }
+
+    @media (max-width: 860px) {
+      .gal-grid.mode-grid { column-count: 2; column-gap: 14px; }
+    }
+
+    @media (max-width: 480px) {
+      .gal-grid.mode-grid { column-count: 1; column-gap: 12px; }
+    }
+
+    /* MODO 2: FOTOS GRANDES */
+    .gal-grid.mode-large {
+      display: block;
+      column-count: 2;
+      column-gap: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .gal-grid.mode-large { column-count: 1; }
+    }
+
+    /* MODO 3: PANTALLA COMPLETA / FEED */
+    .gal-grid.mode-feed {
+      display: block;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* CARD CON SKELETON SHIMMER PLACEHOLDER PARA CARGA EN 0ms */
+    .gal-card {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 20px;
+      break-inside: avoid;
+      background: linear-gradient(90deg, #0b2149 0%, #13326b 50%, #0b2149 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite linear;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      will-change: transform;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .gal-card:active {
+      transform: scale(0.96) !important;
+    }
+
+    .gal-card:hover {
+      transform: translateY(-5px) scale(1.015);
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.35);
+      border-color: var(--cyan);
+    }
+
+    .gal-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s ease;
+      will-change: transform, opacity;
+    }
+
+    .gal-card img.loaded {
+      opacity: 1;
+    }
+
+    .gal-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .gal-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7, 25, 56, 0.92) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px 20px;
+    }
+
+    .gal-card:hover .gal-card-overlay {
+      opacity: 1;
+    }
+
+    /* BANNER DE DESCARGA EN PIE DE GALERÍA */
+    .coyote-banner {
+      margin-top: 50px;
+      background: linear-gradient(135deg, rgba(7, 25, 56, 0.95), rgba(11, 33, 73, 0.95));
+      border: 2px solid rgba(56, 189, 248, 0.35);
+      border-radius: 24px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+    }
+
+    .btn-cta {
+      background: linear-gradient(135deg, var(--pink) 0%, #d91b65 100%);
+      color: #fff;
+      border: none;
+      padding: 11px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(238, 31, 115, 0.4);
+      transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease;
+      will-change: transform;
+    }
+
+    .btn-cta:active {
+      transform: scale(0.95);
+    }
+
+    .btn-cta:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 24px rgba(238, 31, 115, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .gal-header { padding: 12px 16px; }
+      .gal-logo-img { height: 30px; }
+      .gal-hero-poster-box { width: 100px; border-radius: 12px; transform: none; box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
+      .gal-hero-wrapper { padding: 24px 18px; margin-bottom: 24px; flex-direction: row; gap: 16px; align-items: center; }
+      .gal-title { font-size: 26px; }
+      .gal-sub { font-size: 13px; line-height: 1.5; }
+      .gal-toolbar { padding: 6px 12px; }
+      .gal-grid.mode-grid { column-count: 2; column-gap: 12px; }
+      .gal-grid.mode-large { column-count: 1; }
+      .gal-card { border-radius: 14px; margin-bottom: 12px; }
+      .coyote-banner { flex-direction: column; text-align: center; padding: 20px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER OFICIAL CON LOGO UNIVERSAL ASSISTANCE + MOVIE -->
+  <header class="gal-header">
+    <div class="gal-logo-group">
+      <img src="/assets/logo-ua-zurich.svg" alt="Universal Assistance a company of Zurich" class="gal-logo-img" style="height: 38px;">
+      <div class="gal-logo-divider"></div>
+      <img src="/assets/logo-movie-white.svg" alt="Movie Montevideo Shopping" class="gal-logo-img" style="height: 28px;">
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <a id="btnDownloadAll" href="/assets/galeria/Album_Universal_Assistance_Coyote_vs_Acme_HD.zip" download="Album_Universal_Assistance_Coyote_vs_Acme_HD.zip" class="btn-cta" style="background: linear-gradient(135deg, #0284c7, #0369a1); font-size: 13px; padding: 10px 18px;">
+        📦 Descargar Todo el Álbum (ZIP HD)
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <div class="gal-container">
+    
+    <!-- HERO BRANDED OFICIAL -->
+    <div class="gal-hero-wrapper">
+      <div class="gal-hero-content">
+        <div class="gal-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>ÁLBUM OFICIAL DE FOTOS · CINE 2026</span>
+        </div>
+        <h1 class="gal-title">
+          <span style="font-size: 0.5em; display: block; letter-spacing: 2px; color: #94a3b8; font-weight: 800; margin-bottom: 6px;">AVANT PREMIERE EXCLUSIVA</span>
+          <span class="title-coyote">COYOTE</span> <span class="title-vs">VS</span> <span class="title-acme">ACME</span>
+        </h1>
+        <p class="gal-sub">Reviví los mejores momentos de la función corporativa exclusiva de Universal Assistance en Movie Montevideo Shopping.</p>
+      </div>
+      <div class="gal-hero-poster-box">
+        <img src="/assets/coyote-onesheet.jpg" alt="Póster Oficial Coyote vs. Acme">
+      </div>
+    </div>
+
+    <!-- TOOLBAR DE VISTAS (APPLE PRO STYLE) -->
+    <div class="gal-toolbar">
+      <div class="gal-toolbar-left">
+        <span class="gal-toolbar-title">Álbum de Fotos</span>
+        <span class="gal-toolbar-badge" id="photoCountBadge">53 Fotos HD</span>
+      </div>
+      <div class="segmented-control" role="tablist" aria-label="Modo de visualización">
+        <button id="btnModeGrid" class="seg-btn active" onclick="setViewMode('grid')" title="Vista en Grilla">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Grilla</span>
+        </button>
+        <button id="btnModeLarge" class="seg-btn" onclick="setViewMode('large')" title="Vista Fotos Grandes">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="8" rx="1"/><rect x="3" y="13" width="18" height="8" rx="1"/></svg>
+          <span>Grandes</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PHOTO GRID (MODOS DINÁMICOS: mode-grid / mode-large / mode-feed) -->
+    <div class="gal-grid mode-grid" id="gallery-grid">
+      <!-- Generado dinámicamente -->
+    </div>
+
+    <!-- BANNER DE DESCARGA EN PIE DE GALERÍA -->
+    <div class="coyote-banner">
+      <div style="font-size: 36px; background: rgba(238, 31, 115, 0.15); width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(238, 31, 115, 0.4); flex-shrink: 0;">
+        📸
+      </div>
+      <div style="flex: 1;">
+        <h3 style="margin: 0 0 6px 0; color: #fff; font-size: 20px; font-weight: 900;">¿Querés guardar tus fotos del evento?</h3>
+        <p style="margin: 0; color: var(--text-sub); font-size: 14px; line-height: 1.5;">Hacé clic en cualquiera de las imágenes para verla en pantalla completa, navegar entre fotos con las flechas o descargarlas en alta definición (HD).</p>
+      </div>
+      <a href="/assets/galeria/Album_Universal_Assistance_Coyote_vs_Acme_HD.zip" download="Album_Universal_Assistance_Coyote_vs_Acme_HD.zip" class="btn-cta" style="padding: 12px 24px; font-size: 14px; white-space: nowrap; text-decoration: none;">
+        📦 Descargar Todo el Álbum (ZIP HD)
+      </a>
+    </div>
+
+  </div>
+
+  <!-- VISOR DE FOTOS: Gestionado por Fancybox 5 (estándar de la industria) -->
+
+  <script>
+    // Colección de fotos oficiales del evento (53 fotos HD seleccionadas)
+    const GALLERY_ITEMS = [
+  {
+    "id": 1,
+    "filename": "GAR_5133.JPG",
+    "src": "/assets/galeria/hd/photo_002.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_002.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_002.webp",
+    "originalId": 2
+  },
+  {
+    "id": 2,
+    "filename": "GAR_5140 - 1.JPG",
+    "src": "/assets/galeria/hd/photo_005.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_005.webp",
+    "w": 2047,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_005.webp",
+    "originalId": 5
+  },
+  {
+    "id": 3,
+    "filename": "GAR_5140.JPG",
+    "src": "/assets/galeria/hd/photo_006.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_006.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_006.webp",
+    "originalId": 6
+  },
+  {
+    "id": 4,
+    "filename": "GAR_5143.JPG",
+    "src": "/assets/galeria/hd/photo_008.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_008.webp",
+    "w": 2048,
+    "h": 1362,
+    "web": "/assets/galeria/web/web_008.webp",
+    "originalId": 8
+  },
+  {
+    "id": 5,
+    "filename": "GAR_5148.JPG",
+    "src": "/assets/galeria/hd/photo_012.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_012.webp",
+    "w": 2048,
+    "h": 1362,
+    "web": "/assets/galeria/web/web_012.webp",
+    "originalId": 12
+  },
+  {
+    "id": 6,
+    "filename": "GAR_5157.JPG",
+    "src": "/assets/galeria/hd/photo_016.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_016.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_016.webp",
+    "originalId": 16
+  },
+  {
+    "id": 7,
+    "filename": "GAR_5163.JPG",
+    "src": "/assets/galeria/hd/photo_019.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_019.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_019.webp",
+    "originalId": 19
+  },
+  {
+    "id": 8,
+    "filename": "GAR_5164.JPG",
+    "src": "/assets/galeria/hd/photo_020.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_020.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_020.webp",
+    "originalId": 20
+  },
+  {
+    "id": 9,
+    "filename": "GAR_5166 - 1.JPG",
+    "src": "/assets/galeria/hd/photo_022.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_022.webp",
+    "w": 2047,
+    "h": 1361,
+    "web": "/assets/galeria/web/web_022.webp",
+    "originalId": 22
+  },
+  {
+    "id": 10,
+    "filename": "GAR_5172.JPG",
+    "src": "/assets/galeria/hd/photo_026.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_026.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_026.webp",
+    "originalId": 26
+  },
+  {
+    "id": 11,
+    "filename": "GAR_5178.JPG",
+    "src": "/assets/galeria/hd/photo_030.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_030.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_030.webp",
+    "originalId": 30
+  },
+  {
+    "id": 12,
+    "filename": "GAR_5183.JPG",
+    "src": "/assets/galeria/hd/photo_032.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_032.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_032.webp",
+    "originalId": 32
+  },
+  {
+    "id": 13,
+    "filename": "GAR_5185.JPG",
+    "src": "/assets/galeria/hd/photo_033.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_033.webp",
+    "w": 1354,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_033.webp",
+    "originalId": 33
+  },
+  {
+    "id": 14,
+    "filename": "GAR_5188.JPG",
+    "src": "/assets/galeria/hd/photo_034.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_034.webp",
+    "w": 1501,
+    "h": 2047,
+    "web": "/assets/galeria/web/web_034.webp",
+    "originalId": 34
+  },
+  {
+    "id": 15,
+    "filename": "GAR_5193.JPG",
+    "src": "/assets/galeria/hd/photo_038.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_038.webp",
+    "w": 1365,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_038.webp",
+    "originalId": 38
+  },
+  {
+    "id": 16,
+    "filename": "GAR_5198.JPG",
+    "src": "/assets/galeria/hd/photo_040.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_040.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_040.webp",
+    "originalId": 40
+  },
+  {
+    "id": 17,
+    "filename": "GAR_5202.JPG",
+    "src": "/assets/galeria/hd/photo_044.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_044.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_044.webp",
+    "originalId": 44
+  },
+  {
+    "id": 18,
+    "filename": "GAR_5204.JPG",
+    "src": "/assets/galeria/hd/photo_045.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_045.webp",
+    "w": 1360,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_045.webp",
+    "originalId": 45
+  },
+  {
+    "id": 19,
+    "filename": "GAR_5208.JPG",
+    "src": "/assets/galeria/hd/photo_047.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_047.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_047.webp",
+    "originalId": 47
+  },
+  {
+    "id": 20,
+    "filename": "GAR_5214 - 1.JPG",
+    "src": "/assets/galeria/hd/photo_052.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_052.webp",
+    "w": 2048,
+    "h": 1364,
+    "web": "/assets/galeria/web/web_052.webp",
+    "originalId": 52
+  },
+  {
+    "id": 21,
+    "filename": "GAR_5217.JPG",
+    "src": "/assets/galeria/hd/photo_053.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_053.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_053.webp",
+    "originalId": 53
+  },
+  {
+    "id": 22,
+    "filename": "GAR_5221.JPG",
+    "src": "/assets/galeria/hd/photo_056.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_056.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_056.webp",
+    "originalId": 56
+  },
+  {
+    "id": 23,
+    "filename": "GAR_5226.JPG",
+    "src": "/assets/galeria/hd/photo_060.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_060.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_060.webp",
+    "originalId": 60
+  },
+  {
+    "id": 24,
+    "filename": "GAR_5231.JPG",
+    "src": "/assets/galeria/hd/photo_062.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_062.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_062.webp",
+    "originalId": 62
+  },
+  {
+    "id": 25,
+    "filename": "GAR_5233.JPG",
+    "src": "/assets/galeria/hd/photo_064.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_064.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_064.webp",
+    "originalId": 64
+  },
+  {
+    "id": 26,
+    "filename": "GAR_5240 - 1.JPG",
+    "src": "/assets/galeria/hd/photo_066.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_066.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_066.webp",
+    "originalId": 66
+  },
+  {
+    "id": 27,
+    "filename": "GAR_5245.JPG",
+    "src": "/assets/galeria/hd/photo_069.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_069.webp",
+    "w": 2047,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_069.webp",
+    "originalId": 69
+  },
+  {
+    "id": 28,
+    "filename": "GAR_5249.JPG",
+    "src": "/assets/galeria/hd/photo_071.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_071.webp",
+    "w": 2047,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_071.webp",
+    "originalId": 71
+  },
+  {
+    "id": 29,
+    "filename": "GAR_5253.JPG",
+    "src": "/assets/galeria/hd/photo_073.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_073.webp",
+    "w": 2047,
+    "h": 1501,
+    "web": "/assets/galeria/web/web_073.webp",
+    "originalId": 73
+  },
+  {
+    "id": 30,
+    "filename": "GAR_5258.JPG",
+    "src": "/assets/galeria/hd/photo_076.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_076.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_076.webp",
+    "originalId": 76
+  },
+  {
+    "id": 31,
+    "filename": "GAR_5261.JPG",
+    "src": "/assets/galeria/hd/photo_078.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_078.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_078.webp",
+    "originalId": 78
+  },
+  {
+    "id": 32,
+    "filename": "GAR_5263.JPG",
+    "src": "/assets/galeria/hd/photo_079.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_079.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_079.webp",
+    "originalId": 79
+  },
+  {
+    "id": 33,
+    "filename": "GAR_5269.JPG",
+    "src": "/assets/galeria/hd/photo_083.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_083.webp",
+    "w": 2047,
+    "h": 1359,
+    "web": "/assets/galeria/web/web_083.webp",
+    "originalId": 83
+  },
+  {
+    "id": 34,
+    "filename": "GAR_5270.JPG",
+    "src": "/assets/galeria/hd/photo_085.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_085.webp",
+    "w": 2048,
+    "h": 1362,
+    "web": "/assets/galeria/web/web_085.webp",
+    "originalId": 85
+  },
+  {
+    "id": 35,
+    "filename": "GAR_5278.JPG",
+    "src": "/assets/galeria/hd/photo_089.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_089.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_089.webp",
+    "originalId": 89
+  },
+  {
+    "id": 36,
+    "filename": "GAR_5282.JPG",
+    "src": "/assets/galeria/hd/photo_091.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_091.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_091.webp",
+    "originalId": 91
+  },
+  {
+    "id": 37,
+    "filename": "GAR_5285.JPG",
+    "src": "/assets/galeria/hd/photo_092.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_092.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_092.webp",
+    "originalId": 92
+  },
+  {
+    "id": 38,
+    "filename": "GAR_5287.JPG",
+    "src": "/assets/galeria/hd/photo_094.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_094.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_094.webp",
+    "originalId": 94
+  },
+  {
+    "id": 39,
+    "filename": "GAR_5291.JPG",
+    "src": "/assets/galeria/hd/photo_096.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_096.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_096.webp",
+    "originalId": 96
+  },
+  {
+    "id": 40,
+    "filename": "GAR_5295.JPG",
+    "src": "/assets/galeria/hd/photo_097.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_097.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_097.webp",
+    "originalId": 97
+  },
+  {
+    "id": 41,
+    "filename": "GAR_5299.JPG",
+    "src": "/assets/galeria/hd/photo_100.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_100.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_100.webp",
+    "originalId": 100
+  },
+  {
+    "id": 42,
+    "filename": "GAR_5307.JPG",
+    "src": "/assets/galeria/hd/photo_105.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_105.webp",
+    "w": 1365,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_105.webp",
+    "originalId": 105
+  },
+  {
+    "id": 43,
+    "filename": "GAR_5312.JPG",
+    "src": "/assets/galeria/hd/photo_107.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_107.webp",
+    "w": 2047,
+    "h": 1366,
+    "web": "/assets/galeria/web/web_107.webp",
+    "originalId": 107
+  },
+  {
+    "id": 44,
+    "filename": "GAR_5314.JPG",
+    "src": "/assets/galeria/hd/photo_109.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_109.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_109.webp",
+    "originalId": 109
+  },
+  {
+    "id": 45,
+    "filename": "GAR_5320.JPG",
+    "src": "/assets/galeria/hd/photo_110.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_110.webp",
+    "w": 1489,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_110.webp",
+    "originalId": 110
+  },
+  {
+    "id": 46,
+    "filename": "GAR_5325.JPG",
+    "src": "/assets/galeria/hd/photo_112.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_112.webp",
+    "w": 2048,
+    "h": 1360,
+    "web": "/assets/galeria/web/web_112.webp",
+    "originalId": 112
+  },
+  {
+    "id": 47,
+    "filename": "GAR_5326.JPG",
+    "src": "/assets/galeria/hd/photo_113.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_113.webp",
+    "w": 1501,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_113.webp",
+    "originalId": 113
+  },
+  {
+    "id": 48,
+    "filename": "GAR_5329.JPG",
+    "src": "/assets/galeria/hd/photo_115.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_115.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_115.webp",
+    "originalId": 115
+  },
+  {
+    "id": 49,
+    "filename": "GAR_5344.JPG",
+    "src": "/assets/galeria/hd/photo_117.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_117.webp",
+    "w": 1365,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_117.webp",
+    "originalId": 117
+  },
+  {
+    "id": 50,
+    "filename": "GAR_5363.JPG",
+    "src": "/assets/galeria/hd/photo_122.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_122.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_122.webp",
+    "originalId": 122
+  },
+  {
+    "id": 51,
+    "filename": "GAR_5366.JPG",
+    "src": "/assets/galeria/hd/photo_124.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_124.webp",
+    "w": 2048,
+    "h": 1365,
+    "web": "/assets/galeria/web/web_124.webp",
+    "originalId": 124
+  },
+  {
+    "id": 52,
+    "filename": "GAR_5372.JPG",
+    "src": "/assets/galeria/hd/photo_127.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_127.webp",
+    "w": 2048,
+    "h": 1362,
+    "web": "/assets/galeria/web/web_127.webp",
+    "originalId": 127
+  },
+  {
+    "id": 53,
+    "filename": "GAR_5385.JPG",
+    "src": "/assets/galeria/hd/photo_129.jpg",
+    "thumb": "/assets/galeria/thumbs/thumb_129.webp",
+    "w": 1365,
+    "h": 2048,
+    "web": "/assets/galeria/web/web_129.webp",
+    "originalId": 129
+  }
+];
+
+    let currentIndex = 0;
+    let currentMode = 'grid';
+    const preloadedCache = new Set();
+
+    // Precarga inteligente en segundo plano (WebP de 1920px)
+    function preloadAdjacent(idx) {
+      if (!GALLERY_ITEMS.length) return;
+      const targets = [
+        (idx + 1) % GALLERY_ITEMS.length,
+        (idx + 2) % GALLERY_ITEMS.length,
+        (idx + 3) % GALLERY_ITEMS.length,
+        (idx + 4) % GALLERY_ITEMS.length,
+        (idx + 5) % GALLERY_ITEMS.length,
+        (idx - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length,
+        (idx - 2 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length
+      ];
+
+      targets.forEach(tIdx => {
+        const item = GALLERY_ITEMS[tIdx];
+        if (item) {
+          const targetSrc = item.web || item.src;
+          if (targetSrc && !preloadedCache.has(targetSrc)) {
+            const img = new Image();
+            img.decoding = 'async';
+            img.src = targetSrc;
+            preloadedCache.add(targetSrc);
+          }
+        }
+      });
+    }
+
+    function setViewMode(mode) {
+      currentMode = mode;
+      const grid = document.getElementById('gallery-grid');
+      grid.className = `gal-grid mode-${mode}`;
+
+      document.querySelectorAll('.seg-btn').forEach(b => {
+        if (b.id && b.id.startsWith('btnMode')) b.classList.remove('active');
+      });
+      if (mode === 'grid') document.getElementById('btnModeGrid').classList.add('active');
+      if (mode === 'large') document.getElementById('btnModeLarge').classList.add('active');
+      if (mode === 'feed') document.getElementById('btnModeFeed').classList.add('active');
+    }
+
+    function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      grid.innerHTML = '';
+
+      document.getElementById('photoCountBadge').innerText = `${GALLERY_ITEMS.length} Fotos HD`;
+
+      GALLERY_ITEMS.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'gal-card';
+        if (item.w && item.h) {
+          card.style.aspectRatio = `${item.w} / ${item.h}`;
+        }
+        card.onclick = () => openLightboxByIndex(idx);
+
+        const img = document.createElement('img');
+        img.src = item.thumb || item.src;
+        img.alt = `Foto ${item.id} - Avant Premiere Coyote vs. Acme`;
+        img.loading = idx < 8 ? 'eager' : 'lazy';
+        img.decoding = 'async';
+        if (idx < 2) img.fetchPriority = 'high';
+
+        img.onload = () => img.classList.add('loaded');
+        if (img.complete) img.classList.add('loaded');
+
+        const overlay = document.createElement('div');
+        overlay.className = 'gal-card-overlay';
+        overlay.innerHTML = `
+          <span style="color: #fff; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">
+            🔍 Ver en HD
+          </span>
+        `;
+
+        card.appendChild(img);
+        card.appendChild(overlay);
+        grid.appendChild(card);
+      });
+
+      // Precargar primeras imágenes HD en segundo plano tras pintar la grilla
+      setTimeout(() => preloadAdjacent(0), 150);
+    }
+
+    function openLightboxByIndex(index) {
+      if (index < 0 || index >= GALLERY_ITEMS.length) return;
+
+      Fancybox.show(
+        GALLERY_ITEMS.map((item) => {
+          const shareText = encodeURIComponent(`¡Mirá esta foto del Avant Premiere de Coyote vs. Acme con Universal Assistance! 🎬📸 ${window.location.origin}${item.src}`);
+          return {
+            src: item.web || item.src,
+            thumb: item.thumb || item.src,
+            caption: `
+              <div class="fb-clean-caption">
+                <span class="fb-caption-counter">Foto ${item.id} de ${GALLERY_ITEMS.length}</span>
+                <div class="fb-caption-actions">
+                  <a href="https://wa.me/?text=${shareText}" target="_blank" class="fb-pill-btn fb-pill-share">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.073-2.127-.521-1.625-.673-2.659-2.327-2.739-2.435-.08-.108-.646-.861-.646-1.642 0-.781.408-1.166.552-1.325.144-.159.314-.199.419-.199.105 0 .21.002.302.007.097.006.228-.037.357.272.132.321.45 1.101.49 1.182.04.081.066.176.013.283-.053.107-.079.176-.157.269-.078.093-.165.207-.235.279-.08.08-.163.167-.07.327.093.16.413.681.887 1.102.61.542 1.124.71 1.284.79.16.08.254.07.348-.04.093-.109.4-466.507-.626.107-.16.213-.134.359-.08.146.054.927.437 1.087.517.16.08.267.12.306.186.039.066.039.387-.105.792z"></path><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.526 3.662 1.442 5.178L2 22l4.982-1.396A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.05c-1.62 0-3.13-.483-4.398-1.314l-.315-.207-2.955.827.824-2.883-.227-.333A8.005 8.005 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8.05-8 8.05z"></path></svg>
+                    Compartir
+                  </a>
+                  <a href="${item.src}" download="Universal_Assistance_${item.id}.jpg" class="fb-pill-btn fb-pill-download">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Descargar HD
+                  </a>
+                </div>
+              </div>
+            `
+          };
+        }),
+        {
+          startIndex: index,
+          dragToClose: true,
+          hideScrollbar: true,
+          contentClick: false, // Clic o toque simple NUNCA hace zoom
+          contentDblClick: "iterateZoom", // ¡EL ZOOM ES EXCLUSIVAMENTE CON DOBLE TAP / DOBLE CLIC!
+          Toolbar: false, // Cero barras de herramientas superiores
+          Thumbs: false,
+          closeButton: "top", // Botón X en esquina superior derecha
+          Images: {
+            Panzoom: {
+              maxScale: 3,
+            },
+          },
+          l10n: {
+            NEXT: 'Siguiente',
+            PREV: 'Anterior',
+            CLOSE: 'Cerrar'
+          }
+        }
+      );
+    }
+
+    // Inicializar galería
+    document.addEventListener('DOMContentLoaded', renderGallery);
+  </script>
+
+</body>
+</html>

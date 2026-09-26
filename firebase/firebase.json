@@ -24,16 +24,36 @@
         ]
       },
       {
-        "source": "**/*.@(png|jpg|jpeg|webp|svg)",
+        "source": "**/*.@(png|jpg|jpeg|webp|svg|zip)",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=3600" }
+          { "key": "Cache-Control", "value": "public, max-age=86400" }
         ]
       }
     ],
     "rewrites": [
       {
+        "source": "/cuenta-regresiva",
+        "destination": "/countdown.html"
+      },
+      {
+        "source": "/countdown",
+        "destination": "/countdown.html"
+      },
+      {
+        "source": "/pantalla",
+        "destination": "/countdown.html"
+      },
+      {
         "source": "/coyote-vs-acme",
         "destination": "/index.html"
+      },
+      {
+        "source": "/galeria-fotos",
+        "destination": "/galeria.html"
+      },
+      {
+        "source": "/galeria",
+        "destination": "/galeria.html"
       },
       {
         "source": "/admin",

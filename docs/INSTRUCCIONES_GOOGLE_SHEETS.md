@@ -10,15 +10,21 @@ Creá un nuevo libro en **Google Sheets** (ej: `Invitaciones UA Cine 2026`) y as
 
 | Columna | Nombre exacto de la Columna | Descripción / Ejemplo |
 | :--- | :--- | :--- |
-| **A** | `Codigo` | Código único del invitado (ej: `UA-001`, `UA-002`). |
-| **B** | `Nombre` | Nombre y apellido del invitado (ej: `Lucas Beathyate`). |
+| **A** | `Código` | Código único del invitado (ej: `UA-001`, `UA-002`). |
+| **B** | `Nombre Completo` | Nombre y apellido del invitado (ej: `Lucas Beathayte`). |
 | **C** | `Email` | Correo electrónico del invitado. |
-| **D** | `Telefono` | Teléfono de contacto. |
+| **D** | `Teléfono` | Teléfono de contacto. |
 | **E** | `Estado` | Estado actual (`Pendiente`, `Confirmado`, `No asiste`). |
-| **F** | `TieneAcompanante` | Indica si asiste con acompañante (`SI` / `NO`). |
-| **G** | `NombreAcompanante` | Nombre y apellido del acompañante. |
-| **H** | `TotalAccesos` | Número total de lugares reservados (`1` o `2`). |
-| **I** | `FechaRespuesta` | Timestamp de cuando respondió el formulario. |
+| **F** | `Acompañante` | Indica si asiste con acompañante (`Sí` / `No`). |
+| **G** | `Nombre Acompañante` | Nombre y apellido del acompañante. |
+| **H** | `Total Lugares` | Número total de lugares reservados (`1`, `2` o `3`). |
+| **I** | `Fecha Respuesta` | Timestamp de cuando respondió el formulario. |
+| **J** | `Link Invitación` | URL pública personalizada (`https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-xxx`). |
+| **K** | `Estado Email` | Estado del envío de notificación por correo. |
+| **L** | `DEMO` | Indicador de prueba (`0` para reales, `1` para pruebas). |
+| **M** | `Canal` | Canal corporativo (`SALUD`, `CORREDOR DE SEGUROS`, `BANCO`, `AGENCIA`, `EMPRESA`, `FUNCIONARIO SURVIEW`). |
+| **N** | `Agencia / Convenio` | Institución o empresa asignada (ej: `SEMM`, `CASMU`, `SUMMUM`, `OCA`, `BBVA`, `PWC`, `TRAVELOZ`). |
+| **O** | `Referente UA` | Iniciales o nombre del referente comercial de Universal Assistance (ej: `AM/MT`, `AB`, `MT`, `FUNCIONARIO`). |
 
 ---
 
@@ -341,8 +347,10 @@ function generarReporteCine_Silent_() {
     .setBackground('#e2e8f0')
     .setHorizontalAlignment('center');
 
-  // Capacidad total de la sala (300 personas)
-  const maxCapacity = 300;
+  // Capacidad total de la sala (parametrizada en pestaña Configuracion o 300 personas por defecto)
+  const config = getConfig_();
+  const rawMax = config['Capacidad Máxima'] || config['Capacidad Sala'] || config['Capacidad'];
+  const maxCapacity = Number(rawMax) > 0 ? Number(rawMax) : 300;
   const freeSeats = maxCapacity - totalSeatsSum;
 
   // Cajas resumen con Alerta cuando quedan menos de 60 asientos disponibles

@@ -1,17 +1,19 @@
 // ═══════════════════════════════════════════════════════════════════════
 // ACREDITACIÓN Y CONTROL DE INGRESO · UNIVERSAL ASSISTANCE CINE 2026
+// VERSIÓN ANDROID & IOS ULTRA-COMPATIBLE
 // ═══════════════════════════════════════════════════════════════════════
 
 const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpqrQuIRJC1YZBWX9kQPaO8m8zBZ7PsPJTA_Ot9sbFBeHIPqrba/exec';
 
 let html5QrCodeInstance = null;
+let isScannerRunning = false;
 let availableCameras = [];
 let currentCameraIndex = 0;
 let isTorchOn = false;
 let allConfirmedGuests = [];
 let guestMapByCode = new Map();
 let currentSelectedGuest = null;
-let currentFilterTab = 'confirmed'; // Por defecto muestra solo los confirmados
+let currentFilterTab = 'confirmed'; // Por defecto muestra confirmados
 let filterTimeout = null;
 
 const $ = selector => document.querySelector(selector);
@@ -20,24 +22,41 @@ const $$ = selector => document.querySelectorAll(selector);
 document.addEventListener('DOMContentLoaded', initCheckin);
 
 function initCheckin() {
-  initQrScanner();
   bindEvents();
   loadDoorList();
 
-  // Sincronización automática de puerta cada 10 segundos
-  setInterval(loadDoorList, 10000);
+  // Intentar iniciar escáner con retardo para permitir que el DOM renderice
+  setTimeout(() => {
+    startQrScanner();
+  }, 300);
+
+  // Sincronización multi-dispositivo en tiempo real cada 3.5 segundos
+  setInterval(loadDoorList, 3500);
 }
 
 function bindEvents() {
-  $('#btnSearch').addEventListener('click', handleSearch);
-  $('#searchInput').addEventListener('input', handleLiveFilterDebounced);
-  $('#searchInput').addEventListener('keyup', e => {
-    if (e.key === 'Enter') handleSearch();
-  });
+  const btnSearch = $('#btnSearch');
+  if (btnSearch) btnSearch.addEventListener('click', handleSearch);
 
-  $('#btnConfirmIngress').addEventListener('click', confirmIngress);
-  if ($('#btnUndoIngress')) $('#btnUndoIngress').addEventListener('click', undoIngress);
-  if ($('#btnToggleFlash')) $('#btnToggleFlash').addEventListener('click', toggleFlash);
+  const searchInput = $('#searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', handleLiveFilterDebounced);
+    searchInput.addEventListener('keyup', e => {
+      if (e.key === 'Enter') handleSearch();
+    });
+  }
+
+  const btnConfirmIngress = $('#btnConfirmIngress');
+  if (btnConfirmIngress) btnConfirmIngress.addEventListener('click', confirmIngress);
+
+  const btnUndoIngress = $('#btnUndoIngress');
+  if (btnUndoIngress) btnUndoIngress.addEventListener('click', undoIngress);
+
+  const btnToggleFlash = $('#btnToggleFlash');
+  if (btnToggleFlash) btnToggleFlash.addEventListener('click', toggleFlash);
+
+  const btnStartCamManual = $('#btnStartCamManual');
+  if (btnStartCamManual) btnStartCamManual.addEventListener('click', () => startQrScanner(true));
 
   // Modal VIP y Exportar CSV
   if ($('#btnOpenVipModal')) $('#btnOpenVipModal').addEventListener('click', openVipModal);
@@ -64,8 +83,16 @@ function isConfirmedStatus_(status) {
   return s === 'confirmado' || s.includes('vip') || s === 'sí' || s === 'si';
 }
 
+const DEMO_TEST_GUESTS = [
+  { code: 'UA-DEMO-001', name: 'Lucas Beathayte (Demo VIP)', status: 'Confirmado', seats: 2, companionName: 'Acompañante VIP', checkedIn: false },
+  { code: 'UA-TEST-MUESTRA', name: 'Lucas Beathayte (Pase Muestra)', status: 'Confirmado', seats: 2, companionName: 'Acompañante VIP', checkedIn: false }
+];
+
 function rebuildGuestMap() {
   guestMapByCode.clear();
+  DEMO_TEST_GUESTS.forEach(g => {
+    guestMapByCode.set(g.code.toLowerCase(), g);
+  });
   allConfirmedGuests.forEach(g => {
     if (g.code) guestMapByCode.set(g.code.toLowerCase().trim(), g);
   });
@@ -73,11 +100,12 @@ function rebuildGuestMap() {
 
 function handleLiveFilterDebounced() {
   clearTimeout(filterTimeout);
-  filterTimeout = setTimeout(applyCurrentFilters, 150);
+  filterTimeout = setTimeout(applyCurrentFilters, 100);
 }
 
 function applyCurrentFilters() {
-  const query = $('#searchInput').value.trim().toLowerCase();
+  const searchInput = $('#searchInput');
+  const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
   
   let list = allConfirmedGuests;
 
@@ -93,33 +121,129 @@ function applyCurrentFilters() {
 
   if (query) {
     list = list.filter(g =>
-      g.name.toLowerCase().includes(query) ||
-      g.code.toLowerCase().includes(query) ||
-      (g.companionName && g.companionName.toLowerCase().includes(query))
+      (g.name || '').toLowerCase().includes(query) ||
+      (g.code || '').toLowerCase().includes(query) ||
+      (g.companionName && g.companionName.toLowerCase().includes(query)) ||
+      (g.agency && g.agency.toLowerCase().includes(query))
     );
   }
 
   renderGuestList(list);
 }
 
-async function initQrScanner() {
-  if (typeof Html5Qrcode === 'undefined') return;
+// ═══════════════════════════════════════════════════════════════════════
+// ESCÁNER DE CÁMARA QR ULTRA-COMPATIBLE CON ANDROID Y IPHONE
+// ═══════════════════════════════════════════════════════════════════════
+
+async function startQrScanner(userInitiated = false) {
+  const container = document.getElementById('qr-reader');
+  const camFallback = document.getElementById('camFallbackBox');
+  if (!container || typeof Html5Qrcode === 'undefined') {
+    if (camFallback) camFallback.classList.remove('hidden');
+    return;
+  }
 
   try {
-    const cameras = await Html5Qrcode.getCameras();
-    if (cameras && cameras.length > 0) {
+    if (html5QrCodeInstance && isScannerRunning) {
+      await html5QrCodeInstance.stop();
+      isScannerRunning = false;
+    }
+  } catch (_) {}
+
+  html5QrCodeInstance = new Html5Qrcode("qr-reader");
+
+  const qrBoxSize = Math.min(window.innerWidth * 0.7, 240);
+
+  const qrConfig = {
+    fps: 15,
+    qrbox: { width: qrBoxSize, height: qrBoxSize },
+    aspectRatio: 1.0
+  };
+
+  // 1. Intentar cámara trasera en modo environment directo
+  html5QrCodeInstance.start(
+    { facingMode: "environment" },
+    qrConfig,
+    onQrCodeSuccess,
+    onQrCodeError
+  ).then(() => {
+    isScannerRunning = true;
+    if (camFallback) camFallback.classList.add('hidden');
+    checkFlashSupport();
+    initCameraList();
+  }).catch(err => {
+    console.warn("Fallo arranque modo environment, intentando lista de dispositivos:", err);
+    
+    // 2. Intentar buscar por ID de cámaras disponibles
+    Html5Qrcode.getCameras().then(cameras => {
+      if (cameras && cameras.length > 0) {
+        availableCameras = cameras;
+        const toggleBtn = $('#btnToggleCamera');
+        if (toggleBtn && availableCameras.length > 1) {
+          toggleBtn.classList.remove('hidden');
+          toggleBtn.onclick = switchCamera;
+        }
+
+        let backIndex = cameras.findIndex(c => {
+          const lbl = (c.label || '').toLowerCase();
+          return lbl.includes('back') || lbl.includes('rear') || lbl.includes('trasera') || lbl.includes('environment');
+        });
+        if (backIndex === -1 && cameras.length > 1) backIndex = cameras.length - 1;
+        currentCameraIndex = backIndex !== -1 ? backIndex : 0;
+
+        return html5QrCodeInstance.start(
+          cameras[currentCameraIndex].id,
+          qrConfig,
+          onQrCodeSuccess,
+          onQrCodeError
+        ).then(() => {
+          isScannerRunning = true;
+          if (camFallback) camFallback.classList.add('hidden');
+          checkFlashSupport();
+        });
+      } else {
+        throw new Error('No se encontraron cámaras');
+      }
+    }).catch(errFinal => {
+      console.warn("Cámara no disponible o bloqueada por permisos:", errFinal);
+      if (camFallback) camFallback.classList.remove('hidden');
+    });
+  });
+}
+
+function initCameraList() {
+  Html5Qrcode.getCameras().then(cameras => {
+    if (cameras && cameras.length > 1) {
       availableCameras = cameras;
       const toggleBtn = $('#btnToggleCamera');
-      if (toggleBtn && availableCameras.length > 1) {
+      if (toggleBtn) {
         toggleBtn.classList.remove('hidden');
         toggleBtn.onclick = switchCamera;
       }
-      startCameraWithId(availableCameras[0].id);
-    } else {
-      startCameraFacingEnvironment();
     }
-  } catch (_) {
-    startCameraFacingEnvironment();
+  }).catch(() => {});
+}
+
+async function switchCamera() {
+  if (!availableCameras || availableCameras.length <= 1 || !html5QrCodeInstance) return;
+  currentCameraIndex = (currentCameraIndex + 1) % availableCameras.length;
+  
+  try {
+    if (isScannerRunning) {
+      await html5QrCodeInstance.stop();
+      isScannerRunning = false;
+    }
+    const qrBoxSize = Math.min(window.innerWidth * 0.7, 240);
+    await html5QrCodeInstance.start(
+      availableCameras[currentCameraIndex].id,
+      { fps: 15, qrbox: { width: qrBoxSize, height: qrBoxSize } },
+      onQrCodeSuccess,
+      onQrCodeError
+    );
+    isScannerRunning = true;
+    checkFlashSupport();
+  } catch (err) {
+    console.warn("Error al cambiar de cámara:", err);
   }
 }
 
@@ -128,12 +252,10 @@ function checkFlashSupport() {
   if (!flashBtn || !html5QrCodeInstance) return;
 
   try {
-    // Verificar si las capacidades del track de video admiten linterna (torch)
     const capabilities = html5QrCodeInstance.getRunningTrackCapabilities?.();
     if (capabilities && capabilities.torch) {
       flashBtn.classList.remove('hidden');
     } else {
-      // Mostrar por defecto en móviles
       if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
         flashBtn.classList.remove('hidden');
       }
@@ -146,7 +268,7 @@ function checkFlashSupport() {
 }
 
 async function toggleFlash() {
-  if (!html5QrCodeInstance) return;
+  if (!html5QrCodeInstance || !isScannerRunning) return;
   isTorchOn = !isTorchOn;
 
   try {
@@ -165,88 +287,66 @@ async function toggleFlash() {
   }
 }
 
-function startCameraFacingEnvironment() {
-  if (html5QrCodeInstance) {
-    try { html5QrCodeInstance.stop(); } catch (_) {}
+function extractCodeFromInput(raw) {
+  const text = String(raw || '').trim();
+  if (!text) return '';
+
+  if (text.includes('demo=1') || text.toLowerCase() === 'demo') {
+    return 'UA-DEMO-001';
   }
-  html5QrCodeInstance = new Html5Qrcode("qr-reader");
-  const config = { fps: 15, qrbox: { width: 220, height: 220 } };
-
-  html5QrCodeInstance.start(
-    { facingMode: "environment" },
-    config,
-    onQrCodeSuccess,
-    onQrCodeError
-  ).then(() => {
-    checkFlashSupport();
-  }).catch(err => {
-    console.warn("Cámara no disponible o denegada:", err);
-    $('#qr-reader').innerHTML = '<div style="padding:24px;text-align:center;color:#94a3b8;font-size:12px;">📷 Cámara inactiva o denegada. Usá la búsqueda manual por código o nombre abajo.</div>';
-  });
-}
-
-async function startCameraWithId(cameraId) {
-  if (html5QrCodeInstance) {
-    try { await html5QrCodeInstance.stop(); } catch (_) {}
+  if (text.includes('?i=') || text.includes('&i=')) {
+    const match = text.match(/[\?&]i=([^&#]+)/);
+    if (match) return decodeURIComponent(match[1]).trim();
   }
-  html5QrCodeInstance = new Html5Qrcode("qr-reader");
-  const config = { fps: 15, qrbox: { width: 220, height: 220 } };
-
-  html5QrCodeInstance.start(
-    cameraId,
-    config,
-    onQrCodeSuccess,
-    onQrCodeError
-  ).then(() => {
-    checkFlashSupport();
-  }).catch(err => {
-    console.warn("Error al iniciar cámara especificada:", err);
-    startCameraFacingEnvironment();
-  });
-}
-
-async function switchCamera() {
-  if (!availableCameras || availableCameras.length <= 1) return;
-  currentCameraIndex = (currentCameraIndex + 1) % availableCameras.length;
-  await startCameraWithId(availableCameras[currentCameraIndex].id);
+  if (text.includes('?code=') || text.includes('&code=')) {
+    const match = text.match(/[\?&]code=([^&#]+)/);
+    if (match) return decodeURIComponent(match[1]).trim();
+  }
+  if (text.startsWith('http')) {
+    try {
+      const u = new URL(text);
+      const param = u.searchParams.get('i') || u.searchParams.get('code');
+      if (param) return param.trim();
+      if (u.searchParams.get('demo') === '1') return 'UA-DEMO-001';
+    } catch (_) {}
+  }
+  const uaMatch = text.match(/UA-[A-Za-z0-9\-_]+/i);
+  if (uaMatch) {
+    return uaMatch[0].trim();
+  }
+  return text.replace(/['"\s]/g, '').trim();
 }
 
 function onQrCodeSuccess(decodedText) {
-  let code = decodedText.trim();
-  
-  // Extraer parámetro ?i=UA-XXX de la URL del QR si viene completa
-  if (code.includes('?i=')) {
-    try {
-      const url = new URL(code);
-      code = url.searchParams.get('i') || code;
-    } catch (_) {
-      const match = code.match(/[\?&]i=([^&]+)/);
-      if (match) code = match[1];
-    }
-  }
-
-  $('#searchInput').value = code;
+  const code = extractCodeFromInput(decodedText);
+  const searchInput = $('#searchInput');
+  if (searchInput) searchInput.value = code;
   processCodeValidation(code);
 }
 
 function onQrCodeError(errorMessage) {
-  // Ignorar errores continuos de búsqueda vacía
+  // Ignorar errores continuos de frame sin QR
 }
 
 function handleSearch() {
   const query = $('#searchInput').value.trim();
   if (!query) return;
-  processCodeValidation(query);
+  const code = extractCodeFromInput(query);
+  processCodeValidation(code);
 }
 
 function processCodeValidation(query) {
-  const cleanQuery = query.toLowerCase().trim();
+  const extracted = extractCodeFromInput(query);
+  const cleanQuery = (extracted || query).toLowerCase().trim();
 
-  const guest = allConfirmedGuests.find(g =>
-    g.code.toLowerCase() === cleanQuery ||
-    g.name.toLowerCase() === cleanQuery ||
-    g.name.toLowerCase().includes(cleanQuery)
-  );
+  let guest = guestMapByCode.get(cleanQuery);
+  if (!guest) {
+    guest = allConfirmedGuests.find(g =>
+      (g.code && g.code.toLowerCase() === cleanQuery) ||
+      (g.name && g.name.toLowerCase() === cleanQuery) ||
+      (g.name && g.name.toLowerCase().includes(cleanQuery))
+    );
+  }
 
   if (guest) {
     if (guest.checkedIn) {
@@ -388,32 +488,104 @@ async function undoIngress() {
   showGuestResultCard(currentSelectedGuest);
 }
 
-async function loadDoorList() {
-  try {
-    const response = await fetch(`${BACKEND_URL}?action=guestListCheckin&_=${Date.now()}`);
-    const data = await response.json();
+function fetchDoorListJsonp() {
+  return new Promise((resolve, reject) => {
+    const callbackName = `uaCheckinListCb_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+    const script = document.createElement('script');
+    let finished = false;
 
-    if (data && data.ok && Array.isArray(data.guests)) {
+    const timeout = setTimeout(() => {
+      if (!finished) {
+        finished = true;
+        delete window[callbackName];
+        script.remove();
+        reject(new Error('Timeout checkin list'));
+      }
+    }, 6000);
+
+    window[callbackName] = payload => {
+      if (!finished) {
+        finished = true;
+        clearTimeout(timeout);
+        delete window[callbackName];
+        script.remove();
+        resolve(payload);
+      }
+    };
+
+    const url = new URL(BACKEND_URL);
+    url.searchParams.set('action', 'guestListCheckin');
+    url.searchParams.set('callback', callbackName);
+    url.searchParams.set('_', Date.now().toString());
+    script.src = url.toString();
+    script.onerror = () => {
+      if (!finished) {
+        finished = true;
+        clearTimeout(timeout);
+        delete window[callbackName];
+        script.remove();
+        reject(new Error('Error de red al cargar lista'));
+      }
+    };
+    document.body.appendChild(script);
+  });
+}
+
+async function loadDoorList() {
+  // 1. Cargar instantáneamente de memoria local si existe
+  const localCache = localStorage.getItem('ua_checkin_door_list');
+  if (localCache && !allConfirmedGuests.length) {
+    try {
+      const parsed = JSON.parse(localCache);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        allConfirmedGuests = parsed;
+        rebuildGuestMap();
+        updateStats();
+        applyCurrentFilters();
+      }
+    } catch (_) {}
+  }
+
+  // 2. Intentar obtener la lista actualizada del servidor vía JSONP (sin bloqueo de CORS)
+  try {
+    const data = await fetchDoorListJsonp();
+    if (data && data.ok && Array.isArray(data.guests) && data.guests.length > 0) {
       allConfirmedGuests = data.guests;
       rebuildGuestMap();
-    } else {
-      if (!allConfirmedGuests.length) useFallbackGuests();
+      try {
+        localStorage.setItem('ua_checkin_door_list', JSON.stringify(data.guests));
+      } catch (_) {}
     }
   } catch (err) {
-    if (!allConfirmedGuests.length) useFallbackGuests();
+    // Fallback: intentar fetch directo
+    try {
+      const response = await fetch(`${BACKEND_URL}?action=guestListCheckin&_=${Date.now()}`);
+      const data = await response.json();
+      if (data && data.ok && Array.isArray(data.guests)) {
+        allConfirmedGuests = data.guests;
+        rebuildGuestMap();
+        try {
+          localStorage.setItem('ua_checkin_door_list', JSON.stringify(data.guests));
+        } catch (_) {}
+      }
+    } catch (_) {
+      if (!allConfirmedGuests.length) loadEmbeddedFallbackGuests();
+    }
   }
 
   updateStats();
   applyCurrentFilters();
 }
 
-function useFallbackGuests() {
-  allConfirmedGuests = [
-    { code: 'UA-001', name: 'Lucas Beathayte', status: 'Confirmado', seats: 2, companionName: 'Acompañante VIP', checkedIn: false },
-    { code: 'UA-002', name: 'María Pérez', status: 'Confirmado', seats: 1, companionName: '', checkedIn: false },
-    { code: 'UA-003', name: 'Carlos Rodríguez', status: 'Pendiente', seats: 1, companionName: '', checkedIn: false }
-  ];
-  rebuildGuestMap();
+function loadEmbeddedFallbackGuests() {
+  // Fallback si no hay conexión
+  try {
+    const raw = localStorage.getItem('ua_checkin_door_list');
+    if (raw) {
+      allConfirmedGuests = JSON.parse(raw);
+      rebuildGuestMap();
+    }
+  } catch (_) {}
 }
 
 function updateStats() {
@@ -422,9 +594,13 @@ function updateStats() {
   const checkedInSeats = allConfirmedGuests.filter(g => g.checkedIn).reduce((acc, g) => acc + (g.seats || 1), 0);
   const pendingSeats = Math.max(0, totalSeatsConfirmed - checkedInSeats);
 
-  $('#statTotalConfirmed').textContent = totalSeatsConfirmed;
-  $('#statCheckedIn').textContent = checkedInSeats;
-  $('#statPending').textContent = pendingSeats;
+  const elTot = $('#statTotalConfirmed');
+  const elIn = $('#statCheckedIn');
+  const elPend = $('#statPending');
+
+  if (elTot) elTot.textContent = totalSeatsConfirmed;
+  if (elIn) elIn.textContent = checkedInSeats;
+  if (elPend) elPend.textContent = pendingSeats;
 
   // Actualizar badges numéricos en los botones de pestaña
   const cntConfirmed = confirmedGuests.length;
@@ -442,6 +618,7 @@ function updateStats() {
 
 function renderGuestList(guests) {
   const container = $('#guestListContainer');
+  if (!container) return;
 
   if (!guests.length) {
     container.innerHTML = '<div style="font-size:12px;color:#94a3b8;text-align:center;padding:16px;">No se encontraron registros en este filtro.</div>';
@@ -467,7 +644,7 @@ function renderGuestList(guests) {
       <div class="guest-item" onclick="processCodeValidation('${g.code}')" style="cursor:pointer;">
         <div>
           <div class="guest-item__name">${g.name} ${g.companionName ? `<span style="font-size:11px;color:var(--cyan);">(+1: ${g.companionName})</span>` : ''}</div>
-          <div class="guest-item__code">${g.code} &middot; ${g.seats || 1} entrada${(g.seats||1) > 1 ? 's' : ''}</div>
+          <div class="guest-item__code">${g.code} &middot; ${g.seats || 1} entrada${(g.seats||1) > 1 ? 's' : ''} ${g.agency ? `&middot; ${g.agency}` : ''}</div>
         </div>
         <div>
           <span class="status-tag ${statusClass}">${statusText}</span>
@@ -478,7 +655,7 @@ function renderGuestList(guests) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// SONIDOS SINTETIZADOS WEB AUDIO API & RETROALIMENTACIÓN HÁPTICA
+// SONIDOS Y RETROALIMENTACIÓN HÁPTICA
 // ═══════════════════════════════════════════════════════════════════════
 
 function playSuccessSound() {
@@ -530,8 +707,8 @@ function playErrorSound() {
     const gain = ctx.createGain();
 
     osc.type = 'sawtooth';
-    osc.frequency.setValueAtTime(220, ctx.currentTime);
-    osc.frequency.setValueAtTime(180, ctx.currentTime + 0.12);
+    osc.frequency.setValueAtTime(330, ctx.currentTime);
+    osc.frequency.setValueAtTime(220, ctx.currentTime + 0.1);
 
     gain.gain.setValueAtTime(0.25, ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
@@ -551,97 +728,105 @@ function triggerHapticFeedback(pattern) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// REGISTRO Y ACREDITACIÓN VIP DIRECTA EN PUERTA
+// REGISTRO DE INVITADOS VIP / FUERA DE LISTA EN PUERTA
 // ═══════════════════════════════════════════════════════════════════════
 
 function openVipModal() {
+  $('#vipModal').classList.remove('hidden');
   $('#vipNameInput').value = '';
   $('#vipCompanionSelect').value = 'no';
   $('#vipCompanionNameInput').value = '';
   $('#vipCompanionNameGroup').classList.add('hidden');
-  $('#vipModal').classList.remove('hidden');
+  $('#vipNameInput').focus();
 }
 
 function closeVipModal() {
   $('#vipModal').classList.add('hidden');
 }
 
-function toggleVipCompanionInput() {
-  const isYes = $('#vipCompanionSelect').value === 'yes';
-  if (isYes) {
-    $('#vipCompanionNameGroup').classList.remove('hidden');
-  } else {
-    $('#vipCompanionNameGroup').classList.add('hidden');
-  }
+function toggleVipCompanionInput(e) {
+  const isYes = e.target.value === 'yes';
+  $('#vipCompanionNameGroup').classList.toggle('hidden', !isYes);
 }
 
 async function handleVipSubmit() {
   const name = $('#vipNameInput').value.trim();
   if (!name) {
-    alert('Ingresá el nombre completo del invitado VIP.');
+    alert('Por favor ingresá el nombre del invitado.');
     return;
   }
 
-  const bringsCompanion = $('#vipCompanionSelect').value === 'yes';
-  const companionName = bringsCompanion ? $('#vipCompanionNameInput').value.trim() : '';
-  if (bringsCompanion && !companionName) {
-    alert('Ingresá el nombre del acompañante.');
-    return;
+  const hasCompanion = $('#vipCompanionSelect').value === 'yes';
+  const companionName = hasCompanion ? $('#vipCompanionNameInput').value.trim() : '';
+  const totalSeats = hasCompanion ? 2 : 1;
+
+  const btn = $('#btnSubmitVip');
+  btn.disabled = true;
+  btn.textContent = 'Acreditando en puerta…';
+
+  try {
+    const vipCode = 'UA-VIP-' + Math.random().toString(36).substring(2, 6).toUpperCase();
+    const nowTime = new Date().toLocaleTimeString('es-UY', { hour: '2-digit', minute: '2-digit' }) + ' hs';
+
+    const newGuest = {
+      code: vipCode,
+      name: `${name} (VIP Puerta)`,
+      status: 'Confirmado',
+      seats: totalSeats,
+      companionName: companionName,
+      checkedIn: true,
+      checkinTime: nowTime,
+      agency: 'Invitado Especial'
+    };
+
+    allConfirmedGuests.unshift(newGuest);
+    rebuildGuestMap();
+    updateStats();
+    applyCurrentFilters();
+
+    // Guardar en Google Sheets en segundo plano
+    const addUrl = `${BACKEND_URL}?action=addVipDoor&name=${encodeURIComponent(name)}&seats=${totalSeats}&companion=${encodeURIComponent(companionName)}&code=${vipCode}`;
+    fetch(addUrl, { method: 'POST', mode: 'no-cors' }).catch(_ => {});
+
+    closeVipModal();
+    playSuccessSound();
+    triggerHapticFeedback([100, 100, 100]);
+    showGuestResultCard(newGuest);
+
+  } catch (err) {
+    alert('Error al registrar VIP: ' + err.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'REGISTRAR E INGRESAR A SALA';
   }
-
-  const seats = bringsCompanion ? 2 : 1;
-  const vipCode = `UA-VIP-${Math.floor(1000 + Math.random() * 9000)}`;
-  const nowTimeString = new Date().toLocaleTimeString('es-UY', { hour: '2-digit', minute: '2-digit' }) + ' hs';
-
-  const newVipGuest = {
-    code: vipCode,
-    name: name,
-    email: '',
-    phone: '',
-    status: 'Confirmado (VIP)',
-    hasCompanion: bringsCompanion,
-    companionName: companionName,
-    seats: seats,
-    checkedIn: true,
-    checkinTime: nowTimeString
-  };
-
-  allConfirmedGuests.unshift(newVipGuest);
-  updateStats();
-  applyCurrentFilters();
-
-  const vipUrl = `${BACKEND_URL}?action=addVipDoor&name=${encodeURIComponent(name)}&companionName=${encodeURIComponent(companionName)}&seats=${seats}`;
-  fetch(vipUrl, { method: 'POST', mode: 'no-cors' }).catch(_ => {});
-
-  closeVipModal();
-  playSuccessSound();
-  showGuestResultCard(newVipGuest);
 }
 
 function exportGuestListCsv() {
-  if (!allConfirmedGuests.length) {
-    alert('No hay asistentes cargados para exportar.');
-    return;
-  }
+  const csvRows = [
+    ['Codigo', 'Nombre', 'Agencia', 'Estado', 'Butacas', 'Acompanante', 'Ingreso_Sala', 'Hora_Ingreso']
+  ];
 
-  const headers = ['Codigo', 'Invitado', 'Estado Respuesta', 'Estado Ingreso', 'Hora Ingreso', 'Entradas', 'Acompanante'];
-  const rows = allConfirmedGuests.map(g => [
-    `"${g.code || ''}"`,
-    `"${g.name || ''}"`,
-    `"${g.status || ''}"`,
-    `"${g.checkedIn ? 'Ingresó' : 'Por Llegar'}"`,
-    `"${g.checkinTime || ''}"`,
-    g.seats || 1,
-    `"${g.companionName || ''}"`
-  ]);
+  allConfirmedGuests.forEach(g => {
+    csvRows.push([
+      `"${g.code || ''}"`,
+      `"${(g.name || '').replace(/"/g, '""')}"`,
+      `"${(g.agency || '').replace(/"/g, '""')}"`,
+      `"${g.status || ''}"`,
+      g.seats || 1,
+      `"${(g.companionName || '').replace(/"/g, '""')}"`,
+      g.checkedIn ? 'SI' : 'NO',
+      `"${g.checkinTime || ''}"`
+    ]);
+  });
 
-  const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+  const csvContent = '\uFEFF' + csvRows.map(r => r.join(';')).join('\n');
   const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.setAttribute('href', url);
-  link.setAttribute('download', `acreditacion_movie_universal_assistance_${Date.now()}.csv`);
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `Acreditacion_Coyote_vs_Acme_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }

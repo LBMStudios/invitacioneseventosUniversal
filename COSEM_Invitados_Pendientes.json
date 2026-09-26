@@ -1,0 +1,74 @@
+[
+  {
+    "#": 1,
+    "Código VIP": "UA-727E4532",
+    "Nombre": "Elisa Costa",
+    "Email": "elisa.costa@cosem.com.uy",
+    "Teléfono": "",
+    "Empresa": "COSEM",
+    "Cupos Asignados": 2,
+    "Estado": "Pendiente",
+    "Estado de Envío": "Pendiente de envío",
+    "Link Invitación": "https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-727E4532"
+  },
+  {
+    "#": 2,
+    "Código VIP": "UA-B60CAF72",
+    "Nombre": "Santiago Fleitas",
+    "Email": "santiago.fleitas@cosem.com.uy",
+    "Teléfono": "",
+    "Empresa": "COSEM",
+    "Cupos Asignados": 2,
+    "Estado": "Pendiente",
+    "Estado de Envío": "Enviado (17/08 11:03 hs)",
+    "Link Invitación": "https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-B60CAF72"
+  },
+  {
+    "#": 3,
+    "Código VIP": "UA-DB185627",
+    "Nombre": "Gabrielo Goicochea",
+    "Email": "gabrielo.goicoechea@cosem.com.uy",
+    "Teléfono": "",
+    "Empresa": "COSEM",
+    "Cupos Asignados": 2,
+    "Estado": "Pendiente",
+    "Estado de Envío": "Enviado (17/08 11:03 hs)",
+    "Link Invitación": "https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-DB185627"
+  },
+  {
+    "#": 4,
+    "Código VIP": "UA-2886A5DD",
+    "Nombre": "Extra Vendedor",
+    "Email": "elisa.costa@cosem.com.uy",
+    "Teléfono": "",
+    "Empresa": "COSEM",
+    "Cupos Asignados": 2,
+    "Estado": "Pendiente",
+    "Estado de Envío": "Pendiente de envío",
+    "Link Invitación": "https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-2886A5DD"
+  },
+  {
+    "#": 5,
+    "Código VIP": "UA-D3733AE5",
+    "Nombre": "Extra Vendedor",
+    "Email": "elisa.costa@cosem.com.uy",
+    "Teléfono": "",
+    "Empresa": "COSEM",
+    "Cupos Asignados": 2,
+    "Estado": "Pendiente",
+    "Estado de Envío": "Pendiente de envío",
+    "Link Invitación": "https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-D3733AE5"
+  },
+  {
+    "#": 6,
+    "Código VIP": "UA-7336D679",
+    "Nombre": "Extra Vendedor",
+    "Email": "elisa.costa@cosem.com.uy",
+    "Teléfono": "",
+    "Empresa": "COSEM",
+    "Cupos Asignados": 2,
+    "Estado": "Pendiente",
+    "Estado de Envío": "Pendiente de envío",
+    "Link Invitación": "https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-7336D679"
+  }
+]

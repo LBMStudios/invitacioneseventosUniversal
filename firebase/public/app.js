@@ -2,7 +2,18 @@ const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwYwJsopzz_6wfdvZpq
 
 const state = {
   guest: null,
-  event: null,
+  event: {
+    name: 'Función especial Coyote vs. Acme',
+    brand: 'Universal Assistance',
+    date: '27/08/2026',
+    time: '20:00',
+    arrivalTime: '19:30',
+    venue: 'Movie Montevideo Shopping',
+    mapsUrl: 'https://maps.google.com/?q=Movie+Montevideo+Shopping',
+    intro: 'Queremos compartir contigo una función especial.',
+    confirmationMessage: 'Tu asistencia quedó registrada.',
+    rsvpDeadline: 'Cupos Limitados'
+  },
   code: new URLSearchParams(location.search).get('i') || '',
   submitting: false,
   testMode: new URLSearchParams(location.search).get('test') === '1'
@@ -28,17 +39,18 @@ function init() {
     state.code = 'UA-DEMO-001';
   }
 
-  if (params.get('demo') === '1' || state.code === 'UA-DEMO-001') {
+  if (params.get('demo') === '1' || state.code === 'UA-DEMO-001' || state.code === 'UA-TEST-MUESTRA') {
     state.guest = {
       code: 'UA-DEMO-001',
-      name: 'Lucas Beathayte',
-      email: '',
-      phone: '',
-      status: 'Pendiente',
-      hasCompanion: false,
-      companionName: '',
-      totalSeats: 0,
-      responseDate: ''
+      name: 'Lucas Beathyate',
+      email: 'lucasb@ua.com.uy',
+      phone: '099 123 456',
+      status: 'Confirmado',
+      hasCompanion: true,
+      companionName: 'Acompañante VIP',
+      totalSeats: 2,
+      maxSeats: 2,
+      responseDate: '26/08/2026 15:00:00'
     };
     state.event = {
       name: 'Función especial Coyote vs. Acme',
@@ -68,6 +80,44 @@ function bindEvents() {
   $('#downloadPassButton')?.addEventListener('click', downloadVipPass);
   $('#mapsButton')?.addEventListener('click', openMapsModal);
   $('#btnCloseMapsModal')?.addEventListener('click', closeMapsModal);
+  $('#btnEditConfirmation')?.addEventListener('click', openEditForm);
+  $('#waitlistForm')?.addEventListener('submit', submitWaitlist);
+}
+
+function openEditForm() {
+  if (state.guest?.status === 'Expirado' || state.guest?.status === 'Bloqueado' || state.guest?.status === 'Cupos Agotados') return;
+  $('#alreadyAnswered')?.classList.add('hidden');
+  $('#confirmar')?.classList.remove('hidden');
+  toggleCtas(true);
+
+  const guest = state.guest;
+  if (guest) {
+    if ($('#formGuestName') && guest.name) $('#formGuestName').value = guest.name;
+    if ($('#formEmail') && guest.email) $('#formEmail').value = guest.email;
+    if ($('#formPhone') && guest.phone && guest.phone !== '099 123 456') $('#formPhone').value = guest.phone;
+
+    const maxSeats = guest.maxSeats || guest.totalSeats || 2;
+    if (maxSeats >= 2 || guest.hasCompanion || guest.totalSeats >= 2) {
+      selectTicketOption('pair');
+      // Preservar exactamente todos los nombres existentes de acompañantes
+      const existingCompanions = (guest.companionName || '').split(' | ').map(n => n.trim()).filter(Boolean);
+      existingCompanions.forEach((name, i) => {
+        const input = $(`#formCompanionName_${i}`);
+        if (input) input.value = name;
+      });
+      // Focus en el primer campo de acompañante vacío si existe
+      const emptyInput = $('#companionFieldsList')?.querySelector('input:not([value]), input[value=""]');
+      if (emptyInput) emptyInput.focus();
+    } else {
+      selectTicketOption('single');
+    }
+  }
+
+  showFormMessage('✏️ Podés modificar o agregar acompañantes y guardar los cambios.', false);
+  const confirmSection = $('#confirmar');
+  if (confirmSection) {
+    confirmSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 function openMapsModal() {
@@ -93,7 +143,36 @@ function selectTicketOption(type) {
   if (singleRadio) singleRadio.checked = !isPair;
   if (pairRadio) pairRadio.checked = isPair;
   $('#companionFieldsGroup')?.classList.toggle('hidden', !isPair);
-  if (isPair) $('#formCompanionName')?.focus();
+
+  // Generar campos de acompañantes dinámicamente
+  if (isPair) {
+    const maxSeats = state.guest?.maxSeats || state.guest?.totalSeats || 2;
+    const numCompanions = Math.max(maxSeats - 1, 1);
+    const container = $('#companionFieldsList');
+    if (container && container.children.length !== numCompanions) {
+      container.innerHTML = '';
+      for (let i = 0; i < numCompanions; i++) {
+        const label = document.createElement('label');
+        label.className = 'field';
+        const span = document.createElement('span');
+        span.textContent = numCompanions === 1
+          ? 'Nombre y Apellido del Acompañante (*)'
+          : `Nombre y Apellido — Acompañante ${i + 1} (*)`;
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.id = `formCompanionName_${i}`;
+        input.name = `companionName_${i}`;
+        input.autocomplete = 'name';
+        input.placeholder = `Ej. ${['María López', 'Juan Pérez', 'Ana García', 'Carlos Ruiz'][i] || 'Nombre Apellido'}`;
+        label.appendChild(span);
+        label.appendChild(input);
+        container.appendChild(label);
+      }
+    }
+    // Focus en el primer campo vacío
+    const firstEmpty = container?.querySelector('input:not([value])');
+    if (firstEmpty) firstEmpty.focus();
+  }
   clearFormMessage();
 }
 
@@ -244,37 +323,64 @@ function initCountdown() {
   setInterval(update, 1000);
 }
 
+
+
 async function loadGuest(code) {
+  const cleanCode = (code || '').toUpperCase().trim();
+  
+  // 1. Carga Instantánea desde Caché Local (0 ms)
+  const cached = localStorage.getItem('ua_guest_cache_' + cleanCode);
+  let renderedFromCache = false;
+  if (cached) {
+    try {
+      const parsed = JSON.parse(cached);
+      if (parsed && parsed.guest) {
+        state.guest = parsed.guest;
+        if (parsed.event) state.event = { ...state.event, ...parsed.event };
+        renderInvitation();
+        renderedFromCache = true;
+      }
+    } catch (_) {}
+  }
+
+  // 2. Si no había caché, mostrar spinner de carga
+  if (!renderedFromCache) {
+    const loadingEl = $('#loadingState');
+    if (loadingEl) {
+      loadingEl.style.display = 'flex';
+      loadingEl.classList.remove('hidden');
+    }
+  }
+
+  // 3. Obtener datos frescos del servidor en paralelo (Revalidación silenciosa)
   try {
-    const payload = await getGuestData(code);
-    state.guest = payload.guest;
-    state.event = payload.event;
-    renderInvitation();
-  } catch (_) {
-    // Fallback gracioso: mostrar siempre la invitación con datos demo
-    state.guest = {
-      code: code || 'UA-DEMO-001',
-      name: 'Invitado Especial',
-      email: '',
-      phone: '',
-      status: 'Pendiente',
-      hasCompanion: false,
-      companionName: '',
-      totalSeats: 0,
-      responseDate: ''
-    };
-    state.event = {
-      name: 'Función especial Coyote vs. Acme',
-      brand: 'Universal Assistance',
-      date: '27/08/2026',
-      time: '20:00',
-      arrivalTime: '19:30',
-      venue: 'Movie Montevideo Shopping',
-      mapsUrl: 'https://maps.google.com/?q=Movie+Montevideo+Shopping',
-      intro: 'Queremos compartir contigo una función especial.',
-      confirmationMessage: 'Tu asistencia quedó registrada.'
-    };
-    renderInvitation();
+    const payload = await getGuestData(cleanCode);
+    if (payload && payload.ok && payload.guest) {
+      state.guest = payload.guest;
+      if (payload.event) {
+        state.event = { ...state.event, ...payload.event };
+      }
+      try {
+        localStorage.setItem('ua_guest_cache_' + cleanCode, JSON.stringify(payload));
+      } catch (_) {}
+      renderInvitation();
+    } else if (!renderedFromCache) {
+      showError(payload?.error || 'No pudimos encontrar esta invitación.');
+    }
+  } catch (err) {
+    console.error('Error al cargar invitado:', err);
+    if (!renderedFromCache) {
+      state.guest = state.guest || {
+        code: cleanCode,
+        name: '',
+        email: '',
+        phone: '',
+        status: 'Confirmado',
+        totalSeats: 2,
+        maxSeats: 2
+      };
+      renderInvitation();
+    }
   }
 }
 
@@ -284,7 +390,7 @@ function getGuestData(code) {
     const script = document.createElement('script');
     let finished = false;
 
-    const timeout = setTimeout(() => finish(() => reject(new Error('No pudimos conectar con la lista de invitados.'))), 3000);
+    const timeout = setTimeout(() => finish(() => reject(new Error('No pudimos conectar con la lista de invitados.'))), 4000);
 
     window[callbackName] = payload => finish(() => {
       if (!payload || !payload.ok) {
@@ -314,6 +420,19 @@ function getGuestData(code) {
   });
 }
 
+function updateFieldBadge(input) {
+  if (!input) return;
+  const val = input.value.trim();
+
+  if (val && val !== '099 123 456') {
+    input.classList.remove('input-ejemplo');
+    input.classList.add('input-precargado');
+  } else {
+    input.classList.remove('input-precargado');
+    input.classList.add('input-ejemplo');
+  }
+}
+
 function renderInvitation() {
   const { guest, event } = state;
 
@@ -326,9 +445,9 @@ function renderInvitation() {
   $('#errorState')?.classList.add('hidden');
   $('#invitation')?.classList.remove('hidden');
 
-  const rawName = guest ? guest.name : 'Invitado';
+  const rawName = guest ? guest.name : '';
   const fName = firstName(rawName);
-  const isGeneric = !rawName || rawName.toLowerCase().includes('invitado');
+  const isGeneric = !fName;
   
   if ($('#guestGreeting')) {
     $('#guestGreeting').textContent = isGeneric
@@ -336,7 +455,11 @@ function renderInvitation() {
       : `¡Hola ${fName}! Tenemos una invitación para vos`;
   }
   
-  if ($('#rsvpGuestFirstName')) $('#rsvpGuestFirstName').textContent = fName || 'Invitado';
+  if ($('#rsvpGreetingTitle')) {
+    $('#rsvpGreetingTitle').textContent = isGeneric
+      ? 'Confirmá tu asistencia'
+      : `¡Hola, ${fName}!`;
+  }
   if ($('#introText')) $('#introText').textContent = event.intro;
   if ($('#eventDate')) $('#eventDate').textContent = formatEventDate(event.date);
   if ($('#eventTime')) $('#eventTime').textContent = `${event.time} hs`;
@@ -345,50 +468,207 @@ function renderInvitation() {
   if ($('#ticketCode')) $('#ticketCode').textContent = guest.code;
   if ($('#formCode')) $('#formCode').value = guest.code;
   if ($('#arrivalTime')) $('#arrivalTime').textContent = `${event.arrivalTime} hs`;
+  if ($('#rsvpDeadline') && event.rsvpDeadline) $('#rsvpDeadline').textContent = event.rsvpDeadline;
   
   $('#calendarButton')?.classList.remove('hidden');
   $('#mapsButton')?.classList.remove('hidden');
   
-  if ($('#ticketSeats')) {
-    $('#ticketSeats').textContent = guest.totalSeats > 0
-      ? `${guest.totalSeats} persona${guest.totalSeats === 2 ? 's' : ''}`
-      : 'Vos + 1';
+  const maxSeats = guest.maxSeats || guest.totalSeats || 0;
+  const seatsNum = maxSeats > 0 ? maxSeats : (guest.hasCompanion ? 2 : 2);
+  const seatsText = seatsNum === 1 ? '1 Entrada' : `${seatsNum} Entradas`;
+  if ($('#ticketSeats')) $('#ticketSeats').textContent = seatsText;
+  if ($('.access-pill')) $('.access-pill').textContent = seatsText;
+
+  // Actualizar texto del resumen según cantidad de entradas
+  if ($('#summarySeatsTitle')) {
+    $('#summarySeatsTitle').textContent = seatsNum > 2
+      ? `Invitación para ${seatsNum} personas`
+      : seatsNum === 2 ? 'Opción con Acompañante' : 'Entrada Individual';
+  }
+  if ($('#summarySeatsText')) {
+    if (seatsNum > 2) {
+      $('#summarySeatsText').textContent = `Podés confirmar para 1 a ${seatsNum} personas.`;
+    } else if (seatsNum === 2) {
+      $('#summarySeatsText').textContent = 'Podés confirmar para 1 o 2 personas.';
+    } else {
+      $('#summarySeatsText').textContent = 'Entrada individual reservada.';
+    }
   }
 
   const guestCode = guest ? guest.code : 'UA-DEMO-001';
   const qrTarget = `https://ua-eventos-uy.web.app/coyote-vs-acme?i=${guestCode}`;
   let qrUrl = '';
   if (typeof QRCode !== 'undefined' && QRCode.generateDataUrl) {
-    qrUrl = QRCode.generateDataUrl(qrTarget, 250, '#0f172a', '#ffffff');
+    qrUrl = QRCode.generateDataUrl(qrTarget, 600, '#0f172a', '#ffffff');
   } else {
-    qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(qrTarget)}&color=0f172a&bgcolor=ffffff`;
+    qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=${encodeURIComponent(qrTarget)}&color=0f172a&bgcolor=ffffff`;
   }
   if ($('#ticketQrImage')) $('#ticketQrImage').src = qrUrl;
   if ($('#successQrImage')) $('#successQrImage').src = qrUrl;
   if ($('#successQrCode')) $('#successQrCode').textContent = guestCode;
 
-  if ($('#formGuestName')) $('#formGuestName').value = guest.name || '';
-  if ($('#formEmail')) $('#formEmail').value = guest.email || '';
-  if ($('#formPhone')) $('#formPhone').value = guest.phone || '';
-  if ($('#formCompanionName')) $('#formCompanionName').value = guest.companionName || '';
+  const isRealName = guest.name && !guest.name.toLowerCase().includes('invitado');
+  const isRealEmail = guest.email && guest.email.includes('@') && !guest.email.includes('ejemplo');
+  const isRealPhone = guest.phone && guest.phone !== '099 123 456' && guest.phone.length > 5;
 
-  if (guest.hasCompanion || guest.totalSeats === 2) {
+  const nameInput = $('#formGuestName');
+  const emailInput = $('#formEmail');
+  const phoneInput = $('#formPhone');
+
+  if (nameInput) {
+    nameInput.value = isRealName ? guest.name : '';
+    nameInput.placeholder = 'Nombre y Apellido';
+    nameInput.disabled = false;
+    updateFieldBadge(nameInput);
+  }
+  if (emailInput) {
+    emailInput.value = isRealEmail ? guest.email : '';
+    emailInput.placeholder = 'ejemplo@correo.com';
+    emailInput.disabled = false;
+    updateFieldBadge(emailInput);
+  }
+  if (phoneInput) {
+    phoneInput.value = isRealPhone ? guest.phone : '';
+    phoneInput.placeholder = '099 123 456';
+    phoneInput.disabled = false;
+    updateFieldBadge(phoneInput);
+  }
+
+  // Escuchar cambios de tipeo en vivo para actualizar el estilo inmediatamente
+  [nameInput, emailInput, phoneInput].forEach(inp => {
+    if (!inp || inp.dataset.bound) return;
+    inp.dataset.bound = '1';
+    inp.addEventListener('input', () => {
+      updateFieldBadge(inp);
+    });
+    inp.addEventListener('focus', () => {
+      if (inp.value) inp.select();
+    });
+  });
+
+  const editBtn = $('#btnToggleEdit');
+  if (editBtn) {
+    editBtn.onclick = () => {
+      if (nameInput) {
+        nameInput.focus();
+        nameInput.select();
+      }
+    };
+  }
+
+  // Pre-llenar campos de acompañantes existentes
+  const existingCompanions = (guest.companionName || '').split(' | ').map(n => n.trim()).filter(Boolean);
+
+  // Actualizar label de opción "pair" según cantidad real de entradas
+  const pairLabel = $('#optionPair');
+  if (pairLabel && maxSeats > 2) {
+    const strongEl = pairLabel.querySelector('strong');
+    const smallEl = pairLabel.querySelector('small');
+    if (strongEl) strongEl.textContent = `Con Acompañantes`;
+    if (smallEl) smallEl.textContent = `${maxSeats} Entradas en Sala`;
+  } else if (pairLabel && maxSeats === 2) {
+    const strongEl = pairLabel.querySelector('strong');
+    const smallEl = pairLabel.querySelector('small');
+    if (strongEl) strongEl.textContent = 'Con Acompañante';
+    if (smallEl) smallEl.textContent = '2 Entradas en Sala';
+  }
+
+  if (maxSeats >= 2 || guest.hasCompanion || guest.totalSeats >= 2) {
     selectTicketOption('pair');
+    // Pre-llenar con nombres existentes
+    if (existingCompanions.length > 0) {
+      existingCompanions.forEach((name, i) => {
+        const input = $(`#formCompanionName_${i}`);
+        if (input) input.value = name;
+      });
+    }
   } else {
     selectTicketOption('single');
+  }
+
+  // ── CUPOS LLENOS: FORZAR LISTA DE ESPERA PARA PENDIENTES (activado 26/08/2026) ──
+  // Para desactivar, cambiar FORZAR_LISTA_ESPERA a false
+  const FORZAR_LISTA_ESPERA = true;
+  const capAlert = $('#capacityAlertBadge');
+  const soldOutBanner = $('#soldOutBanner');
+  const isPending = !guest.status || guest.status === 'Pendiente';
+
+  // Si está forzado o el backend informa isSoldOut, tratar como cupos llenos
+  const cuposLlenos = (FORZAR_LISTA_ESPERA || (event && event.isSoldOut)) && isPending && !state.testMode;
+
+  if (cuposLlenos) {
+    if (soldOutBanner) soldOutBanner.classList.remove('hidden');
+    $('#confirmar')?.classList.add('hidden');
+    if (capAlert) {
+      capAlert.textContent = '🚨 CUPOS COMPLETOS — LISTA DE ESPERA';
+      capAlert.className = 'capacity-alert-badge capacity-alert-badge--danger';
+      capAlert.classList.remove('hidden');
+    }
+  } else {
+    if (soldOutBanner) soldOutBanner.classList.add('hidden');
+    if (capAlert) {
+      capAlert.classList.add('hidden');
+      capAlert.textContent = '';
+    }
   }
 
   clearFormMessage();
   resetHeroStatus();
   toggleCtas(true);
-  $('#confirmar')?.classList.remove('hidden');
+  if (!cuposLlenos) {
+    $('#confirmar')?.classList.remove('hidden');
+  }
   $('#alreadyAnswered')?.classList.add('hidden');
   $('#successState')?.classList.add('hidden');
 
-  if (guest.status && guest.status !== 'Pendiente' && !state.testMode) {
-    applyAnsweredState(guest.status);
-  } else if (guest.status && guest.status !== 'Pendiente' && state.testMode) {
-    showTestModeState(guest.status);
+  // ── Opción A: Detectar re-confirmación por problema técnico ──
+  if (isPending && state.code) {
+    const prevConfirmed = localStorage.getItem('confirmed_' + state.code);
+    if (prevConfirmed) {
+      showFormMessage('⚠️ Detectamos un problema técnico con tu confirmación anterior. Por favor, volvé a confirmar para asegurar tu lugar.', true);
+    }
+  }
+
+  // ── Ocultar ticket/QR cuando aún no confirmó (Opción A UX) ──
+  const inviteCard = $('aside.invite-card');
+  if (inviteCard) {
+    if (isPending) {
+      // El invitado NO confirmó todavía: ocultar el ticket/QR
+      inviteCard.style.display = 'none';
+    } else {
+      // Ya confirmó: mostrar el ticket/QR
+      inviteCard.style.display = '';
+    }
+  }
+
+  if (guest.status === 'Confirmado') {
+    applyAnsweredState('Confirmado');
+  } else if (state.testMode) {
+    showTestModeState(guest.status || 'Pendiente');
+  } else if (guest.status === 'Pendiente' || !guest.status) {
+    // Si cupos llenos, mostrar lista de espera en vez del formulario
+    if (FORZAR_LISTA_ESPERA && !state.testMode) {
+      $('#alreadyAnswered')?.classList.add('hidden');
+      $('#confirmar')?.classList.add('hidden');
+      // waitlistCard vive dentro de expiredBanner, hay que mostrar ambos
+      $('#expiredBanner')?.classList.remove('hidden');
+      $('#waitlistCard')?.classList.remove('hidden');
+      $('#waitlistSuccess')?.classList.add('hidden');
+      $('#soldOutBanner')?.classList.remove('hidden');
+      if (guest.phone && $('#waitlistPhone') && !$('#waitlistPhone').value) {
+        $('#waitlistPhone').value = guest.phone;
+      }
+      $('#heroStatus')?.classList.remove('hidden');
+      if ($('#heroStatusText')) $('#heroStatusText').textContent = 'Cupos completos · Lista de Espera disponible';
+      toggleCtas(false);
+    } else {
+      $('#alreadyAnswered')?.classList.add('hidden');
+      $('#confirmar')?.classList.remove('hidden');
+      toggleCtas(true);
+    }
+  } else {
+    // Bloqueo para cualquier estado Expirado / Bloqueado / Lista de espera
+    applyAnsweredState(guest.status || 'Expirado');
   }
 }
 
@@ -414,31 +694,69 @@ function showTestModeState(status) {
 }
 
 function applyAnsweredState(status) {
-  const confirmed = status === 'Confirmado';
+  const isConfirmed = status === 'Confirmado';
+  const isWaitlist = status === 'Lista de Espera';
   const fullName = state.guest?.name || 'el invitado';
   const totalSeats = Number(state.guest?.totalSeats || 0);
   const companionName = state.guest?.companionName || '';
 
   toggleCtas(false);
   $('#confirmar')?.classList.add('hidden');
-  $('#alreadyAnswered')?.classList.remove('hidden');
-  $('#heroStatus')?.classList.remove('hidden');
+  $('#soldOutBanner')?.classList.add('hidden');
 
-  if (confirmed) {
+  if (isConfirmed) {
+    $('#expiredBanner')?.classList.add('hidden');
+    $('#alreadyAnswered')?.classList.remove('hidden');
+    $('#heroStatus')?.classList.remove('hidden');
+    const evDate = state.event?.date ? formatEventDate(state.event.date) : 'Jueves 27 de agosto';
+    const evTime = state.event?.time || '20:00';
     if ($('#heroStatusText')) $('#heroStatusText').textContent = `Asistencia confirmada${totalSeats ? ` · ${totalSeats} persona${totalSeats === 2 ? 's' : ''}` : ''}`;
     if ($('#previousAnswerTitle')) $('#previousAnswerTitle').textContent = `La invitación ya quedó confirmada a nombre de ${fullName}.`;
     if ($('#previousAnswer')) {
       $('#previousAnswer').textContent = totalSeats === 2
-        ? `Registramos a ${fullName} y ${companionName || 'su acompañante'}. Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs.`
-        : `Registramos la asistencia de ${fullName}. Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs.`;
+        ? `Registramos a ${fullName} y ${companionName || 'su acompañante'}. Te esperamos el ${evDate} a las ${evTime} hs.`
+        : `Registramos la asistencia de ${fullName}. Te esperamos el ${evDate} a las ${evTime} hs.`;
     }
-    if ($('#ticketSeats')) $('#ticketSeats').textContent = `${Math.max(totalSeats, 1)} persona${Math.max(totalSeats, 1) === 2 ? 's' : ''}`;
-  } else {
-    if ($('#heroStatusText')) $('#heroStatusText').textContent = 'Respuesta registrada · No asistirá';
-    if ($('#previousAnswerTitle')) $('#previousAnswerTitle').textContent = `Ya registramos que ${fullName} no podrá asistir.`;
-    if ($('#previousAnswer')) $('#previousAnswer').textContent = 'Gracias por avisarnos. Esta invitación ya no volverá a mostrarse como pendiente.';
-    if ($('#ticketSeats')) $('#ticketSeats').textContent = 'No asistirá';
+    const confirmedSeats = Math.max(totalSeats, 1);
+    const confirmedText = confirmedSeats === 1 ? '1 Entrada' : `${confirmedSeats} Entradas`;
+    if ($('#ticketSeats')) $('#ticketSeats').textContent = confirmedText;
+    if ($('.access-pill')) $('.access-pill').textContent = confirmedText;
+
+    // Mostrar el ticket/QR ahora que ya está confirmado
+    const inviteCard = $('aside.invite-card');
+    if (inviteCard) {
+      inviteCard.style.display = '';
+      inviteCard.style.animation = 'fadeInUp 0.8s ease-out';
+    }
+    return;
   }
+
+  // ── PARA TODOS LOS NO CONFIRMADOS: Mostrar SIEMPRE la Lista de Espera ──
+  $('#alreadyAnswered')?.classList.add('hidden');
+  const expBanner = $('#expiredBanner');
+  if (expBanner) {
+    expBanner.classList.remove('hidden');
+    const nameSpan = $('#expiredGuestName');
+    if (nameSpan) nameSpan.textContent = fullName;
+  }
+
+  if (isWaitlist) {
+    $('#waitlistCard')?.classList.add('hidden');
+    $('#waitlistSuccess')?.classList.remove('hidden');
+    $('#heroStatus')?.classList.remove('hidden');
+    if ($('#heroStatusText')) $('#heroStatusText').textContent = 'En Lista de Espera';
+  } else {
+    $('#waitlistCard')?.classList.remove('hidden');
+    $('#waitlistSuccess')?.classList.add('hidden');
+    if (state.guest?.phone && $('#waitlistPhone') && !$('#waitlistPhone').value) {
+      $('#waitlistPhone').value = state.guest.phone;
+    }
+    $('#heroStatus')?.classList.remove('hidden');
+    if ($('#heroStatusText')) $('#heroStatusText').textContent = 'Plazo finalizado · Lista de Espera disponible';
+  }
+
+  const inviteCard = $('aside.invite-card');
+  if (inviteCard) inviteCard.style.display = 'none';
 }
 
 function resetHeroStatus() {
@@ -463,34 +781,135 @@ async function submitRsvp(event) {
 
   const attendanceType = $('input[name="attendanceType"]:checked')?.value || 'single';
   const companion = attendanceType === 'pair' ? 'yes' : 'no';
-  const companionName = $('#formCompanionName')?.value.trim() || '';
 
-  if (attendanceType === 'pair' && !companionName) {
-    showFormMessage('Por favor ingresá el nombre de tu acompañante.', true);
-    $('#formCompanionName')?.focus();
-    return;
+  // Recolectar todos los nombres de acompañantes
+  const companionNames = [];
+  const container = $('#companionFieldsList');
+  if (attendanceType === 'pair' && container) {
+    const inputs = container.querySelectorAll('input');
+    let hasEmpty = false;
+    inputs.forEach((input, i) => {
+      const val = input.value.trim();
+      if (!val) hasEmpty = true;
+      else companionNames.push(val);
+    });
+    if (hasEmpty && companionNames.length < inputs.length) {
+      showFormMessage(`Por favor completá el nombre de todos los acompañantes (${inputs.length}).`, true);
+      const emptyInput = [...inputs].find(i => !i.value.trim());
+      if (emptyInput) emptyInput.focus();
+      return;
+    }
   }
+  const companionName = companionNames.join(' | ');
 
   submitRsvpInternal('yes', companion, companionName);
 }
 
 async function submitRsvpInternal(attendance, companion, companionName) {
   if (state.submitting) return;
+
+  // Bloqueo: si está Expirado o Bloqueado (y no está en Pendiente ni Confirmado), se muestra el cartel de expirado
+  if (state.guest?.status !== 'Confirmado' && state.guest?.status !== 'Pendiente' && !state.testMode) {
+    applyAnsweredState('Expirado');
+    return;
+  }
+
   state.submitting = true;
 
   const submitButton = $('#submitButton');
   if (submitButton) {
     submitButton.disabled = true;
-    submitButton.textContent = 'Registrando…';
+    submitButton.innerHTML = '⏳ Guardando tus entradas…';
   }
-  showFormMessage('Estamos registrando tu respuesta…', false);
+  showFormMessage('Estamos asegurando tu lugar en la sala…', false);
 
   const guestName = $('#formGuestName')?.value.trim() || state.guest?.name || '';
   const email = $('#formEmail')?.value.trim() || state.guest?.email || '';
   const phone = $('#formPhone')?.value.trim() || state.guest?.phone || '';
   const confirmed = attendance === 'yes';
+  const guestCode = state.code || state.guest?.code || 'UA-DEMO-001';
+  const calculatedSeats = confirmed
+    ? (state.guest?.maxSeats > 0 ? state.guest.maxSeats : (companion === 'yes' ? 2 : 1))
+    : 0;
 
-  // 1. Actualizar estado local inmediatamente (estado optimista)
+  const formData = new FormData();
+  formData.set('code', guestCode);
+  formData.set('guestName', guestName);
+  formData.set('email', email);
+  formData.set('phone', phone);
+  formData.set('attendance', attendance);
+  formData.set('companion', companion);
+  formData.set('companionName', companionName);
+  formData.set('allowUpdate', '1');
+  formData.set('testMode', state.testMode ? '1' : '0');
+
+  const urlParams = new URLSearchParams();
+  for (const [key, value] of formData.entries()) {
+    urlParams.append(key, value);
+  }
+
+  let serverConfirmed = false;
+
+  // ── INTENTO 1: Fetch POST con verificación real de respuesta ──
+  try {
+    const postResp = await fetch(BACKEND_URL, {
+      method: 'POST',
+      redirect: 'follow',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: urlParams.toString()
+    });
+    if (postResp.ok) {
+      try {
+        const data = await postResp.json();
+        if (data.ok) serverConfirmed = true;
+      } catch (_) {
+        // Respuesta no-JSON pero status OK = probablemente fue bien
+        serverConfirmed = true;
+      }
+    }
+  } catch (postErr) {
+    console.warn('POST falló, intentando GET fallback:', postErr);
+  }
+
+  // ── INTENTO 2: GET fallback si POST falló ──
+  if (!serverConfirmed) {
+    try {
+      const getSyncUrl = BACKEND_URL + '?action=updateGuest&code=' + encodeURIComponent(guestCode) +
+        '&status=' + encodeURIComponent(confirmed ? 'Confirmado' : 'No asiste') +
+        '&totalSeats=' + encodeURIComponent(calculatedSeats) +
+        '&companion=' + encodeURIComponent(companion === 'yes' ? 'Sí' : 'No') +
+        '&companionName=' + encodeURIComponent(companionName) +
+        '&name=' + encodeURIComponent(guestName) +
+        '&email=' + encodeURIComponent(email) +
+        '&phone=' + encodeURIComponent(phone) +
+        '&t=' + Date.now();
+      const getResp = await fetch(getSyncUrl, { method: 'GET', redirect: 'follow' });
+      if (getResp.ok) {
+        try {
+          const data = await getResp.json();
+          if (data.ok) serverConfirmed = true;
+        } catch (_) {
+          serverConfirmed = true;
+        }
+      }
+    } catch (getErr) {
+      console.warn('GET fallback también falló:', getErr);
+    }
+  }
+
+  // ── INTENTO 3: Beacon + Iframe como último recurso (fire-and-forget) ──
+  if (!serverConfirmed) {
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(BACKEND_URL, urlParams);
+      }
+      submitHiddenForm(formData, attendance, companion);
+    } catch (_) {}
+    // Esperar un poco para dar tiempo a beacon/iframe
+    await sleep(2000);
+  }
+
+  // ── Actualizar estado local ──
   state.guest = {
     ...state.guest,
     name: guestName,
@@ -499,35 +918,30 @@ async function submitRsvpInternal(attendance, companion, companionName) {
     status: confirmed ? 'Confirmado' : 'No asiste',
     hasCompanion: companion === 'yes',
     companionName: companionName,
-    totalSeats: confirmed ? (companion === 'yes' ? 2 : 1) : 0,
-    code: state.guest?.code || 'UA-DEMO-001'
+    totalSeats: calculatedSeats,
+    code: guestCode
   };
 
-  // 2. Enviar al backend en segundo plano (no bloquea la UX)
+  // ── Guardar en localStorage que el usuario confirmó (para detección de re-confirmación) ──
   try {
-    const formData = new FormData();
-    formData.set('code', state.code || 'UA-DEMO-001');
-    formData.set('guestName', guestName);
-    formData.set('email', email);
-    formData.set('phone', phone);
-    formData.set('attendance', attendance);
-    formData.set('companion', companion);
-    formData.set('companionName', companionName);
-    formData.set('allowUpdate', '1');
-    formData.set('testMode', state.testMode ? '1' : '0');
-    submitHiddenForm(formData, attendance, companion);
+    localStorage.setItem('confirmed_' + guestCode, new Date().toISOString());
   } catch (_) {}
 
-  // 3. Mostrar resultado inmediato tras 400ms
-  await sleep(400);
-  showSuccessFromServer();
+  if (serverConfirmed) {
+    // Servidor confirmó: mostrar éxito normalmente
+    showSuccessFromServer();
+    clearFormMessage();
+  } else {
+    // Servidor NO confirmó: mostrar éxito PERO con advertencia
+    showSuccessFromServer();
+    showFormMessage('⚠️ Tu confirmación se envió pero no pudimos verificar la respuesta del servidor. Si no recibís el mail de confirmación, por favor volvé a abrir este link para re-confirmar.', true);
+  }
 
   state.submitting = false;
   if (submitButton) {
     submitButton.disabled = false;
     submitButton.textContent = '🎟️ CONFIRMAR Y OBTENER MIS ENTRADAS VIP';
   }
-  clearFormMessage();
 }
 
 function submitHiddenForm(formData, attendance, companion) {
@@ -535,11 +949,19 @@ function submitHiddenForm(formData, attendance, companion) {
   formData.set('companion', companion);
   formData.set('testMode', state.testMode ? '1' : '0');
 
+  let iframe = document.querySelector('iframe[name="submissionFrame"]');
+  if (!iframe) {
+    iframe = document.createElement('iframe');
+    iframe.name = 'submissionFrame';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+  }
+
   const postForm = document.createElement('form');
   postForm.method = 'POST';
   postForm.action = BACKEND_URL;
   postForm.target = 'submissionFrame';
-  postForm.className = 'hidden';
+  postForm.style.display = 'none';
 
   for (const [key, value] of formData.entries()) {
     const input = document.createElement('input');
@@ -550,14 +972,23 @@ function submitHiddenForm(formData, attendance, companion) {
   }
 
   document.body.appendChild(postForm);
-  postForm.submit();
+  try {
+    postForm.submit();
+  } catch (e) {
+    console.warn('Post error fallback:', e);
+  }
   setTimeout(() => postForm.remove(), 3000);
 }
 
 
 function showSuccessFromServer() {
-  const attending = state.guest.status === 'Confirmado';
-  const total = Number(state.guest.totalSeats || 0);
+  const attending = state.guest?.status === 'Confirmado';
+  const total = Number(state.guest?.totalSeats || 0);
+
+  // 1. Siempre aplicar el estado respondido primero (oculta form y muestra ticket QR)
+  if (state.guest?.status) {
+    applyAnsweredState(state.guest.status);
+  }
 
   const guestCode = state.guest ? state.guest.code : 'UA-DEMO-001';
   const qrTarget = `https://ua-eventos-uy.web.app/coyote-vs-acme?i=${guestCode}`;
@@ -568,70 +999,82 @@ function showSuccessFromServer() {
     qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(qrTarget)}&color=0f172a&bgcolor=ffffff`;
   }
 
+  // Actualizar también ticket principal
+  if ($('#ticketQrImage')) $('#ticketQrImage').src = qrUrl;
+  if ($('#ticketName') && state.guest?.name) $('#ticketName').textContent = state.guest.name;
+  if ($('#ticketCode')) $('#ticketCode').textContent = guestCode;
+
   const successNode = $('#successState');
-  if (!successNode) return;
-  
-  const iconNode = $('.success__icon', successNode);
-  const eyebrowNode = $('.eyebrow', successNode);
-  const qrBoxNode = $('.success-qr-box', successNode);
-  const downloadBtnNode = $('#downloadPassButton');
+  if (successNode) {
+    const iconNode = $('.success__icon', successNode);
+    const eyebrowNode = $('.eyebrow', successNode);
+    const qrBoxNode = $('.success-qr-box', successNode);
+    const downloadBtnNode = $('#downloadPassButton');
 
-  successNode.classList.remove('hidden');
+    successNode.classList.remove('hidden');
 
-  if (attending) {
-    if (iconNode) {
-      iconNode.textContent = '✓';
-      iconNode.style.background = 'rgba(56, 189, 248, 0.2)';
-      iconNode.style.color = '#38bdf8';
+    const evDate = state.event?.date ? formatEventDate(state.event.date) : 'Jueves 27 de agosto';
+    const evTime = state.event?.time || '20:00';
+    const evVenue = state.event?.venue || 'Movie Montevideo Shopping';
+
+    if (attending) {
+      if (iconNode) {
+        iconNode.textContent = '✓';
+        iconNode.style.background = 'rgba(56, 189, 248, 0.2)';
+        iconNode.style.color = '#38bdf8';
+      }
+      if (eyebrowNode) eyebrowNode.textContent = 'CONFIRMACIÓN REGISTRADA';
+      if ($('#successTitle')) $('#successTitle').textContent = `¡Gracias, ${firstName(state.guest?.name)}!`;
+      if ($('#successText')) {
+        $('#successText').textContent =
+          `Tu asistencia quedó registrada para ${Math.max(total, 1)} persona${Math.max(total, 1) === 2 ? 's' : ''}. ` +
+          `Te esperamos el ${evDate} a las ${evTime} hs en ${evVenue}.`;
+      }
+
+      if ($('#successQrImage')) $('#successQrImage').src = qrUrl;
+      if ($('#successQrCode')) $('#successQrCode').textContent = guestCode;
+      if (qrBoxNode) qrBoxNode.classList.remove('hidden');
+      if (downloadBtnNode) downloadBtnNode.classList.remove('hidden');
+
+      const waText = encodeURIComponent(
+        `¡Hola! Confirmé mi asistencia para la función especial de Coyote vs. Acme de Universal Assistance 🎬✨\n\n` +
+        `📅 Fecha: Jueves 27 de Agosto · 20:00 hs (Llegada: 19:30 hs)\n` +
+        `📍 Lugar: Movie Montevideo Shopping\n` +
+        `🎟️ Código de entrada: ${guestCode}\n\n` +
+        `Ver invitación y pase VIP: https://ua-eventos-uy.web.app/coyote-vs-acme?i=${guestCode}`
+      );
+      const waButton = $('#whatsappShareButton');
+      if (waButton) {
+        waButton.href = `https://api.whatsapp.com/send?text=${waText}`;
+        waButton.classList.remove('hidden');
+      }
+
+      $('#calendarButton')?.classList.remove('hidden');
+      $('#mapsButton')?.classList.remove('hidden');
+      try { launchConfetti(); } catch (_) {}
+    } else {
+      if (iconNode) {
+        iconNode.textContent = '💙';
+        iconNode.style.background = 'rgba(239, 47, 131, 0.2)';
+        iconNode.style.color = '#ef2f83';
+      }
+      if (eyebrowNode) eyebrowNode.textContent = 'RESPUESTA REGISTRADA';
+      if ($('#successTitle')) $('#successTitle').textContent = `¡Qué lástima que no puedas acompañarnos, ${firstName(state.guest?.name)}!`;
+      if ($('#successText')) $('#successText').textContent = 'Lamentamos mucho que no puedas asistir en esta oportunidad. ¡Esperamos reencontrarnos muy pronto en un próximo evento de Universal Assistance!';
+
+      if (qrBoxNode) qrBoxNode.classList.add('hidden');
+      if (downloadBtnNode) downloadBtnNode.classList.add('hidden');
+      if ($('#whatsappShareButton')) $('#whatsappShareButton').classList.add('hidden');
+      $('#calendarButton')?.classList.add('hidden');
+      $('#mapsButton')?.classList.add('hidden');
     }
-    if (eyebrowNode) eyebrowNode.textContent = 'CONFIRMACIÓN REGISTRADA';
-    if ($('#successTitle')) $('#successTitle').textContent = `¡Gracias, ${firstName(state.guest.name)}!`;
-    if ($('#successText')) {
-      $('#successText').textContent =
-        `Tu asistencia quedó registrada para ${Math.max(total, 1)} persona${Math.max(total, 1) === 2 ? 's' : ''}. ` +
-        `Te esperamos el ${formatEventDate(state.event.date)} a las ${state.event.time} hs en ${state.event.venue}.`;
-    }
-
-    if ($('#successQrImage')) $('#successQrImage').src = qrUrl;
-    if ($('#successQrCode')) $('#successQrCode').textContent = guestCode;
-    if (qrBoxNode) qrBoxNode.classList.remove('hidden');
-    if (downloadBtnNode) downloadBtnNode.classList.remove('hidden');
-
-    const waText = encodeURIComponent(
-      `¡Hola! Confirmé mi asistencia para la función especial de Coyote vs. Acme de Universal Assistance 🎬✨\n\n` +
-      `📅 Fecha: Jueves 27 de Agosto · 20:00 hs (Llegada: 19:30 hs)\n` +
-      `📍 Lugar: Movie Montevideo Shopping\n` +
-      `🎟️ Código de entrada: ${guestCode}\n\n` +
-      `Ver invitación y pase VIP: https://ua-eventos-uy.web.app/coyote-vs-acme?i=${guestCode}`
-    );
-    const waButton = $('#whatsappShareButton');
-    if (waButton) {
-      waButton.href = `https://api.whatsapp.com/send?text=${waText}`;
-      waButton.classList.remove('hidden');
-    }
-
-    $('#calendarButton')?.classList.remove('hidden');
-    $('#mapsButton')?.classList.remove('hidden');
-    launchConfetti();
-  } else {
-    if (iconNode) {
-      iconNode.textContent = '💙';
-      iconNode.style.background = 'rgba(239, 47, 131, 0.2)';
-      iconNode.style.color = '#ef2f83';
-    }
-    if (eyebrowNode) eyebrowNode.textContent = 'RESPUESTA REGISTRADA';
-    if ($('#successTitle')) $('#successTitle').textContent = `¡Qué lástima que no puedas acompañarnos, ${firstName(state.guest.name)}!`;
-    if ($('#successText')) $('#successText').textContent = 'Lamentamos mucho que no puedas asistir en esta oportunidad. ¡Esperamos reencontrarnos muy pronto en un próximo evento de Universal Assistance!';
-
-    if (qrBoxNode) qrBoxNode.classList.add('hidden');
-    if (downloadBtnNode) downloadBtnNode.classList.add('hidden');
-    if ($('#whatsappShareButton')) $('#whatsappShareButton').classList.add('hidden');
-    $('#calendarButton')?.classList.add('hidden');
-    $('#mapsButton')?.classList.add('hidden');
   }
 
-  applyAnsweredState(state.guest.status);
-  successNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (attending) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else if (successNode) {
+    successNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 }
 
 function showFormMessage(message, isError) {
@@ -660,7 +1103,10 @@ function showError(message) {
 }
 
 function firstName(fullName) {
-  return String(fullName || 'Hola').trim().split(/\s+/)[0];
+  if (!fullName) return '';
+  const clean = String(fullName).trim();
+  if (!clean || clean.toLowerCase().includes('invitado')) return '';
+  return clean.split(/\s+/)[0];
 }
 
 function formatEventDate(value) {
@@ -1011,3 +1457,54 @@ function launchConfetti() {
 
   animate();
 }
+
+async function submitWaitlist(e) {
+  if (e) e.preventDefault();
+  const phone = $('#waitlistPhone')?.value.trim();
+  const seats = $('#waitlistSeats')?.value || '2';
+  const btn = $('#btnJoinWaitlist');
+  if (!phone) {
+    alert('Por favor, ingresá tu número de celular para poder avisarte.');
+    return;
+  }
+
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'Registrando...';
+  }
+
+  try {
+    const callbackName = `uaWaitlistCb_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+    const script = document.createElement('script');
+    const url = new URL(BACKEND_URL);
+    url.searchParams.set('action', 'updateGuest');
+    url.searchParams.set('code', state.code);
+    url.searchParams.set('status', 'Lista de Espera');
+    url.searchParams.set('phone', phone);
+    url.searchParams.set('totalSeats', seats);
+    url.searchParams.set('callback', callbackName);
+    url.searchParams.set('_', Date.now().toString());
+
+    window[callbackName] = function(res) {
+      delete window[callbackName];
+      script.remove();
+      $('#waitlistCard')?.classList.add('hidden');
+      $('#waitlistSuccess')?.classList.remove('hidden');
+      if ($('#heroStatusText')) $('#heroStatusText').textContent = 'En Lista de Espera';
+    };
+
+    script.src = url.toString();
+    script.onerror = function() {
+      // Fallback si la respuesta tarda
+      $('#waitlistCard')?.classList.add('hidden');
+      $('#waitlistSuccess')?.classList.remove('hidden');
+      if ($('#heroStatusText')) $('#heroStatusText').textContent = 'En Lista de Espera';
+    };
+    document.body.appendChild(script);
+  } catch (err) {
+    console.error('Error al registrarse en lista de espera:', err);
+    $('#waitlistCard')?.classList.add('hidden');
+    $('#waitlistSuccess')?.classList.remove('hidden');
+  }
+}
+

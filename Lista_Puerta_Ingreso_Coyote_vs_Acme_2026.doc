@@ -1,0 +1,1595 @@
+
+  <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+  <head>
+    <meta charset="utf-8">
+    <title>Planilla de Ingreso a Sala - Coyote vs Acme</title>
+    <!--[if gte mso 9]>
+    <xml>
+      <w:WordDocument>
+        <w:View>Print</w:View>
+        <w:Zoom>100</w:Zoom>
+        <w:DoNotOptimizeForBrowser/>
+      </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+      @page Section1 {
+        size: 21.59cm 27.94cm;
+        margin: 1.2cm 1.2cm 1.2cm 1.2cm;
+        mso-header-margin: 0.8cm;
+        mso-footer-margin: 0.8cm;
+      }
+      div.Section1 { page: Section1; }
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #0f172a;
+        margin: 0; padding: 0;
+      }
+      .header-bar {
+        background-color: #071938;
+        padding: 14px 20px;
+        border-radius: 8px;
+        color: #ffffff;
+        margin-bottom: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header-title {
+        font-size: 18px;
+        font-weight: 900;
+        color: #ffffff;
+        margin: 0;
+      }
+      .header-sub {
+        font-size: 11px;
+        color: #38bdf8;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+      .main-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .main-table th {
+        background-color: #071938;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 8px 6px;
+        border: 1px solid #071938;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Section1">
+      
+      <div class="header-bar">
+        <div>
+          <div style="font-size: 9px; font-weight: 900; color: #ee1f73; text-transform: uppercase; letter-spacing: 1px;">UNIVERSAL ASSISTANCE · PLANILLA DE PUERTA / ACREDITACIÓN</div>
+          <h1 class="header-title">🎬 Control de Ingreso a Sala (Orden Alfabético)</h1>
+          <div class="header-sub">Función: Coyote vs. Acme · Movie Mvd Shopping (Sala 2) · Jueves 27/08 19:30 hs · <strong>Total: 291 Butacas (136 Pases)</strong></div>
+        </div>
+      </div>
+
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th style="width: 4%;">#</th>
+            <th style="width: 32%;">Nombre del Titular</th>
+            <th style="width: 36%;">Acompañante(s)</th>
+            <th style="width: 10%;">Butacas</th>
+            <th style="width: 12%;">Código</th>
+            <th style="width: 6%;">Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">1</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Aldo Nipoli</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126489</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">2</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Alejandro Mendez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-C898D8F9</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">3</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Amparo Schelotto</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Lila Pesenti</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620505</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">4</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ana Camiou</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Maria Paz Lago | Agustin Lago</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-A73CA7A0</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">5</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ana Gabriela Conti</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Lorenzo Marino</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-786E6F9F</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">6</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ana Laura Britos</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">LUCAS AGUIAR</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-CC8EB366</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">7</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ana Toniotti</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Hija de Ana Toniotti</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-2D660500</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">8</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Anaclara Arrieta</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Pablo Trentini</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620498</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">9</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Anahir Aguilar</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Horacio Botta</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-67244620</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">10</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Andrea Melegati</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Luis Delfino</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-20642072</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">11</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Andrea Silvana Menéndez Martínez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Mateo Menéndez Martínez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620621</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">12</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Angel Brazionis</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Leticia Lemaire | Emilia Brazionis</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620605</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">13</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Angela Hoffman</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante Confirmado</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-DDC44D12</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">14</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ayelen Alvarez acland</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">ianco rodríguez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620510</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">15</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Bárbara Mayoral</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Javier D´Elia</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620616</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">16</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Belén Arbiza</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Victoria Martinez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-3771D38F</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">17</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Belen gallo</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Belen sosa</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620503</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">18</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Camila Walch</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Danilo rodriguez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620496</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">19</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Carina Cobas</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Sabrina Cean Cobas</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620608</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">20</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Carla Varela</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Juan Aron</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620504</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">21</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Cecilia</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">FRANCO RADÛNZ | LUCIANA RADÛNZ</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-D4AB1964</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">22</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Cecilia Mendez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Pablo Gianoni</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-05F95A3A</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">23</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Cecilia Pinto</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Micaela Gavioli</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126522</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">24</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Clara Bachino</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Lucia Loriente</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-95205518</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">25</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Daniel Pons</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Alexandra Ramilo / Juan Manuel Trinidad</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126526</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">26</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Darío Czeszler</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Paula Czeszler</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98B43977</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">27</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Diego Correa</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Alejandra Palermo</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-25045D75</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">28</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Diego Massia</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Emilia Massia | Federico Massia</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620617</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">29</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Elisa Costa</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">2 Acompañantes</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-1A61CF1F</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">30</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Elizabeth Méndez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Bruno Grubits</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620613</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">31</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Emiliano Arevalo</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Estefania Alonso</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-85A412B2</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">32</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Enzo Figueira</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante Confirmado</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-E1398250</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">33</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Erika Martin</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Thiago Montossi | Emiliano Montossi</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-724E3E54</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">34</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Extra Vendedor</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Javier D'elia</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-9CF6443E</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">35</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Fabrizio Maglione</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Lorenzo Maglione y Acompañante</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-6DD558DE</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">36</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Facundo Quiró Saldaña</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Juampi</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-8EE3F33C</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">37</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Federico Hornes</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Maria Belen Dominguez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620500</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">38</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Fernanda Fontes</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Nicolas Rippe</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-9D6A8016</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">39</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">FERNANDO NADER</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">LORENZO NADER | JULIETA NADER</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620607</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">40</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Fernando Otazu</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Benjamin Otasu | Aldana Otasu</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620532</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">41</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Fiorella Ancheta</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Valentina Martiarena</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126459</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">42</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Florencia Costanzo</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Nicolas Martinez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620493</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">43</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Florencia Flores</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Gonzalo Alfaro</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-F104E515</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">44</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Florencia Quinteros</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Josefina Rodriguez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620424</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">45</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Gabriel Piastra</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Fabrizio Piastra | Natalia Prado</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620604</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">46</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Gerardo Rodriguez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">JOAQUIN RODRIGUEZ</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620454</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">47</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Gimena Rodriguez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Franco Azambuya | Mahia Azambuya | Ernesto Azambuya</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">4</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-AFE5BD48</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">48</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Grisel Olivera</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">VANESA FURTADO</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-148857CD</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">49</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Guadalupe Placeres</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Jose algorta</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620501</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">50</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Gustavo Amoroso</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Máximo Billar | Raphaella Billar</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-6A820E9B</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">51</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ibrahim Al Mohammad</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Sanaa al</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-529B6D22</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">52</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">IGNACIO CURTI</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">MARGARITA CURTI</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620458</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">53</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ignacio Vidal</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Mariana Aguirre</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-0FB47E1B</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">54</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ivanna</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante Confirmado</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-D2D0AE66</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">55</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Javier Mossi</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Bastian >Roldan</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126473</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">56</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Jimena Quintana</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Evelin Molina</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-F2364BFD</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">57</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Joaquin Alfonso</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Soledad Narvaez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620534</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">58</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Jorge Costa Tu viaje</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620540</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">59</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Jorge Martínez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Guillermo</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-9E439B34</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">60</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Jorgelina arrigoni</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Bruna Guarnerio</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-F81908EB-J</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">61</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Josefina Delgado</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">PIA CAJAL</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-E2D839E8</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">62</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Juan Pablo Escobar</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Nicolas Escobar</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-3CB0003E</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">63</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Juan Pablo Guaglianoni</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-53700A22</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">64</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Karina Rossini</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Martin Picasso</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-0A597B97</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">65</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Laura Caprio</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante Confirmado</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-DF9F77B2</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">66</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Laura Rodriguez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Florencia Pereyra</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-DBAB436B</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">67</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Laura Ronchetti</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">GUILLERMINA SCHIPILOV | SALVADOR SCHIPILOV</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-2D32F6A9</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">68</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Lorena Sanchez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Maia Mieres y Diego Bonjour</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620609</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">69</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Lucia Amestoy</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Juan Pablo Morales | Karina | Diego</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">4</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-49D8E751</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">70</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Luciana Coitiño</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Anthony Blanco</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620494</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">71</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Maca Perez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Emma Azcurra</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-12B86D7F</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">72</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Marcos Miraglia</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Blas Miraglia</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620492</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">73</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Margaret Bittencourt</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-CE0A1B71</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">74</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Maria Camiou</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Manuel Selves</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126517</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">75</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">María José Méndez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620531</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">76</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">María José Piuma</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Josefina Barceló | Micaela Radiccioni</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620619</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">77</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Mariana Firpo</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Federico Carabajal</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-0C8E2AA8</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">78</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">MARIANELA IBIÑETE</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Juan F. Richelli | Joaquín Richelli | Josefina Richelli</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">4</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126531</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">79</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Marianna Tomasi</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Emilia Durañona</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-004</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">80</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Mariano Umpierre</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620623</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">81</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Maximiliano Abreo</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">3 Acompañantes</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">4</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-7D8E219B</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">82</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Maximiliano Cobas</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Juan Manuel Cobas</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-EF243E65</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">83</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Monica Reyes</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Tomas Vaillant | 2 Acompañantes</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">4</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620475</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">84</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Myriam Cardozo</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Emiliano Pons</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-FE5ED687</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">85</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Nacho</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Orianna Ferrazzi</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-A20A3578</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">86</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Nadia NuñEz</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Agustín Maubrigades</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-8F23F9C7</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">87</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">NANCY TORRES</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">DOLORES GARCIA</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620602</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">88</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Natalia de los Santos</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Rocio Balcedo</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-4AF01B2F</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">89</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Natalia Doglio (Pase 1 - Adulto + 2 Niños)</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Joaquina Pedro</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-CF5493C0</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">90</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Natalia Gonzalez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Bruno Pereyra</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-159954F6</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">91</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Pablo Ananikian</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Lorenzo Ananikian | Vicente Ananikian</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-23DC8C37</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">92</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Pablo Perez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante Confirmado</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-DF9DAD65</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">93</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Pablo Rasocvich</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Alfonsina Rascovich</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-D29D1CDD</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">94</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">PABLO SCHIPILOV</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">ELIAS FARAH</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126492</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">95</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Pamela Zabala</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126458</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">96</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Pase CAMBADU (Titular)</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Mónica Prentice</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-B9D60563</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">97</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Patricia Correa</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Tiziano Pascale</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">6</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-CDDA4E11</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">98</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Paula Aramendia</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-C6704E59</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">99</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Paulina Mendez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Gabriel Martinez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620529</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">100</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Pilar Méndez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620530</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">101</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Rafael Monzón</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Renzo Monzón | Lautaro Monzón</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620620</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">102</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Renata Almeida Suárez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Martina Salazar</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620437</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">103</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Ricardo Hausman</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Lil Carballo</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-B22FADDC</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">104</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Rodolfo Capote</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620611</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">105</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Rodrigo Pinto</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">FELIPE PINTO | CARINA RIVOIRA</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620481</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">106</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Romina Baraybar</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Javier Ponzo</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-12A905D7</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">107</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Rosana Bagnado</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-584B7E74</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">108</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Rosina Fábregas</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620533</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">109</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Sandra Perroni</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-D88A84A6</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">110</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Sandra Yuane</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Gianni Carsillo | Gustavo Carsillo</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-805814BB</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">111</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Santiago Deluca</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-6EFB79C7</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">112</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Sebastián Furtado</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">2 Niños</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">3</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620622</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">113</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Sebastian Perona</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Patricio Larrobla Perona</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-CECA30E6</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">114</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Silvana Sagario</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Andrea Pérez</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-001D7FF5</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">115</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Sofia Ramirez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">THIAGO TINOCO</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-1D94AFD0</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">116</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Soledad Baquet</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Martín Baquet</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-57B46107</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">117</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Stephanie Olivera</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-FF989B31</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">118</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Susana Pasos</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Emanuel</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-D5047B58</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">119</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Tatiana</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante Confirmado</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126469</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">120</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Tiffany Herrera</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Kevin Nallem</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126527</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">121</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Vale Olivera</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Franco Silva</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620495</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">122</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">valentin quiro saldaña</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Martiniano</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-C5944342</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">123</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Valentina Irigaray</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Benjamín Nocella</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-B387F788</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">124</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Valentina Mendez</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-C2726D57</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">125</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Valeria Herrera</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Daniel Laso Herrera</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-09052CDD</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">126</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Veronica Sanchiz</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Alejandro Alzúa</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-1AACF6C2</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">127</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Verónica Sequeiros</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Federico Márquez Sequeiros</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-5E3A75FC</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">128</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Victoria Cardoso</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">TOMAS RODRIGUEZ</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620606</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">129</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Victoria de Souza</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Maia de Souza</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620499</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">130</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Victoria Diano</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">—</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">1</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-8350D348</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">131</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Victoria Méndez Aramendía</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante Confirmado</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-BA5D8F1D</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">132</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Virginia Pica</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Agustina Rossi</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-6C4127A7</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">133</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Virginia Willebald</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Santiago Varela</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-96126457</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">134</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">vittoria gugliotta</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Felipe Olivera</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620603</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #ffffff;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">135</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Yhonson Choca</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Faustino Choca</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-CAE070ED</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+      <tr style="background-color: #f8fafc;">
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: bold; color: #64748b; font-size: 11px;">136</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; font-weight: bold; color: #071938; font-size: 13px;">Yomira Aguiar</td>
+        <td style="padding: 7px 10px; border: 1px solid #cbd5e1; color: #1e293b; font-size: 12px;">Acompañante de Yomira Aguiar</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 900; color: #ee1f73; font-size: 14px;">2</td>
+        <td style="padding: 7px 8px; border: 1px solid #cbd5e1; font-family: Consolas, monospace; font-size: 11px; color: #475569; text-align: center;">UA-98620596</td>
+        <td style="padding: 7px 6px; border: 1px solid #cbd5e1; text-align: center; width: 60px;">
+          <div style="width: 22px; height: 22px; border: 2px solid #94a3b8; border-radius: 4px; margin: 0 auto;"></div>
+        </td>
+      </tr>
+    
+        </tbody>
+      </table>
+
+      <div style="margin-top: 14px; font-size: 10px; color: #94a3b8; text-align: center;">
+        Planilla Oficial de Acreditación · Movie Montevideo Shopping · Sala 2 (Capacidad: 299 Butacas)
+      </div>
+
+    </div>
+  </body>
+  </html>
+  

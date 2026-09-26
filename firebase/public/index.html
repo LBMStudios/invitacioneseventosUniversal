@@ -7,9 +7,13 @@
   <meta name="theme-color" content="#071938">
 
   <title>Universal Assistance | Invitación Especial a Cine</title>
-  <link rel="icon" type="image/png" href="/assets/logo-ua-white-icon.png">
-  <link rel="shortcut icon" href="/assets/logo-ua-white-icon.png">
-  <link rel="apple-touch-icon" href="/assets/logo-ua-white-icon.png">
+  <link rel="preconnect" href="https://script.google.com" crossorigin>
+  <link rel="dns-prefetch" href="https://script.google.com">
+  <link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
+
+  <link rel="icon" type="image/png" href="https://ua-eventos-uy.web.app/assets/logo-ua-white-icon.png">
+  <link rel="shortcut icon" type="image/png" href="https://ua-eventos-uy.web.app/assets/logo-ua-white-icon.png">
+  <link rel="apple-touch-icon" href="https://ua-eventos-uy.web.app/assets/logo-ua-white-icon.png">
   <meta name="title" content="Universal Assistance | Invitación Especial a Cine">
   <meta name="description" content="Tenés una invitación personalizada para la función especial de Coyote vs. Acme el Jueves 27 de Agosto a las 20:00 hs en Movie Montevideo Shopping. Confirmá tu lugar.">
 
@@ -34,26 +38,17 @@
   <!-- Favicon & Icons -->
   <link rel="icon" href="/assets/logo-ua-white-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/logo-ua-white-icon.png">
-  <link rel="image_src" href="https://ua-eventos-uy.web.app/assets/preview.png?v=ua-20260801-v53">
-  <link rel="stylesheet" href="/styles.css?v=ua-20260801-v53">
+  <link rel="stylesheet" href="/styles.css?v=20260826-v201">
+  <script src="/qrcode.min.js?v=20260826-v201"></script>
 </head>
 <body>
   <header class="ua-header">
     <div class="ua-header__inner">
       <div class="ua-brand">
-        <img src="/assets/logo-ua-white.png" alt="Universal Assistance" class="ua-brand__logo">
-        <span class="ua-brand__company">A company of</span>
-        <div class="ua-brand__zurich">
-          <svg viewBox="0 0 120 28" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Zurich">
-            <circle cx="14" cy="14" r="12.5" fill="white"/>
-            <path d="M8.5 9h11L8.5 19h11" stroke="#001B3A" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter"/>
-            <text x="33" y="19" fill="#FFFFFF" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="14.5" letter-spacing="1.2">ZURICH</text>
-            <text x="105" y="11" fill="#FFFFFF" font-family="Inter, -apple-system, sans-serif" font-size="7" font-weight="400">®</text>
-          </svg>
-        </div>
+        <img src="/assets/logo-ua-zurich.svg?v=1" alt="Universal Assistance - A company of Zurich" class="ua-brand__logo-full">
       </div>
       <div class="ua-header__right">
-        <img src="/assets/logo-movie-white.svg" alt="Movie" class="ua-header__movie-logo">
+        <img src="/assets/logo-movie-white.svg?v=5" alt="Movie" class="ua-header__movie-logo">
         <a href="#confirmar" id="headerCta" class="header-cta">Confirmar asistencia</a>
       </div>
     </div>
@@ -115,9 +110,9 @@
             <p id="introText" class="hero-intro">Te invitamos a disfrutar de una función especial con Universal Assistance.</p>
 
             <div class="feature-row" aria-label="Beneficios de la invitación">
-              <div><span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M7 3v18M17 3v18M2 9h20M2 15h20"/></svg></span><span><strong>Función exclusiva</strong><small>Para invitados de UA.</small></span></div>
-              <div><span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span><strong>Experiencia única</strong><small>Cine y sorpresas.</small></span></div>
-              <div><span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span><strong>Para compartir</strong><small>Con quien vos elijas.</small></span></div>
+              <div><span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M7 3v18M17 3v18M2 9h20M2 15h20"/></svg></span><span><strong>Función Exclusiva</strong><small>Para invitados de UA.</small></span></div>
+              <div><span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><span><strong>Pop & Bebida</strong><small>Cortesía de Universal.</small></span></div>
+              <div><span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span><strong>Pase Personal</strong><small>Individual e intransferible.</small></span></div>
             </div>
           </section>
 
@@ -149,17 +144,17 @@
               <div class="invite-card__stub-right" aria-hidden="true"></div>
               <div class="invite-card__top">
                 <p class="eyebrow">Pase VIP Exclusivo</p>
-                <span class="access-pill">Vos +1</span>
+                <span class="access-pill">2 Entradas</span>
               </div>
               <span class="label">Invitado Especial</span>
               <h2 id="ticketName">Invitado</h2>
               <div class="invite-divider"></div>
               <div class="invite-data">
-                <div><span>Accesos</span><strong id="ticketSeats">Vos + 1</strong></div>
+                <div><span>Accesos</span><strong id="ticketSeats">2 Entradas</strong></div>
                 <div><span>Código</span><strong id="ticketCode">UA-000000</strong></div>
               </div>
               <div class="ticket-qr-container">
-                <img id="ticketQrImage" class="ticket-qr-img" crossorigin="anonymous" alt="Código QR del pase" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fua-eventos-uy.web.app%2Fcoyote-vs-acme%3Fi%3DUA-DEMO-001&color=0f172a&bgcolor=ffffff">
+                <img id="ticketQrImage" class="ticket-qr-img" crossorigin="anonymous" alt="Código QR del pase" src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https%3A%2F%2Fua-eventos-uy.web.app%2Fcoyote-vs-acme%3Fi%3DUA-DEMO-001&color=0f172a&bgcolor=ffffff">
                 <span class="ticket-qr-label">ESCANEÁ PARA VALIDAR EN ENTRADA</span>
               </div>
               <div class="ticket-barcode" aria-hidden="true">
@@ -198,9 +193,71 @@
             <div class="notice__badge">Respuesta registrada</div>
             <strong id="previousAnswerTitle">Ya registramos una respuesta para esta invitación.</strong>
             <p id="previousAnswer"></p>
+            <div style="margin-top: 1.25rem;">
+              <button type="button" id="btnEditConfirmation" class="btn btn--secondary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 600;">
+                ✏️ Modificar mis datos o acompañantes
+              </button>
+            </div>
+          </section>
+
+          <section id="expiredBanner" class="notice notice--soldout hidden" data-reveal>
+            <div class="notice__badge notice__badge--soldout">⏳ PLAZO FINALIZADO / CUPOS COMPLETOS</div>
+            <h2>Plazo de Confirmación Finalizado</h2>
+            <p>Estimado/a <span id="expiredGuestName">invitado/a</span>, te informamos que el plazo límite para confirmar la asistencia a la función especial de <strong>Coyote vs. Acme</strong> ha concluido y los cupos disponibles de la sala han sido completados.</p>
+
+            <!-- FORMULARIO LISTA DE ESPERA -->
+            <div id="waitlistCard" style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; text-align: left;">
+              <h3 style="font-size: 1.05rem; color: #38bdf8; margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span>📋</span> ¿Querés anotarte en Lista de Espera?
+              </h3>
+              <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 1rem; line-height: 1.4;">
+                Si se liberan lugares por cancelaciones de último momento, nos comunicaremos contigo de inmediato para asignarte tus entradas.
+              </p>
+              
+              <form id="waitlistForm" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                  <input type="tel" id="waitlistPhone" placeholder="Tu Celular (Ej: 099 123 456)" required style="flex: 1; min-width: 180px; padding: 0.75rem 1rem; background: rgba(15,23,42,0.85); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 0.95rem;">
+                  <select id="waitlistSeats" style="padding: 0.75rem 1rem; background: #0f172a; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 0.95rem; cursor: pointer;">
+                    <option value="2">2 Entradas</option>
+                    <option value="1">1 Entrada</option>
+                  </select>
+                </div>
+                <button type="submit" id="btnJoinWaitlist" class="btn btn--primary" style="padding: 0.85rem 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 0.5rem; border: none; cursor: pointer;">
+                  <span>🙋‍♂️</span> Anotarme en Lista de Espera
+                </button>
+              </form>
+            </div>
+
+            <!-- MENSAJE DE ÉXITO LISTA DE ESPERA -->
+            <div id="waitlistSuccess" class="hidden" style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(34, 197, 94, 0.12); border: 1px solid rgba(34, 197, 94, 0.35); border-radius: 12px; text-align: left;">
+              <h3 style="font-size: 1.05rem; color: #4ade80; margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span>✅</span> ¡Estás en la Lista de Espera!
+              </h3>
+              <p style="font-size: 0.9rem; color: #cbd5e1; margin: 0; line-height: 1.5;">
+                Registramos tu solicitud. Si se liberan lugares en la sala Movie, el equipo de <strong>Universal Assistance</strong> te contactará directamente.
+              </p>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: center;">
+              <span style="display: inline-block; font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Universal Assistance</span>
+            </div>
+          </section>
+
+          <section id="soldOutBanner" class="notice notice--soldout hidden" data-reveal>
+            <div class="notice__badge notice__badge--soldout">🚨 CUPOS COMPLETOS / SALA LLENA</div>
+            <h2>Cupos Agotados para esta Función</h2>
+            <p>Agradecemos tu interés. Se ha alcanzado la capacidad máxima de la sala de cine para la función especial. Por el momento no quedan lugares disponibles para confirmar asistencia.</p>
           </section>
 
           <section class="rsvp-section" id="confirmar">
+            <div class="urgency-banner-card" data-reveal>
+              <div class="urgency-banner-badge">🚨 CUPOS LIMITADOS</div>
+              <div class="urgency-banner-content">
+                <strong>Confirmá tu lugar para asegurar tus entradas <span id="rsvpDeadline" class="urgency-highlight">(Cupos Limitados)</span></strong>
+                <p>Los accesos son estrictamente limitados y se reservan por orden de respuesta. Respondé a la brevedad para asegurar tu lugar en la sala.</p>
+                <div id="capacityAlertBadge" class="capacity-alert-badge hidden"></div>
+              </div>
+            </div>
             <div class="rsvp-grid">
               <article class="summary-card" data-reveal>
                 <p class="eyebrow">Tu invitación VIP</p>
@@ -209,7 +266,7 @@
 
                 <div class="summary-list">
                   <div><span class="summary-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"/><path d="M13 5v14" stroke-dasharray="2 2"/></svg></span><span><strong>Función especial de Cine</strong><small>Entradas reservadas para invitados de UA.</small></span></div>
-                  <div><span class="summary-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span><strong>Opción con Acompañante</strong><small>Podés confirmar para 1 o 2 personas.</small></span></div>
+                  <div><span class="summary-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span><strong id="summarySeatsTitle">Opción con Acompañante</strong><small id="summarySeatsText">Podés confirmar para 1 o 2 personas.</small></span></div>
                   <div><span class="summary-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span><strong>Llegada sugerida</strong><small>Te esperamos a las <span id="arrivalTime">19:30 hs</span>.</small></span></div>
                 </div>
               </article>
@@ -217,7 +274,7 @@
               <article class="form-card" id="formCard" data-reveal>
                 <div class="form-card__head">
                   <p class="eyebrow">Confirmación RSVP</p>
-                  <h2 id="rsvpGreetingTitle">¡Hola, <span id="rsvpGuestFirstName">Invitado</span>!</h2>
+                  <h2 id="rsvpGreetingTitle">Confirmá tu asistencia</h2>
                   <p>Confirmá o editá tus datos para obtener tu Pase VIP QR.</p>
                 </div>
 
@@ -228,20 +285,20 @@
                   <div class="guest-info-card">
                     <div class="guest-info-header">
                       <span>👤 Tus Datos Registrados</span>
-                      <button type="button" id="btnToggleEdit" class="btn-toggle-edit">✏️ Editar mis datos</button>
+                      <button type="button" id="btnToggleEdit" class="btn-toggle-edit">✏️ Toca cualquier campo para editar</button>
                     </div>
                     <div class="field-grid">
-                      <label class="field">
+                      <label class="field" id="fieldContainerName">
                         <span>Nombre y Apellido (*)</span>
-                        <input type="text" id="formGuestName" name="guestName" required autocomplete="name" placeholder="Tu nombre completo">
+                        <input type="text" id="formGuestName" name="guestName" required autocomplete="name" placeholder="Ej: Lucas Beathyate">
                       </label>
-                      <label class="field">
-                        <span>Correo Electrónico (*)</span>
-                        <input type="email" id="formEmail" name="email" required autocomplete="email" placeholder="ejemplo@correo.com">
+                      <label class="field" id="fieldContainerEmail">
+                        <span>Correo Electrónico (opcional)</span>
+                        <input type="email" id="formEmail" name="email" autocomplete="email" placeholder="Ej: ejemplo@correo.com">
                       </label>
-                      <label class="field" style="grid-column: 1 / -1;">
+                      <label class="field" id="fieldContainerPhone" style="grid-column: 1 / -1;">
                         <span>Teléfono / Celular (opcional)</span>
-                        <input type="tel" id="formPhone" name="phone" autocomplete="tel" placeholder="099 123 456">
+                        <input type="tel" id="formPhone" name="phone" autocomplete="tel" placeholder="Ej: 099 123 456">
                       </label>
                     </div>
                   </div>
@@ -271,12 +328,11 @@
                     </div>
                   </div>
 
-                  <!-- CAMPO DINÁMICO ACOMPAÑANTE -->
+                  <!-- CAMPOS DINÁMICOS ACOMPAÑANTES -->
                   <div id="companionFieldsGroup" class="hidden companion-fields-box">
-                    <label class="field">
-                      <span>Nombre y Apellido del Acompañante (*)</span>
-                      <input type="text" id="formCompanionName" name="companionName" autocomplete="name" placeholder="Ej. María López">
-                    </label>
+                    <div id="companionFieldsList">
+                      <!-- Se genera dinámicamente por JS según la cantidad de entradas -->
+                    </div>
                   </div>
 
                   <p id="formMessage" class="form-message hidden" role="status"></p>
@@ -302,7 +358,7 @@
             <h2 id="successTitle">¡Gracias por confirmar!</h2>
             <p id="successText"></p>
             <div class="success-qr-box">
-              <img id="successQrImage" class="success-qr-img" crossorigin="anonymous" alt="Código QR de confirmación" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fua-eventos-uy.web.app%2Fcoyote-vs-acme%3Fi%3DUA-DEMO-001&color=0f172a&bgcolor=ffffff">
+              <img id="successQrImage" class="success-qr-img" crossorigin="anonymous" alt="Código QR de confirmación" src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=https%3A%2F%2Fua-eventos-uy.web.app%2Fcoyote-vs-acme%3Fi%3DUA-DEMO-001&color=0f172a&bgcolor=ffffff">
               <span class="success-qr-code" id="successQrCode">UA-DEMO-001</span>
             </div>
             <div class="success__actions">
@@ -334,16 +390,7 @@
       <div class="ua-footer__card">
         <div class="ua-footer__header">
           <div class="ua-footer__brand-wrapper">
-            <img src="/assets/logo-ua-white.png" alt="Universal Assistance" class="ua-footer__logo-img">
-            <span class="ua-footer__company-tag">A company of</span>
-            <div class="ua-footer__zurich-badge">
-              <svg viewBox="0 0 120 28" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Zurich">
-                <circle cx="14" cy="14" r="12.5" fill="white"/>
-                <path d="M8.5 9h11L8.5 19h11" stroke="#001C38" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter"/>
-                <text x="33" y="19" fill="#FFFFFF" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="14.5" letter-spacing="1.2">ZURICH</text>
-                <text x="105" y="11" fill="#FFFFFF" font-family="Inter, -apple-system, sans-serif" font-size="7" font-weight="400">®</text>
-              </svg>
-            </div>
+            <img src="/assets/logo-ua-zurich.svg?v=1" alt="Universal Assistance - A company of Zurich" class="ua-footer__logo-full" style="height: 38px; width: auto; display: block;">
           </div>
 
           <div class="ua-footer__event-badge">
@@ -424,6 +471,6 @@
 
   <iframe name="submissionFrame" id="submissionFrame" class="hidden-frame" title="Envío de confirmación"></iframe>
   <script src="/qrcode.min.js?v=ua-20260801-v58"></script>
-  <script src="/app.js?v=ua-20260801-v58"></script>
+  <script src="/app.js?v=20260826-v201"></script>
 </body>
 </html>

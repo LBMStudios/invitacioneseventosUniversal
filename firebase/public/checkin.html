@@ -51,9 +51,9 @@
 
     /* Responsive Header */
     .checkin-header {
-      background: rgba(7, 25, 56, 0.88);
+      background: rgba(7, 25, 56, 0.92);
       border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-      padding: 12px 24px;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -71,75 +71,79 @@
       font-weight: 900; font-size: 22px; color: var(--navy);
       box-shadow: 0 4px 14px rgba(0,0,0,0.3);
     }
-    .checkin-header__title { font-size: 16px; font-weight: 900; color: #ffffff; line-height: 1.1; letter-spacing: -0.3px; }
+    .checkin-header__title { font-size: 15px; font-weight: 900; color: #ffffff; line-height: 1.1; letter-spacing: -0.3px; }
     .checkin-header__subtitle { font-size: 11px; color: var(--cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
 
-    .hdr-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .hdr-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
     .btn-hdr {
       background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
-      color: #fff; font-size: 12px; font-weight: 800; padding: 8px 14px; border-radius: 10px;
+      color: #fff; font-size: 12px; font-weight: 800; padding: 8px 12px; border-radius: 10px;
       cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px;
       text-decoration: none; font-family: inherit;
     }
-    .btn-hdr:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
+    .btn-hdr:hover { background: rgba(255,255,255,0.18); }
     .btn-hdr--pink { background: linear-gradient(135deg, #ef2f83, #ee1f73); border: none; box-shadow: 0 4px 14px rgba(238,31,115,0.4); }
-    .btn-hdr--pink:hover { box-shadow: 0 6px 18px rgba(238,31,115,0.6); }
 
     /* Main Responsive Container */
     .checkin-container {
       position: relative; z-index: 1;
       max-width: 1360px; width: 100%;
       margin: 0 auto;
-      padding: 24px 20px 50px;
+      padding: 14px 12px 40px;
       flex: 1;
+    }
+
+    @media (max-width: 600px) {
+      .checkin-header { padding: 10px 14px; }
+      .checkin-header__title { font-size: 14px; }
+      .checkin-header__subtitle { font-size: 10px; }
+      .btn-hdr { padding: 6px 8px; font-size: 11px; }
+      .hdr-actions { gap: 6px; }
+      .stat-card { padding: 10px 6px; }
+      .stat-card__num { font-size: 24px; }
+      .stat-card__label { font-size: 9px; }
+      .filter-tabs { width: 100%; justify-content: space-between; }
+      .tab-btn { flex: 1 1 auto; justify-content: center; font-size: 10px; padding: 6px 8px; }
     }
 
     /* Grid layout */
     .checkin-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 16px;
     }
 
     @media (min-width: 900px) {
+      .checkin-container { padding: 20px 16px 50px; }
       .checkin-grid {
-        grid-template-columns: 460px 1fr;
+        grid-template-columns: 440px 1fr;
         align-items: start;
-        gap: 24px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .checkin-grid {
-        grid-template-columns: 520px 1fr;
-        gap: 28px;
+        gap: 20px;
       }
     }
 
     .checkin-panel {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 14px;
     }
 
     /* Stats Grid */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 8px;
     }
     .stat-card {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 16px;
-      padding: 16px 12px;
+      border-radius: 14px;
+      padding: 12px 8px;
       text-align: center;
       backdrop-filter: blur(12px);
-      transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .stat-card:hover { transform: translateY(-2px); border-color: rgba(56, 189, 248, 0.4); }
     .stat-card__num {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 900;
       color: var(--cyan);
       line-height: 1;
@@ -151,27 +155,26 @@
       font-weight: 800;
       color: rgba(255,255,255,0.7);
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-top: 6px;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
     }
 
     /* Scanner Box */
     .scanner-box {
-      background: rgba(13, 38, 84, 0.75);
-      border: 2px solid rgba(56, 189, 248, 0.45);
-      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     .scanner-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 18px;
-      background: rgba(4, 15, 38, 0.6);
+      padding: 10px 14px;
+      background: rgba(4, 15, 38, 0.7);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      gap: 8px; flex-wrap: wrap;
+      gap: 8px;
     }
     .scanner-title {
       font-size: 12px; font-weight: 800; color: var(--cyan);
@@ -181,55 +184,76 @@
     .scanner-controls { display: flex; gap: 6px; align-items: center; }
     .btn-cam-switch {
       background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-      color: #fff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 8px;
+      color: #fff; font-size: 11px; font-weight: 800; padding: 4px 8px; border-radius: 8px;
       cursor: pointer; transition: all 0.2s ease; font-family: inherit;
     }
-    .btn-cam-switch:hover { background: rgba(56,189,248,0.25); border-color: var(--cyan); }
     .btn-cam-switch.active-torch { background: rgba(245, 158, 11, 0.4); border-color: var(--yellow); color: #fef08a; }
 
     #qr-reader {
-      width: 100%;
+      width: 100% !important;
+      border: none !important;
       background: #000;
-      min-height: 240px;
+      min-height: 220px;
     }
     #qr-reader video {
       width: 100% !important;
       height: auto !important;
-      object-fit: cover;
+      display: block;
+    }
+    #qr-reader img {
+      display: none !important;
+    }
+
+    .cam-fallback-box {
+      padding: 24px 16px;
+      text-align: center;
+      background: rgba(4, 15, 38, 0.85);
+    }
+    .btn-start-cam {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #071938;
+      font-weight: 900;
+      font-size: 14px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.4);
+      font-family: inherit;
+      margin-bottom: 8px;
     }
 
     /* Manual Search Entry */
     .manual-entry {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 18px;
-      padding: 18px;
+      border-radius: 16px;
+      padding: 14px;
       backdrop-filter: blur(16px);
     }
     .manual-entry__title {
       font-size: 11px;
       font-weight: 800;
       color: var(--cyan);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       display: flex; align-items: center; gap: 6px;
     }
     .search-group {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
     .search-input {
       flex: 1;
       background: rgba(7, 25, 56, 0.85);
       border: 1px solid rgba(56, 189, 248, 0.4);
-      border-radius: 12px;
-      padding: 14px 16px;
+      border-radius: 10px;
+      padding: 12px 14px;
       color: #ffffff;
       font-size: 15px;
       font-weight: 700;
       font-family: inherit;
-      transition: all 0.2s ease;
     }
     .search-input:focus {
       outline: none;
@@ -241,56 +265,52 @@
       border: none;
       color: #ffffff;
       font-weight: 800;
-      padding: 14px 22px;
-      border-radius: 12px;
+      padding: 12px 18px;
+      border-radius: 10px;
       cursor: pointer;
       font-size: 14px;
-      box-shadow: 0 6px 18px rgba(238,31,115,0.4);
-      transition: all 0.2s ease;
       font-family: inherit;
     }
-    .btn-search:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(238,31,115,0.55); }
 
     /* Result Card */
     .result-card {
       background: linear-gradient(135deg, #0d2654 0%, #201140 100%);
       border: 2px solid var(--cyan);
-      border-radius: 22px;
-      padding: 26px 20px;
+      border-radius: 20px;
+      padding: 22px 16px;
       text-align: center;
       box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: popIn 0.3s ease;
     }
     @keyframes popIn {
-      from { opacity: 0; transform: scale(0.94) translateY(10px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
     .result-badge {
       display: inline-block;
-      padding: 6px 18px;
+      padding: 6px 16px;
       border-radius: 99px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
-    .result-badge--valid { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #22c55e; box-shadow: 0 0 16px rgba(34, 197, 94, 0.3); }
-    .result-badge--used { background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1px solid #f59e0b; box-shadow: 0 0 16px rgba(245, 158, 11, 0.3); }
-    .result-badge--invalid { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid #ef4444; box-shadow: 0 0 16px rgba(239, 68, 68, 0.3); }
+    .result-badge--valid { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #22c55e; }
+    .result-badge--used { background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1px solid #f59e0b; }
+    .result-badge--invalid { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid #ef4444; }
     
     .result-guest-name {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 900;
       color: #ffffff;
-      margin-bottom: 6px;
-      letter-spacing: -0.5px;
+      margin-bottom: 4px;
     }
     .result-seats {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       color: var(--cyan);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .btn-action-checkin {
       width: 100%;
@@ -300,37 +320,32 @@
       color: #ffffff;
       font-weight: 900;
       font-size: 16px;
-      border-radius: 14px;
+      border-radius: 12px;
       cursor: pointer;
       box-shadow: 0 8px 25px rgba(34, 197, 94, 0.45);
-      transition: all 0.22s ease;
-      margin-top: 12px;
+      margin-top: 10px;
       font-family: inherit;
     }
-    .btn-action-checkin:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6); }
-
     .btn-action-undo {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       background: rgba(239, 68, 68, 0.15);
       border: 1px solid rgba(239, 68, 68, 0.4);
       color: #fca5a5;
       font-weight: 800;
-      font-size: 13px;
-      border-radius: 12px;
+      font-size: 12px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: all 0.2s ease;
       margin-top: 8px;
       font-family: inherit;
     }
-    .btn-action-undo:hover { background: rgba(239, 68, 68, 0.3); color: #fff; }
 
     /* Guest List Box */
     .guest-list-box {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 16px;
       backdrop-filter: blur(16px);
       display: flex;
       flex-direction: column;
@@ -338,8 +353,8 @@
     .guest-list-header {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 10px;
+      margin-bottom: 12px;
     }
     @media (min-width: 600px) {
       .guest-list-header {
@@ -353,18 +368,17 @@
       font-weight: 800;
       color: var(--cyan);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
     }
     .filter-tabs {
-      display: flex; gap: 6px; flex-wrap: wrap;
+      display: flex; gap: 4px; flex-wrap: wrap;
     }
     .tab-btn {
       background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
-      color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 800; padding: 6px 12px;
+      color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 800; padding: 5px 10px;
       border-radius: 99px; cursor: pointer; transition: all 0.2s ease; font-family: inherit;
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 4px;
     }
-    .tab-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
     .tab-btn.active {
       background: var(--cyan); color: var(--navy); border-color: var(--cyan); font-weight: 900;
     }
@@ -373,7 +387,7 @@
       color: inherit;
       font-size: 10px;
       font-weight: 900;
-      padding: 1px 6px;
+      padding: 1px 5px;
       border-radius: 99px;
     }
     .tab-btn.active .tab-badge {
@@ -382,34 +396,29 @@
     }
 
     .guest-list-scroll {
-      max-height: 540px;
+      max-height: 520px;
       overflow-y: auto;
-      padding-right: 4px;
     }
-    .guest-list-scroll::-webkit-scrollbar { width: 6px; }
-    .guest-list-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 6px; }
-    .guest-list-scroll::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.3); border-radius: 6px; }
-    .guest-list-scroll::-webkit-scrollbar-thumb:hover { background: rgba(56, 189, 248, 0.6); }
 
     .guest-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 14px;
+      padding: 10px 12px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 10px;
-      transition: background 0.15s ease;
-      gap: 12px;
-    }
-    .guest-item:hover { background: rgba(255,255,255,0.08); }
-    .guest-item:last-child { border-bottom: none; }
-    .guest-item__name { font-weight: 800; font-size: 14px; color: #fff; }
-    .guest-item__code { font-family: monospace; font-size: 12px; color: var(--cyan); font-weight: 700; margin-top: 2px; }
-    .status-tag {
-      font-size: 11px;
-      font-weight: 800;
-      padding: 4px 10px;
       border-radius: 8px;
+      transition: background 0.15s ease;
+      gap: 10px;
+    }
+    .guest-item:hover, .guest-item:active { background: rgba(56, 189, 248, 0.15); }
+    .guest-item:last-child { border-bottom: none; }
+    .guest-item__name { font-weight: 800; font-size: 13px; color: #fff; }
+    .guest-item__code { font-family: monospace; font-size: 11px; color: var(--cyan); font-weight: 700; margin-top: 2px; }
+    .status-tag {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
       white-space: nowrap;
     }
     .status-tag--in { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
@@ -434,7 +443,7 @@
       </div>
     </div>
     <div class="hdr-actions">
-      <button id="btnOpenVipModal" class="btn-hdr btn-hdr--pink">➕ VIP Fuera de Lista</button>
+      <button id="btnOpenVipModal" class="btn-hdr btn-hdr--pink">➕ VIP</button>
       <button id="btnExportCsv" class="btn-hdr">📥 CSV</button>
       <a href="index.html" class="btn-hdr">← Salir</a>
     </div>
@@ -442,7 +451,6 @@
 
   <main class="checkin-container">
 
-    <!-- CONTENEDOR GRID RESPONSIVO PARA PC / LAPTOPS / CELULARES -->
     <div class="checkin-grid">
 
       <!-- COLUMNA IZQUIERDA: ESCÁNER, BÚSQUEDA Y VALIDACIÓN -->
@@ -454,17 +462,21 @@
             <span class="scanner-title">📷 Escáner de Código QR</span>
             <div class="scanner-controls">
               <button id="btnToggleFlash" class="btn-cam-switch hidden" title="Encender Linterna">🔦 Flash</button>
-              <button id="btnToggleCamera" class="btn-cam-switch hidden" title="Cambiar Cámara">🔄 Cambiar Cámara</button>
+              <button id="btnToggleCamera" class="btn-cam-switch hidden" title="Cambiar Cámara">🔄 Cámara</button>
             </div>
           </div>
           <div id="qr-reader"></div>
+          <div id="camFallbackBox" class="cam-fallback-box hidden">
+            <button id="btnStartCamManual" class="btn-start-cam">📸 Tocar para Activar Cámara</button>
+            <div style="font-size:11px;color:#94a3b8;">Si la cámara no inicia, podés buscar por nombre o código abajo 👇</div>
+          </div>
         </div>
 
         <!-- BÚSQUEDA MANUAL POR NOMBRE O CÓDIGO -->
         <div class="manual-entry">
-          <div class="manual-entry__title">🔍 Búsqueda manual por nombre o código</div>
+          <div class="manual-entry__title">🔍 Búsqueda rápida por nombre o código</div>
           <div class="search-group">
-            <input type="text" id="searchInput" class="search-input" placeholder="Ej. UA-001 o Nombre del invitado..." autocomplete="off">
+            <input type="text" id="searchInput" class="search-input" placeholder="Escribí apellido, nombre o código..." autocomplete="off">
             <button id="btnSearch" class="btn-search">Buscar</button>
           </div>
         </div>
@@ -474,7 +486,7 @@
           <div id="resultBadge" class="result-badge result-badge--valid">VALIDACIÓN OK</div>
           <div id="resultGuestName" class="result-guest-name">Invitado</div>
           <div id="resultSeats" class="result-seats">Acceso para 2 personas</div>
-          <div id="resultDetails" style="font-size:13px;color:#94a3b8;margin-bottom:16px;"></div>
+          <div id="resultDetails" style="font-size:12px;color:#94a3b8;margin-bottom:14px;"></div>
           <button id="btnConfirmIngress" class="btn-action-checkin">✅ CONFIRMAR INGRESO A SALA</button>
           <button id="btnUndoIngress" class="btn-action-undo hidden">↩️ Revertir Ingreso / Deshacer</button>
         </div>
@@ -503,7 +515,7 @@
         <!-- LISTA RÁPIDA DE ASISTENTES CON SCROLL -->
         <div class="guest-list-box">
           <div class="guest-list-header">
-            <div class="guest-list-title">📋 Asistentes de Puerta</div>
+            <div class="guest-list-title">📋 Lista de Puerta (Tocar para ingresar)</div>
             <div class="filter-tabs">
               <button class="tab-btn active" data-filter="confirmed">Confirmados <span id="badgeConfirmed" class="tab-badge">0</span></button>
               <button class="tab-btn" data-filter="in">En Sala <span id="badgeIn" class="tab-badge">0</span></button>
@@ -525,36 +537,36 @@
 
   <!-- MODAL REGISTRO VIP EN PUERTA -->
   <div id="vipModal" class="hidden" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:999;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(16px);">
-    <div style="background:linear-gradient(135deg, #071938, #0d2654);border:2px solid #ee1f73;border-radius:24px;padding:28px;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(0,0,0,0.8);">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-        <h3 style="margin:0;font-size:18px;font-weight:900;color:#ffffff;">➕ Registrar Invitado VIP / Fuera de Lista</h3>
+    <div style="background:linear-gradient(135deg, #071938, #0d2654);border:2px solid #ee1f73;border-radius:20px;padding:24px;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(0,0,0,0.8);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+        <h3 style="margin:0;font-size:16px;font-weight:900;color:#ffffff;">➕ Registrar Invitado VIP / Puerta</h3>
         <button id="btnCloseVipModal" style="background:none;border:none;color:#94a3b8;font-size:22px;cursor:pointer;">✕</button>
       </div>
       
-      <div style="margin-bottom:14px;">
+      <div style="margin-bottom:12px;">
         <label style="display:block;font-size:11px;font-weight:800;color:var(--cyan);margin-bottom:6px;text-transform:uppercase;">Nombre Completo (*)</label>
-        <input type="text" id="vipNameInput" style="width:100%;box-sizing:border-box;padding:14px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;" placeholder="Ej. Juan Pérez">
+        <input type="text" id="vipNameInput" style="width:100%;box-sizing:border-box;padding:12px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;" placeholder="Ej. Juan Pérez">
       </div>
 
-      <div style="margin-bottom:14px;">
+      <div style="margin-bottom:12px;">
         <label style="display:block;font-size:11px;font-weight:800;color:var(--cyan);margin-bottom:6px;text-transform:uppercase;">¿Trae Acompañante?</label>
-        <select id="vipCompanionSelect" style="width:100%;box-sizing:border-box;padding:14px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;">
+        <select id="vipCompanionSelect" style="width:100%;box-sizing:border-box;padding:12px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;">
           <option value="no">No, viene solo (1 entrada)</option>
           <option value="yes">Sí, trae acompañante (2 entradas)</option>
         </select>
       </div>
 
-      <div id="vipCompanionNameGroup" class="hidden" style="margin-bottom:18px;">
+      <div id="vipCompanionNameGroup" class="hidden" style="margin-bottom:16px;">
         <label style="display:block;font-size:11px;font-weight:800;color:var(--cyan);margin-bottom:6px;text-transform:uppercase;">Nombre Acompañante</label>
-        <input type="text" id="vipCompanionNameInput" style="width:100%;box-sizing:border-box;padding:14px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;" placeholder="Ej. María López">
+        <input type="text" id="vipCompanionNameInput" style="width:100%;box-sizing:border-box;padding:12px;background:#040f26;border:1px solid rgba(56,189,248,0.4);border-radius:10px;color:#fff;font-size:14px;font-weight:700;" placeholder="Ej. María López">
       </div>
 
-      <button id="btnSubmitVip" style="width:100%;padding:16px;background:linear-gradient(135deg, #ef2f83, #ee1f73);border:none;color:#fff;font-weight:900;font-size:15px;border-radius:12px;cursor:pointer;box-shadow:0 8px 25px rgba(238,31,115,0.45);font-family:inherit;">
+      <button id="btnSubmitVip" style="width:100%;padding:14px;background:linear-gradient(135deg, #ef2f83, #ee1f73);border:none;color:#fff;font-weight:900;font-size:15px;border-radius:12px;cursor:pointer;box-shadow:0 8px 25px rgba(238,31,115,0.45);font-family:inherit;">
         REGISTRAR E INGRESAR A SALA
       </button>
     </div>
   </div>
 
-  <script src="checkin.js"></script>
+  <script src="checkin.js?v=20260827-v301"></script>
 </body>
 </html>

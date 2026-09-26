@@ -1,0 +1,4582 @@
+[
+  {
+    "code": "UA-004",
+    "name": "Marianna Tomasi",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Emilia Durañona",
+    "agency": "OFICINA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-DF9F77B2",
+    "name": "Laura Caprio",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7E50DE77",
+    "name": "Andres Rodriguez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-68E95A70",
+    "name": "Diego De Carlini",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-9CF6443E",
+    "name": "Extra Vendedor",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Javier D'elia",
+    "agency": "SEMM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98B43977",
+    "name": "Darío Czeszler",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Paula Czeszler",
+    "agency": "SEMM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-EC3951E5",
+    "name": "Extra Vendedor",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7A4F5B72",
+    "name": "Paola Pradie",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM CALL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-ACDE54C5",
+    "name": "Juan Voelker",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1615D3F1",
+    "name": "Juan Jose Borreli",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-3BF9E70A",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM CALL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A61991BE",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM CALL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-FEB85F45",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM CALL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C10E9C84",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEMM CALL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-52679693",
+    "name": "Nestor Conde",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-DDC44D12",
+    "name": "Angela Hoffman",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-545CE8E9",
+    "name": "Monica Naumis",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-122C9852",
+    "name": "Lucy Hernandez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D88A84A6",
+    "name": "Sandra Perroni",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A6AB1B32",
+    "name": "Gina De Bellis",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B1897516",
+    "name": "Alberto Yaffe",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1D3DA1C0",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B549022C",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-85DF7917",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-25EBA14F",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D8DCE009",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-55A3E5B1",
+    "name": "Karen Ramillo",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "EVANGELICO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-AF42286B",
+    "name": "Jorge MuñOz",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "EVANGELICO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-90BE45E7",
+    "name": "Ignacio Barbot",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "EVANGELICO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1759D7EB",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "EVANGELICO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-417B6C81",
+    "name": "Santiago De Luca",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-8F23F9C7",
+    "name": "Nadia NuñEz",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Agustín Maubrigades",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-FDE5BCED",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-ABFC93FE",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-FC513DFE",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B3C7651D",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-70A987D3",
+    "name": "Ana Lopez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SUMMUM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-5882FE33",
+    "name": "Natalia Labat",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SUMMUM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-0C8E2AA8",
+    "name": "Mariana Firpo",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Federico Carabajal",
+    "agency": "SUMMUM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-2FBF2CB3",
+    "name": "Alejandra Saavedra",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SAAVEDRA SEGUROS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F7772F1F",
+    "name": "Delia Vilaro",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "DVS SEGUROS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1A61CF1F",
+    "name": "Elisa Costa",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "2 Acompañantes",
+    "agency": "COSEM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B60CAF72",
+    "name": "Santiago Fleitas",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "COSEM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-DB185627",
+    "name": "Gabrielo Goicochea",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "COSEM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-AAACDA16",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "COSEM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-845A6CDF",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "COSEM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-72D38F78",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "COSEM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D672D07F",
+    "name": "Joaquin Barreto",
+    "status": "Pendiente",
+    "seats": 3,
+    "companionName": "",
+    "agency": "AMSJ",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A3629E1A",
+    "name": "Gustavo Amorin",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASISTENCIAL MEDICA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F2ADE289",
+    "name": "Joaquin Guillen",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASISTENCIAL MEDICA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-FCADEF8F",
+    "name": "Gustavo Burghi",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASISTENCIAL MEDICA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-07215880",
+    "name": "Silvina Tortorella",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ASISTENCIAL MEDICA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B9C030AA",
+    "name": "Fernando Bervejillo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-0B629473",
+    "name": "Laura Fernandez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEGURO AMERICANO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-70E5F827",
+    "name": "Facundo Quiroz",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEGURO AMERICANO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-31E65F68",
+    "name": "Fernanda Cabrera",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEGURO AMERICANO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-05734BCB",
+    "name": "Ariel Bango",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEGURO AMERICANO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B9F998ED",
+    "name": "Rosario Cuadro",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SEGURO AMERICANO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C81D5939",
+    "name": "Laura Suarez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "RISSO SEGUROS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-840343EF",
+    "name": "Jorge Jerez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MP",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-EBBAEDA2",
+    "name": "Jorge Ferraguz",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MP",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-618589FB",
+    "name": "Natalia Caimi",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "OCA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-3ACA250A",
+    "name": "Gabriela Perez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "OCA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-990A3549",
+    "name": "Juan Pablo Fernandez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "OCA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-0AE66508",
+    "name": "Florencia Diaz",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "OCA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-DB9D8E94",
+    "name": "Ignacio MariñO",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "OCA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CA2FBA8B",
+    "name": "Lialiana Landoni",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SMI",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-5C640439",
+    "name": "Jose Benitez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SANTANDER",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-2338C10F",
+    "name": "Sabrina Otero",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SANTANDER",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-0CC77C6E",
+    "name": "Raul Montossi",
+    "status": "Expirado",
+    "seats": 3,
+    "companionName": "",
+    "agency": "ITAU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A8367FE4",
+    "name": "Ines Sturla",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ITAU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-6C4127A7",
+    "name": "Virginia Pica",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Agustina Rossi",
+    "agency": "ITAU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C6941B01",
+    "name": "Paula NuñEz",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ITAU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-DF9DAD65",
+    "name": "Pablo Perez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ITAU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-BB3CE371",
+    "name": "Rosina Urioste",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BBVA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CDF8E277",
+    "name": "Joaquin Tolosa",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BBVA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-BBB9DE20",
+    "name": "Agustin Cirili",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SBI",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-960D004D",
+    "name": "Gustavo Spinella",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SBI",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D6CD8EDB",
+    "name": "Fabian Giovanola",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SBI",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-BF5D6C95",
+    "name": "Camila Migales",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SBI",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D11DEB1A",
+    "name": "Yamila Barrera",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SBI",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-4A574BF9",
+    "name": "Alvaro Chebi",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SISTARBANC",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-44C35B37",
+    "name": "Victor Berton",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SISTARBANC",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-9D6A8016",
+    "name": "Fernanda Fontes",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Nicolas Rippe",
+    "agency": "SAPP",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-006",
+    "name": "Veronica Correa",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "PORTO SERVICIOS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A73CA7A0",
+    "name": "Ana Camiou",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Maria Paz Lago | Agustin Lago",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CC8EB366",
+    "name": "Ana Laura Britos",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "LUCAS AGUIAR",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-001D7FF5",
+    "name": "Silvana Sagario",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Andrea Pérez",
+    "agency": "BIG CHESSE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-05F95A3A",
+    "name": "Cecilia Mendez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Pablo Gianoni",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F2364BFD",
+    "name": "Jimena Quintana",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Evelin Molina",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-DB0FE634",
+    "name": "Sebastian Martinez",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-87DD1420",
+    "name": "Thoilme Silva",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "Sofia Barrera | Fernando Barrera",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CECA30E6",
+    "name": "Sebastian Perona",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Patricio Larrobla Perona",
+    "agency": "COLEGIO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-122AA6FD",
+    "name": "Gabriela Conti",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "COIT",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7B1AB1D2",
+    "name": "Luciana Rodriguez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Grupo Gim . artística",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-80CEF356",
+    "name": "Alejandro Alfaro",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA URUGUAY_ANDO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-33AD88CB",
+    "name": "Sandra Ogliarusso",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Grupos Judo",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-5FF42812",
+    "name": "Victoria Mendez",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "JM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C2726D57",
+    "name": "Valentina Mendez",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1D94AFD0",
+    "name": "Sofia Ramirez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "THIAGO TINOCO",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C09316E4",
+    "name": "Victoria Pereira",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CONOSUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126539",
+    "name": "Mario Etchesure",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CONOSUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CAE070ED",
+    "name": "Yhonson Choca",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Faustino Choca",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-23DC8C37",
+    "name": "Pablo Ananikian",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Lorenzo Ananikian | Vicente Ananikian",
+    "agency": "SUNLIVE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C898D8F9",
+    "name": "Alejandro Mendez",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C6704E59",
+    "name": "Paula Aramendia",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F23A2D8E",
+    "name": "Adriana Fraga",
+    "status": "Expirado",
+    "seats": 3,
+    "companionName": "",
+    "agency": "NUEVOS MUNDOS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-25045D75",
+    "name": "Diego Correa",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Alejandra Palermo",
+    "agency": "MELITOUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1B260793",
+    "name": "Giulia Barros",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "TRYOLABS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-85CF8B75",
+    "name": "Sabrina Ustinelli",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "TRYOLABS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-38EB2F6F",
+    "name": "Rosina Introini",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "PWC",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1AACF6C2",
+    "name": "Veronica Sanchiz",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Alejandro Alzúa",
+    "agency": "PWC",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A6276382",
+    "name": "Adriana Rumbos",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "RUMBOS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-ADB14573",
+    "name": "Maira Perez",
+    "status": "Expirado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "GENERSOL DISEL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1D604C82",
+    "name": "Maria Eugenia DíAz",
+    "status": "Expirado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "BIOERIX",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-9CFC9775",
+    "name": "Florencia Navia",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BIOERIX",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-55A51E09",
+    "name": "Alejo Quinta",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BIOERIX",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620615",
+    "name": "Ines Giro",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AMS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-8E32AC74",
+    "name": "Zoila Zela",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AIR CLASS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F98F1B7B",
+    "name": "Abel Garcia",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BRENDISOL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D44B5CF1",
+    "name": "Ines Barrabino",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "NGS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-3DAD275F",
+    "name": "Joel Mokosce",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "EDF",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-046536A2",
+    "name": "Carolina GoñI",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "GREYCON",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CC84CD7E",
+    "name": "Fabiana Masini",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MASINI SEGUROS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-9B142755",
+    "name": "Veronica Bonfiglio",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "NUEVO SIGLO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B22FADDC",
+    "name": "Ricardo Hausman",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Lil Carballo",
+    "agency": "RICARDO HAUSMAN",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-8B4C865D",
+    "name": "Susana Garcia",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SUSANA GARCIA SEGUROS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-77FF077D",
+    "name": "Jorge Vidiella",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "LABORATORIO LIBRA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D6050FC8",
+    "name": "Cristobal Fernandez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "FL SEGUROS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-148857CD",
+    "name": "Grisel Olivera",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "VANESA FURTADO",
+    "agency": "SENDAS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1F8624FA",
+    "name": "Vanesa Furtado",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SENDAS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-9F95138F",
+    "name": "Traveloz",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-85837C92",
+    "name": "Traveloz",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-8F000E6B",
+    "name": "Traveloz",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-148AE05E",
+    "name": "Traveloz",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-23D0FA77",
+    "name": "Traveloz",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-6855B38D",
+    "name": "Destinico",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D24C81EE",
+    "name": "Destinico",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-E61AA8CD",
+    "name": "Destinico",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-6CE2A8FF",
+    "name": "Destinico",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-E40EFA07",
+    "name": "Destinico",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F485D6A1",
+    "name": "Ivana",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MERCURIO VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A3102673",
+    "name": "Jorgelina",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MERCURIO VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-46AE4277",
+    "name": "Betina Bellini",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MERCURIO VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-406B080E",
+    "name": "Tato Pereira",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ACTIVE TRAVEL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-6CC1349A",
+    "name": "Ana Laura Rocheti",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "JM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620430",
+    "name": "Alejandra Martinez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "JM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1A8EA693",
+    "name": "Jimena",
+    "status": "Expirado",
+    "seats": 3,
+    "companionName": "",
+    "agency": "COIT",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D6406CD7",
+    "name": "Gabriela Conti",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "COIT",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-AD8DAE74",
+    "name": "Victoria Dano",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CONOSUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7F33C55C",
+    "name": "Diego Correa",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MELITOUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-775CA20F",
+    "name": "Om Travel",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-4613AEF0",
+    "name": "Om Travel Florida",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A SORTEO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-23A5FB9A",
+    "name": "Sevens",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "A CONFRIMAR PERSONAS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620481",
+    "name": "Rodrigo Pinto",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "FELIPE PINTO | CARINA RIVOIRA",
+    "agency": "AZUL VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-8D510774",
+    "name": "Agustina Ferreira",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AZUL VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126451",
+    "name": "Magui Larrosa",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BATISTA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CE54721E",
+    "name": "Victoria Blanco",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BATISTA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-3F15C2D8",
+    "name": "Bea Alvarez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BATISTA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126452",
+    "name": "Martin Moller",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BATISTA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-9B077BAE",
+    "name": "Gonzalo Moreira",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BATISTA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7AD08FDE",
+    "name": "De Leon Ana Laura",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "C Y C",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B248D132",
+    "name": "Negro Carolina",
+    "status": "Expirado",
+    "seats": 3,
+    "companionName": "",
+    "agency": "CONSOLID PUNTA DEL ESTE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126540",
+    "name": "Carolina Schultz",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "V Y T",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-87DBF44C",
+    "name": "Gabi Zimerman",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "V Y T",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-69315390",
+    "name": "Francisca Arocena",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "VIAJEROS SIN FRONTERAS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A20A3578",
+    "name": "Nacho",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Orianna Ferrazzi",
+    "agency": "VIAJEROS SIN FRONTERAS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-33B5A97C",
+    "name": "Fabiana Martilota",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "VIAJEROS SIN FRONTERAS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D5047B58",
+    "name": "Susana Pasos",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Emanuel",
+    "agency": "CIA DEL SUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-20642072",
+    "name": "Andrea Melegati",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Luis Delfino",
+    "agency": "CIA DEL SUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CE0A1B71",
+    "name": "Margaret Bittencourt",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "DLC SEGUROS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-E1398250",
+    "name": "Enzo Figueira",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "",
+    "agency": "ENZO FIGUEIRA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-02AFE894",
+    "name": "Martin OrdoñEz",
+    "status": "Expirado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "ORDOÑEZ",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D06110A1",
+    "name": "Natalia Doglio",
+    "status": "Pendiente",
+    "seats": 3,
+    "companionName": "",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-65661959",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-EF04D840",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7C258F57",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-11214C81",
+    "name": "Extra Vendedor",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-AB9A0D71",
+    "name": "Silvana Llacer",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ATOM GROUP",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7D250B51",
+    "name": "Rafael Laitano",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ATOM GROUP",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B387F788",
+    "name": "Valentina Irigaray",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Benjamín Nocella",
+    "agency": "SIUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D4AB1964",
+    "name": "Cecilia",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "FRANCO RADÛNZ | LUCIANA RADÛNZ",
+    "agency": "TU VIAJE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A7492A76",
+    "name": "Paula",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "TU VIAJE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-81B2E7FB",
+    "name": "Sebastian",
+    "status": "Pendiente",
+    "seats": 3,
+    "companionName": "",
+    "agency": "TU VIAJE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D72C36DD",
+    "name": "Andrea Fisher",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "LIBERTY",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-81CA9A8D",
+    "name": "Virginia Guerra",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "LIBERTY",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-3195C79E",
+    "name": "Lourdes Zafiro",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "LIBERTY",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D29D1CDD",
+    "name": "Pablo Rasocvich",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Alfonsina Rascovich",
+    "agency": "LIBERTY",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-A8CABBD2",
+    "name": "Jp Guaglioni",
+    "status": "Expirado",
+    "seats": 4,
+    "companionName": "",
+    "agency": "LIBERTY",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F50896A8",
+    "name": "Marcelo Bergalo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "LIBERTY",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CD1A68B2",
+    "name": "Silvina Etchandy",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BUEMES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-E2D839E8",
+    "name": "Josefina Delgado",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "PIA CAJAL",
+    "agency": "GUAMATUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-192EB1CE",
+    "name": "Joel Felder",
+    "status": "No asiste",
+    "seats": 4,
+    "companionName": "",
+    "agency": "BUEMES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-514AC9F8",
+    "name": "Fer Acosta Y Lara",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "JETMAR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-80B1F872",
+    "name": "Rosina Ligerini",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "GUAMATUR",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B10BB015",
+    "name": "Nacho",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "DCOM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-695C18FE",
+    "name": "Maca",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "DCOM",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CDDA4E11",
+    "name": "Patricia Correa",
+    "status": "Confirmado",
+    "seats": 6,
+    "companionName": "Tiziano Pascale",
+    "agency": "SUNLIVE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-E5583081",
+    "name": "Gaston Castro",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "PROVIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-341D7B34",
+    "name": "Gonzalo Peré",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ACTIVE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-FFFA0728",
+    "name": "Pereira Tato",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ACTIVE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7F75251D",
+    "name": "Alonso Federico",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ACTIVE",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-DDDEEC5F",
+    "name": "Juan Andres Varela",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BATISTA VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126526",
+    "name": "Daniel Pons",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Alexandra Ramilo / Juan Manuel Trinidad",
+    "agency": "Pons",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CFA78ED7",
+    "name": "Geronimo Cassoni",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Traveloz / Destinico",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-99FD2E88",
+    "name": "Leandro Lencina",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Traveloz / Destinico",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-651EEDC2",
+    "name": "Joaquin Ojeda",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Traveloz / Destinico",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B9E1A14D",
+    "name": "Francisco Calviño",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Traveloz / Destinico",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-0FB47E1B",
+    "name": "Ignacio Vidal",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Mariana Aguirre",
+    "agency": "Traveloz / Destinico",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126527",
+    "name": "Tiffany Herrera",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Kevin Nallem",
+    "agency": "PROVIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D2D0AE66",
+    "name": "Ivanna",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MERCURIO VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126469",
+    "name": "Tatiana",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MERCURIO VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-BA5D8F1D",
+    "name": "Victoria Méndez Aramendía",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-805814BB",
+    "name": "Sandra Yuane",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Gianni Carsillo | Gustavo Carsillo",
+    "agency": "Alejandro Méndez",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-0B534AE6",
+    "name": "Eliana Pizzorno",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Alejandro Méndez",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620600",
+    "name": "Alejandra Palermo",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Melitour",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620599",
+    "name": "Gianfranco Iafrate",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Melitour",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620601",
+    "name": "Carmen Galan",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Melitour",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-DBAB436B",
+    "name": "Laura Rodriguez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Florencia Pereyra",
+    "agency": "Azul Viajes",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B9D60563",
+    "name": "Pase CAMBADU (Titular)",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Mónica Prentice",
+    "agency": "CAMBADU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-B19373A2",
+    "name": "Pase CAMBADU (Equipo)",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CAMBADU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F104E515",
+    "name": "Florencia Flores",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Gonzalo Alfaro",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-1E01D75E",
+    "name": "Pase Radio Carve (Titular)",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Radio Carve",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7B3EC8C0",
+    "name": "Pase Radio Carve (Equipo)",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Radio Carve",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CACCD528",
+    "name": "Roxana",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Infonegocios",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-889613D8",
+    "name": "Pase Infonegocios (Equipo)",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Infonegocios",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-EF243E65",
+    "name": "Maximiliano Cobas",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Juan Manuel Cobas",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-FF989B31",
+    "name": "Stephanie Olivera",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Acompañante",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-67244620",
+    "name": "Anahir Aguilar",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Horacio Botta",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-0A597B97",
+    "name": "Karina Rossini",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Martin Picasso",
+    "agency": "CASMU",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-AFE5BD48",
+    "name": "Gimena Rodriguez",
+    "status": "Confirmado",
+    "seats": 4,
+    "companionName": "Franco Azambuya | Mahia Azambuya | Ernesto Azambuya",
+    "agency": "Tu Viaje",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-6DD558DE",
+    "name": "Fabrizio Maglione",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Lorenzo Maglione y Acompañante",
+    "agency": "JP Santos",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-87D9FC83",
+    "name": "Gabriel Lopez (Pase 2)",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "JP Santos",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-49D8E751",
+    "name": "Lucia Amestoy",
+    "status": "Confirmado",
+    "seats": 4,
+    "companionName": "Juan Pablo Morales | Karina | Diego",
+    "agency": "Amestoy Viajes",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-9E439B34",
+    "name": "Jorge Martínez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Guillermo",
+    "agency": "Jorge Martínez",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7D8E219B",
+    "name": "Maximiliano Abreo",
+    "status": "Confirmado",
+    "seats": 4,
+    "companionName": "3 Acompañantes",
+    "agency": "Buemes",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C40101A1",
+    "name": "Mariano Mosca",
+    "status": "No asiste",
+    "seats": 4,
+    "companionName": "",
+    "agency": "Canal 4",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C40202B2",
+    "name": "W. Helou",
+    "status": "Lista de Espera",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Canal 4",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C40303C3",
+    "name": "B. Perdomo",
+    "status": "Lista de Espera",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Canal 4",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C40404D4",
+    "name": "J. Olivera",
+    "status": "Lista de Espera",
+    "seats": 5,
+    "companionName": "Inés Calabuig | Santino Olivera | Micaela Olivera | Bautista Olivera",
+    "agency": "Canal 4",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C40505E5",
+    "name": "W. Helou - Equipo 1",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Canal 4",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C40606F6",
+    "name": "W. Helou - Equipo 2",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Canal 4",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C40707A7",
+    "name": "W. Helou - Equipo 3",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Canal 4",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C40808B8",
+    "name": "W. Helou - Equipo 4",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Canal 4",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-D06110A1",
+    "name": "Cupo ANDA / Natalia Doglio (Pase 2 - Adulto + 2 Niños)",
+    "status": "Pendiente",
+    "seats": 3,
+    "companionName": "",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-7E81C09F",
+    "name": "Shirley Cervantes",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "INVITADOS UA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-4F91B2C8",
+    "name": "Valeria Amaral",
+    "status": "Pendiente",
+    "seats": 2,
+    "companionName": "",
+    "agency": "INVITADOS UA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-6A820E9B",
+    "name": "Gustavo Amoroso",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Máximo Billar | Raphaella Billar",
+    "agency": "AMOROSO VIAJES",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-3771D38F",
+    "name": "Belén Arbiza",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Victoria Martinez",
+    "agency": "DCOM Travel",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-85A412B2",
+    "name": "Emiliano Arevalo",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Estefania Alonso",
+    "agency": "Guamatur",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-FE5ED687",
+    "name": "Myriam Cardozo",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Emiliano Pons",
+    "agency": "EVANGELICO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-CF5493C0",
+    "name": "Natalia Doglio (Pase 1 - Adulto + 2 Niños)",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Joaquina Pedro",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-2D660500",
+    "name": "Ana Toniotti",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Hija de Ana Toniotti",
+    "agency": "Personal Travel",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-786E6F9F",
+    "name": "Ana Gabriela Conti",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Lorenzo Marino",
+    "agency": "COIT",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-95205518",
+    "name": "Clara Bachino",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Lucia Loriente",
+    "agency": "PWC",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-2D32F6A9",
+    "name": "Laura Ronchetti",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "GUILLERMINA SCHIPILOV | SALVADOR SCHIPILOV",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-07CEEBB2",
+    "name": "ALEXANDRA RAMILO (Asiste con Daniel Pons UA-96126526)",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "SALUD",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-54B6157A",
+    "name": "Gustavo Tato Pereira",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-C5944342",
+    "name": "valentin quiro saldaña",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Martiniano",
+    "agency": "SALUD",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-6BE7E6D4",
+    "name": "Gustavo Pereira",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-5C42664F",
+    "name": "Carolina Garcia",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-53700A22",
+    "name": "Juan Pablo Guaglianoni",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-8EE3F33C",
+    "name": "Facundo Quiró Saldaña",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Juampi",
+    "agency": "SALUD",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-8350D348",
+    "name": "Victoria Diano",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-6EFB79C7",
+    "name": "Santiago Deluca",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126442",
+    "name": "test",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126453",
+    "name": "Isabel Lobato",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126454",
+    "name": "Alejandro García",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126455",
+    "name": "Enrique",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126456",
+    "name": "Adriana Dupuy",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126457",
+    "name": "Virginia Willebald",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Santiago Varela",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126458",
+    "name": "Pamela Zabala",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "OFICINA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126459",
+    "name": "Fiorella Ancheta",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Valentina Martiarena",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126460",
+    "name": "Florencia Cánepa",
+    "status": "No asiste",
+    "seats": 1,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-724E3E54",
+    "name": "Erika Martin",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Thiago Montossi | Emiliano Montossi",
+    "agency": "BANCO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F81908EB",
+    "name": "Bettina",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "BANCO",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-F81908EB-J",
+    "name": "Jorgelina arrigoni",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Bruna Guarnerio",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126470",
+    "name": "Federico Alonso",
+    "status": "No asiste",
+    "seats": 3,
+    "companionName": "",
+    "agency": "Active Travel",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126472",
+    "name": "Silvia",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126473",
+    "name": "Javier Mossi",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Bastian >Roldan",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126489",
+    "name": "Aldo Nipoli",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126492",
+    "name": "PABLO SCHIPILOV",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "ELIAS FARAH",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126493",
+    "name": "Diego Martinez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126494",
+    "name": "Marcelo Bergara",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126497",
+    "name": "Chumbo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126498",
+    "name": "Sorteo JM 1",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126501",
+    "name": "Sorteo JM 3",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126502",
+    "name": "Sorteo JM 4",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126503",
+    "name": "Sorteo JM 5",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126514",
+    "name": "Sorteo JM 9",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-12B86D7F",
+    "name": "Maca Perez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Emma Azcurra",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126517",
+    "name": "Maria Camiou",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Manuel Selves",
+    "agency": "Buemes",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126518",
+    "name": "Ignacio Chaine",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "Buemes",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126519",
+    "name": "Stella",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126520",
+    "name": "Mariana Mesa",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126521",
+    "name": "Sebastian R",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126522",
+    "name": "Cecilia Pinto",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Micaela Gavioli",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126523",
+    "name": "Majo Acosta",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126524",
+    "name": "Mateo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "CORREDOR DE SEGUROS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126525",
+    "name": "Alexia Constantinidi",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-09052CDD",
+    "name": "Valeria Herrera",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Daniel Laso Herrera",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126531",
+    "name": "MARIANELA IBIÑETE",
+    "status": "Confirmado",
+    "seats": 4,
+    "companionName": "Juan F. Richelli | Joaquín Richelli | Josefina Richelli",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126532",
+    "name": "Javier Fernández Goñi",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126533",
+    "name": "Alejandro",
+    "status": "Expirado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126534",
+    "name": "Virginia",
+    "status": "Expirado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126535",
+    "name": "Gonzalo Pereira",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-96126537",
+    "name": "Alejandro Perciavalle",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620423",
+    "name": "mario",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620424",
+    "name": "Florencia Quinteros",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Josefina Rodriguez",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620425",
+    "name": "Agustin Briano",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620426",
+    "name": "Agustín Sosa",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620427",
+    "name": "Alberto Seijas",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620429",
+    "name": "Alejandra Magnoni",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620431",
+    "name": "Ana Laura Hernandez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620432",
+    "name": "Alejandro Leal",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620433",
+    "name": "Andrea Montano",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620434",
+    "name": "Andres Russi -Roth",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620436",
+    "name": "Carlos Perez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620437",
+    "name": "Renata Almeida Suárez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Martina Salazar",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620438",
+    "name": "Carolina Gomez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620439",
+    "name": "Daniel Barzabal",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620440",
+    "name": "Cecilia Regules",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620441",
+    "name": "Claudio Guzman",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620442",
+    "name": "Diego Garcia",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620444",
+    "name": "Enzo Cusati",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620445",
+    "name": "Federico Rivas",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620446",
+    "name": "Federico Cousillas",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620447",
+    "name": "Fernanda Pereira",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620448",
+    "name": "Federico Valverde",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620449",
+    "name": "Felix Leon",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620450",
+    "name": "Gabriel Bonavita",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620451",
+    "name": "Gabriel Lopez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620452",
+    "name": "Gabriela Martin",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620453",
+    "name": "Gabriela Zimerman",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620454",
+    "name": "Gerardo Rodriguez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "JOAQUIN RODRIGUEZ",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620455",
+    "name": "Geraldina Curti",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620456",
+    "name": "Guillermo Gomez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620457",
+    "name": "Gonzalo Muniz",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620458",
+    "name": "IGNACIO CURTI",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "MARGARITA CURTI",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620459",
+    "name": "Joaquin Blanco",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620460",
+    "name": "Josefina Barofio",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620461",
+    "name": "Joel Gonzalez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620462",
+    "name": "Karen Novoturismo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620463",
+    "name": "Leticia Torres",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620464",
+    "name": "Lorenzo Ba?ales",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620465",
+    "name": "Lsabatel",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620466",
+    "name": "Marcelo Cazet",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620467",
+    "name": "Luciano Milan",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620468",
+    "name": "Mara Hartwig",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620469",
+    "name": "Maria Noel Curbelo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620470",
+    "name": "Mateo Fornaró",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620471",
+    "name": "Matias Sosa",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620472",
+    "name": "Mayra Peirano",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620473",
+    "name": "Maximiliano Cardozo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620474",
+    "name": "Maximiliano Castillo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620475",
+    "name": "Monica Reyes",
+    "status": "Confirmado",
+    "seats": 4,
+    "companionName": "Tomas Vaillant | 2 Acompañantes",
+    "agency": "Jorge Martínez",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620476",
+    "name": "Nicolas Arocena",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620477",
+    "name": "Nicolas Vidal",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620478",
+    "name": "Pablo Cammarota",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620479",
+    "name": "Ramiro Bilbao",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620480",
+    "name": "Pablo Mendoza",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620482",
+    "name": "Recepcion Grupo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620483",
+    "name": "Rodrigo",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620484",
+    "name": "Sergio Dimitriadis",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620485",
+    "name": "Silvia Quimpos",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620486",
+    "name": "Stella Faggiani",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620487",
+    "name": "Soledad Gomez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620488",
+    "name": "Ventaspando",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620490",
+    "name": "Vivir Viajando",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620491",
+    "name": "Sebastian Rodriguez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620492",
+    "name": "Marcos Miraglia",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Blas Miraglia",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620493",
+    "name": "Florencia Costanzo",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Nicolas Martinez",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620494",
+    "name": "Luciana Coitiño",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Anthony Blanco",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620495",
+    "name": "Vale Olivera",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Franco Silva",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620496",
+    "name": "Camila Walch",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Danilo rodriguez",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620497",
+    "name": "Heliana Molina",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620498",
+    "name": "Anaclara Arrieta",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Pablo Trentini",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620499",
+    "name": "Victoria de Souza",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Maia de Souza",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620501",
+    "name": "Guadalupe Placeres",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Jose algorta",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620502",
+    "name": "Laura da Silva",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620503",
+    "name": "Belen gallo",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Belen sosa",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620504",
+    "name": "Carla Varela",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Juan Aron",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620505",
+    "name": "Amparo Schelotto",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Lila Pesenti",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620506",
+    "name": "Sofi Giammarchi",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620507",
+    "name": "Mateo Parafita",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620508",
+    "name": "Mathias Batto",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620509",
+    "name": "Karina Vargas",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620510",
+    "name": "Ayelen Alvarez acland",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "ianco rodríguez",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620511",
+    "name": "Rodrigo Ferrari",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620512",
+    "name": "Jorge Brun",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620513",
+    "name": "Tatiana Castagno",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620514",
+    "name": "Tatiana Fierro",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620515",
+    "name": "Facu Bentancur",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620516",
+    "name": "Paul Calandria",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620517",
+    "name": "Mathias Ferreira",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620518",
+    "name": "Victoria Sanner",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620519",
+    "name": "Juan Pedro Garmendia",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620520",
+    "name": "Juan Manuel Pacheco",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620521",
+    "name": "Santiago Cirilli",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620522",
+    "name": "Bernardo Meyer",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620523",
+    "name": "Elisa Ayres",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620524",
+    "name": "Enrique Roldan",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620525",
+    "name": "Matias Gomez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620526",
+    "name": "Michel Sanchez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620527",
+    "name": "Paulina Méndez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620530",
+    "name": "Pilar Méndez",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620531",
+    "name": "María José Méndez",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620532",
+    "name": "Fernando Otazu",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Benjamin Otasu | Aldana Otasu",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620533",
+    "name": "Rosina Fábregas",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Acompañante",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620534",
+    "name": "Joaquin Alfonso",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Soledad Narvaez",
+    "agency": "ALIANZAS ESTRATEGICAS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620535",
+    "name": "Cupo Aldeas Infantiles (A confirmar)",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "ALIANZAS ESTRATEGICAS",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620529",
+    "name": "Paulina Mendez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Gabriel Martinez",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620536",
+    "name": "Seba Detomas",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620537",
+    "name": "Juan Ignacio Crncich",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620538",
+    "name": "Rodrigo Perez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620539",
+    "name": "Fernando Ferreira",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620540",
+    "name": "Jorge Costa Tu viaje",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-AFE37A09",
+    "name": "Juan Francisco Richelli (Duplicado Ibiñete)",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "Joaquin Richelli",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620582",
+    "name": "Renatta Almeida",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620585",
+    "name": "Hector",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620586",
+    "name": "Federico Sassi",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620587",
+    "name": "Noela Fonsalia",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620588",
+    "name": "Sebastian Lopez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620589",
+    "name": "Bernardo Nuñez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620590",
+    "name": "Alejandra Bermudez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620591",
+    "name": "Sebastian Borroni",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620592",
+    "name": "Valentina Daguerre",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620593",
+    "name": "Alejandro Haberfeld",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620596",
+    "name": "Yomira Aguiar",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Acompañante de Yomira Aguiar",
+    "agency": "Batista Viajes",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620602",
+    "name": "NANCY TORRES",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "DOLORES GARCIA",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620603",
+    "name": "vittoria gugliotta",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Felipe Olivera",
+    "agency": "MANUAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620604",
+    "name": "Gabriel Piastra",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Fabrizio Piastra | Natalia Prado",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620605",
+    "name": "Angel Brazionis",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Leticia Lemaire | Emilia Brazionis",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620606",
+    "name": "Victoria Cardoso",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "TOMAS RODRIGUEZ",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620607",
+    "name": "FERNANDO NADER",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "LORENZO NADER | JULIETA NADER",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620608",
+    "name": "Carina Cobas",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Sabrina Cean Cobas",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620609",
+    "name": "Lorena Sanchez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Maia Mieres y Diego Bonjour",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620610",
+    "name": "Orlandys Suárez (Duplicado anulado)",
+    "status": "No asiste",
+    "seats": 2,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620611",
+    "name": "Rodolfo Capote",
+    "status": "Confirmado",
+    "seats": 1,
+    "companionName": "",
+    "agency": "AGENCIA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620612",
+    "name": "TestDelete",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620613",
+    "name": "Elizabeth Méndez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Bruno Grubits",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620614",
+    "name": "Matilde Alvarez",
+    "status": "Expirado",
+    "seats": 2,
+    "companionName": "",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-5E3A75FC",
+    "name": "Verónica Sequeiros",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Federico Márquez Sequeiros",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-3CB0003E",
+    "name": "Juan Pablo Escobar",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Nicolas Escobar",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-4AF01B2F",
+    "name": "Natalia de los Santos",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Rocio Balcedo",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620616",
+    "name": "Bárbara Mayoral",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Javier D´Elia",
+    "agency": "INVITADO ESPECIAL",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620617",
+    "name": "Diego Massia",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Emilia Massia | Federico Massia",
+    "agency": "LIBERTY",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620500",
+    "name": "Federico Hornes",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Maria Belen Dominguez",
+    "agency": "",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620619",
+    "name": "María José Piuma",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Josefina Barceló | Micaela Radiccioni",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620620",
+    "name": "Rafael Monzón",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "Renzo Monzón | Lautaro Monzón",
+    "agency": "ANDA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-12A905D7",
+    "name": "Romina Baraybar",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Javier Ponzo",
+    "agency": "SALUD",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-159954F6",
+    "name": "Natalia Gonzalez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Bruno Pereyra",
+    "agency": "SALUD",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-584B7E74",
+    "name": "Rosana Bagnado",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Acompañante",
+    "agency": "SALUD",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-57B46107",
+    "name": "Soledad Baquet",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Martín Baquet",
+    "agency": "ASOC ESPAÑOLA",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-529B6D22",
+    "name": "Ibrahim Al Mohammad",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Sanaa al",
+    "agency": "SALUD",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620621",
+    "name": "Andrea Silvana Menéndez Martínez",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Mateo Menéndez Martínez",
+    "agency": "Directo",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620622",
+    "name": "Sebastián Furtado",
+    "status": "Confirmado",
+    "seats": 3,
+    "companionName": "2 Niños",
+    "agency": "Directo",
+    "checkedIn": false,
+    "checkinTime": ""
+  },
+  {
+    "code": "UA-98620623",
+    "name": "Mariano Umpierre",
+    "status": "Confirmado",
+    "seats": 2,
+    "companionName": "Acompañante",
+    "agency": "Directo",
+    "checkedIn": false,
+    "checkinTime": ""
+  }
+]

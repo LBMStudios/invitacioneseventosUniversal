@@ -1,0 +1,55 @@
+{
+  "statsRes": {
+    "ok": false,
+    "error": "Acción no válida."
+  },
+  "totalLiveSeats": 296,
+  "availableSeats": 4,
+  "confirmedCount": 136,
+  "waitlistCount": 0,
+  "declinedCount": 14,
+  "expiredCount": 254,
+  "pendingCount": 52,
+  "anomalyCompanions": [
+    {
+      "code": "UA-0FB47E1B",
+      "name": "Ignacio Vidal",
+      "email": "",
+      "phone": "",
+      "status": "Pendiente",
+      "companion": "Sí",
+      "companionName": "Mariana Aguirre",
+      "totalSeats": 2,
+      "responseDate": "8/21/2026 13:31:37",
+      "link": "https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-0FB47E1B",
+      "mailStatus": "Confirmado sin correo electrónico",
+      "demoCheck": "",
+      "channel": "CANAL - AGENCIA",
+      "agency": "Traveloz / Destinico",
+      "referent": "Ana Laura Britos",
+      "openedAt": "Abierto (8/21/2026 13:31:37)",
+      "stage": "Abierto (8/14/2026 15:38:37)"
+    },
+    {
+      "code": "UA-96126527",
+      "name": "Tiffany Herrera",
+      "email": "",
+      "phone": "",
+      "status": "Pendiente",
+      "companion": "Sí",
+      "companionName": "Kevin Nallem",
+      "totalSeats": 2,
+      "responseDate": "8/21/2026 13:32:01",
+      "link": "https://ua-eventos-uy.web.app/coyote-vs-acme?i=UA-96126527",
+      "mailStatus": "Enviado (Abierto 23/08 10:27 hs)",
+      "demoCheck": "",
+      "channel": "CANAL - AGENCIA",
+      "agency": "PROVIAJES",
+      "referent": "AB",
+      "openedAt": "Abierto (8/21/2026 13:32:01)",
+      "stage": "Abierto (8/14/2026 16:35:12)"
+    }
+  ],
+  "newlyAdded": [],
+  "statusChanges": []
+}

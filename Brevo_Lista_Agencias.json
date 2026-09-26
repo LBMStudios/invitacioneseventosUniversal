@@ -1,0 +1,3575 @@
+[
+  {
+    "id": 103413,
+    "email": "nrumbos@adinet.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-07-14T14:31:55.068+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {},
+    "subscriptions": {}
+  },
+  {
+    "id": 103412,
+    "email": "vipturismouruguay@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "NOMBRE": "Rodrigo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103411,
+    "email": "viajes@newtravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Nabadian",
+      "NOMBRE": "Horacio"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103410,
+    "email": "ventasvipturismo@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "NOMBRE": "Analia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103409,
+    "email": "ventaspando@viajaconbea.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {},
+    "subscriptions": {}
+  },
+  {
+    "id": 103408,
+    "email": "ventas1.sommainternacional@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Boucq",
+      "NOMBRE": "Noelia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103407,
+    "email": "turismodelsur2015@hotmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "José Pollero",
+      "NOMBRE": "Maria"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103406,
+    "email": "sanjose@orientalviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Ramos",
+      "NOMBRE": "Lorena"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103405,
+    "email": "sabrina@turispayviajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Coceres",
+      "NOMBRE": "Sabrina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103404,
+    "email": "patricia.garcia@anda.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "García",
+      "NOMBRE": "Patricia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103403,
+    "email": "natalia.ugolini@consolidtravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Ugolini",
+      "NOMBRE": "Natalia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103402,
+    "email": "natalia.doglio@anda.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Doglio",
+      "NOMBRE": "Natalia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103401,
+    "email": "mneyraviajesyturismo@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Neyra",
+      "NOMBRE": "Martin"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103400,
+    "email": "micaela@solutionviajes.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Porley",
+      "NOMBRE": "Micaela"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103399,
+    "email": "mayra.peirano@e-travels.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Peirano",
+      "NOMBRE": "Mayra"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103398,
+    "email": "marianoel@turispayviqjes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Noel Curbelo",
+      "NOMBRE": "Maria"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103397,
+    "email": "mara@emegeviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Hartwig",
+      "NOMBRE": "Mara"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103396,
+    "email": "lorena@ventusviajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Lopez",
+      "NOMBRE": "Lorena"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103395,
+    "email": "jorge.abella@hcviajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Abella",
+      "NOMBRE": "Jorge"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103394,
+    "email": "horizonte.agenciadeviaje@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Faggiani",
+      "NOMBRE": "Stella"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103393,
+    "email": "gonzalosmaldone@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Smaldone",
+      "NOMBRE": "Gonzalo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103392,
+    "email": "giovanna@ventusviajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Milesi",
+      "NOMBRE": "Giovanna"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103391,
+    "email": "gerencia@cycviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Casuriaga",
+      "NOMBRE": "Javier"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103390,
+    "email": "geral@emegeviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Curti",
+      "NOMBRE": "Geraldina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103389,
+    "email": "geotur.santiago@gmail.com",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-13T15:42:52.786+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Sosa",
+      "NOMBRE": "Santiago"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103388,
+    "email": "geotur.gonzalo@gmail.com",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-13T15:42:52.786+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Ferreira",
+      "NOMBRE": "Gonzalo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103387,
+    "email": "esteban@estudiocallorda.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Callorda",
+      "NOMBRE": "Esteban"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103386,
+    "email": "dlviajes05@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {},
+    "subscriptions": {}
+  },
+  {
+    "id": 103385,
+    "email": "contaduria@cycviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Laura De Leon",
+      "NOMBRE": "Ana"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103384,
+    "email": "carolina@ibizaviajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "White",
+      "NOMBRE": "Carolina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103383,
+    "email": "carolina.sommainternacional@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Boucq",
+      "NOMBRE": "Carolina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103382,
+    "email": "bruno.cabrera@toctocviajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Cabrera",
+      "NOMBRE": "Bruno"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103381,
+    "email": "beatriz@viajaconbea.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "NOMBRE": "Beatriz"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103380,
+    "email": "asosa@hiperviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Sosa",
+      "NOMBRE": "Agustín"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103379,
+    "email": "alejandro.leal@e-travels.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-06-16T04:20:46.176+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.011+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Leal",
+      "NOMBRE": "Alejandro"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 103364,
+    "email": "nrumbos@vera.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2026-04-07T17:53:21.553+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.018+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {},
+    "subscriptions": {}
+  },
+  {
+    "id": 103359,
+    "email": "lsabatel@cisplatinauruguay.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-09-05T19:17:19.162+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.018+02:00",
+    "listIds": [
+      11,
+      19
+    ],
+    "listUnsubscribed": [],
+    "attributes": {},
+    "subscriptions": {}
+  },
+  {
+    "id": 102513,
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-07-22T19:10:13.721+02:00",
+    "modifiedAt": "2025-07-22T19:10:13.721+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Dimitriadis",
+      "NOMBRE": "Sergio",
+      "SMS": "59898317171"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102512,
+    "email": "pablo@azulviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-07-22T19:10:13.721+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Mendoza",
+      "NOMBRE": "Pablo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102511,
+    "email": "mgasanol@bntours.com",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-07-22T19:10:13.721+02:00",
+    "modifiedAt": "2025-07-22T20:11:11.869+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Gasañol",
+      "NOMBRE": "Mathias"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102510,
+    "email": "fede@mevuelo.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-07-22T19:10:13.721+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Valverde",
+      "NOMBRE": "Federico"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102509,
+    "email": "fcousillas@experience.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-07-22T19:10:13.721+02:00",
+    "modifiedAt": "2025-08-01T17:19:20.565+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Cousillas",
+      "NOMBRE": "Federico"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102508,
+    "email": "estefani@campomar.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-07-22T19:10:13.721+02:00",
+    "modifiedAt": "2025-07-22T20:11:13.397+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Costa",
+      "NOMBRE": "Estefani"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102507,
+    "email": "aram@acviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-07-22T19:10:13.720+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Guergerian",
+      "NOMBRE": "Aram"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102500,
+    "email": "gaston.castro@proviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-06-03T17:05:12.204+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Castro",
+      "NOMBRE": "Gaston",
+      "SMS": "59894054746"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102448,
+    "email": "cecilia@ceciliaregules.com",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.557+02:00",
+    "modifiedAt": "2025-04-25T19:00:07.296+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Regules",
+      "NOMBRE": "Cecilia",
+      "SMS": "59899683608"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102447,
+    "email": "rgimenez@horizonttravel.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.557+02:00",
+    "modifiedAt": "2025-04-25T18:39:19.654+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Gimenez",
+      "NOMBRE": "Rodrigo",
+      "SMS": "59899673900"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102446,
+    "email": "ventas3@mactravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.557+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Tardagula",
+      "NOMBRE": "Lorena",
+      "SMS": "59898747522"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102445,
+    "email": "joel@azulviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Gonzalez",
+      "NOMBRE": "Joel",
+      "SMS": "59898298158"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102444,
+    "email": "matias.sosa@traveloz.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Sosa",
+      "NOMBRE": "Matias",
+      "SMS": "59897665300"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102443,
+    "email": "info@donagustinviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Caballero",
+      "NOMBRE": "Pablo",
+      "SMS": "59891339099"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102442,
+    "email": "turismovivirviajando@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "NOMBRE": "Vivir Viajando"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102441,
+    "email": "ramiro.bilbao@mevuelo.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Bilbao",
+      "NOMBRE": "Ramiro"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102440,
+    "email": "mlima@andamosvolando.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Lima",
+      "NOMBRE": "Mauro"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102439,
+    "email": "mateo@carrascoviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Fornaró",
+      "NOMBRE": "Mateo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102438,
+    "email": "jorgelina@mercurio.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2025-04-01T17:16:41.407+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Arrigoni",
+      "NOMBRE": "Jorgelina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102437,
+    "email": "guillermo.talento@mevuelo.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Talento",
+      "NOMBRE": "Guillermo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102436,
+    "email": "enzo@321vola.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Giliberti",
+      "NOMBRE": "Enzo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102435,
+    "email": "diego.palacios@guamatur.com",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2025-04-01T17:16:08.461+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Palacios",
+      "NOMBRE": "Diego"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102434,
+    "email": "dgarcia@creditravel.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-04-01T14:38:36.554+02:00",
+    "modifiedAt": "2025-04-25T18:39:09.653+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Garcia",
+      "NOMBRE": "Diego"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 102433,
+    "email": "gabriel.bonavita.gb@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2025-03-26T14:59:07.301+01:00",
+    "modifiedAt": "2026-08-14T23:01:14.008+02:00",
+    "listIds": [
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Bonavita",
+      "NOMBRE": "Gabriel"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 101472,
+    "email": "victoriamendez@destinico.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.366+01:00",
+    "modifiedAt": "2026-08-14T23:01:13.753+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Mendez",
+      "NOMBRE": "Victoria",
+      "SMS": "59899843559"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 100842,
+    "email": "gustavo.pereira@activetravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.363+01:00",
+    "modifiedAt": "2026-08-14T23:01:13.240+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "PEREIRA",
+      "NOMBRE": "GUSTAVO",
+      "SMS": "59899665247"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 100795,
+    "email": "vmuracciole@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.363+01:00",
+    "modifiedAt": "2026-08-14T23:01:13.240+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Muracciole",
+      "NOMBRE": "Veronique",
+      "SMS": "59899651554"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 100566,
+    "email": "gonzalo.pere@activetravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.362+01:00",
+    "modifiedAt": "2026-08-14T23:01:13.240+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Peré",
+      "NOMBRE": "Gonzalo",
+      "SMS": "59899613621"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 100300,
+    "email": "alvaro.varzi@activetravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.360+01:00",
+    "modifiedAt": "2026-08-14T23:01:12.051+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "VARZI",
+      "NOMBRE": "ALVARO",
+      "SMS": "59899547163"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 100162,
+    "email": "juanpablo@libertyuruguay.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.359+01:00",
+    "modifiedAt": "2026-08-14T23:01:12.051+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Guaglianoni",
+      "NOMBRE": "Juan Pablo",
+      "SMS": "59899502158"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 99615,
+    "email": "martin@martindiazturismo.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.357+01:00",
+    "modifiedAt": "2026-08-14T23:01:12.033+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Diaz",
+      "NOMBRE": "Martin",
+      "SMS": "59899316864"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 99499,
+    "email": "gdommarco@jorgemartinez.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.356+01:00",
+    "modifiedAt": "2026-02-19T13:46:33.830+01:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Dommarco",
+      "NOMBRE": "Gabriel",
+      "SMS": "59899288087"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 99493,
+    "email": "ventas@zafiroviajes.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.356+01:00",
+    "modifiedAt": "2026-08-14T23:01:12.033+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Moran",
+      "NOMBRE": "Lourdes",
+      "SMS": "59899287778"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 99464,
+    "email": "noela@bntours.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.356+01:00",
+    "modifiedAt": "2026-08-14T23:01:12.033+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Fonsalia",
+      "NOMBRE": "Noelia",
+      "SMS": "59895794232"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 99373,
+    "email": "cecilia@lamana.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.356+01:00",
+    "modifiedAt": "2026-08-14T23:01:12.014+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Risso",
+      "NOMBRE": "Cecilia",
+      "SMS": "59899261536"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 98760,
+    "email": "nicoruiz123@gmail.com",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.352+01:00",
+    "modifiedAt": "2026-04-17T19:29:58.773+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Ruiz",
+      "NOMBRE": "Nicolas",
+      "SMS": "59899123457"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 98716,
+    "email": "anipoli@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.352+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.917+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "NIPOLI",
+      "NOMBRE": "ALDO",
+      "SMS": "59899116461"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 98188,
+    "email": "gbarboza@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.350+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.870+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "BARBOZA",
+      "NOMBRE": "GONZALO",
+      "SMS": "59898899708"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 97878,
+    "email": "mzito@jpsantos.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.348+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.870+02:00",
+    "listIds": [
+      4,
+      11,
+      12
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Zito",
+      "NOMBRE": "Mariela"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 97850,
+    "email": "maximiliano@lamana.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.348+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.870+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Castillo",
+      "NOMBRE": "Maximiliano",
+      "SMS": "59898705596"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 97638,
+    "email": "ignacio.curti@dcomtravel.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.347+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.849+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "CURTI",
+      "NOMBRE": "IGNACIO",
+      "SMS": "59898584025"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 97325,
+    "email": "alejandro@rumbosturismo.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.345+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.849+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Garcia",
+      "NOMBRE": "Alejandro",
+      "SMS": "59898396844"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 97289,
+    "email": "damian@lamana.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.345+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.849+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Mello lopez",
+      "NOMBRE": "Gerardo",
+      "SMS": "59898377956"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 96870,
+    "email": "carlosperez@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.342+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.776+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Perez",
+      "NOMBRE": "Carlos",
+      "SMS": "59898123456"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 96624,
+    "email": "maximiliano@novoturismo.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.341+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.776+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Cardozo",
+      "NOMBRE": "Maximiliano"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 96512,
+    "email": "karen@novoturismo.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.340+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.652+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Novoturismo",
+      "NOMBRE": "Karen"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 96213,
+    "email": "fabiana@sinfronteras.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.339+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.652+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Martilotta",
+      "NOMBRE": "Fabiana",
+      "SMS": "59896646278"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 96147,
+    "email": "federico@novoturismo.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.338+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.652+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Rivas",
+      "NOMBRE": "Federico"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 96146,
+    "email": "agustin@novoturismo.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:42.338+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.652+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Briano",
+      "NOMBRE": "Agustin"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 95948,
+    "email": "valeria@lamana.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.712+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.587+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Sosa",
+      "NOMBRE": "Valeria",
+      "SMS": "59896114433"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 95339,
+    "email": "andrea@libertyuruguay.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.707+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.132+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Fischer",
+      "NOMBRE": "Andrea",
+      "SMS": "59895278231"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 95073,
+    "email": "maximiliano.makovsky@activetravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.705+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.132+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Makovsky",
+      "NOMBRE": "Maximiliano",
+      "SMS": "59894996060"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 94842,
+    "email": "rodrigo@azulviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.703+01:00",
+    "modifiedAt": "2026-08-14T23:01:11.132+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Pinto",
+      "NOMBRE": "Rodrigo",
+      "SMS": "59894796941"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 94637,
+    "email": "enrique@rumbosturismo.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.702+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.892+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Varela",
+      "NOMBRE": "Enrique",
+      "SMS": "59894595433"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 94475,
+    "email": "arussi@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.701+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.892+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Russi -Roth",
+      "NOMBRE": "Andres",
+      "SMS": "59894469009"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 94369,
+    "email": "gerencia@creditravel.net",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.700+01:00",
+    "modifiedAt": "2026-06-01T16:16:55.992+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Peirano",
+      "NOMBRE": "Marcelo",
+      "SMS": "59894419501"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 94359,
+    "email": "andrea@dsviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.700+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.892+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Laurente",
+      "NOMBRE": "Andrea",
+      "SMS": "59894412183"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 94178,
+    "email": "dmartinez@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.698+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.856+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Martinez",
+      "NOMBRE": "Diego",
+      "SMS": "59894274942"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 93668,
+    "email": "receptivocolonia@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.695+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.851+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Gomez",
+      "NOMBRE": "Carolina",
+      "SMS": "59893607066"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 93608,
+    "email": "lmiliscovich@jpsantos.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.694+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.851+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Miliscovich",
+      "NOMBRE": "Lourdes"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 93475,
+    "email": "amelegatti@delsurviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.693+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.851+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Melegatti",
+      "NOMBRE": "Andrea"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 93466,
+    "email": "lautaro@lamana.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.693+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.851+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Bolatti",
+      "NOMBRE": "Lautaro",
+      "SMS": "59892816705"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 93001,
+    "email": "cmato@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.689+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.725+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "MATO",
+      "NOMBRE": "CECILIA",
+      "SMS": "59891963413"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 92933,
+    "email": "administracion@mactravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.689+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.725+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Muniz",
+      "NOMBRE": "Gonzalo",
+      "SMS": "59891849755"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 92629,
+    "email": "pablo@ciceroneuruguay.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.687+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.725+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Cammarota",
+      "NOMBRE": "Pablo",
+      "SMS": "59891431672"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 92479,
+    "email": "bgonzalez@jorgemartinez.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.686+01:00",
+    "modifiedAt": "2026-04-07T20:06:24.464+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Gonz?lez",
+      "NOMBRE": "Bruno",
+      "SMS": "59891306910"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 91749,
+    "email": "ltorres@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.680+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.702+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Torres",
+      "NOMBRE": "Leticia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 91714,
+    "email": "lronchetti@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.680+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.702+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Ronchetti",
+      "NOMBRE": "Laura"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 91528,
+    "email": "lorenzo@mactravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.679+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.702+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Ba?ales",
+      "NOMBRE": "Lorenzo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 91162,
+    "email": "luciano@campomar.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.675+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.639+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Milan",
+      "NOMBRE": "Luciano"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 89728,
+    "email": "laura.paiz@vyt.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.588+01:00",
+    "modifiedAt": "2026-08-14T23:01:09.151+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Paiz",
+      "NOMBRE": "Laura"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 88651,
+    "email": "jussara@personaloperadora.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.577+01:00",
+    "modifiedAt": "2026-08-14T23:01:07.697+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Castro",
+      "NOMBRE": "Jussara"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 88446,
+    "email": "juliana@personaloperadora.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.575+01:00",
+    "modifiedAt": "2026-08-14T23:01:07.697+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Medero",
+      "NOMBRE": "Juliana"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 87610,
+    "email": "josefina@syncroviajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.567+01:00",
+    "modifiedAt": "2026-08-14T23:01:07.683+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Barofio",
+      "NOMBRE": "Josefina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 86947,
+    "email": "macarena.perez@dcomtravel.com",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.565+01:00",
+    "modifiedAt": "2024-12-12T17:24:52.863+01:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Perez",
+      "NOMBRE": "Macarena"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 86910,
+    "email": "jleone@coit.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.565+01:00",
+    "modifiedAt": "2026-08-14T23:01:07.546+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Leone",
+      "NOMBRE": "Jimena"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 86260,
+    "email": "jblanco@travellerviajes.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.562+01:00",
+    "modifiedAt": "2026-04-08T17:20:21.925+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Blanco",
+      "NOMBRE": "Joaquin"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 85967,
+    "email": "magdalena@melitour.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.561+01:00",
+    "modifiedAt": "2026-08-14T23:01:07.521+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Ferrari",
+      "NOMBRE": "Magdalena"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 84877,
+    "email": "ifarina@jorgemartinez.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.557+01:00",
+    "modifiedAt": "2025-10-07T21:48:32.135+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Farina",
+      "NOMBRE": "Ignacio"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 83609,
+    "email": "gteti@creditravel.net",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.552+01:00",
+    "modifiedAt": "2026-08-14T23:01:06.913+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Teti",
+      "NOMBRE": "Gabriela"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 83598,
+    "email": "gsuaya@delsurviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.552+01:00",
+    "modifiedAt": "2026-08-14T23:01:06.913+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Suaya",
+      "NOMBRE": "Graciela"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 83498,
+    "email": "grodriguez@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.552+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.446+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Rodriguez",
+      "NOMBRE": "Gerardo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 83186,
+    "email": "mantonacci@creditravel.net",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.550+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.446+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Antonacci",
+      "NOMBRE": "Mathias"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 82708,
+    "email": "gmartin@jpsantos.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.548+01:00",
+    "modifiedAt": "2026-01-08T19:04:05.914+01:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Martin",
+      "NOMBRE": "Gabriela"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 82664,
+    "email": "glopez@jpsantos.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.547+01:00",
+    "modifiedAt": "2025-11-28T13:32:46.913+01:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Lopez",
+      "NOMBRE": "Gabriel"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 82226,
+    "email": "ggomez@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.546+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.334+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Gomez",
+      "NOMBRE": "Guillermo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 81950,
+    "email": "marcelo.bergalo@libertyuruguay.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.545+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.334+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Bergalo",
+      "NOMBRE": "Marcelo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 81843,
+    "email": "marcelo@libertyuruguay.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.544+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.248+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Cazet",
+      "NOMBRE": "Marcelo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 81053,
+    "email": "gabriela.zimerman@vyt.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:37.541+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.235+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Zimerman",
+      "NOMBRE": "Gabriela"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 80466,
+    "email": "fpereira@delsurviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.554+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.232+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Pereira",
+      "NOMBRE": "Fernanda"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 80397,
+    "email": "fnader@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.554+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.232+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Nader",
+      "NOMBRE": "Fernando"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 80357,
+    "email": "fmartinez@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.554+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.232+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Martinez",
+      "NOMBRE": "Fernando"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 80125,
+    "email": "florencia@sinfronteras.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.553+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.020+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Fegan",
+      "NOMBRE": "Florencia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 80004,
+    "email": "maria@conexion-viajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.552+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.020+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Lorenzo",
+      "NOMBRE": "Maria"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 79872,
+    "email": "fleon@travellerviajes.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.552+01:00",
+    "modifiedAt": "2026-04-29T22:06:40.808+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Leon",
+      "NOMBRE": "Felix"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 79775,
+    "email": "fjourdan@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.552+01:00",
+    "modifiedAt": "2026-08-14T23:01:05.020+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Jourdan",
+      "NOMBRE": "Fabricio"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 79701,
+    "email": "fiorella@sinfronteras.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.551+01:00",
+    "modifiedAt": "2026-08-14T23:01:04.862+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Rammauro",
+      "NOMBRE": "Fiorella"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 78419,
+    "email": "facundo@libertyuruguay.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.546+01:00",
+    "modifiedAt": "2026-08-14T23:01:04.738+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Casella",
+      "NOMBRE": "Facundo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 78193,
+    "email": "fabiana.menendez.bqb@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.545+01:00",
+    "modifiedAt": "2026-08-14T23:01:04.738+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Menendez",
+      "NOMBRE": "Fabiana"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 77262,
+    "email": "enzo.cusati@globaltours.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.541+01:00",
+    "modifiedAt": "2026-08-14T23:01:03.280+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Cusati",
+      "NOMBRE": "Enzo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 77210,
+    "email": "enrique.schneeberger@gmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.540+01:00",
+    "modifiedAt": "2026-08-14T23:01:03.280+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Schneeberger",
+      "NOMBRE": "Enrique"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 76178,
+    "email": "efarah@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.536+01:00",
+    "modifiedAt": "2026-08-14T23:01:03.116+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Farah",
+      "NOMBRE": "Elias"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 74798,
+    "email": "diego@libertyuruguay.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.530+01:00",
+    "modifiedAt": "2025-11-28T13:32:18.884+01:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Massia",
+      "NOMBRE": "Diego"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 74742,
+    "email": "diego.correa@melitour.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.530+01:00",
+    "modifiedAt": "2026-08-14T23:01:03.029+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Correa",
+      "NOMBRE": "Diego"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 74553,
+    "email": "dgarcia@creditravel.net",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.529+01:00",
+    "modifiedAt": "2026-08-12T17:03:16.736+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Garcia",
+      "NOMBRE": "Diego"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 73663,
+    "email": "daniel@libertyuruguay.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.526+01:00",
+    "modifiedAt": "2026-08-14T23:01:02.772+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Barzabal",
+      "NOMBRE": "Daniel"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 73636,
+    "email": "daniel.montes@activetravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.526+01:00",
+    "modifiedAt": "2026-08-14T23:01:02.772+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Montes",
+      "NOMBRE": "Daniel"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 73582,
+    "email": "dani@adventour.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.526+01:00",
+    "modifiedAt": "2025-04-25T18:37:53.737+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Baruch",
+      "NOMBRE": "Daniel"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 72592,
+    "email": "contable@sinfronteras.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.522+01:00",
+    "modifiedAt": "2026-08-14T23:01:02.596+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Arocena",
+      "NOMBRE": "Nicolas"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 71821,
+    "email": "tcandiota@travellerviajes.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.518+01:00",
+    "modifiedAt": "2026-04-08T01:08:30.028+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Candiota",
+      "NOMBRE": "Tamara"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 71168,
+    "email": "cguzman@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.515+01:00",
+    "modifiedAt": "2026-08-14T23:01:01.028+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Guzman",
+      "NOMBRE": "Claudio"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 71084,
+    "email": "cgarcia@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.515+01:00",
+    "modifiedAt": "2026-08-14T23:01:01.028+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Garcia",
+      "NOMBRE": "Carolina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 70289,
+    "email": "spazos@delsurviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.512+01:00",
+    "modifiedAt": "2026-08-14T23:01:00.895+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Pazos",
+      "NOMBRE": "Susana"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 69912,
+    "email": "ccobas@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.511+01:00",
+    "modifiedAt": "2026-08-14T23:01:00.765+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Cobas",
+      "NOMBRE": "Carina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 69855,
+    "email": "soledad@libertyuruguay.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.510+01:00",
+    "modifiedAt": "2025-01-23T13:44:13.019+01:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Gomez",
+      "NOMBRE": "Soledad"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 68956,
+    "email": "carolina@libertyuruguay.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.506+01:00",
+    "modifiedAt": "2026-08-14T23:01:00.606+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Gonzalez",
+      "NOMBRE": "Carolina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 68932,
+    "email": "carolina.schultz@vyt.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.506+01:00",
+    "modifiedAt": "2026-08-14T23:01:00.606+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Schultz",
+      "NOMBRE": "Carolina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 68920,
+    "email": "carolina.rizzo@libertyuruguay.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.506+01:00",
+    "modifiedAt": "2025-06-16T16:32:50.590+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Rizzo",
+      "NOMBRE": "Carolina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 68517,
+    "email": "silvia@melitour.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.504+01:00",
+    "modifiedAt": "2026-08-14T23:01:00.606+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Quimpos",
+      "NOMBRE": "Silvia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 67577,
+    "email": "sergio@mactravel.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.501+01:00",
+    "modifiedAt": "2025-10-02T17:55:51.728+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Ba?ales",
+      "NOMBRE": "Sergio"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 67187,
+    "email": "sebastian@bntours.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.499+01:00",
+    "modifiedAt": "2026-08-14T23:01:00.253+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Lopez",
+      "NOMBRE": "Sebastian"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 66729,
+    "email": "sborges@creditravel.net",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:32.497+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.739+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Borges",
+      "NOMBRE": "Silvina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 65852,
+    "email": "mbergara@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.148+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.403+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Bergara",
+      "NOMBRE": "Marcelo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 65690,
+    "email": "bpnunez@bntours.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.147+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.403+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Nu",
+      "NOMBRE": "Bernardo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 65130,
+    "email": "bgarcia@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.145+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.378+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Garcia",
+      "NOMBRE": "Beatriz"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 65026,
+    "email": "bettina@mercurioviajes.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.145+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.357+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Bellini",
+      "NOMBRE": "Bettina"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 64419,
+    "email": "vcardoso@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.143+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.346+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Cardoso",
+      "NOMBRE": "Victoria"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 63084,
+    "email": "asilvera@creditravel.net",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.136+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.338+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Silvera",
+      "NOMBRE": "Andres"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 63048,
+    "email": "aseijas@travellerviajes.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.136+01:00",
+    "modifiedAt": "2026-04-06T19:39:16.591+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Seijas",
+      "NOMBRE": "Alberto"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 62859,
+    "email": "veronica@personaloperadora.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.135+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.338+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Castro",
+      "NOMBRE": "Veronica"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 62659,
+    "email": "rlawlor@creditravel.net",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.134+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.284+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Lawlor",
+      "NOMBRE": "Ricardo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 61885,
+    "email": "recepcion@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.129+01:00",
+    "modifiedAt": "2026-08-14T23:00:58.284+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Grupo",
+      "NOMBRE": "Recepcion"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 60779,
+    "email": "psanchez@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.122+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.454+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Sanchez",
+      "NOMBRE": "Pablo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 58685,
+    "email": "virginia@rumbosturismo.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.108+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.212+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Willebald",
+      "NOMBRE": "Virginia"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 58294,
+    "email": "ana@sinfronteras.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.105+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.194+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Hernandez",
+      "NOMBRE": "Ana Laura"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 58078,
+    "email": "amontano@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.104+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.194+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Montano",
+      "NOMBRE": "Andrea"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 57884,
+    "email": "amartinez@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.103+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.194+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Martinez",
+      "NOMBRE": "Alejandra"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 57766,
+    "email": "amagnoni@bntours.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.102+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.172+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Magnoni",
+      "NOMBRE": "Alejandra"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 57107,
+    "email": "pablo@libertyuruguay.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.098+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.133+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Rascovich",
+      "NOMBRE": "Pablo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 57099,
+    "email": "pablo@campomar.com.uy",
+    "emailBlacklisted": true,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.098+01:00",
+    "modifiedAt": "2025-07-22T19:10:13.721+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Romero",
+      "NOMBRE": "Pablo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 57007,
+    "email": "pablo.deazpitarte@vyt.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.097+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.133+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "De Azpitarte",
+      "NOMBRE": "Pablo"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 56619,
+    "email": "operaciones@mactravel.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.095+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.121+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Guerrero",
+      "NOMBRE": "Luz"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 56203,
+    "email": "numantelo@hotmail.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.093+01:00",
+    "modifiedAt": "2026-08-14T23:00:53.989+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Antelo",
+      "NOMBRE": "Federico"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 55628,
+    "email": "alejandro.perciavalle@vyt.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.090+01:00",
+    "modifiedAt": "2026-08-14T23:00:56.084+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Perciavalle",
+      "NOMBRE": "Alejandro"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 55430,
+    "email": "alejandra@melitour.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.089+01:00",
+    "modifiedAt": "2026-08-14T23:00:54.182+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Palermo",
+      "NOMBRE": "Alejandra"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 55061,
+    "email": "nicolas@personaloperadora.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.087+01:00",
+    "modifiedAt": "2026-08-14T23:00:54.182+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Vidal",
+      "NOMBRE": "Nicolas"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 54434,
+    "email": "mirel.scotti@hcviajes.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.084+01:00",
+    "modifiedAt": "2026-08-14T23:00:54.144+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Scotti",
+      "NOMBRE": "Mirel"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 53907,
+    "email": "natalie@bntours.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.081+01:00",
+    "modifiedAt": "2026-08-14T23:00:54.141+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Fuentes",
+      "NOMBRE": "Natalie"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 53152,
+    "email": "aeropuerto@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.078+01:00",
+    "modifiedAt": "2026-08-14T23:00:54.114+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Grupo",
+      "NOMBRE": "Aeropuerto"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 52636,
+    "email": "adriana@rumbosturismo.com",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.075+01:00",
+    "modifiedAt": "2026-08-14T23:00:54.113+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Dupuy",
+      "NOMBRE": "Adriana"
+    },
+    "subscriptions": {}
+  },
+  {
+    "id": 52123,
+    "email": "mreyes@jorgemartinez.com.uy",
+    "emailBlacklisted": false,
+    "smsBlacklisted": false,
+    "whatsappBlacklisted": false,
+    "createdAt": "2024-12-12T14:21:27.073+01:00",
+    "modifiedAt": "2026-08-14T23:00:54.101+02:00",
+    "listIds": [
+      4,
+      11
+    ],
+    "listUnsubscribed": [],
+    "attributes": {
+      "APELLIDOS": "Reyes",
+      "NOMBRE": "Monica"
+    },
+    "subscriptions": {}
+  }
+]
